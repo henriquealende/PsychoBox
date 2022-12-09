@@ -1,0 +1,3 @@
+{
+    "files": ["widget.py","Forms/form.ui","Resources/resourceGui.qrc"]
+}

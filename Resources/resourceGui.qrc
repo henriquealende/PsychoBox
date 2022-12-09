@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>img/addEnabled.png</file>
+        <file>img/chart.png</file>
+        <file>img/downArrow.png</file>
+        <file>img/downArrowDis.png</file>
+        <file>img/equalizerEnable.png</file>
+        <file>img/filter.png</file>
+        <file>img/graphicsEnabled.png</file>
+        <file>img/homeEnabled.png</file>
+        <file>img/importAudio.png</file>
+        <file>img/menuEnabled.png</file>
+        <file>img/metricas.png</file>
+        <file>img/pause.png</file>
+        <file>img/play.png</file>
+        <file>img/saveEnable.png</file>
+        <file>img/settingsEnable.png</file>
+        <file>img/upArrow.png</file>
+        <file>img/upArrowDis.png</file>
+        <file>img/userEnabled.png</file>
+    </qresource>
+    <qresource prefix="/logos">
+        <file>img/embracoLogo.png</file>
+        <file>img/embracoLogoAzul.png</file>
+        <file>img/logo.png</file>
+        <file>img/nidecLogo.png</file>
+    </qresource>
+</RCC>
