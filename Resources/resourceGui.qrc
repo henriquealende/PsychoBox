@@ -18,11 +18,13 @@
         <file>img/upArrow.png</file>
         <file>img/upArrowDis.png</file>
         <file>img/userEnabled.png</file>
+        <file>img/close.png</file>
+        <file>img/minus.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/embracoLogo.png</file>
         <file>img/embracoLogoAzul.png</file>
-        <file>img/logo.png</file>
         <file>img/nidecLogo.png</file>
+        <file>img/logo.png</file>
     </qresource>
 </RCC>

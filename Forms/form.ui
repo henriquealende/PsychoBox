@@ -189,7 +189,7 @@ QPushButton:checked {
        <widget class="QFrame" name="frame_4">
         <property name="styleSheet">
          <string notr="true">QFrame{
-	background-color: rgb(0,124,132);
+	background-color : #006d34;
 }</string>
         </property>
         <property name="frameShape">
@@ -256,7 +256,7 @@ QPushButton:checked {
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/embracoLogo.png</pixmap>
+               <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/nidecLogo.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -268,6 +268,15 @@ QPushButton:checked {
          </item>
          <item>
           <widget class="QFrame" name="frame_6">
+           <property name="maximumSize">
+            <size>
+             <width>75</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
            </property>
@@ -279,39 +288,76 @@ QPushButton:checked {
              <number>0</number>
             </property>
             <property name="leftMargin">
-             <number>300</number>
+             <number>0</number>
             </property>
             <property name="topMargin">
              <number>0</number>
             </property>
             <property name="rightMargin">
-             <number>10</number>
+             <number>20</number>
             </property>
             <property name="bottomMargin">
              <number>0</number>
             </property>
-            <item>
-             <widget class="QLabel" name="label_3">
-              <property name="minimumSize">
-               <size>
-                <width>85</width>
-                <height>25</height>
-               </size>
-              </property>
+            <item alignment="Qt::AlignRight">
+             <widget class="QPushButton" name="minimizeButton">
               <property name="maximumSize">
                <size>
-                <width>85</width>
-                <height>25</height>
+                <width>20</width>
+                <height>20</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+	background-color: #ffbe38;
+	border-radius: 10px;
+	border: 2px solid  #d5a342;
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 255, 58)
+}</string>
               </property>
               <property name="text">
                <string/>
               </property>
-              <property name="pixmap">
-               <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/nidecLogo.png</pixmap>
+              <property name="icon">
+               <iconset resource="../Resources/resourceGui.qrc">
+                <normaloff>:/icons/img/minus.png</normaloff>:/icons/img/minus.png</iconset>
               </property>
-              <property name="scaledContents">
-               <bool>true</bool>
+             </widget>
+            </item>
+            <item alignment="Qt::AlignRight">
+             <widget class="QPushButton" name="closeAllButton">
+              <property name="maximumSize">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+	background-color: #fc5753;
+	border-radius: 10px;
+	border: 2px solid  #cf5254;
+}
+
+QPushButton:hover{
+	background-color: rgb(255, 119, 119)
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../Resources/resourceGui.qrc">
+                <normaloff>:/icons/img/close.png</normaloff>:/icons/img/close.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>12</width>
+                <height>12</height>
+               </size>
               </property>
              </widget>
             </item>
@@ -400,12 +446,12 @@ QPushButton:checked {
            </property>
            <property name="styleSheet">
             <string notr="true">QFrame{
-	background-color: rgb(0,124,132);
+	background-color: #006d34;
 }
 QPushButton {
 	padding-left: 10px;
 	text-align: left;
-	background-color: rgb(0,124,132);
+	background-color: #006d34;
 	border:none;
 	color: rgb(255, 255, 255)
 }
@@ -419,7 +465,7 @@ QPushButton:pressed {
 }
 
 QPushButton:checked {
-	background-color: rgb(0, 138, 147);
+	background-color:#009b4a;
 	padding-left: 5px;
 	border-left: 5px solid  rgb(241, 102, 55);
 }</string>
@@ -594,12 +640,12 @@ QPushButton:checked {
            </property>
            <property name="styleSheet">
             <string notr="true">QFrame{
-	background-color: rgb(0,124,132);
+	background-color: #006d34;
 }
 QPushButton {
 	padding-left: 14px;
 	text-align: left;
-	background-color:  rgb(0,124,132);
+	background-color:   #006d34;
 	border:none;
 	color: rgb(255, 255, 255)
 }
@@ -612,7 +658,7 @@ QPushButton:pressed {
 }
 
 QPushButton:checked {
-	background-color: rgb(0, 138, 147);
+	background-color:  #006d34;
 	padding-left: 9px;
 	border-left: 5px solid  rgb(241, 102, 55);
 }</string>
@@ -893,10 +939,10 @@ QPushButton:checked {
                          </font>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">color: rgb(0,124,132);</string>
+                         <string notr="true">color: #009b4a;</string>
                         </property>
                         <property name="text">
-                         <string>BEM VINDO(A) </string>
+                         <string>WELCOME</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -916,289 +962,11 @@ QPushButton:checked {
                          <string notr="true">color: rgb(97, 176, 155);</string>
                         </property>
                         <property name="text">
-                         <string>CRIE UMA CONTA OU CONECTE-SE 
-PARA ACESSAR SEUS PROJETOS</string>
+                         <string>sign to acess 
+your procects</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_28">
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::NoFrame</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_18">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
-                      </property>
-                      <item>
-                       <widget class="QFrame" name="frame_29">
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::NoFrame</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QHBoxLayout" name="horizontalLayout_17">
-                         <property name="spacing">
-                          <number>5</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>18</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>0</number>
-                         </property>
-                         <item>
-                          <widget class="QFrame" name="frame_30">
-                           <property name="frameShape">
-                            <enum>QFrame::NoFrame</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QLabel" name="label_26">
-                           <property name="enabled">
-                            <bool>true</bool>
-                           </property>
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>50</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>50</width>
-                             <height>16777215</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>PF BeauSans Pro</family>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">color: rgb(97, 97, 97);</string>
-                           </property>
-                           <property name="text">
-                            <string>POWER</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QLabel" name="label_27">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>20</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>20</width>
-                             <height>16777215</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>PF BeauSans Pro</family>
-                             <bold>true</bold>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">color: rgb(97, 176, 155);</string>
-                           </property>
-                           <property name="text">
-                            <string>IN.</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QFrame" name="frame_31">
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>30</height>
-                         </size>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::NoFrame</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QHBoxLayout" name="horizontalLayout_18">
-                         <property name="spacing">
-                          <number>5</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>18</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>0</number>
-                         </property>
-                         <item>
-                          <widget class="QFrame" name="frame_32">
-                           <property name="frameShape">
-                            <enum>QFrame::NoFrame</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QLabel" name="label_28">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>60</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>60</width>
-                             <height>16777215</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>PF BeauSans Pro</family>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">color: rgb(97, 97, 97);</string>
-                           </property>
-                           <property name="text">
-                            <string>CHANGE</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QLabel" name="label_29">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="minimumSize">
-                            <size>
-                             <width>25</width>
-                             <height>0</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>25</width>
-                             <height>16777215</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>PF BeauSans Pro</family>
-                             <bold>true</bold>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">color: rgb(97, 176, 155);</string>
-                           </property>
-                           <property name="text">
-                            <string>ON.</string>
-                           </property>
-                           <property name="alignment">
-                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QFrame" name="frame_33">
-                        <property name="frameShape">
-                         <enum>QFrame::NoFrame</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
                         </property>
                        </widget>
                       </item>
@@ -1227,7 +995,7 @@ PARA ACESSAR SEUS PROJETOS</string>
                     <number>0</number>
                    </property>
                    <property name="rightMargin">
-                    <number>0</number>
+                    <number>10</number>
                    </property>
                    <property name="bottomMargin">
                     <number>0</number>
@@ -1245,72 +1013,73 @@ PARA ACESSAR SEUS PROJETOS</string>
                        <number>0</number>
                       </property>
                       <property name="leftMargin">
-                       <number>30</number>
+                       <number>0</number>
                       </property>
                       <property name="topMargin">
                        <number>0</number>
                       </property>
                       <property name="rightMargin">
-                       <number>9</number>
+                       <number>0</number>
                       </property>
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
                       <item>
-                       <widget class="QLabel" name="label_30">
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_31">
+                       <widget class="QLabel" name="registerInfo">
                         <property name="minimumSize">
                          <size>
-                          <width>400</width>
-                          <height>100</height>
+                          <width>0</width>
+                          <height>40</height>
                          </size>
                         </property>
                         <property name="maximumSize">
                          <size>
-                          <width>400</width>
-                          <height>100</height>
+                          <width>16777215</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>PF BeauSans Pro</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">padding-right:10</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                        </property>
+                        <property name="margin">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                      </item>
+                      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+                       <widget class="QLabel" name="label_31">
+                        <property name="minimumSize">
+                         <size>
+                          <width>300</width>
+                          <height>130</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>300</width>
+                          <height>130</height>
                          </size>
                         </property>
                         <property name="text">
                          <string/>
                         </property>
                         <property name="pixmap">
-                         <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/embracoLogoAzul.png</pixmap>
+                         <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/logo.png</pixmap>
                         </property>
                         <property name="scaledContents">
                          <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_32">
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>45</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <family>PF BeauSans Pro</family>
-                          <pointsize>16</pointsize>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(97, 176, 155);</string>
-                        </property>
-                        <property name="text">
-                         <string>sound quality toolbox</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
                         </property>
                        </widget>
                       </item>
@@ -1333,7 +1102,7 @@ PARA ACESSAR SEUS PROJETOS</string>
                      </property>
                      <property name="styleSheet">
                       <string notr="true">QLineEdit{
-	border: 2px solid rgb(0,124,132);
+	border: 2px solid #006d34;
 	border-radius: 5px;
 	color:rgb(255, 255, 255);
 	background-color: rgb(182, 182, 182);
@@ -1341,7 +1110,7 @@ PARA ACESSAR SEUS PROJETOS</string>
 	padding-right:20px;
 }
 QLineEdit:hover{
-	border: 2px solid rgb(97, 176, 155);
+	border: 2px solid  #009b4a;
 }</string>
                      </property>
                      <property name="frameShape">
@@ -1352,7 +1121,7 @@ QLineEdit:hover{
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout_36">
                       <item>
-                       <widget class="QLineEdit" name="LoginLineEdit">
+                       <widget class="QLineEdit" name="loginLineEdit">
                         <property name="minimumSize">
                          <size>
                           <width>240</width>
@@ -1394,7 +1163,7 @@ QLineEdit:hover{
                          <enum>QLineEdit::Password</enum>
                         </property>
                         <property name="placeholderText">
-                         <string>senha</string>
+                         <string>password</string>
                         </property>
                        </widget>
                       </item>
@@ -1414,25 +1183,26 @@ QLineEdit:hover{
                         </property>
                         <property name="styleSheet">
                          <string notr="true">QPushButton {
-	padding-left: 10px;
+	padding-left:10px;
 	text-align: left;
-	border-radius: 5px;
-	background-color: rgb(0,124,132);
-	border:none;
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
+	border-radius:5px;
 	color: rgb(255, 255, 255)
 }
 
 QPushButton:hover {
-	background-color: rgb(79,186,160)
-}
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(79,186,160,255), stop:1 #009b4a);
+	}
 
 QPushButton:pressed {
 	background-color: rgb(241, 102, 55)
 }
+
+
 </string>
                         </property>
                         <property name="text">
-                         <string>conectar</string>
+                         <string>login</string>
                         </property>
                        </widget>
                       </item>
@@ -1451,10 +1221,10 @@ QPushButton:pressed {
                          </font>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">color: rgb(0,124,132);</string>
+                         <string notr="true">color: #009b4a;</string>
                         </property>
                         <property name="text">
-                         <string>OU</string>
+                         <string>OR</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignHCenter|Qt::AlignTop</set>
@@ -1480,13 +1250,13 @@ QPushButton:pressed {
 	padding-left: 10px;
 	border-radius: 5px;
 	text-align: left;
-	background-color: rgb(0,124,132);
+	background-color:  #006d34;;
 	border:none;
 	color: rgb(255, 255, 255)
 }
 
 QPushButton:hover {
-	background-color: rgb(79,186,160)
+	background-color: #009b4a;
 }
 
 QPushButton:pressed {
@@ -1495,7 +1265,7 @@ QPushButton:pressed {
 </string>
                         </property>
                         <property name="text">
-                         <string>registrar</string>
+                         <string>register</string>
                         </property>
                        </widget>
                       </item>
@@ -1589,7 +1359,7 @@ QPushButton:pressed {
                       <string notr="true">color: rgb(237, 237, 237);</string>
                      </property>
                      <property name="text">
-                      <string>IMPORTE SEUS ARQUIVOS</string>
+                      <string>IMPORT YOUR FILES</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1665,8 +1435,8 @@ border: 5px  solid rgb(237, 237, 237);</string>
                       <string notr="true">color: rgb(237, 237, 237);</string>
                      </property>
                      <property name="text">
-                      <string>Trabalhe diretamente 
-com extensões de áudio 
+                      <string>Work directly 
+with audio extensions 
 (.wav, .acc, .mp3)</string>
                      </property>
                      <property name="alignment">
@@ -1704,7 +1474,7 @@ com extensões de áudio
                       <string notr="true">color: rgb(237, 237, 237);</string>
                      </property>
                      <property name="text">
-                      <string>EDITE SEU SINAL</string>
+                      <string>EDIT YOUR SIGNAL</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1779,8 +1549,9 @@ border: 5px  inset rgb(237, 237, 237);</string>
                       <string notr="true">color: rgb(237, 237, 237);</string>
                      </property>
                      <property name="text">
-                      <string>Processe e ouça os sinais 
- utilizando filtros e janelas  </string>
+                      <string>
+Process and listen to 
+ signals using filters and windows</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1817,7 +1588,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
                       <string notr="true">color: rgb(237, 237, 237);</string>
                      </property>
                      <property name="text">
-                      <string>APLIQUE MÉTRICAS</string>
+                      <string>APPLY METRICS</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -1892,8 +1663,8 @@ border: 5px  inset rgb(237, 237, 237);</string>
                       <string notr="true">color: rgb(237, 237, 237);</string>
                      </property>
                      <property name="text">
-                      <string>Utilize métricas psicoacústicas 
- para analisar o seu sinal</string>
+                      <string>Use psychoacoustic 
+ metrics to analyze your signal</string>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignCenter</set>
@@ -8126,7 +7897,7 @@ QPushButton:disabled{
                         <property name="font">
                          <font>
                           <family>PF BeauSans Pro</family>
-                          <pointsize>10</pointsize>
+                          <pointsize>13</pointsize>
                           <bold>false</bold>
                          </font>
                         </property>
@@ -8221,8 +7992,8 @@ QPushButton:disabled{
          <string notr="true">color:rgb(255, 255, 255)</string>
         </property>
         <property name="text">
-         <string>© 2021 embraco
-Todos os direitos reservados a embraco </string>
+         <string>© 2021 Nidec
+All rights reserved to Nidec </string>
         </property>
         <property name="alignment">
          <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -8242,7 +8013,7 @@ Todos os direitos reservados a embraco </string>
          <string notr="true">color: rgb(238, 238, 236);</string>
         </property>
         <property name="text">
-         <string>Desenvolvido por Henrique Silveira
+         <string>Develop by Henrique Silveira
  e Ricardo Brum</string>
         </property>
         <property name="alignment">
