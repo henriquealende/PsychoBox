@@ -9,8 +9,24 @@ def loginUser(self, username, password):
                     "' and password= '" + password + "'")
     result = cursor.fetchone()
     if result:
-        pass
-        # MUDAR A WIDGET AQUI
+        self.ui.rightContent.setCurrentWidget(self.ui.welcomePage)
+        fadeIn = QGraphicsOpacityEffect(self.ui.welcomePage)
+        self.animation = QPropertyAnimation(fadeIn, b"opacity")
+        self.ui.welcomePage.setGraphicsEffect(fadeIn)
+        self.animation.setDuration(1000)
+        self.animation.setStartValue(0)
+        self.animation.setEndValue(1)
+        self.animation.start()
+        self.ui.filterButton.setEnabled(True)
+        self.ui.usernameLabel.setText(username.title())
+        self.ui.userButton.setEnabled(True)
+        self.ui.userButton.setChecked(True)
+        self.online = True
+        if self.ui.leftMenu.width() > 50:
+            self.ui.userButton.setText(
+                self.ui.usernameLabel.text()+'\nSair')
+        else:
+            self.ui.userButton.setText("")
     else:
         self.ui.registerInfo.setText('Access Denied! \nUnregistered user')
     

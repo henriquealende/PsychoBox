@@ -20,6 +20,9 @@
         <file>img/userEnabled.png</file>
         <file>img/close.png</file>
         <file>img/minus.png</file>
+        <file>img/stop.png</file>
+        <file>img/volume-alto.png</file>
+        <file>img/volume-mute.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/embracoLogo.png</file>

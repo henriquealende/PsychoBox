@@ -186,7 +186,7 @@ QPushButton:checked {
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_4">
+       <widget class="QFrame" name="infoBar">
         <property name="styleSheet">
          <string notr="true">QFrame{
 	background-color : #006d34;
@@ -812,7 +812,7 @@ QPushButton:checked {
          <enum>QFrame::Raised</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="loginPage">
          <layout class="QHBoxLayout" name="horizontalLayout_24">
@@ -1754,10 +1754,16 @@ border: 5px  inset rgb(237, 237, 237);</string>
                 </property>
                 <item>
                  <widget class="QFrame" name="frame_9">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>80</height>
+                   </size>
+                  </property>
                   <property name="maximumSize">
                    <size>
                     <width>16777215</width>
-                    <height>98</height>
+                    <height>80</height>
                    </size>
                   </property>
                   <property name="frameShape">
@@ -1831,10 +1837,10 @@ border: 5px  inset rgb(237, 237, 237);</string>
                          </font>
                         </property>
                         <property name="styleSheet">
-                         <string notr="true">color: rgb(0,124,132);</string>
+                         <string notr="true">color: #009b4a;</string>
                         </property>
                         <property name="text">
-                         <string>BEM VINDO(A) </string>
+                         <string>Welcome</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
@@ -1909,106 +1915,37 @@ border: 5px  inset rgb(237, 237, 237);</string>
                           <number>0</number>
                          </property>
                          <property name="topMargin">
-                          <number>0</number>
+                          <number>10</number>
                          </property>
                          <property name="rightMargin">
-                          <number>0</number>
+                          <number>10</number>
                          </property>
                          <property name="bottomMargin">
                           <number>0</number>
                          </property>
-                         <item>
-                          <widget class="QFrame" name="frame_13">
-                           <property name="frameShape">
-                            <enum>QFrame::NoFrame</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QFrame" name="frame_14">
-                           <property name="maximumSize">
+                         <item alignment="Qt::AlignRight">
+                          <widget class="QLabel" name="label_10">
+                           <property name="minimumSize">
                             <size>
-                             <width>16777215</width>
-                             <height>98</height>
+                             <width>100</width>
+                             <height>50</height>
                             </size>
                            </property>
-                           <property name="frameShape">
-                            <enum>QFrame::NoFrame</enum>
+                           <property name="maximumSize">
+                            <size>
+                             <width>100</width>
+                             <height>50</height>
+                            </size>
                            </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
+                           <property name="text">
+                            <string/>
                            </property>
-                           <layout class="QVBoxLayout" name="verticalLayout_5">
-                            <property name="spacing">
-                             <number>0</number>
-                            </property>
-                            <property name="leftMargin">
-                             <number>0</number>
-                            </property>
-                            <property name="topMargin">
-                             <number>10</number>
-                            </property>
-                            <property name="rightMargin">
-                             <number>10</number>
-                            </property>
-                            <property name="bottomMargin">
-                             <number>0</number>
-                            </property>
-                            <item>
-                             <widget class="QLabel" name="label_10">
-                              <property name="minimumSize">
-                               <size>
-                                <width>200</width>
-                                <height>50</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>200</width>
-                                <height>50</height>
-                               </size>
-                              </property>
-                              <property name="text">
-                               <string/>
-                              </property>
-                              <property name="pixmap">
-                               <pixmap>:/img/embracoLogoAzul.png</pixmap>
-                              </property>
-                              <property name="scaledContents">
-                               <bool>true</bool>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <widget class="QLabel" name="label_20">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>45</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>PF BeauSans Pro</family>
-                                <pointsize>13</pointsize>
-                                <bold>false</bold>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">color: rgb(97, 176, 155);</string>
-                              </property>
-                              <property name="text">
-                               <string>sound quality toolbox</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-                              </property>
-                             </widget>
-                            </item>
-                           </layout>
+                           <property name="pixmap">
+                            <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/logo.png</pixmap>
+                           </property>
+                           <property name="scaledContents">
+                            <bool>true</bool>
+                           </property>
                           </widget>
                          </item>
                         </layout>
@@ -2163,11 +2100,11 @@ QPushButton:pressed {
 </string>
                                  </property>
                                  <property name="text">
-                                  <string>  Novo Projeto</string>
+                                  <string>  New project</string>
                                  </property>
                                  <property name="icon">
-                                  <iconset>
-                                   <normaloff>:/img/addEnabled.png</normaloff>:/img/addEnabled.png</iconset>
+                                  <iconset resource="../Resources/resourceGui.qrc">
+                                   <normaloff>:/icons/img/addEnabled.png</normaloff>:/icons/img/addEnabled.png</iconset>
                                  </property>
                                  <property name="iconSize">
                                   <size>
@@ -2317,7 +2254,7 @@ QPushButton:pressed {
                                   <string notr="true">color: rgb(237, 237, 237);</string>
                                  </property>
                                  <property name="text">
-                                  <string>IMPORTE ARQUIVOS</string>
+                                  <string>IMPORT YOUR FILES</string>
                                  </property>
                                  <property name="alignment">
                                   <set>Qt::AlignCenter</set>
@@ -2367,7 +2304,7 @@ border: 5px  solid rgb(237, 237, 237);</string>
                                      <string/>
                                     </property>
                                     <property name="pixmap">
-                                     <pixmap>:/img/importAudio.png</pixmap>
+                                     <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/importAudio.png</pixmap>
                                     </property>
                                     <property name="scaledContents">
                                      <bool>true</bool>
@@ -2393,8 +2330,8 @@ border: 5px  solid rgb(237, 237, 237);</string>
                                   <string notr="true">color: rgb(237, 237, 237);</string>
                                  </property>
                                  <property name="text">
-                                  <string>Trabalhe diretamente 
-com extensões de áudio 
+                                  <string>Work directly 
+with audio extensions 
 (.wav, .acc, .mp3)</string>
                                  </property>
                                  <property name="alignment">
@@ -2432,7 +2369,7 @@ com extensões de áudio
                                   <string notr="true">color: rgb(237, 237, 237);</string>
                                  </property>
                                  <property name="text">
-                                  <string>EDITE SINAIS</string>
+                                  <string>EDIT YOUR SIGNAL</string>
                                  </property>
                                  <property name="alignment">
                                   <set>Qt::AlignCenter</set>
@@ -2481,7 +2418,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
                                      <string/>
                                     </property>
                                     <property name="pixmap">
-                                     <pixmap>../../../v.002/guiMetrics/resources/img/filter.png</pixmap>
+                                     <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/filter.png</pixmap>
                                     </property>
                                     <property name="scaledContents">
                                      <bool>true</bool>
@@ -2507,8 +2444,9 @@ border: 5px  inset rgb(237, 237, 237);</string>
                                   <string notr="true">color: rgb(237, 237, 237);</string>
                                  </property>
                                  <property name="text">
-                                  <string>Processe e ouça os sinais 
- utilizando filtros e janelas  </string>
+                                  <string>
+Process and listen to 
+ signals using filters and windows</string>
                                  </property>
                                  <property name="alignment">
                                   <set>Qt::AlignCenter</set>
@@ -2545,7 +2483,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
                                   <string notr="true">color: rgb(237, 237, 237);</string>
                                  </property>
                                  <property name="text">
-                                  <string>APLIQUE MÉTRICAS</string>
+                                  <string>APPLY METRICS</string>
                                  </property>
                                  <property name="alignment">
                                   <set>Qt::AlignCenter</set>
@@ -2594,7 +2532,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
                                      <string/>
                                     </property>
                                     <property name="pixmap">
-                                     <pixmap>../../../v.002/guiMetrics/resources/img/metricas.png</pixmap>
+                                     <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/metricas.png</pixmap>
                                     </property>
                                     <property name="scaledContents">
                                      <bool>true</bool>
@@ -2620,8 +2558,8 @@ border: 5px  inset rgb(237, 237, 237);</string>
                                   <string notr="true">color: rgb(237, 237, 237);</string>
                                  </property>
                                  <property name="text">
-                                  <string>Utilize métricas psicoacústicas 
- para analisar o seu sinal</string>
+                                  <string>Use psychoacoustic 
+ metrics to analyze your signal</string>
                                  </property>
                                  <property name="alignment">
                                   <set>Qt::AlignCenter</set>
@@ -2652,6 +2590,11 @@ border: 5px  inset rgb(237, 237, 237);</string>
          </layout>
         </widget>
         <widget class="QWidget" name="filterPage">
+         <property name="styleSheet">
+          <string notr="true">QFrame{	
+	background-color: rgb(237, 237, 237);
+}</string>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_28">
           <property name="spacing">
            <number>0</number>
@@ -2670,10 +2613,16 @@ border: 5px  inset rgb(237, 237, 237);</string>
           </property>
           <item>
            <widget class="QFrame" name="frame_17">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>80</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>98</height>
+              <height>80</height>
              </size>
             </property>
             <property name="frameShape">
@@ -2747,32 +2696,13 @@ border: 5px  inset rgb(237, 237, 237);</string>
                    </font>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">color: rgb(0,124,132);</string>
+                   <string notr="true">color: #009b4a;</string>
                   </property>
                   <property name="text">
-                   <string>EDITOR DE SINAIS</string>
+                   <string>Signal Editor</string>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="usernameLabel_2">
-                  <property name="font">
-                   <font>
-                    <family>PF BeauSans Pro</family>
-                    <pointsize>16</pointsize>
-                   </font>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color: rgb(97, 176, 155);</string>
-                  </property>
-                  <property name="text">
-                   <string>importe e edite seus sinais</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
                   </property>
                  </widget>
                 </item>
@@ -2801,133 +2731,37 @@ border: 5px  inset rgb(237, 237, 237);</string>
                  <number>0</number>
                 </property>
                 <property name="topMargin">
-                 <number>0</number>
+                 <number>12</number>
                 </property>
                 <property name="rightMargin">
-                 <number>0</number>
+                 <number>11</number>
                 </property>
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
-                 <widget class="QFrame" name="frame_22">
-                  <property name="frameShape">
-                   <enum>QFrame::NoFrame</enum>
+                <item alignment="Qt::AlignRight">
+                 <widget class="QLabel" name="label_11">
+                  <property name="minimumSize">
+                   <size>
+                    <width>100</width>
+                    <height>50</height>
+                   </size>
                   </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
+                  <property name="maximumSize">
+                   <size>
+                    <width>100</width>
+                    <height>50</height>
+                   </size>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_12">
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QFrame" name="frame_23">
-                     <property name="frameShape">
-                      <enum>QFrame::NoFrame</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_24">
-                     <property name="maximumSize">
-                      <size>
-                       <width>16777215</width>
-                       <height>98</height>
-                      </size>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::NoFrame</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_27">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>10</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>10</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
-                      </property>
-                      <item>
-                       <widget class="QLabel" name="label_11">
-                        <property name="minimumSize">
-                         <size>
-                          <width>200</width>
-                          <height>50</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>200</width>
-                          <height>50</height>
-                         </size>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                        <property name="pixmap">
-                         <pixmap>:/img/embracoLogoAzul.png</pixmap>
-                        </property>
-                        <property name="scaledContents">
-                         <bool>true</bool>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="label_21">
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>45</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <family>PF BeauSans Pro</family>
-                          <pointsize>13</pointsize>
-                          <bold>false</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">color: rgb(97, 176, 155);</string>
-                        </property>
-                        <property name="text">
-                         <string>sound quality toolbox</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                  </layout>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="pixmap">
+                   <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/logo.png</pixmap>
+                  </property>
+                  <property name="scaledContents">
+                   <bool>true</bool>
+                  </property>
                  </widget>
                 </item>
                </layout>
@@ -2956,38 +2790,32 @@ border: 5px  inset rgb(237, 237, 237);</string>
             <property name="styleSheet">
              <string notr="true">
 
-QSlider{
-	margin-left:40px;
-	margin-right:40px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-}
-
 QSlider::groove:vertical {
-                background-color: rgb(97, 176, 155);
-                width:15px;
-				  border-radius: 5px;
+				background:  #009b4a;
+                 width:10px;
+				height: 100px;
+				border-radius: 5px;
 }
 
 QSlider::handle:vertical {
-            border: 1px rgb(255, 255, 255);
+            border: 0px rgb(255, 255, 255);
             border-style: outset;
-			 border-radius: 5px;
-            margin: -2px 0;
+			 border-radius: 2px;
+            margin: 0px -2px;
             width: 10px;
             height: 10px;
             background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
 }
+
 QSlider::sub-page:vertical {
-       background: rgb(182,182,182);
+       background-color:  rgb(182,182,182);
 	   border-radius: 5px;
 }
 QSlider::handle:vertical:disabled{
 			background-color: rgb(32, 59, 60); 
-	 		border: 1px rgb(48, 82, 83);
 }
 QSlider::groove:vertical:disabled {
-           background-color: rgb(0,124,132);
+           background-color:  #006d34;
 			
 }
 QSlider::sub-page:vertical:disabled{
@@ -3202,14 +3030,14 @@ text-align: right;
 QPushButton {
 	padding-left: 5px;
 	text-align: left;
-	background-color: rgb(0,124,132);;
+	background-color: #006d34;
 	border:none;
 	border-radius:15px;
 	color: rgb(255, 255, 255)
 }
 
 QPushButton:hover {
-	background-color:  rgb(79,186,160)
+	background-color: #009b4a;
 }
 
 QPushButton:pressed {
@@ -3250,12 +3078,12 @@ QPushButton:pressed {
                            <property name="font">
                             <font>
                              <family>PF BeauSans Pro</family>
-                             <pointsize>10</pointsize>
+                             <pointsize>12</pointsize>
                              <bold>false</bold>
                             </font>
                            </property>
                            <property name="text">
-                            <string>importar</string>
+                            <string>import</string>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -3276,12 +3104,12 @@ QPushButton:pressed {
                            <property name="font">
                             <font>
                              <family>PF BeauSans Pro</family>
-                             <pointsize>10</pointsize>
+                             <pointsize>12</pointsize>
                              <bold>false</bold>
                             </font>
                            </property>
                            <property name="text">
-                            <string>remover</string>
+                            <string>remove</string>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -3302,12 +3130,12 @@ QPushButton:pressed {
                            <property name="font">
                             <font>
                              <family>PF BeauSans Pro</family>
-                             <pointsize>10</pointsize>
+                             <pointsize>12</pointsize>
                              <bold>false</bold>
                             </font>
                            </property>
                            <property name="text">
-                            <string>remover tudo</string>
+                            <string>remove all</string>
                            </property>
                           </widget>
                          </item>
@@ -3337,7 +3165,7 @@ QPushButton:pressed {
                      <property name="frameShadow">
                       <enum>QFrame::Raised</enum>
                      </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_56">
+                     <layout class="QVBoxLayout" name="verticalLayout_5">
                       <property name="spacing">
                        <number>0</number>
                       </property>
@@ -3381,125 +3209,16 @@ QPushButton:pressed {
                           <number>0</number>
                          </property>
                          <item>
-                          <widget class="QFrame" name="frame_68">
-                           <property name="enabled">
-                            <bool>true</bool>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton {
-	padding-top:5px;
-	text-align: center;
-	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
-	border-radius:5px;
-	color: rgb(255, 255, 255)
-}
-
-QPushButton:hover {
-	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(79,186,160,255), stop:1 rgba(0,124,132, 255));
-	}
-
-QPushButton:pressed {
-	background-color: rgb(241, 102, 55)
-}
-
-
-QPushButton:disabled{
-	background-color:rgb(70, 70, 70);
-	color: rgb(136,138,133);
-	}
-</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::NoFrame</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                           <layout class="QHBoxLayout" name="horizontalLayout_32">
-                            <property name="spacing">
-                             <number>0</number>
-                            </property>
-                            <property name="leftMargin">
-                             <number>0</number>
-                            </property>
-                            <property name="topMargin">
-                             <number>0</number>
-                            </property>
-                            <property name="rightMargin">
-                             <number>0</number>
-                            </property>
-                            <property name="bottomMargin">
-                             <number>0</number>
-                            </property>
-                            <item>
-                             <spacer name="horizontalSpacer">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>40</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item>
-                             <widget class="QPushButton" name="filterAudioButton">
-                              <property name="enabled">
-                               <bool>false</bool>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>100</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="maximumSize">
-                               <size>
-                                <width>100</width>
-                                <height>30</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>PF BeauSans Pro</family>
-                                <pointsize>10</pointsize>
-                                <bold>false</bold>
-                               </font>
-                              </property>
-                              <property name="text">
-                               <string>filtrar</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item>
-                             <spacer name="horizontalSpacer_2">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>40</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                           </layout>
-                          </widget>
-                         </item>
-                         <item>
                           <widget class="QFrame" name="frame_69">
                            <property name="enabled">
                             <bool>true</bool>
                            </property>
                            <property name="styleSheet">
                             <string notr="true">QPushButton {
-	padding-left: 10px;
-	text-align: left;
-	background-color: rgb(0,124,132);
-	border: 3px solid rgb(79,186,160);
+	padding-left: 2px;
+	text-align: center;
+	background-color:#006d34;
+	border: 3px solid #009b4a;
 	border-radius:25px;
 	color: rgb(255, 255, 255)
 }
@@ -3627,7 +3346,7 @@ QPushButton:disabled{
                                <string/>
                               </property>
                               <property name="icon">
-                               <iconset>
+                               <iconset resource="../Resources/resourceGui.qrc">
                                 <normaloff>:/icons/img/stop.png</normaloff>:/icons/img/stop.png</iconset>
                               </property>
                               <property name="iconSize">
@@ -3639,6 +3358,274 @@ QPushButton:disabled{
                              </widget>
                             </item>
                            </layout>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame_4">
+                        <property name="enabled">
+                         <bool>true</bool>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">
+QSlider::groove:horizontal {
+				background: rgb(182,182,182);
+                 width:170px;
+				height: 10px;
+				  border-radius: 5px;
+}
+
+QSlider::handle:horizontal {
+            border: 0px rgb(255, 255, 255);
+            border-style: outset;
+			 border-radius: 2px;
+            margin: -2px 0;
+            width: 20px;
+            height: 20px;
+            background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
+}
+QSlider::sub-page:horizontal {
+       background-color: #009b4a;
+	   border-radius: 5px;
+}
+QSlider::handle:horizontal:disabled{
+			background-color: rgb(32, 59, 60); 
+	 		border: 0px rgb(48, 82, 83);
+}
+QSlider::groove:horizontal:disabled {
+           background-color: #4B4B4B;
+			
+}
+QSlider::sub-page:horizontal:disabled{
+		background:  #006d34;
+}
+</string>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_17">
+                         <property name="spacing">
+                          <number>0</number>
+                         </property>
+                         <property name="leftMargin">
+                          <number>45</number>
+                         </property>
+                         <property name="topMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="rightMargin">
+                          <number>45</number>
+                         </property>
+                         <property name="bottomMargin">
+                          <number>0</number>
+                         </property>
+                         <item>
+                          <widget class="QPushButton" name="muteButton">
+                           <property name="enabled">
+                            <bool>true</bool>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>20</width>
+                             <height>20</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>20</width>
+                             <height>20</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton {
+	background-color:#009b4a;
+	width:20px;
+	height:20px;
+	border-radius:10px;
+}
+
+QPushButton:checked {
+	background-color:#fc5753;	
+}
+
+QPushButton:disabled {
+	background-color:#006d34;	
+}
+</string>
+                           </property>
+                           <property name="text">
+                            <string/>
+                           </property>
+                           <property name="icon">
+                            <iconset resource="../Resources/resourceGui.qrc">
+                             <normaloff>:/icons/img/volume-alto.png</normaloff>
+                             <normalon>:/icons/img/volume-mute.png</normalon>
+                             <activeon>:/icons/img/volume-mute.png</activeon>:/icons/img/volume-alto.png</iconset>
+                           </property>
+                           <property name="checkable">
+                            <bool>true</bool>
+                           </property>
+                           <property name="checked">
+                            <bool>false</bool>
+                           </property>
+                           <property name="autoRepeat">
+                            <bool>false</bool>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QSlider" name="volumeSlider">
+                           <property name="enabled">
+                            <bool>false</bool>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>200</width>
+                             <height>0</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>200</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
+                           <property name="value">
+                            <number>50</number>
+                           </property>
+                           <property name="orientation">
+                            <enum>Qt::Horizontal</enum>
+                           </property>
+                          </widget>
+                         </item>
+                        </layout>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QFrame" name="frame_68">
+                        <property name="enabled">
+                         <bool>true</bool>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton {
+	text-align: left;
+	padding-left: 10px;
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
+	border-radius:5px;
+	color: rgb(255, 255, 255)
+}
+
+QPushButton:hover {
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(79,186,160,255), stop:1 rgba(0,124,132, 255));
+	}
+
+QPushButton:pressed {
+	background-color: rgb(241, 102, 55)
+}
+
+
+QPushButton:disabled{
+	background-color:rgb(70, 70, 70);
+	color: rgb(136,138,133);
+	}
+</string>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::NoFrame</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <layout class="QHBoxLayout" name="horizontalLayout_12">
+                         <item>
+                          <widget class="QPushButton" name="filterAudioButton">
+                           <property name="enabled">
+                            <bool>false</bool>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>100</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>100</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>PF BeauSans Pro</family>
+                             <pointsize>12</pointsize>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="text">
+                            <string>filter</string>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="resetButton">
+                           <property name="enabled">
+                            <bool>false</bool>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>100</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>100</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>PF BeauSans Pro</family>
+                             <pointsize>12</pointsize>
+                             <bold>false</bold>
+                            </font>
+                           </property>
+                           <property name="layoutDirection">
+                            <enum>Qt::RightToLeft</enum>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton {
+	text-align: left;
+	padding-right:10px;
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
+	border-radius:5px;
+	color: rgb(255, 255, 255)
+}
+
+QPushButton:hover {
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(79,186,160,255), stop:1 rgba(0,124,132, 255));
+	}
+
+QPushButton:pressed {
+	background-color: rgb(241, 102, 55)
+}
+
+
+QPushButton:disabled{
+	background-color:rgb(70, 70, 70);
+	color: rgb(136,138,133);
+	}
+</string>
+                           </property>
+                           <property name="text">
+                            <string>reset</string>
+                           </property>
                           </widget>
                          </item>
                         </layout>
@@ -3664,7 +3651,7 @@ QPushButton:disabled{
                <property name="styleSheet">
                 <string notr="true">QPushButton {
 	text-align: center;
-	background-color: rgb(0,124,132);
+	background-color: #006d34;
 	padding: 2px;
 	border-radius: 10px;
 	color: rgb(255, 255, 255);
@@ -3673,7 +3660,7 @@ QPushButton:disabled{
 }
 
 QPushButton:hover {
-	background-color: rgb(97, 176, 155);
+	background-color: #009b4a;
 }
 
 QPushButton:pressed {
@@ -3681,8 +3668,8 @@ QPushButton:pressed {
 }
 
 QPushButton:checked {
-	background-color: rgb(97, 176, 155);
-}
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255))
+};
 
 </string>
                </property>
@@ -3764,7 +3751,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -3779,7 +3766,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_50">
                      <property name="enabled">
                       <bool>false</bool>
@@ -3789,6 +3776,9 @@ QPushButton:checked {
                        <width>45</width>
                        <height>100</height>
                       </size>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true"/>
                      </property>
                      <property name="minimum">
                       <number>-50</number>
@@ -3814,7 +3804,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>50 Hz</string>
@@ -3883,7 +3873,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -3898,7 +3888,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_63">
                      <property name="enabled">
                       <bool>false</bool>
@@ -3933,7 +3923,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>63 Hz</string>
@@ -3999,7 +3989,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4014,7 +4004,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_80">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4049,7 +4039,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>80 Hz</string>
@@ -4118,7 +4108,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4133,7 +4123,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_100">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4168,7 +4158,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>100 Hz</string>
@@ -4234,7 +4224,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4249,7 +4239,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_125">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4284,7 +4274,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>125 Hz</string>
@@ -4350,7 +4340,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4365,7 +4355,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_160">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4400,7 +4390,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>160 Hz</string>
@@ -4466,7 +4456,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4481,7 +4471,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_200">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4516,7 +4506,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>200 Hz</string>
@@ -4582,7 +4572,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4597,7 +4587,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_250">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4632,7 +4622,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>250 Hz</string>
@@ -4683,6 +4673,9 @@ QPushButton:checked {
                    </property>
                    <item>
                     <widget class="QPushButton" name="switch_315">
+                     <property name="enabled">
+                      <bool>true</bool>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>66</width>
@@ -4698,7 +4691,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4713,7 +4706,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_315">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4748,7 +4741,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>315 Hz</string>
@@ -4814,7 +4807,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4829,7 +4822,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_400">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4864,7 +4857,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>400 Hz</string>
@@ -4930,7 +4923,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -4945,7 +4938,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_500">
                      <property name="enabled">
                       <bool>false</bool>
@@ -4980,7 +4973,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>500 Hz</string>
@@ -5049,7 +5042,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -5064,7 +5057,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_630">
                      <property name="enabled">
                       <bool>false</bool>
@@ -5099,7 +5092,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>630 Hz</string>
@@ -5126,19 +5119,16 @@ QPushButton:checked {
                <property name="styleSheet">
                 <string notr="true">QPushButton {
 	text-align: center;
-	background-color: rgb(0,124,132);
+	background-color: #006d34;
 	padding: 2px;
 	border-radius: 10px;
-	color: rgb(255, 255, 255);	
+	color: rgb(255, 255, 255);
 	margin-left: 5px;
-
-	
-	
 
 }
 
 QPushButton:hover {
-	background-color: rgb(97, 176, 155);
+	background-color: #009b4a;
 }
 
 QPushButton:pressed {
@@ -5146,8 +5136,8 @@ QPushButton:pressed {
 }
 
 QPushButton:checked {
-	background-color: rgb(97, 176, 155);
-}
+	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255))
+};
 
 </string>
                </property>
@@ -5158,21 +5148,6 @@ QPushButton:checked {
                 <enum>QFrame::Raised</enum>
                </property>
                <layout class="QHBoxLayout" name="horizontalLayout_15">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
                 <item>
                  <widget class="QFrame" name="frame_84">
                   <property name="minimumSize">
@@ -5226,7 +5201,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -5241,7 +5216,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_800">
                      <property name="enabled">
                       <bool>false</bool>
@@ -5276,7 +5251,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>800 Hz</string>
@@ -5342,7 +5317,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -5357,7 +5332,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_1000">
                      <property name="enabled">
                       <bool>false</bool>
@@ -5392,7 +5367,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>1 kHz</string>
@@ -5458,7 +5433,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -5473,7 +5448,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_1250">
                      <property name="enabled">
                       <bool>false</bool>
@@ -5508,7 +5483,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>1.25 kHz</string>
@@ -5574,7 +5549,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -5589,7 +5564,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_1600">
                      <property name="enabled">
                       <bool>false</bool>
@@ -5624,7 +5599,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>1.6 kHz</string>
@@ -5690,7 +5665,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -5705,7 +5680,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_2000">
                      <property name="enabled">
                       <bool>false</bool>
@@ -5740,7 +5715,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>2 kHz</string>
@@ -5806,7 +5781,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -5821,7 +5796,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_2500">
                      <property name="enabled">
                       <bool>false</bool>
@@ -5856,7 +5831,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>2.5 kHz</string>
@@ -5922,7 +5897,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -5937,7 +5912,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_3150">
                      <property name="enabled">
                       <bool>false</bool>
@@ -5972,7 +5947,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>3.15 kHz</string>
@@ -6038,7 +6013,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -6053,7 +6028,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_4000">
                      <property name="enabled">
                       <bool>false</bool>
@@ -6088,7 +6063,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>4 kHz</string>
@@ -6154,7 +6129,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -6169,7 +6144,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_5000">
                      <property name="enabled">
                       <bool>false</bool>
@@ -6204,7 +6179,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>5 kHz</string>
@@ -6270,7 +6245,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -6285,7 +6260,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_6300">
                      <property name="enabled">
                       <bool>false</bool>
@@ -6320,7 +6295,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>6.3 kHz</string>
@@ -6386,7 +6361,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -6401,7 +6376,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_8000">
                      <property name="enabled">
                       <bool>false</bool>
@@ -6436,7 +6411,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>8 kHz</string>
@@ -6502,7 +6477,7 @@ QPushButton:checked {
                      <property name="font">
                       <font>
                        <family>PF BeauSans Pro</family>
-                       <pointsize>10</pointsize>
+                       <pointsize>11</pointsize>
                        <bold>false</bold>
                       </font>
                      </property>
@@ -6517,7 +6492,7 @@ QPushButton:checked {
                      </property>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignHCenter">
                     <widget class="QSlider" name="slider_10000">
                      <property name="enabled">
                       <bool>false</bool>
@@ -6552,7 +6527,7 @@ QPushButton:checked {
                       </font>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">color: rgb(0, 124, 132)</string>
+                      <string notr="true">color: #009b4a;</string>
                      </property>
                      <property name="text">
                       <string>10 kHz</string>
@@ -6574,27 +6549,7 @@ QPushButton:checked {
                 <enum>Qt::RightToLeft</enum>
                </property>
                <property name="styleSheet">
-                <string notr="true">QPushButton {
-	text-align: center;
-	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
-	border-radius:5px;
-	color: rgb(255, 255, 255)
-}
-
-QPushButton:hover {
-	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(79,186,160,255), stop:1 rgba(0,124,132, 255));
-	}
-
-QPushButton:pressed {
-	background-color: rgb(241, 102, 55)
-}
-
-
-QPushButton:disabled{
-	background-color:rgb(70, 70, 70);
-	color: rgb(136,138,133);
-	}
-</string>
+                <string notr="true"/>
                </property>
                <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
@@ -6613,56 +6568,11 @@ QPushButton:disabled{
                  <number>0</number>
                 </property>
                 <property name="rightMargin">
-                 <number>6</number>
+                 <number>20</number>
                 </property>
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <item>
-                 <widget class="QPushButton" name="resetButton">
-                  <property name="enabled">
-                   <bool>false</bool>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>100</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>100</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <family>PF BeauSans Pro</family>
-                    <pointsize>10</pointsize>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::RightToLeft</enum>
-                  </property>
-                  <property name="text">
-                   <string>resetar</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <spacer name="horizontalSpacer_5">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>40</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </spacer>
-                </item>
                </layout>
               </widget>
              </item>
@@ -6672,6 +6582,11 @@ QPushButton:disabled{
          </layout>
         </widget>
         <widget class="QWidget" name="graphPage">
+         <property name="styleSheet">
+          <string notr="true">QFrame{	
+	background-color: rgb(237, 237, 237);
+}</string>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_63">
           <property name="spacing">
            <number>0</number>
