@@ -1,8 +1,10 @@
-from widget import *
+import os
 import scipy.io.wavfile as wav
 from scipy import signal
 from scipy.signal.signaltools import wiener
 import numpy as np
+from PySide2.QtWidgets import (QFileDialog)
+
 
 def getInitParameters(self):
     self.sliders = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250, 
@@ -10,6 +12,7 @@ def getInitParameters(self):
     return self.sliders
 
 def read_wav(filename):
+    print(filename)
     samplingRate, timeVector = wav.read(str(filename))
     #if timeVector.dtype == 'int16':
     #    timeVector = timeVector/(2**15)
@@ -25,7 +28,7 @@ def setMono(timeVector):
     return timeVector
 
 def thirdOctaveFilter(self, timeVector, samplingRate):
-    centralFrequencies = self.sliders    
+    centralFrequencies = self.sliders
     filterFactor = np.power(2,1/(6))
     lowerFrequencyBand = centralFrequencies/filterFactor
     upperFrequencyBand = centralFrequencies*filterFactor
@@ -56,4 +59,4 @@ def save_wav(self, timeVector, samplingRate):
 
 
 def timeReverberation(self, bandEnergy, samplingRate):
-    from scipy.misc import face
+    pass

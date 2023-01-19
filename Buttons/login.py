@@ -1,16 +1,14 @@
-from widget import *
 from Database.database import *
-
-
+from new_project import *
+from main import *
 
 class UI_Buttons_Login():
     def __init__(self):
         super(UI_Buttons_Login, self).__init__()
 
-    # GLOBAL BUTTONS
     def closeAll(self):
         self.close()
-        
+
     def minimize(self):
         self.showMinimized()
 
@@ -109,3 +107,18 @@ class UI_Buttons_Login():
         if self.online:
             self.ui.rightContent.setCurrentWidget(self.ui.welcomePage)
 
+    def newProject(self):
+        self.np = New_Project_Widget()
+        self.np.show()
+
+    def applyProject(self, main):
+        self.projectName = self.np.projectLineEdit.text()
+        main.ui.project1.setText(str(self.projectName))
+        print(main.ui.project1.text())
+        self.close()
+        #main.show()
+
+    def refresh(self, new):
+        self.ui.project1.setText(str(new.ui.projectName))
+        self.close()
+        self.show()

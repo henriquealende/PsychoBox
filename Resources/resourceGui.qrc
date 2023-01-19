@@ -23,6 +23,8 @@
         <file>img/stop.png</file>
         <file>img/volume-alto.png</file>
         <file>img/volume-mute.png</file>
+        <file>img/shopping-basket.png</file>
+        <file>img/refresh.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/embracoLogo.png</file>

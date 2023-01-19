@@ -1,12 +1,15 @@
 # This Python file uses the following encoding: utf-8
+
 import os
 from pathlib import Path
 import sys
 from Resources import resourceGUI
 
+
 import pygame
 import Buttons.login as bt_lo
 import Buttons.filter as bt_fi
+import Buttons.graph as bt_gh
 
 
 
@@ -17,12 +20,13 @@ from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
 from PySide2.QtSql import QSqlDatabase, QSqlQuery
 
-
 path = {}
+
 
 class Main_Window(QMainWindow):
     def __init__(self):
         super(Main_Window, self).__init__()
+
         self.initUI()
         self.buttonCallback()
 
@@ -36,9 +40,13 @@ class Main_Window(QMainWindow):
         file.close()
         self.setWindowTitle('PsychoBox | v.003')
         self.setIcon()
+        main_window_export = self.ui
         self.ui.infoBar.installEventFilter(self)
+        self.ui.mainBox.addItems(['Time-Frequency', 'Metrics'])
+        self.ui.domainBox.addItems(['Time', 'Frequency'])
+        self.ui.samplingBox.addItems(['Linear', '3º octave'])
         pygame.init()
-
+        return main_window_export
 
     def eventFilter(self, source, event):
         if source == self.ui.infoBar:
@@ -63,7 +71,11 @@ class Main_Window(QMainWindow):
         self.ui.menuButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.toogleMenu(self))
         self.ui.userButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.userButton(self))
         self.ui.homeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.homeButton(self))
+        self.ui.newProjectButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.newProject(self))
+        self.ui.refreshButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.refresh(self))
+
         # FILTER PAGE
+
         self.ui.filterButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.filterButton(self))
         self.ui.importButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.importButton(self))
         self.ui.removeButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self))
@@ -74,24 +86,40 @@ class Main_Window(QMainWindow):
         self.ui.stopButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.stopButton(self))
         self.ui.volumeSlider.valueChanged.connect(lambda: bt_fi.UI_Buttons_Filter.setVolume(self))
         self.ui.muteButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.setMute(self))
+        self.frequencieBands = [50, 63, 80, 100, 125, 160, 200, 250, 315, 400,
+                                500, 630, 800, 1000, 1250, 1600, 2000, 2500,
+                                3150, 4000, 5000, 6300, 8000, 10000]
+        params = {"self": self, "UI_Buttons": bt_fi.UI_Buttons_Filter}
+        for slider in self.frequencieBands:
+            eval('''self.ui.switch_{}.clicked.connect(lambda: UI_Buttons.switchSlider(self))'''.format(slider), params)
+            eval('''self.ui.slider_{}.valueChanged.connect(lambda: UI_Buttons.switchSlider(self))'''.format(
+                slider), params)
+        self.ui.resetButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.resetButton(self))
+        self.ui.filterAudioButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.filterAudioButton(self))
 
-def center_window(widget):
-   window = widget.window()
-   window.setGeometry(
+        # GRAPH PAGE
+
+        self.ui.mainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectGraph(self))
+        self.ui.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self))
+        self.ui.graphButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.graphButton(self))
+
+
+def centerWindow(widget):
+    window = widget.window()
+    window.setGeometry(
        QtWidgets.QStyle.alignedRect(
            QtCore.Qt.LeftToRight,
            QtCore.Qt.AlignCenter,
            window.size(),
            QtGui.QGuiApplication.primaryScreen().availableGeometry(),
        ),
-   )
+    )
 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    
     widget = Main_Window()
     widget.resize(962,665)
     widget.show()
-    QtCore.QTimer.singleShot(0, lambda: center_window(widget))
+    QtCore.QTimer.singleShot(0, lambda: centerWindow(widget))
     sys.exit(app.exec_())

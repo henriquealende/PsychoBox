@@ -1,5 +1,7 @@
-from widget import *
 import mysql.connector as con
+
+from PySide2.QtWidgets import QGraphicsOpacityEffect
+from PySide2.QtCore import QPropertyAnimation
 
 def loginUser(self, username, password):
     database = con.connect(host="localhost", user="root",
