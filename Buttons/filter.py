@@ -1,3 +1,4 @@
+import os
 from main import *
 from pygame import mixer
 from Utils.utils import *
@@ -16,17 +17,42 @@ class UI_Buttons_Filter():
         importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')
         importPathname = importAdress[0]
         filename = os.path.basename(str(importPathname))
-        path = os.path.dirname(str(importPathname))
+        path = os.path.dirname(str(importPathname))        
         self.ui.listWidget.addItem(filename)
 
-    def remove(self):
-        allItems = self.ui.listWidget.count()
-        listItems = self.ui.listWidget.selectedItems()
-        if not listItems:
-            return
-        for item in listItems:
-            self.ui.listWidget.takeItem(self.ui.listWidget.row(item))
-        if allItems == 1:
+
+    def remove(self, where):
+        if where == 'filter':
+            allItems = self.ui.listWidget.count()
+            listItems = self.ui.listWidget.selectedItems()
+            if not listItems:
+                return
+            for item in listItems:
+                self.ui.listWidget.takeItem(self.ui.listWidget.row(item))
+            if allItems == 1:
+                self.ui.playButton.setDisabled(True)
+                self.ui.pauseButton.setDisabled(True)
+                self.ui.stopButton.setDisabled(True)
+                self.ui.filterAudioButton.setDisabled(True)
+                self.ui.graphButton.setDisabled(True)
+                self.ui.resetButton.setDisabled(True)
+                self.ui.muteButton.setDisabled(True)
+                self.ui.volumeSlider.setDisabled(True)
+                for index, slider in enumerate(self.sliders):
+                    eval('self.ui.switch_{}.setChecked(False)'.format(slider))
+                    eval("self.ui.slider_{}.setDisabled(True)".format(slider))
+                    eval("self.ui.switch_{}.setText('off')".format(slider))
+        elif where == 'graph':
+            allItems = self.ui.listWidget2.count()
+            listItems = self.ui.listWidget2.selectedItems()
+            if not listItems:
+                return
+            for item in listItems:
+                self.ui.listWidget2.takeItem(self.ui.listWidget2.row(item))
+
+    def removeAllButton(self, where):
+        if where == 'filter':
+            self.ui.listWidget.clear()
             self.ui.playButton.setDisabled(True)
             self.ui.pauseButton.setDisabled(True)
             self.ui.stopButton.setDisabled(True)
@@ -39,21 +65,8 @@ class UI_Buttons_Filter():
                 eval('self.ui.switch_{}.setChecked(False)'.format(slider))
                 eval("self.ui.slider_{}.setDisabled(True)".format(slider))
                 eval("self.ui.switch_{}.setText('off')".format(slider))
-
-    def removeAllButton(self):
-        self.ui.listWidget.clear()
-        self.ui.playButton.setDisabled(True)
-        self.ui.pauseButton.setDisabled(True)
-        self.ui.stopButton.setDisabled(True)
-        self.ui.filterAudioButton.setDisabled(True)
-        self.ui.graphButton.setDisabled(True)
-        self.ui.resetButton.setDisabled(True)
-        self.ui.muteButton.setDisabled(True)
-        self.ui.volumeSlider.setDisabled(True)
-        for index, slider in enumerate(self.sliders):
-            eval('self.ui.switch_{}.setChecked(False)'.format(slider))
-            eval("self.ui.slider_{}.setDisabled(True)".format(slider))
-            eval("self.ui.switch_{}.setText('off')".format(slider))
+        elif where == 'graph':
+            self.ui.listWidget2.clear()
 
     def selectItem(self):
         global path

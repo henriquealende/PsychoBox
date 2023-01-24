@@ -20,8 +20,9 @@ from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
 from PySide2.QtSql import QSqlDatabase, QSqlQuery
 
-path = {}
 
+path = {}
+projects = []
 
 class Main_Window(QMainWindow):
     def __init__(self):
@@ -78,8 +79,8 @@ class Main_Window(QMainWindow):
 
         self.ui.filterButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.filterButton(self))
         self.ui.importButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.importButton(self))
-        self.ui.removeButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self))
-        self.ui.removeAllButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self))
+        self.ui.removeButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'filter'))
+        self.ui.removeAllButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'filter'))
         self.ui.listWidget.itemClicked.connect(lambda: bt_fi.UI_Buttons_Filter.selectItem(self))
         self.ui.playButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.playButton(self))
         self.ui.pauseButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.pauseButton(self))
@@ -102,6 +103,12 @@ class Main_Window(QMainWindow):
         self.ui.mainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectGraph(self))
         self.ui.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self))
         self.ui.graphButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.graphButton(self))
+        self.ui.importGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.importButton(self))
+        self.ui.removeGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'graph'))
+        self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
+        self.ui.listWidget2.itemClicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
+        self.ui.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.exportData(self))
+
 
 
 def centerWindow(widget):

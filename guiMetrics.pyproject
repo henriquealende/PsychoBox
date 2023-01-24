@@ -1,3 +1,3 @@
 {
-    "files": ["main.py","new_project.py","Forms/form.ui","Database/database.py","Utils/utils.py","Buttons/graph.py","Resources/resourceGui.qrc","Buttons/filter.py","Buttons/login.py","Forms/newProject.ui"]
+    "files": ["main.py","new_project.py","Forms/form.ui","Database/database.py","Utils/utils.py", "Utils/graph_utils.py","Buttons/graph.py","Resources/resourceGui.qrc","Buttons/filter.py","Buttons/login.py","Forms/newProject.ui"]
 }

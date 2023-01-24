@@ -112,13 +112,13 @@ class UI_Buttons_Login():
         self.np.show()
 
     def applyProject(self, main):
-        self.projectName = self.np.projectLineEdit.text()
-        main.ui.project1.setText(str(self.projectName))
-        print(main.ui.project1.text())
+        global projects
+        project_name = self.np.projectLineEdit.text()
+        projects.append(project_name)
         self.close()
-        #main.show()
 
-    def refresh(self, new):
-        self.ui.project1.setText(str(new.ui.projectName))
-        self.close()
-        self.show()
+    def refresh(self):
+        global projects
+        self.ui.project1.setText(projects[0])
+        print(len(projects))
+

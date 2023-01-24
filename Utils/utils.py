@@ -4,6 +4,7 @@ from scipy import signal
 from scipy.signal.signaltools import wiener
 import numpy as np
 from PySide2.QtWidgets import (QFileDialog)
+from scipy.fft import fft, fftfreq, fftshift
 
 
 def getInitParameters(self):
@@ -12,13 +13,8 @@ def getInitParameters(self):
     return self.sliders
 
 def read_wav(filename):
-    print(filename)
     samplingRate, timeVector = wav.read(str(filename))
-    #if timeVector.dtype == 'int16':
-    #    timeVector = timeVector/(2**15)
-    #elif timeVector.dtype == 'int32':
-    #    timeVector = timeVector/(2**31)
-    timeVector = timeVector.astype(np.int16)
+    timeVector = 2*(timeVector.astype(np.int16)/(2**16))
     return timeVector, samplingRate
 
 def setMono(timeVector):
@@ -57,6 +53,16 @@ def save_wav(self, timeVector, samplingRate):
     savedFile = os.path.basename(str(savePathname))
     return savedFile
 
+def getFFT(timeData, samplingRate):
+    N = len(timeData)
+    xf = fftfreq(N, 1/samplingRate)
+    xf = fftshift(xf)
+    yf = fft(timeData) 
+    
+    yplot= fftshift(yf)
+    y = 1.0/N * np.abs(yplot)
+    print(int(np.round(len(timeData)/2+1)))
+    return xf[int(np.round(len(timeData)/2+1)):len(timeData)], 20*np.log10(y[int(np.round(len(timeData)/2+1)):len(timeData)]/2e-5)
 
 def timeReverberation(self, bandEnergy, samplingRate):
     pass

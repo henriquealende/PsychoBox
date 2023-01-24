@@ -25,6 +25,10 @@
         <file>img/volume-mute.png</file>
         <file>img/shopping-basket.png</file>
         <file>img/refresh.png</file>
+        <file>img/closepp.png</file>
+        <file>img/maximize.png</file>
+        <file>img/trash-can.png</file>
+        <file>img/calibration.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/embracoLogo.png</file>
