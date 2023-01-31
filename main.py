@@ -18,9 +18,9 @@ from PySide2.QtWidgets import (QApplication, QWidget, QGraphicsOpacityEffect, QM
 from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargins, QTime, QPoint)
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
-from PySide2.QtSql import QSqlDatabase, QSqlQuery
 
 
+pathname = {}
 path = {}
 projects = []
 
@@ -41,14 +41,16 @@ class Main_Window(QMainWindow):
         file.close()
         self.setWindowTitle('PsychoBox | v.003')
         self.setIcon()
-        main_window_export = self.ui
         self.ui.infoBar.installEventFilter(self)
         self.ui.mainBox.addItems(['Time-Frequency', 'Metrics'])
         self.ui.domainBox.addItems(['Time', 'Frequency'])
         self.ui.samplingBox.addItems(['Linear', '3º octave'])
         pygame.init()
-        return main_window_export
-
+        
+    def getPath(self):
+        pathname = bt_gh.UI_Buttons_Graph.getPathname(self)
+        return pathname
+    
     def eventFilter(self, source, event):
         if source == self.ui.infoBar:
             if event.type() == QtCore.QEvent.MouseButtonPress:
@@ -101,6 +103,7 @@ class Main_Window(QMainWindow):
         # GRAPH PAGE
 
         self.ui.mainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectGraph(self))
+        self.ui.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self))
         self.ui.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self))
         self.ui.graphButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.graphButton(self))
         self.ui.importGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.importButton(self))
@@ -108,8 +111,8 @@ class Main_Window(QMainWindow):
         self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
         self.ui.listWidget2.itemClicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
         self.ui.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.exportData(self))
-
-
+        self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
+        self.ui.expandGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self))
 
 def centerWindow(widget):
     window = widget.window()

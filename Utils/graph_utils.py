@@ -4,7 +4,7 @@ from PySide2 import  QtGui
 from PySide2.QtGui import  QPainter, QBrush, QColor, QPen
 from Utils.utils import *
     
-def getGraph(self, timeData, samplingRate, domain):
+def getGraph(self, timeData, samplingRate, domain, window):
     chart = QtCharts.QChart() 
     chart.setBackgroundRoundness(12.0)
     chart.setDropShadowEnabled(True)
@@ -24,18 +24,14 @@ def getGraph(self, timeData, samplingRate, domain):
         y = timeData    
         T = len(timeData)/samplingRate
         x = np.linspace(0, T, len(y))
-        
-        for pos in np.arange(len(y)):
-            # add point to chart
-            series.append(x[pos], y[pos])
 
-        ''' chart - add series'''
+        for pos in np.arange(len(y)):
+            series.append(x[pos], y[pos])
         chart.addSeries(series)
         #chart.createDefaultAxes()
 
         self.axis_x = QtCharts.QValueAxis()
         self.axis_x.setRange(0, T)
-
         self.axis_x.setTickCount(5)
         self.axis_x.setLabelFormat("%.2f")
         self.axis_x.setTitleText("Time [s]")
@@ -47,29 +43,59 @@ def getGraph(self, timeData, samplingRate, domain):
         self.axis_y.setLabelFormat("%.2f")
         self.axis_y.setTitleText("Amplitude")
         chart.setAxisY(self.axis_y, series)
+
     elif domain == 'Frequency':
-        x, y = getFFT(timeData, samplingRate)
-        for pos in np.arange(len(y)):
-            # add point to chart
-            series.append(x[pos], y[pos])
+        if self.ui.samplingBox.currentText() == "Linear":
+            x, y = getFFT(timeData, samplingRate)
+            for pos in np.arange(len(y)):
+                # add point to chart
+                series.append(x[pos], y[pos])
 
-        ''' chart - add series'''
-        chart.addSeries(series)
-        #chart.createDefaultAxes()
+            ''' chart - add series'''
+            chart.addSeries(series)
+            #chart.createDefaultAxes()
 
-        self.axis_x = QtCharts.QLogValueAxis()
-        self.axis_x.setRange(20, np.max(x))       
-        #self.axis_x.setTickCount(5)
-        #self.axis_x.setLabelFormat("%.2f")
-        self.axis_x.setTitleText("Frequency [Hz]")
-        chart.setAxisX(self.axis_x, series)
-        self.axis_y = QtCharts.QValueAxis()
-        self.axis_y.setTickCount(5)
-        self.axis_y.setLabelFormat("%.2f")
-        self.axis_y.setTitleText("SPL [dB]")
-        chart.setAxisY(self.axis_y, series)
-        
-    self.ui.gridLayout.addWidget(chartView, 1, 0)
+            self.axis_x = QtCharts.QLogValueAxis()
+            self.axis_x.setRange(20, np.max(x))
+            #self.axis_x.setTickCount(5)
+            self.axis_x.setLabelFormat("%.0f")
+            self.axis_x.setTitleText("Frequency [Hz]")
+            chart.setAxisX(self.axis_x, series)
+            self.axis_y = QtCharts.QValueAxis()
+            self.axis_y.setTickCount(5)
+            self.axis_y.setLabelFormat("%.2f")
+            self.axis_y.setTitleText("SPL [dB]")
+            chart.setAxisY(self.axis_y, series)
+        # else:
+            #bandEnergy = thirdOctaveFilter(self, timeData, samplingRate)
+            # x = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
+            # 1600, 2000, 2500,3150, 4000, 5000, 6300, 8000, 10000])
+            # y = 20*np.log10(sumBandEnergy/2e-5)
+            # for pos in np.arange(len(y)):
+            #     # add point to chart
+            #     series.append(x[pos], y[pos])
+
+            # ''' chart - add series'''
+            # chart.addSeries(series)
+            # #chart.createDefaultAxes()
+
+            # self.axis_x = QtCharts.QLogValueAxis()
+            # self.axis_x.setRange(20, np.max(x))
+            # #self.axis_x.setTickCount(5)
+            # self.axis_x.setLabelFormat("%.0f")
+            # self.axis_x.setTitleText("Frequency [Hz]")
+            # chart.setAxisX(self.axis_x, series)
+            # self.axis_y = QtCharts.QValueAxis()
+            # self.axis_y.setTickCount(5)
+            # self.axis_y.setLabelFormat("%.2f")
+            # self.axis_y.setTitleText("SPL [dB]")
+            # chart.setAxisY(self.axis_y, series)
+
+
+    if window == "default":
+        self.ui.gridLayout.addWidget(chartView, 1, 0)
+    elif window == "expand":
+        self.gp.gridLayout.addWidget(chartView, 1, 0)
     
     
 #def populate_animationbox(self):

@@ -1,6 +1,7 @@
 from Database.database import *
+
 from new_project import *
-from main import *
+#from main import *
 
 class UI_Buttons_Login():
     def __init__(self):

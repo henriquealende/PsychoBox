@@ -8186,6 +8186,9 @@ QSpinBox::up-arrow:disabled {
                    </item>
                    <item>
                     <widget class="QComboBox" name="samplingBox">
+                     <property name="enabled">
+                      <bool>false</bool>
+                     </property>
                      <property name="minimumSize">
                       <size>
                        <width>258</width>
@@ -8757,7 +8760,7 @@ All rights reserved to Nidec </string>
         </property>
         <property name="text">
          <string>Develop by Henrique Silveira
- e Ricardo Brum</string>
+ and Ricardo Brum</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>

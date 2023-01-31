@@ -1,5 +1,5 @@
 import os
-from main import *
+
 from pygame import mixer
 from Utils.utils import *
 
