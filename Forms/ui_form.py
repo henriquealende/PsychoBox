@@ -3471,7 +3471,7 @@ class Ui_Widget(object):
 
         self.mainBox = QComboBox(self.controlGraphFrame)
         self.mainBox.setObjectName(u"mainBox")
-        self.mainBox.setMinimumSize(QSize(258, 30))
+        self.mainBox.setMinimumSize(QSize(298, 30))
         self.mainBox.setMaximumSize(QSize(16777215, 30))
         font15 = QFont()
         font15.setFamilies([u"PF BeauSans Pro"])
@@ -3496,7 +3496,7 @@ class Ui_Widget(object):
         self.domainBox = QComboBox(self.controlGraphFrame)
         self.domainBox.setObjectName(u"domainBox")
         self.domainBox.setEnabled(True)
-        self.domainBox.setMinimumSize(QSize(258, 30))
+        self.domainBox.setMinimumSize(QSize(298, 30))
         self.domainBox.setMaximumSize(QSize(16777215, 30))
         self.domainBox.setFont(font15)
         self.domainBox.setStyleSheet(u"")
@@ -3515,7 +3515,7 @@ class Ui_Widget(object):
         self.samplingBox = QComboBox(self.controlGraphFrame)
         self.samplingBox.setObjectName(u"samplingBox")
         self.samplingBox.setEnabled(False)
-        self.samplingBox.setMinimumSize(QSize(258, 30))
+        self.samplingBox.setMinimumSize(QSize(298, 30))
         self.samplingBox.setMaximumSize(QSize(16777215, 30))
         self.samplingBox.setFont(font15)
         self.samplingBox.setEditable(False)
@@ -3758,7 +3758,6 @@ class Ui_Widget(object):
         self.bottomContent.setMinimumSize(QSize(0, 50))
         self.bottomContent.setMaximumSize(QSize(16777215, 50))
         self.bottomContent.setStyleSheet(u"QFrame{\n"
-"	\n"
 "	background-color: rgb(70, 70, 70);\n"
 "}")
         self.bottomContent.setFrameShape(QFrame.NoFrame)

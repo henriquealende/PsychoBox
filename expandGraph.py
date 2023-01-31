@@ -1,6 +1,8 @@
 from Utils.utils import *
 from Utils.graph_utils import *
+
 import Buttons.login as bt_lo
+import Buttons.graph as bt_gh
 
 from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtWidgets import (QApplication, QWidget, QGraphicsOpacityEffect, QMessageBox, QGraphicsColorizeEffect, QLabel, QVBoxLayout, QMainWindow, QGraphicsDropShadowEffect)
@@ -25,11 +27,12 @@ class Expand_Graph(QMainWindow):
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         loader = QUiLoader()
-        file = QFile("Forms/expand.ui")
+        file = QFile("Forms/graph.ui")
         file.open(QFile.ReadOnly)
         self.gp = loader.load(file, self)
         file.close()
         self.gp.infoBar3.installEventFilter(self)
+        self.gp.domainBox.addItems([' Time', ' Frequency'])
         
     def eventFilter(self, source, event):
         if source == self.gp.infoBar3:
@@ -46,16 +49,24 @@ class Expand_Graph(QMainWindow):
     def buttonCallback(self):
         self.gp.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
+        self.gp.pushButton.clicked.connect(self.getAndReadWav)
+
 
 
     def getAndReadWav(self):
         from main import Main_Window
         main = Main_Window()
         pathname = main.getPath()
+        type = self.gp.domainBox.currentText()
+        print("Type =", type)
         timeVector, samplingRate = read_wav(pathname)
         timeVector = 2*(timeVector/(2**16))
-        getGraph(self, timeVector, samplingRate, domain = 'Time', window = "expand")
 
+        if type == " Time":
+            getGraph(self, timeVector, samplingRate, domain = 'Time', window = "expand")
+
+        elif type == " Frequency":
+            getGraph(self, timeVector, samplingRate, domain = 'Frequency', window = "expand")
 
 def centerWindow(widget):
     window = widget.window()
