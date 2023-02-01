@@ -8,6 +8,7 @@ class UI_Buttons_Graph():
     def __init__(self):
         super(UI_Buttons_Graph, self).__init__()
 
+
     def selectGraph(self):
         condition = self.ui.mainBox.currentText()
         if condition != 'Time-Frequency':
@@ -76,6 +77,9 @@ class UI_Buttons_Graph():
         self.ui.expandGraph.setEnabled(True)
         getGraph(self, self.timeVector, self.samplingRate, domain = "Time", window = "default")
         pathname = (path + '/' + filename)
+        timeVector = self.timeVector
+        samplingRate = self.samplingRate
+
     
     def getPathname(self):
         global pathname
@@ -84,7 +88,7 @@ class UI_Buttons_Graph():
     def changeGraph(self):
         domain = self.ui.domainBox.currentText()
         getGraph(self, self.timeVector, self.samplingRate, domain, window = "default") 
-        
+
 
     def expandGraph(self):
         self.gp = Expand_Graph()

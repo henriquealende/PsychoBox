@@ -1,3 +1,3 @@
 {
-    "files": ["Resources/resourceGui.qrc","expandGraph.py","Utils/utils.py","Buttons/graph.py","new_project.py","Forms/form.ui","main.py","Forms/expand.ui","Forms/newProject.ui","Utils/graph_utils.py","Buttons/filter.py","Database/database.py","Buttons/login.py"]
+    "files": ["Forms/graph.ui","main.py","Utils/utils.py","Resources/resourceGui.qrc","expandGraph.py","Utils/graph_utils.py","Buttons/filter.py","Forms/newProject.ui","Buttons/login.py","Forms/form.ui","Buttons/graph.py","new_project.py","Database/database.py"]
 }

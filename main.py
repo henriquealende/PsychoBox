@@ -23,6 +23,7 @@ pathname = {}
 path = {}
 projects = []
 
+
 class Main_Window(QMainWindow):
     def __init__(self):
         super(Main_Window, self).__init__()

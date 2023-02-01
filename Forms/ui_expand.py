@@ -15,9 +15,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
-    QLabel, QPushButton, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
+    QHBoxLayout, QLabel, QPushButton, QSizePolicy,
+    QSpacerItem, QVBoxLayout, QWidget)
 import resourceGui_rc
 
 class Ui_Form(object):
@@ -41,18 +41,18 @@ class Ui_Form(object):
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.infoBar3 = QFrame(self.topContent)
-        self.infoBar3.setObjectName(u"infoBar3")
-        self.infoBar3.setStyleSheet(u"QFrame{\n"
+        self.infoBar = QFrame(self.topContent)
+        self.infoBar.setObjectName(u"infoBar")
+        self.infoBar.setStyleSheet(u"QFrame{\n"
 "	background-color : #006d34;\n"
 "}")
-        self.infoBar3.setFrameShape(QFrame.NoFrame)
-        self.infoBar3.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_5 = QHBoxLayout(self.infoBar3)
+        self.infoBar.setFrameShape(QFrame.NoFrame)
+        self.infoBar.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_5 = QHBoxLayout(self.infoBar)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.frame_1 = QFrame(self.infoBar3)
+        self.frame_1 = QFrame(self.infoBar)
         self.frame_1.setObjectName(u"frame_1")
         self.frame_1.setFrameShape(QFrame.NoFrame)
         self.frame_1.setFrameShadow(QFrame.Raised)
@@ -72,7 +72,7 @@ class Ui_Form(object):
 
         self.horizontalLayout_5.addWidget(self.frame_1)
 
-        self.frame_2 = QFrame(self.infoBar3)
+        self.frame_2 = QFrame(self.infoBar)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setMaximumSize(QSize(75, 16777215))
         self.frame_2.setStyleSheet(u"")
@@ -123,7 +123,7 @@ class Ui_Form(object):
         self.horizontalLayout_5.addWidget(self.frame_2)
 
 
-        self.horizontalLayout_2.addWidget(self.infoBar3)
+        self.horizontalLayout_2.addWidget(self.infoBar)
 
 
         self.verticalLayout.addWidget(self.topContent)
@@ -189,6 +189,105 @@ class Ui_Form(object):
 
         self.verticalLayout_18.addWidget(self.frame_3)
 
+        self.frame = QFrame(self.graphFrameView)
+        self.frame.setObjectName(u"frame")
+        self.frame.setMinimumSize(QSize(0, 50))
+        self.frame.setMaximumSize(QSize(16777215, 50))
+        self.frame.setFrameShape(QFrame.NoFrame)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frame)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.usernameLabel_5 = QLabel(self.frame)
+        self.usernameLabel_5.setObjectName(u"usernameLabel_5")
+        self.usernameLabel_5.setMaximumSize(QSize(16777215, 20))
+        font1 = QFont()
+        font1.setFamilies([u"PF BeauSans Pro"])
+        font1.setPointSize(12)
+        font1.setBold(False)
+        self.usernameLabel_5.setFont(font1)
+        self.usernameLabel_5.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.usernameLabel_5.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout.addWidget(self.usernameLabel_5)
+
+        self.domainBox = QComboBox(self.frame)
+        self.domainBox.setObjectName(u"domainBox")
+        self.domainBox.setEnabled(True)
+        self.domainBox.setMinimumSize(QSize(260, 30))
+        self.domainBox.setMaximumSize(QSize(16777215, 30))
+        font2 = QFont()
+        font2.setFamilies([u"PF BeauSans Pro"])
+        font2.setPointSize(11)
+        self.domainBox.setFont(font2)
+        self.domainBox.setStyleSheet(u"QComboBox {\n"
+"	border: 1px solid #333333;\n"
+"	border-radius: 15px;\n"
+"	background:  rgb(70, 70, 70);\n"
+"	padding: 10x 23px 5px 5x;\n"
+"	min-width: 10em;\n"
+"	color: rgb(255, 255, 255);\n"
+"	margin-left: 30px;\n"
+"	margin-right: 5px;\n"
+"}\n"
+"\n"
+"QComboBox::disabled{\n"
+"	color: rgb(136, 138, 133)\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow:disabled {    \n"
+"	image: url(:/icons/img/downArrowDis.png);\n"
+"}\n"
+"\n"
+"QComboBox::hover{\n"
+"border: 3px solid  #009b4a;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"	subcontrol-origin: padding;\n"
+"	subcontrol-position: top right;\n"
+"	width: 20px;\n"
+" \n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {    \n"
+"	image: url(:/icons/img/downArrow.png);\n"
+"	width : 12px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractView{\n"
+"	background-color: #4f4f4f;\n"
+"	color: #999999;\n"
+" \n"
+"	selection-background-color: rgb(70, 70, 70);\n"
+"	selection-color: #4f4f4f;\n"
+"}\n"
+"")
+
+        self.horizontalLayout.addWidget(self.domainBox)
+
+        self.pushButton = QPushButton(self.frame)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMinimumSize(QSize(30, 30))
+        self.pushButton.setStyleSheet(u"QPushButton {	\n"
+"	image: url(:/icons/img/refresh.png);\n"
+"	background-color: rgb(180,180,180);\n"
+"	border-radius: 15px;\n"
+"}\n"
+"\n"
+"")
+        self.pushButton.setIconSize(QSize(15, 15))
+
+        self.horizontalLayout.addWidget(self.pushButton)
+
+        self.horizontalSpacer_2 = QSpacerItem(593, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_18.addWidget(self.frame)
+
         self.chartFrame = QFrame(self.graphFrameView)
         self.chartFrame.setObjectName(u"chartFrame")
         self.chartFrame.setFrameShape(QFrame.StyledPanel)
@@ -236,30 +335,30 @@ class Ui_Form(object):
         self.horizontalLayout_39.setSpacing(6)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
         self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
-        self.exportButton = QPushButton(self.frame_4)
-        self.exportButton.setObjectName(u"exportButton")
-        self.exportButton.setEnabled(False)
-        self.exportButton.setMinimumSize(QSize(125, 30))
-        self.exportButton.setMaximumSize(QSize(125, 30))
-        font1 = QFont()
-        font1.setFamilies([u"PF BeauSans Pro"])
-        font1.setPointSize(12)
-        self.exportButton.setFont(font1)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_39.addWidget(self.exportButton)
+        self.horizontalLayout_39.addItem(self.horizontalSpacer)
 
         self.exportFig = QPushButton(self.frame_4)
         self.exportFig.setObjectName(u"exportFig")
         self.exportFig.setEnabled(False)
         self.exportFig.setMinimumSize(QSize(125, 30))
         self.exportFig.setMaximumSize(QSize(125, 30))
-        self.exportFig.setFont(font1)
+        font3 = QFont()
+        font3.setFamilies([u"PF BeauSans Pro"])
+        font3.setPointSize(12)
+        self.exportFig.setFont(font3)
 
         self.horizontalLayout_39.addWidget(self.exportFig)
 
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.exportButton = QPushButton(self.frame_4)
+        self.exportButton.setObjectName(u"exportButton")
+        self.exportButton.setEnabled(False)
+        self.exportButton.setMinimumSize(QSize(125, 30))
+        self.exportButton.setMaximumSize(QSize(125, 30))
+        self.exportButton.setFont(font3)
 
-        self.horizontalLayout_39.addItem(self.horizontalSpacer)
+        self.horizontalLayout_39.addWidget(self.exportButton)
 
 
         self.verticalLayout_18.addWidget(self.frame_4)
@@ -283,10 +382,10 @@ class Ui_Form(object):
         self.horizontalLayout_11.setContentsMargins(5, 5, 5, 5)
         self.label_2 = QLabel(self.bottomContent)
         self.label_2.setObjectName(u"label_2")
-        font2 = QFont()
-        font2.setFamilies([u"PF BeauSans Pro"])
-        font2.setPointSize(10)
-        self.label_2.setFont(font2)
+        font4 = QFont()
+        font4.setFamilies([u"PF BeauSans Pro"])
+        font4.setPointSize(10)
+        self.label_2.setFont(font4)
         self.label_2.setStyleSheet(u"color:rgb(255, 255, 255)")
         self.label_2.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
@@ -294,11 +393,11 @@ class Ui_Form(object):
 
         self.label_4 = QLabel(self.bottomContent)
         self.label_4.setObjectName(u"label_4")
-        font3 = QFont()
-        font3.setFamilies([u"PF BeauSans Pro"])
-        font3.setPointSize(10)
-        font3.setBold(False)
-        self.label_4.setFont(font3)
+        font5 = QFont()
+        font5.setFamilies([u"PF BeauSans Pro"])
+        font5.setPointSize(10)
+        font5.setBold(False)
+        self.label_4.setFont(font5)
         self.label_4.setStyleSheet(u"color: rgb(238, 238, 236);")
         self.label_4.setAlignment(Qt.AlignBottom|Qt.AlignRight|Qt.AlignTrailing)
 
@@ -321,8 +420,11 @@ class Ui_Form(object):
         self.label_5.setText("")
         self.label_7.setText(QCoreApplication.translate("Form", u"Chart", None))
         self.label_6.setText("")
-        self.exportButton.setText(QCoreApplication.translate("Form", u"export data", None))
+        self.usernameLabel_5.setText(QCoreApplication.translate("Form", u"Domain", None))
+        self.domainBox.setCurrentText("")
+        self.pushButton.setText("")
         self.exportFig.setText(QCoreApplication.translate("Form", u"export figure", None))
+        self.exportButton.setText(QCoreApplication.translate("Form", u"export data", None))
         self.label_2.setText(QCoreApplication.translate("Form", u"\u00a9 2021 Nidec\n"
 "All rights reserved to Nidec ", None))
         self.label_4.setText(QCoreApplication.translate("Form", u"Develop by Henrique Silveira\n"

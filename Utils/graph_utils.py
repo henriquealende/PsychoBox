@@ -98,7 +98,7 @@ def getGraph(self, timeData, samplingRate, domain, window):
     elif window == "expand":
         self.gp.gridLayout.addWidget(chartView, 1, 0)
     
-    
+
 #def populate_animationbox(self):
     #animated = self.ui.animatedComboBox
     #chart_view.chart().setAnimationOptions(options_name)
