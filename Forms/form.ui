@@ -8070,7 +8070,7 @@ QSpinBox::up-arrow:disabled {
                     <widget class="QComboBox" name="mainBox">
                      <property name="minimumSize">
                       <size>
-                       <width>258</width>
+                       <width>298</width>
                        <height>30</height>
                       </size>
                      </property>
@@ -8137,7 +8137,7 @@ QSpinBox::up-arrow:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>258</width>
+                       <width>298</width>
                        <height>30</height>
                       </size>
                      </property>
@@ -8191,7 +8191,7 @@ QSpinBox::up-arrow:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>258</width>
+                       <width>298</width>
                        <height>30</height>
                       </size>
                      </property>
@@ -8700,7 +8700,6 @@ QPushButton:disabled{
      </property>
      <property name="styleSheet">
       <string notr="true">QFrame{
-	
 	background-color: rgb(70, 70, 70);
 }</string>
      </property>

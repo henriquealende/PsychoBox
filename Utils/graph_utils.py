@@ -45,7 +45,30 @@ def getGraph(self, timeData, samplingRate, domain, window):
         chart.setAxisY(self.axis_y, series)
 
     elif domain == 'Frequency':
-        if self.ui.samplingBox.currentText() == "Linear":
+        if window == "default":
+            if self.ui.samplingBox.currentText() == "Linear":
+                x, y = getFFT(timeData, samplingRate)
+                for pos in np.arange(len(y)):
+                    # add point to chart
+                    series.append(x[pos], y[pos])
+
+                ''' chart - add series'''
+                chart.addSeries(series)
+                #chart.createDefaultAxes()
+
+                self.axis_x = QtCharts.QLogValueAxis()
+                self.axis_x.setRange(20, np.max(x))
+                #self.axis_x.setTickCount(5)
+                self.axis_x.setLabelFormat("%.0f")
+                self.axis_x.setTitleText("Frequency [Hz]")
+                chart.setAxisX(self.axis_x, series)
+                self.axis_y = QtCharts.QValueAxis()
+                self.axis_y.setTickCount(5)
+                self.axis_y.setLabelFormat("%.2f")
+                self.axis_y.setTitleText("SPL [dB]")
+                chart.setAxisY(self.axis_y, series)
+
+        elif window == "expand":
             x, y = getFFT(timeData, samplingRate)
             for pos in np.arange(len(y)):
                 # add point to chart

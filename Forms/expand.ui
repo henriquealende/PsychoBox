@@ -78,7 +78,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="infoBar3">
+       <widget class="QFrame" name="infoBar">
         <property name="styleSheet">
          <string notr="true">QFrame{
 	background-color : #006d34;
@@ -434,7 +434,7 @@ QPushButton:hover{
          </size>
         </property>
         <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+         <enum>QFrame::NoFrame</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
@@ -473,7 +473,7 @@ QPushButton:hover{
            </property>
            <property name="minimumSize">
             <size>
-             <width>250</width>
+             <width>260</width>
              <height>30</height>
             </size>
            </property>
@@ -490,7 +490,82 @@ QPushButton:hover{
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">QComboBox {
+	border: 1px solid #333333;
+	border-radius: 15px;
+	background:  rgb(70, 70, 70);
+	padding: 10x 23px 5px 5x;
+	min-width: 10em;
+	color: rgb(255, 255, 255);
+	margin-left: 30px;
+	margin-right: 5px;
+}
+
+QComboBox::disabled{
+	color: rgb(136, 138, 133)
+}
+
+QComboBox::down-arrow:disabled {    
+	image: url(:/icons/img/downArrowDis.png);
+}
+
+QComboBox::hover{
+border: 3px solid  #009b4a;
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 20px;
+ 
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {    
+	image: url(:/icons/img/downArrow.png);
+	width : 12px;
+}
+
+QComboBox QAbstractView{
+	background-color: #4f4f4f;
+	color: #999999;
+ 
+	selection-background-color: rgb(70, 70, 70);
+	selection-color: #4f4f4f;
+}
+</string>
+           </property>
+           <property name="currentText">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton">
+           <property name="minimumSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {	
+	image: url(:/icons/img/refresh.png);
+	background-color: rgb(180,180,180);
+	border-radius: 15px;
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>15</width>
+             <height>15</height>
+            </size>
            </property>
           </widget>
          </item>
