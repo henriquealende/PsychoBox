@@ -19,7 +19,6 @@ from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargin
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
 
-
 pathname = {}
 path = {}
 projects = []

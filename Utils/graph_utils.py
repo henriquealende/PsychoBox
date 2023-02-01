@@ -2,8 +2,9 @@ import numpy as np
 from PySide2.QtCharts import * 
 from PySide2 import  QtGui
 from PySide2.QtGui import  QPainter, QBrush, QColor, QPen
+
 from Utils.utils import *
-    
+
 def getGraph(self, timeData, samplingRate, domain, window):
     chart = QtCharts.QChart() 
     chart.setBackgroundRoundness(12.0)
@@ -45,8 +46,8 @@ def getGraph(self, timeData, samplingRate, domain, window):
         chart.setAxisY(self.axis_y, series)
 
     elif domain == 'Frequency':
-        if self.ui.samplingBox.currentText() == "Linear":
-            x, y = getFFT(timeData, samplingRate)
+        x, y, Yplot = getFFT(timeData, samplingRate)
+        if self.ui.samplingBox.currentText() == "Linear":            
             for pos in np.arange(len(y)):
                 # add point to chart
                 series.append(x[pos], y[pos])
@@ -66,30 +67,30 @@ def getGraph(self, timeData, samplingRate, domain, window):
             self.axis_y.setLabelFormat("%.2f")
             self.axis_y.setTitleText("SPL [dB]")
             chart.setAxisY(self.axis_y, series)
-        # else:
-            #bandEnergy = thirdOctaveFilter(self, timeData, samplingRate)
-            # x = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
-            # 1600, 2000, 2500,3150, 4000, 5000, 6300, 8000, 10000])
-            # y = 20*np.log10(sumBandEnergy/2e-5)
-            # for pos in np.arange(len(y)):
-            #     # add point to chart
-            #     series.append(x[pos], y[pos])
+        else:
+            y = getBandValue(Yplot, samplingRate)            
+            x = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
+            1600, 2000, 2500,3150, 4000, 5000, 6300, 8000, 10000])
+            y = 20*np.log10(y/2e-5)
+            for pos in np.arange(len(y)):
+                # add point to chart
+                series.append(x[pos], y[pos])
 
-            # ''' chart - add series'''
-            # chart.addSeries(series)
-            # #chart.createDefaultAxes()
+            ''' chart - add series'''
+            chart.addSeries(series)
+            #chart.createDefaultAxes()
 
-            # self.axis_x = QtCharts.QLogValueAxis()
-            # self.axis_x.setRange(20, np.max(x))
-            # #self.axis_x.setTickCount(5)
-            # self.axis_x.setLabelFormat("%.0f")
-            # self.axis_x.setTitleText("Frequency [Hz]")
-            # chart.setAxisX(self.axis_x, series)
-            # self.axis_y = QtCharts.QValueAxis()
-            # self.axis_y.setTickCount(5)
-            # self.axis_y.setLabelFormat("%.2f")
-            # self.axis_y.setTitleText("SPL [dB]")
-            # chart.setAxisY(self.axis_y, series)
+            self.axis_x = QtCharts.QLogValueAxis()
+            self.axis_x.setRange(np.min(x), np.max(x))
+            #self.axis_x.setTickCount(5)
+            self.axis_x.setLabelFormat("%.0f")
+            self.axis_x.setTitleText("Frequency [Hz]")
+            chart.setAxisX(self.axis_x, series)
+            self.axis_y = QtCharts.QValueAxis()
+            self.axis_y.setTickCount(5)
+            self.axis_y.setLabelFormat("%.2f")
+            self.axis_y.setTitleText("SPL [dB]")
+            chart.setAxisY(self.axis_y, series)
 
 
     if window == "default":
