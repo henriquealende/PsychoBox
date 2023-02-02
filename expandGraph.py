@@ -33,7 +33,7 @@ class Expand_Graph(QMainWindow):
         self.gp = loader.load(file, self)
         file.close()
         self.gp.infoBar3.installEventFilter(self)
-        self.gp.domainBox.addItems([' Time', ' Frequency'])
+        self.gp.domainBox.addItems(['Time', 'Frequency'])
 
     def eventFilter(self, source, event):
         if source == self.gp.infoBar3:
@@ -51,19 +51,19 @@ class Expand_Graph(QMainWindow):
         self.gp.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
         self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self))
-
+        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeDomainExpand(self))
 
     def getAndReadWav(self):
         from main import Main_Window
         main = Main_Window()
         pathname = main.getPath()
         type = self.gp.domainBox.currentText()
-        timeVector, samplingRate = read_wav(pathname)
-        timeVector = 2*(timeVector/(2**16))
-        if type == " Time":
-            self.chartview = getGraph(self, timeVector, samplingRate, domain = 'Time', window = "expand")
-        elif type == " Frequency":
-            self.chartview = getGraph(self, timeVector, samplingRate, domain = 'Frequency', window = "expand")
+        self.timeVector, self.samplingRate = read_wav(pathname)
+        self.timeVector = 2*(self.timeVector/(2**16))
+        if type == "Time":
+            self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = 'Time', window = "expand")
+        elif type == "Frequency":
+            self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = 'Frequency', window = "expand")
 
 
 def centerWindow(widget):

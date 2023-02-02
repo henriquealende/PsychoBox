@@ -461,7 +461,7 @@ QPushButton:hover{
                   <string notr="true">color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string>Domain</string>
+                  <string>domain:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -540,34 +540,6 @@ QComboBox QAbstractView{
                  </property>
                  <property name="currentText">
                   <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="pushButton">
-                 <property name="minimumSize">
-                  <size>
-                   <width>30</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QPushButton {	
-	image: url(:/icons/img/refresh.png);
-	background-color: rgb(180,180,180);
-	border-radius: 15px;
-}
-
-</string>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="iconSize">
-                  <size>
-                   <width>15</width>
-                   <height>15</height>
-                  </size>
                  </property>
                 </widget>
                </item>

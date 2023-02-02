@@ -5,7 +5,6 @@ from pathlib import Path
 import sys
 from Resources import resourceGUI
 
-
 import pygame
 import Buttons.login as bt_lo
 import Buttons.filter as bt_fi

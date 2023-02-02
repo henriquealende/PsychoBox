@@ -97,5 +97,9 @@ class UI_Buttons_Graph():
         image = self.chartview.grab()
         image.save(fileName)
 
+    def changeDomainExpand(self):
+        domain = self.gp.domainBox.currentText()
+        getGraph(self, self.timeVector, self.samplingRate, domain = domain, window = "expand")
+
     def exportData(self):
         pass
