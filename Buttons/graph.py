@@ -77,9 +77,6 @@ class UI_Buttons_Graph():
         self.ui.expandGraph.setEnabled(True)
         getGraph(self, self.timeVector, self.samplingRate, domain = "Time", window = "default")
         pathname = (path + '/' + filename)
-        timeVector = self.timeVector
-        samplingRate = self.samplingRate
-
     
     def getPathname(self):
         global pathname
@@ -89,10 +86,16 @@ class UI_Buttons_Graph():
         domain = self.ui.domainBox.currentText()
         getGraph(self, self.timeVector, self.samplingRate, domain, window = "default") 
 
-
     def expandGraph(self):
         self.gp = Expand_Graph()
         self.gp.show()
+
+    def saveGraph(self):
+        fileName, _ = QFileDialog.getSaveFileName(
+            self, "Save Image", r"H:\Image", "Image Files (*.png *.jpg *.bmp)")
+        fileName = fileName + '.png'
+        image = self.chartview.grab()
+        image.save(fileName)
 
     def exportData(self):
         pass

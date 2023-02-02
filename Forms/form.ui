@@ -3266,7 +3266,7 @@ QSlider::sub-page:vertical:disabled{
                        <widget class="QFrame" name="frame_52">
                         <property name="minimumSize">
                          <size>
-                          <width>300</width>
+                          <width>0</width>
                           <height>0</height>
                          </size>
                         </property>
@@ -3308,8 +3308,8 @@ QSlider::sub-page:vertical:disabled{
                           <widget class="QListWidget" name="listWidget">
                            <property name="minimumSize">
                             <size>
-                             <width>450</width>
-                             <height>140</height>
+                             <width>0</width>
+                             <height>0</height>
                             </size>
                            </property>
                            <property name="font">
@@ -3370,6 +3370,18 @@ QListView::item {
                       </item>
                       <item>
                        <widget class="QFrame" name="frame_53">
+                        <property name="minimumSize">
+                         <size>
+                          <width>130</width>
+                          <height>0</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>130</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="styleSheet">
                          <string notr="true">
 QPushButton {
@@ -8070,7 +8082,7 @@ QSpinBox::up-arrow:disabled {
                     <widget class="QComboBox" name="mainBox">
                      <property name="minimumSize">
                       <size>
-                       <width>298</width>
+                       <width>258</width>
                        <height>30</height>
                       </size>
                      </property>
@@ -8137,7 +8149,7 @@ QSpinBox::up-arrow:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>298</width>
+                       <width>258</width>
                        <height>30</height>
                       </size>
                      </property>
@@ -8191,7 +8203,7 @@ QSpinBox::up-arrow:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>298</width>
+                       <width>258</width>
                        <height>30</height>
                       </size>
                      </property>

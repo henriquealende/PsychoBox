@@ -8,8 +8,10 @@ from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtWidgets import (QApplication, QWidget, QGraphicsOpacityEffect, QMessageBox, QGraphicsColorizeEffect, QLabel, QVBoxLayout, QMainWindow, QGraphicsDropShadowEffect)
 from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargins, QTime, QPoint)
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
+from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon, QPixmap
 from PySide2.QtSql import QSqlDatabase, QSqlQuery
+
+from PIL import ImageQt
 
 from Resources import resourceGUI
 
@@ -22,7 +24,6 @@ class Expand_Graph(QMainWindow):
         self.getAndReadWav()
         self.buttonCallback()
 
-        
     def initUI(self):
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
@@ -33,7 +34,7 @@ class Expand_Graph(QMainWindow):
         file.close()
         self.gp.infoBar3.installEventFilter(self)
         self.gp.domainBox.addItems([' Time', ' Frequency'])
-        
+
     def eventFilter(self, source, event):
         if source == self.gp.infoBar3:
             if event.type() == QtCore.QEvent.MouseButtonPress:
@@ -49,8 +50,7 @@ class Expand_Graph(QMainWindow):
     def buttonCallback(self):
         self.gp.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
-        self.gp.pushButton.clicked.connect(self.getAndReadWav)
-
+        self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self))
 
 
     def getAndReadWav(self):
@@ -58,15 +58,13 @@ class Expand_Graph(QMainWindow):
         main = Main_Window()
         pathname = main.getPath()
         type = self.gp.domainBox.currentText()
-        print("Type =", type)
         timeVector, samplingRate = read_wav(pathname)
         timeVector = 2*(timeVector/(2**16))
-
         if type == " Time":
-            getGraph(self, timeVector, samplingRate, domain = 'Time', window = "expand")
-
+            self.chartview = getGraph(self, timeVector, samplingRate, domain = 'Time', window = "expand")
         elif type == " Frequency":
-            getGraph(self, timeVector, samplingRate, domain = 'Frequency', window = "expand")
+            self.chartview = getGraph(self, timeVector, samplingRate, domain = 'Frequency', window = "expand")
+
 
 def centerWindow(widget):
     window = widget.window()

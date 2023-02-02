@@ -7,13 +7,12 @@ from Utils.utils import *
 
 def getGraph(self, timeData, samplingRate, domain, window):
     chart = QtCharts.QChart() 
+    chart.legend().hide()
     chart.setBackgroundRoundness(12.0)
     chart.setDropShadowEnabled(True)
-    chartView = QtCharts.QChartView(chart)
-    chartView.setRenderHint(QPainter.Antialiasing)
-    chartView.chart().setAnimationOptions(QtCharts.QChart.AllAnimations)
-    chartView.chart().setBackgroundBrush(QBrush(QColor(242, 240, 241)))
-    chartView.chart().legend().hide() 
+    chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
+    chart.setAnimationOptions(QtCharts.QChart.AllAnimations)
+    
     #if domain == "Time":
     #    chart.setTitle('Time')  
     series = QtCharts.QLineSeries()
@@ -92,12 +91,17 @@ def getGraph(self, timeData, samplingRate, domain, window):
             self.axis_y.setTitleText("SPL [dB]")
             chart.setAxisY(self.axis_y, series)
 
-
+    chartView = QtCharts.QChartView(chart)
+    chartView.setRenderHint(QPainter.Antialiasing)
+    
+ 
+    
     if window == "default":
         self.ui.gridLayout.addWidget(chartView, 1, 0)
     elif window == "expand":
         self.gp.gridLayout.addWidget(chartView, 1, 0)
     
+    return chartView
 
 #def populate_animationbox(self):
     #animated = self.ui.animatedComboBox
