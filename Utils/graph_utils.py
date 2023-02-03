@@ -5,7 +5,12 @@ from PySide2.QtGui import  QPainter, QBrush, QColor, QPen
 
 from Utils.utils import *
 
+global x, y
+x = [0]
+y = [0]
+
 def getGraph(self, timeData, samplingRate, domain, window):
+    global x, y
     chart = QtCharts.QChart() 
     chart.legend().hide()
     chart.setBackgroundRoundness(12.0)
@@ -119,8 +124,9 @@ def getGraph(self, timeData, samplingRate, domain, window):
         self.ui.gridLayout.addWidget(chartView, 1, 0)
     elif window == "expand":
         self.gp.gridLayout.addWidget(chartView, 1, 0)
-    
+
     return chartView
+
 
 #def populate_animationbox(self):
     #animated = self.ui.animatedComboBox

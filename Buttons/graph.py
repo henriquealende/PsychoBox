@@ -4,6 +4,8 @@ from Database.database import *
 from Utils.graph_utils import *
 from Utils.utils import *   
 
+import pandas as pd
+
 class UI_Buttons_Graph():
     def __init__(self):
         super(UI_Buttons_Graph, self).__init__()
@@ -75,7 +77,7 @@ class UI_Buttons_Graph():
         self.timeVector, self.samplingRate = read_wav(path + '/' + filename)
         self.timeVector = 2*(self.timeVector/(2**16))
         self.ui.expandGraph.setEnabled(True)
-        getGraph(self, self.timeVector, self.samplingRate, domain = "Time", window = "default")
+        self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = "Time", window = "default")
         pathname = (path + '/' + filename)
     
     def getPathname(self):
@@ -84,22 +86,33 @@ class UI_Buttons_Graph():
 
     def changeGraph(self):
         domain = self.ui.domainBox.currentText()
-        getGraph(self, self.timeVector, self.samplingRate, domain, window = "default") 
+        self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain, window = "default")
 
     def expandGraph(self):
         self.gp = Expand_Graph()
         self.gp.show()
 
-    def saveGraph(self):
+    def saveGraph(self, window):
         fileName, _ = QFileDialog.getSaveFileName(
             self, "Save Image", r"H:\Image", "Image Files (*.png *.jpg *.bmp)")
         fileName = fileName + '.png'
         image = self.chartview.grab()
-        image.save(fileName)
+
+        if window == "default":
+            image = image.scaled(800, 800)
+            image.save(fileName)
+
+        else:
+            image.save(fileName)
+
+    def saveData(self):
+        from Utils.graph_utils import x, y
+        lista_xy = list(zip(x, y))
+        df = pd.DataFrame(lista_xy, columns=['x', 'y'])
+
+        name = QFileDialog.getSaveFileName(self, 'Save File', filter='*.csv')
+        df.to_csv(name[0], index = False, sep = ";")
 
     def changeDomainExpand(self):
         domain = self.gp.domainBox.currentText()
-        getGraph(self, self.timeVector, self.samplingRate, domain = domain, window = "expand")
-
-    def exportData(self):
-        pass
+        self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = domain, window = "expand")

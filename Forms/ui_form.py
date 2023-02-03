@@ -1461,7 +1461,7 @@ class Ui_Widget(object):
         self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
         self.frame_52 = QFrame(self.frame_51)
         self.frame_52.setObjectName(u"frame_52")
-        self.frame_52.setMinimumSize(QSize(300, 0))
+        self.frame_52.setMinimumSize(QSize(0, 0))
         self.frame_52.setMaximumSize(QSize(460, 16777215))
         self.frame_52.setSizeIncrement(QSize(0, 0))
         self.frame_52.setFrameShape(QFrame.NoFrame)
@@ -1472,7 +1472,7 @@ class Ui_Widget(object):
         self.horizontalLayout_30.setContentsMargins(0, 0, 0, 0)
         self.listWidget = QListWidget(self.frame_52)
         self.listWidget.setObjectName(u"listWidget")
-        self.listWidget.setMinimumSize(QSize(450, 140))
+        self.listWidget.setMinimumSize(QSize(0, 0))
         self.listWidget.setFont(font11)
         self.listWidget.setStyleSheet(u"QListWidget {\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1510,6 +1510,8 @@ class Ui_Widget(object):
 
         self.frame_53 = QFrame(self.frame_51)
         self.frame_53.setObjectName(u"frame_53")
+        self.frame_53.setMinimumSize(QSize(130, 0))
+        self.frame_53.setMaximumSize(QSize(130, 16777215))
         self.frame_53.setStyleSheet(u"\n"
 "QPushButton {\n"
 "	padding-left: 5px;\n"
@@ -3141,7 +3143,7 @@ class Ui_Widget(object):
         self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
         self.exportButton = QPushButton(self.frame_23)
         self.exportButton.setObjectName(u"exportButton")
-        self.exportButton.setEnabled(False)
+        self.exportButton.setEnabled(True)
         self.exportButton.setMinimumSize(QSize(125, 30))
         self.exportButton.setMaximumSize(QSize(125, 30))
         self.exportButton.setFont(font6)
@@ -3150,7 +3152,7 @@ class Ui_Widget(object):
 
         self.exportFig = QPushButton(self.frame_23)
         self.exportFig.setObjectName(u"exportFig")
-        self.exportFig.setEnabled(False)
+        self.exportFig.setEnabled(True)
         self.exportFig.setMinimumSize(QSize(125, 30))
         self.exportFig.setMaximumSize(QSize(125, 30))
         self.exportFig.setFont(font6)
