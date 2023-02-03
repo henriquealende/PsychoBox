@@ -475,7 +475,7 @@ QPushButton:hover{
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>220</width>
+                   <width>260</width>
                    <height>30</height>
                   </size>
                  </property>
@@ -679,7 +679,7 @@ QPushButton:disabled{
                <item>
                 <widget class="QPushButton" name="exportButton">
                  <property name="enabled">
-                  <bool>false</bool>
+                  <bool>true</bool>
                  </property>
                  <property name="minimumSize">
                   <size>

@@ -32,6 +32,7 @@ class Ui_Form(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.infoBar3 = QFrame(Form)
         self.infoBar3.setObjectName(u"infoBar3")
+        self.infoBar3.setMinimumSize(QSize(0, 50))
         self.infoBar3.setMaximumSize(QSize(16777215, 50))
         self.infoBar3.setStyleSheet(u"QFrame{\n"
 "	background-color : #006d34;\n"
@@ -117,7 +118,7 @@ class Ui_Form(object):
 
         self.frame_2 = QFrame(Form)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShape(QFrame.NoFrame)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.verticalLayout_67 = QVBoxLayout(self.frame_2)
         self.verticalLayout_67.setSpacing(0)
@@ -152,7 +153,7 @@ class Ui_Form(object):
         self.frame_4.setFrameShape(QFrame.NoFrame)
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_18 = QHBoxLayout(self.frame_4)
-        self.horizontalLayout_18.setSpacing(5)
+        self.horizontalLayout_18.setSpacing(0)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
         self.label_4 = QLabel(self.frame_4)
@@ -263,20 +264,6 @@ class Ui_Form(object):
 
         self.horizontalLayout.addWidget(self.domainBox)
 
-        self.pushButton = QPushButton(self.frame)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(30, 30))
-        self.pushButton.setStyleSheet(u"QPushButton {	\n"
-"	image: url(:/icons/img/refresh.png);\n"
-"	background-color: rgb(180,180,180);\n"
-"	border-radius: 15px;\n"
-"}\n"
-"\n"
-"")
-        self.pushButton.setIconSize(QSize(15, 15))
-
-        self.horizontalLayout.addWidget(self.pushButton)
-
         self.horizontalSpacer_2 = QSpacerItem(573, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_2)
@@ -331,55 +318,30 @@ class Ui_Form(object):
         self.horizontalLayout_39.setSpacing(6)
         self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
         self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
-        self.exportButton = QPushButton(self.frame_23)
-        self.exportButton.setObjectName(u"exportButton")
-        self.exportButton.setEnabled(False)
-        self.exportButton.setMinimumSize(QSize(125, 30))
-        self.exportButton.setMaximumSize(QSize(125, 30))
-        font3 = QFont()
-        font3.setFamilies([u"PF BeauSans Pro"])
-        font3.setPointSize(12)
-        self.exportButton.setFont(font3)
-
-        self.horizontalLayout_39.addWidget(self.exportButton)
-
-        self.exportFig = QPushButton(self.frame_23)
-        self.exportFig.setObjectName(u"exportFig")
-        self.exportFig.setEnabled(False)
-        self.exportFig.setMinimumSize(QSize(125, 30))
-        self.exportFig.setMaximumSize(QSize(125, 30))
-        self.exportFig.setFont(font3)
-
-        self.horizontalLayout_39.addWidget(self.exportFig)
-
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_39.addItem(self.horizontalSpacer)
 
-        self.expandGraph = QPushButton(self.frame_23)
-        self.expandGraph.setObjectName(u"expandGraph")
-        self.expandGraph.setEnabled(False)
-        self.expandGraph.setMinimumSize(QSize(30, 30))
-        self.expandGraph.setMaximumSize(QSize(30, 30))
-        self.expandGraph.setFont(font3)
-        self.expandGraph.setStyleSheet(u"padding-left:7px")
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/img/maximize.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.expandGraph.setIcon(icon2)
+        self.exportFig = QPushButton(self.frame_23)
+        self.exportFig.setObjectName(u"exportFig")
+        self.exportFig.setEnabled(True)
+        self.exportFig.setMinimumSize(QSize(125, 30))
+        self.exportFig.setMaximumSize(QSize(125, 30))
+        font3 = QFont()
+        font3.setFamilies([u"PF BeauSans Pro"])
+        font3.setPointSize(12)
+        self.exportFig.setFont(font3)
 
-        self.horizontalLayout_39.addWidget(self.expandGraph)
+        self.horizontalLayout_39.addWidget(self.exportFig)
 
-        self.removeGraph_2 = QPushButton(self.frame_23)
-        self.removeGraph_2.setObjectName(u"removeGraph_2")
-        self.removeGraph_2.setEnabled(False)
-        self.removeGraph_2.setMinimumSize(QSize(30, 30))
-        self.removeGraph_2.setMaximumSize(QSize(30, 30))
-        self.removeGraph_2.setStyleSheet(u"padding-left: 7px;")
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/img/trash-can.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.removeGraph_2.setIcon(icon3)
+        self.exportButton = QPushButton(self.frame_23)
+        self.exportButton.setObjectName(u"exportButton")
+        self.exportButton.setEnabled(True)
+        self.exportButton.setMinimumSize(QSize(125, 30))
+        self.exportButton.setMaximumSize(QSize(125, 30))
+        self.exportButton.setFont(font3)
 
-        self.horizontalLayout_39.addWidget(self.removeGraph_2)
+        self.horizontalLayout_39.addWidget(self.exportButton)
 
 
         self.verticalLayout_18.addWidget(self.frame_23)
@@ -445,13 +407,10 @@ class Ui_Form(object):
         self.closeAllButton.setText("")
         self.label_4.setText("")
         self.label_5.setText(QCoreApplication.translate("Form", u"Chart", None))
-        self.label_7.setText(QCoreApplication.translate("Form", u"Domain", None))
+        self.label_7.setText(QCoreApplication.translate("Form", u"domain:", None))
         self.domainBox.setCurrentText("")
-        self.pushButton.setText("")
-        self.exportButton.setText(QCoreApplication.translate("Form", u"export data", None))
         self.exportFig.setText(QCoreApplication.translate("Form", u"export figure", None))
-        self.expandGraph.setText("")
-        self.removeGraph_2.setText("")
+        self.exportButton.setText(QCoreApplication.translate("Form", u"export data", None))
         self.label.setText(QCoreApplication.translate("Form", u"\u00a9 2021 Nidec\n"
 "All rights reserved to Nidec ", None))
         self.label_6.setText(QCoreApplication.translate("Form", u"Develop by Henrique Silveira\n"

@@ -50,19 +50,21 @@ class Expand_Graph(QMainWindow):
     def buttonCallback(self):
         self.gp.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
-        self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self))
+        self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "expand"))
         self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeDomainExpand(self))
+        #self.gp.domainBox.activated[str].connect(self.getAndReadWav)  ---- Não precisaria da função changeDomainExpand
+        self.gp.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
 
     def getAndReadWav(self):
         from main import Main_Window
         main = Main_Window()
         pathname = main.getPath()
-        type = self.gp.domainBox.currentText()
+        domain = self.gp.domainBox.currentText()
         self.timeVector, self.samplingRate = read_wav(pathname)
         self.timeVector = 2*(self.timeVector/(2**16))
-        if type == "Time":
+        if domain == "Time":
             self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = 'Time', window = "expand")
-        elif type == "Frequency":
+        elif domain == "Frequency":
             self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = 'Frequency', window = "expand")
 
 

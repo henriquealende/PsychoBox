@@ -23,6 +23,7 @@ path = {}
 projects = []
 
 
+
 class Main_Window(QMainWindow):
     def __init__(self):
         super(Main_Window, self).__init__()
@@ -109,9 +110,10 @@ class Main_Window(QMainWindow):
         self.ui.removeGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'graph'))
         self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
         self.ui.listWidget2.itemClicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
-        self.ui.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.exportData(self))
         self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
         self.ui.expandGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self))
+        self.ui.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "default"))
+        self.ui.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
 
 def centerWindow(widget):
     window = widget.window()
