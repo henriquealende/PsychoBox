@@ -194,36 +194,43 @@ class Ui_Form(object):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, -1)
-        self.label_7 = QLabel(self.frame)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setMaximumSize(QSize(16777215, 20))
+        self.frame_9 = QFrame(self.frame)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_9)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.label_9 = QLabel(self.frame_9)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMaximumSize(QSize(16777215, 20))
         font1 = QFont()
         font1.setFamilies([u"PF BeauSans Pro"])
         font1.setPointSize(12)
         font1.setBold(False)
-        self.label_7.setFont(font1)
-        self.label_7.setStyleSheet(u"color: rgb(255, 255, 255);")
-        self.label_7.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.label_9.setFont(font1)
+        self.label_9.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_9.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.horizontalLayout.addWidget(self.label_7)
+        self.horizontalLayout_4.addWidget(self.label_9)
 
-        self.domainBox = QComboBox(self.frame)
-        self.domainBox.setObjectName(u"domainBox")
-        self.domainBox.setEnabled(True)
-        self.domainBox.setMinimumSize(QSize(260, 30))
-        self.domainBox.setMaximumSize(QSize(16777215, 30))
+        self.mainBox = QComboBox(self.frame_9)
+        self.mainBox.setObjectName(u"mainBox")
+        self.mainBox.setMinimumSize(QSize(235, 30))
+        self.mainBox.setMaximumSize(QSize(16777215, 30))
         font2 = QFont()
         font2.setFamilies([u"PF BeauSans Pro"])
         font2.setPointSize(11)
-        self.domainBox.setFont(font2)
-        self.domainBox.setStyleSheet(u"QComboBox {\n"
+        self.mainBox.setFont(font2)
+        self.mainBox.setStyleSheet(u"QComboBox {\n"
 "	border: 1px solid #333333;\n"
 "	border-radius: 15px;\n"
 "	background:  rgb(70, 70, 70);\n"
 "	padding: 10x 23px 5px 5x;\n"
 "	min-width: 10em;\n"
 "	color: rgb(255, 255, 255);\n"
-"	margin-left: 30px;\n"
+"	margin-left: 5px;\n"
 "	margin-right: 5px;\n"
 "}\n"
 "\n"
@@ -262,11 +269,171 @@ class Ui_Form(object):
 "}\n"
 "")
 
-        self.horizontalLayout.addWidget(self.domainBox)
+        self.horizontalLayout_4.addWidget(self.mainBox)
 
-        self.horizontalSpacer_2 = QSpacerItem(573, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+        self.horizontalLayout.addWidget(self.frame_9)
+
+        self.frame_7 = QFrame(self.frame)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame_7)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.label_7 = QLabel(self.frame_7)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setMaximumSize(QSize(16777215, 20))
+        self.label_7.setFont(font1)
+        self.label_7.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_7.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_2.addWidget(self.label_7)
+
+        self.domainBox = QComboBox(self.frame_7)
+        self.domainBox.setObjectName(u"domainBox")
+        self.domainBox.setEnabled(True)
+        self.domainBox.setMinimumSize(QSize(235, 30))
+        self.domainBox.setMaximumSize(QSize(16777215, 30))
+        self.domainBox.setFont(font2)
+        self.domainBox.setStyleSheet(u"QComboBox {\n"
+"	border: 1px solid #333333;\n"
+"	border-radius: 15px;\n"
+"	background:  rgb(70, 70, 70);\n"
+"	padding: 10x 23px 5px 5x;\n"
+"	min-width: 10em;\n"
+"	color: rgb(255, 255, 255);\n"
+"	margin-left: 5px;\n"
+"	margin-right: 5px;\n"
+"}\n"
+"\n"
+"QComboBox::disabled{\n"
+"	color: rgb(136, 138, 133)\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow:disabled {    \n"
+"	image: url(:/icons/img/downArrowDis.png);\n"
+"}\n"
+"\n"
+"QComboBox::hover{\n"
+"border: 3px solid  #009b4a;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"	subcontrol-origin: padding;\n"
+"	subcontrol-position: top right;\n"
+"	width: 20px;\n"
+" \n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {    \n"
+"	image: url(:/icons/img/downArrow.png);\n"
+"	width : 12px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractView{\n"
+"	background-color: #4f4f4f;\n"
+"	color: #999999;\n"
+" \n"
+"	selection-background-color: rgb(70, 70, 70);\n"
+"	selection-color: #4f4f4f;\n"
+"}\n"
+"")
+        self.domainBox.setEditable(False)
+
+        self.horizontalLayout_2.addWidget(self.domainBox)
+
+
+        self.horizontalLayout.addWidget(self.frame_7)
+
+        self.frame_8 = QFrame(self.frame)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_samplingBox = QFrame(self.frame_8)
+        self.frame_samplingBox.setObjectName(u"frame_samplingBox")
+        self.frame_samplingBox.setFrameShape(QFrame.StyledPanel)
+        self.frame_samplingBox.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_samplingBox)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label_8 = QLabel(self.frame_samplingBox)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setMaximumSize(QSize(16777215, 20))
+        self.label_8.setFont(font1)
+        self.label_8.setStyleSheet(u"color: rgb(255, 255, 255);")
+        self.label_8.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.horizontalLayout_3.addWidget(self.label_8)
+
+        self.samplingBox = QComboBox(self.frame_samplingBox)
+        self.samplingBox.setObjectName(u"samplingBox")
+        self.samplingBox.setEnabled(True)
+        self.samplingBox.setMinimumSize(QSize(235, 30))
+        self.samplingBox.setMaximumSize(QSize(16777215, 30))
+        self.samplingBox.setFont(font2)
+        self.samplingBox.setStyleSheet(u"QComboBox {\n"
+"	border: 1px solid #333333;\n"
+"	border-radius: 15px;\n"
+"	background:  rgb(70, 70, 70);\n"
+"	padding: 10x 23px 5px 5x;\n"
+"	min-width: 10em;\n"
+"	color: rgb(255, 255, 255);\n"
+"	margin-left: 5px;\n"
+"	margin-right: 5px;\n"
+"}\n"
+"\n"
+"QComboBox::disabled{\n"
+"	color: rgb(136, 138, 133)\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow:disabled {    \n"
+"	image: url(:/icons/img/downArrowDis.png);\n"
+"}\n"
+"\n"
+"QComboBox::hover{\n"
+"border: 3px solid  #009b4a;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"	subcontrol-origin: padding;\n"
+"	subcontrol-position: top right;\n"
+"	width: 20px;\n"
+" \n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {    \n"
+"	image: url(:/icons/img/downArrow.png);\n"
+"	width : 12px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractView{\n"
+"	background-color: #4f4f4f;\n"
+"	color: #999999;\n"
+" \n"
+"	selection-background-color: rgb(70, 70, 70);\n"
+"	selection-color: #4f4f4f;\n"
+"}\n"
+"")
+        self.samplingBox.setEditable(False)
+
+        self.horizontalLayout_3.addWidget(self.samplingBox)
+
+
+        self.verticalLayout_2.addWidget(self.frame_samplingBox)
+
+
+        self.horizontalLayout.addWidget(self.frame_8)
 
 
         self.verticalLayout_18.addWidget(self.frame)
@@ -314,13 +481,13 @@ class Ui_Form(object):
 "")
         self.frame_23.setFrameShape(QFrame.NoFrame)
         self.frame_23.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_39 = QHBoxLayout(self.frame_23)
-        self.horizontalLayout_39.setSpacing(6)
-        self.horizontalLayout_39.setObjectName(u"horizontalLayout_39")
-        self.horizontalLayout_39.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_23)
+        self.horizontalLayout_6.setSpacing(6)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_39.addItem(self.horizontalSpacer)
+        self.horizontalLayout_6.addItem(self.horizontalSpacer)
 
         self.exportFig = QPushButton(self.frame_23)
         self.exportFig.setObjectName(u"exportFig")
@@ -332,7 +499,7 @@ class Ui_Form(object):
         font3.setPointSize(12)
         self.exportFig.setFont(font3)
 
-        self.horizontalLayout_39.addWidget(self.exportFig)
+        self.horizontalLayout_6.addWidget(self.exportFig)
 
         self.exportButton = QPushButton(self.frame_23)
         self.exportButton.setObjectName(u"exportButton")
@@ -341,7 +508,7 @@ class Ui_Form(object):
         self.exportButton.setMaximumSize(QSize(125, 30))
         self.exportButton.setFont(font3)
 
-        self.horizontalLayout_39.addWidget(self.exportButton)
+        self.horizontalLayout_6.addWidget(self.exportButton)
 
 
         self.verticalLayout_18.addWidget(self.frame_23)
@@ -407,8 +574,10 @@ class Ui_Form(object):
         self.closeAllButton.setText("")
         self.label_4.setText("")
         self.label_5.setText(QCoreApplication.translate("Form", u"Chart", None))
-        self.label_7.setText(QCoreApplication.translate("Form", u"domain:", None))
+        self.label_9.setText(QCoreApplication.translate("Form", u"Metrics:", None))
+        self.label_7.setText(QCoreApplication.translate("Form", u"Domain:", None))
         self.domainBox.setCurrentText("")
+        self.label_8.setText(QCoreApplication.translate("Form", u"Format:", None))
         self.exportFig.setText(QCoreApplication.translate("Form", u"export figure", None))
         self.exportButton.setText(QCoreApplication.translate("Form", u"export data", None))
         self.label.setText(QCoreApplication.translate("Form", u"\u00a9 2021 Nidec\n"

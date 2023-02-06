@@ -75,7 +75,7 @@ class Main_Window(QMainWindow):
         self.ui.userButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.userButton(self))
         self.ui.homeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.homeButton(self))
         self.ui.newProjectButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.newProject(self))
-        self.ui.refreshButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.refresh(self))
+        #self.ui.refreshButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.refresh(self))
 
         # FILTER PAGE
 
@@ -103,14 +103,14 @@ class Main_Window(QMainWindow):
         # GRAPH PAGE
 
         self.ui.mainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectGraph(self))
-        self.ui.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self))
+        self.ui.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="defaut"))
         self.ui.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self))
         self.ui.graphButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.graphButton(self))
         self.ui.importGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.importButton(self))
         self.ui.removeGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'graph'))
         self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
         self.ui.listWidget2.itemClicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
-        self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
+        self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
         self.ui.expandGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self))
         self.ui.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "default"))
         self.ui.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))

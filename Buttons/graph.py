@@ -32,12 +32,19 @@ class UI_Buttons_Graph():
             self.ui.automaticCheckBox.setChecked(True)
             self.ui.applyButton.setEnabled(True)
 
-    def selectDomain(self):
-        domain = self.ui.domainBox.currentText()
-        if domain == "Time":
-            self.ui.samplingBox.setDisabled(True)
-        elif domain == "Frequency":
-            self.ui.samplingBox.setEnabled(True)
+    def selectDomain(self, window):
+        if window == "defaut":
+            domain = self.ui.domainBox.currentText()
+            if domain == "Time":
+                self.ui.samplingBox.setDisabled(True)
+            elif domain == "Frequency":
+                self.ui.samplingBox.setEnabled(True)
+        else:
+            domain = self.gp.domainBox.currentText()
+            if domain == "Time":
+                self.gp.frame_samplingBox.hide()
+            else:
+                self.gp.frame_samplingBox.show()
 
     def automaticCheckBox(self):
         if self.ui.automaticCheckBox.isChecked():
@@ -64,29 +71,51 @@ class UI_Buttons_Graph():
         self.ui.listWidget2.addItem(filename)
 
     def selectItem(self):
-        global path, pathname    
+        global path, pathname
         self.ui.mainBox.setCurrentIndex(0)
-        self.ui.domainBox.setCurrentIndex(0)
-        self.ui.domainBox.setEnabled(True)
-        self.ui.samplingBox.setCurrentIndex(0)
-        self.ui.samplingBox.setEnabled(False)
-        self.ui.automaticCheckBox.setEnabled(True)
-        self.ui.automaticCheckBox.setChecked(True)
-        self.ui.applyButton.setEnabled(True)
+
+        metrics = self.ui.mainBox.currentText()
+        domain = self.ui.domainBox.currentText()
+        samplingBox = self.ui.samplingBox.currentText()
+
+        if domain == "Time":
+            self.ui.domainBox.setCurrentIndex(0)
+            self.ui.domainBox.setEnabled(True)
+            #self.ui.samplingBox.setCurrentIndex(0)
+            self.ui.samplingBox.setEnabled(False)
+            self.ui.automaticCheckBox.setEnabled(True)
+            self.ui.automaticCheckBox.setChecked(True)
+            self.ui.applyButton.setEnabled(True)
+
         filename = str(self.ui.listWidget2.currentItem().text())
         self.timeVector, self.samplingRate = read_wav(path + '/' + filename)
         self.timeVector = 2*(self.timeVector/(2**16))
         self.ui.expandGraph.setEnabled(True)
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = "Time", window = "default")
+
+        self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "default")
         pathname = (path + '/' + filename)
     
-    def getPathname(self):
+    def getAndReadWav(self):
+        #from main import Main_Window
+        #main = Main_Window()
+        #pathname = main.getPath()
         global pathname
-        return pathname        
+        metrics = self.gp.mainBox.currentText()
+        domain = self.gp.domainBox.currentText()
+        samplingBox = self.gp.samplingBox.currentText()
+        self.timeVector, self.samplingRate = read_wav(pathname)
+        self.timeVector = 2*(self.timeVector/(2**16))
+        self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "expand")
 
-    def changeGraph(self):
-        domain = self.ui.domainBox.currentText()
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain, window = "default")
+#    def getPathname(self):
+#        global pathname
+#        return pathname
+
+#    def changeGraph(self):
+#        metrics = self.ui.mainBox.currentText()
+#        domain = self.ui.domainBox.currentText()
+#        samplingBox = self.ui.samplingBox.currentText()
+#        self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "default")
 
     def expandGraph(self):
         self.gp = Expand_Graph()
@@ -113,6 +142,6 @@ class UI_Buttons_Graph():
         name = QFileDialog.getSaveFileName(self, 'Save File', filter='*.csv')
         df.to_csv(name[0], index = False, sep = ";")
 
-    def changeDomainExpand(self):
-        domain = self.gp.domainBox.currentText()
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = domain, window = "expand")
+#    def changeDomainExpand(self):
+ #       domain = self.gp.domainBox.currentText()
+  #      self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = domain, window = "expand")

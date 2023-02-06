@@ -21,8 +21,8 @@ class Expand_Graph(QMainWindow):
     def __init__(self):
         super(Expand_Graph, self).__init__()
         self.initUI()
-        self.getAndReadWav()
         self.buttonCallback()
+        self.gp.frame_samplingBox.hide()
 
     def initUI(self):
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
@@ -33,7 +33,10 @@ class Expand_Graph(QMainWindow):
         self.gp = loader.load(file, self)
         file.close()
         self.gp.infoBar3.installEventFilter(self)
+        self.gp.mainBox.addItems(['Time-Frequency', 'Metrics'])
+        self.gp.samplingBox.addItems(['Linear', '3º octave'])
         self.gp.domainBox.addItems(['Time', 'Frequency'])
+
 
     def eventFilter(self, source, event):
         if source == self.gp.infoBar3:
@@ -51,22 +54,21 @@ class Expand_Graph(QMainWindow):
         self.gp.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
         self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "expand"))
-        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeDomainExpand(self))
-        #self.gp.domainBox.activated[str].connect(self.getAndReadWav)  ---- Não precisaria da função changeDomainExpand
         self.gp.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
+        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
+        self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
+        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="expand"))
 
-    def getAndReadWav(self):
-        from main import Main_Window
-        main = Main_Window()
-        pathname = main.getPath()
-        domain = self.gp.domainBox.currentText()
-        self.timeVector, self.samplingRate = read_wav(pathname)
-        self.timeVector = 2*(self.timeVector/(2**16))
-        if domain == "Time":
-            self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = 'Time', window = "expand")
-        elif domain == "Frequency":
-            self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = 'Frequency', window = "expand")
-
+ #   def getAndReadWav(self):
+  #      from main import Main_Window
+   #     main = Main_Window()
+    #    pathname = main.getPath()
+     #   metrics = self.gp.mainBox.currentText()
+      #  domain = self.gp.domainBox.currentText()
+       # samplingBox = self.gp.samplingBox.currentText()
+       # self.timeVector, self.samplingRate = read_wav(pathname)
+       # self.timeVector = 2*(self.timeVector/(2**16))
+       # self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "expand")
 
 def centerWindow(widget):
     window = widget.window()
