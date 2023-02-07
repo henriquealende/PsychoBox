@@ -22,7 +22,8 @@ class Expand_Graph(QMainWindow):
         super(Expand_Graph, self).__init__()
         self.initUI()
         self.buttonCallback()
-        self.gp.frame_samplingBox.hide()
+        self.gp.frame_samplingBox_2.hide()
+        self.gp.frame_axis_2.hide()
 
     def initUI(self):
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
@@ -33,9 +34,9 @@ class Expand_Graph(QMainWindow):
         self.gp = loader.load(file, self)
         file.close()
         self.gp.infoBar3.installEventFilter(self)
-        self.gp.mainBox.addItems(['Time-Frequency', 'Metrics'])
-        self.gp.samplingBox.addItems(['Linear', '3º octave'])
-        self.gp.domainBox.addItems(['Time', 'Frequency'])
+        self.gp.mainBox_2.addItems(['Time-Frequency', 'Metrics'])
+        self.gp.samplingBox_2.addItems(['Linear', '3º octave'])
+        self.gp.domainBox_2.addItems(['Time', 'Frequency'])
 
 
     def eventFilter(self, source, event):
@@ -53,11 +54,13 @@ class Expand_Graph(QMainWindow):
     def buttonCallback(self):
         self.gp.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
-        self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "expand"))
-        self.gp.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
-        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
-        self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
-        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="expand"))
+        self.gp.exportFig_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "expand"))
+        self.gp.exportButton_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
+        self.gp.domainBox_2.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
+        self.gp.samplingBox_2.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
+        self.gp.domainBox_2.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="expand"))
+        self.gp.automaticCheckBox_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self, window = "expand"))
+
 
  #   def getAndReadWav(self):
   #      from main import Main_Window
