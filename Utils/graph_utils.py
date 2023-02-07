@@ -10,7 +10,6 @@ x = [0]
 y = [0]
 
 def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window):
-    global x, y
     chart = QtCharts.QChart()
     chart.legend().hide()
     chart.setBackgroundRoundness(12.0)
@@ -23,13 +22,14 @@ def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window)
     pen.setWidth(1)
     series.setPen(pen)
 
-    if metrics == 'Time-Frequency':
-        Time_Frequency(self, timeData, samplingRate, metrics, domain, samplingBox, window, series, chart)
-    else:
-        Metrics(self)
+    #if metrics == 'Time-Frequency':
+    #    Time_Frequency(self, timeData, samplingRate, metrics, domain, samplingBox, window, series, chart)
+    #else:
+    #    Metrics(self)
 
 
-def Time_Frequency(self, timeData, samplingRate, metrics, domain, samplingBox, window, series, chart):
+#def Time_Frequency(self, timeData, samplingRate, metrics, domain, samplingBox, window, series, chart):
+    global x, y
     if domain == 'Time':
         y = timeData
         T = len(timeData)/samplingRate
@@ -80,17 +80,17 @@ def Time_Frequency(self, timeData, samplingRate, metrics, domain, samplingBox, w
     chartView = QtCharts.QChartView(chart)
     chartView.setRenderHint(QPainter.Antialiasing)
 
-    plot(self, chartView, window)
+#    plot(self, chartView, window)
 
 
-def Metrics(self):
-    pass
+#def Metrics(self):
+#    pass
     #plot(self, chartView, window)
 
-def plot(self, chartView, window):
+#def plot(self, chartView, window):
     if window == "default":
         self.ui.gridLayout.addWidget(chartView, 1, 0)
     elif window == "expand":
-        self.gp.gridLayout.addWidget(chartView, 1, 0)
+        self.gp.gridLayout_2.addWidget(chartView, 1, 0)
     return chartView
 

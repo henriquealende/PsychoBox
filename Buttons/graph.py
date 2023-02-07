@@ -40,23 +40,30 @@ class UI_Buttons_Graph():
             elif domain == "Frequency":
                 self.ui.samplingBox.setEnabled(True)
         else:
-            domain = self.gp.domainBox.currentText()
+            domain = self.gp.domainBox_2.currentText()
             if domain == "Time":
-                self.gp.frame_samplingBox.hide()
+                self.gp.frame_samplingBox_2.hide()
             else:
-                self.gp.frame_samplingBox.show()
+                self.gp.frame_samplingBox_2.show()
 
-    def automaticCheckBox(self):
-        if self.ui.automaticCheckBox.isChecked():
-            self.ui.spinBox.setDisabled(True)
-            self.ui.spinBox_2.setDisabled(True)
-            self.ui.spinBox_3.setDisabled(True)
-            self.ui.spinBox_4.setDisabled(True)
+    def automaticCheckBox(self, window):
+        if window == "defaut":
+            if self.ui.automaticCheckBox.isChecked():
+                self.ui.spinBox.setDisabled(True)
+                self.ui.spinBox_2.setDisabled(True)
+                self.ui.spinBox_3.setDisabled(True)
+                self.ui.spinBox_4.setDisabled(True)
+            else:
+                self.ui.spinBox.setEnabled(True)
+                self.ui.spinBox_2.setEnabled(True)
+                self.ui.spinBox_3.setEnabled(True)
+                self.ui.spinBox_4.setEnabled(True)
         else:
-            self.ui.spinBox.setEnabled(True)
-            self.ui.spinBox_2.setEnabled(True)
-            self.ui.spinBox_3.setEnabled(True)
-            self.ui.spinBox_4.setEnabled(True)
+            if self.gp.automaticCheckBox_2.isChecked():
+                self.gp.frame_axis_2.hide()
+            else:
+                self.gp.frame_axis_2.show()
+
 
     def graphButton(self):
         if self.online:
@@ -100,9 +107,9 @@ class UI_Buttons_Graph():
         #main = Main_Window()
         #pathname = main.getPath()
         global pathname
-        metrics = self.gp.mainBox.currentText()
-        domain = self.gp.domainBox.currentText()
-        samplingBox = self.gp.samplingBox.currentText()
+        metrics = self.gp.mainBox_2.currentText()
+        domain = self.gp.domainBox_2.currentText()
+        samplingBox = self.gp.samplingBox_2.currentText()
         self.timeVector, self.samplingRate = read_wav(pathname)
         self.timeVector = 2*(self.timeVector/(2**16))
         self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "expand")
