@@ -10,7 +10,6 @@ class UI_Buttons_Graph():
     def __init__(self):
         super(UI_Buttons_Graph, self).__init__()
 
-
     def selectGraph(self):
         condition = self.ui.mainBox.currentText()
         if condition != 'Time-Frequency':
@@ -40,29 +39,56 @@ class UI_Buttons_Graph():
             elif domain == "Frequency":
                 self.ui.samplingBox.setEnabled(True)
         else:
-            domain = self.gp.domainBox_2.currentText()
+            domain = self.gp.domainBox.currentText()
             if domain == "Time":
-                self.gp.frame_samplingBox_2.hide()
+                self.gp.frame_samplingBox.hide()
             else:
-                self.gp.frame_samplingBox_2.show()
+                self.gp.frame_samplingBox.show()
 
     def automaticCheckBox(self, window):
         if window == "defaut":
+            domain = self.ui.domainBox.currentText()
             if self.ui.automaticCheckBox.isChecked():
                 self.ui.spinBox.setDisabled(True)
                 self.ui.spinBox_2.setDisabled(True)
                 self.ui.spinBox_3.setDisabled(True)
                 self.ui.spinBox_4.setDisabled(True)
-            else:
+                self.ui.spinBox.setValue(0)
+                self.ui.spinBox_2.setValue(99000)
+                self.ui.spinBox_3.setValue(0)
+                self.ui.spinBox_4.setValue(99000)
+            else:                
+               
                 self.ui.spinBox.setEnabled(True)
                 self.ui.spinBox_2.setEnabled(True)
                 self.ui.spinBox_3.setEnabled(True)
                 self.ui.spinBox_4.setEnabled(True)
+                if domain == 'Time':
+                    self.ui.spinBox.setValue(-1)
+                    self.ui.spinBox_2.setValue(1)
+                    self.ui.spinBox_3.setValue(0)
+                    self.ui.spinBox_4.setValue(10)
+                elif domain == "Frequency":
+                    self.ui.spinBox.setValue(0)
+                    self.ui.spinBox_2.setValue(80)
+                    self.ui.spinBox_3.setValue(20)
+                    self.ui.spinBox_4.setValue(10000)
         else:
-            if self.gp.automaticCheckBox_2.isChecked():
-                self.gp.frame_axis_2.hide()
+            domain = self.gp.domainBox.currentText()
+            if self.gp.automaticCheckBox.isChecked():                
+                self.gp.frame_axis.hide()
             else:
-                self.gp.frame_axis_2.show()
+                self.gp.frame_axis.show()
+                if domain == 'Time':
+                    self.gp.spinBox.setValue(-1)
+                    self.gp.spinBox_2.setValue(1)
+                    self.gp.spinBox_3.setValue(0)
+                    self.gp.spinBox_4.setValue(10)
+                elif domain == "Frequency":
+                    self.gp.spinBox.setValue(0)
+                    self.gp.spinBox_2.setValue(80)
+                    self.gp.spinBox_3.setValue(20)
+                    self.gp.spinBox_4.setValue(10000)
 
 
     def graphButton(self):
@@ -98,31 +124,32 @@ class UI_Buttons_Graph():
         self.timeVector, self.samplingRate = read_wav(path + '/' + filename)
         self.timeVector = 2*(self.timeVector/(2**16))
         self.ui.expandGraph.setEnabled(True)
-
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "default")
+        self.ui.exportFig.setEnabled(True)
+        self.ui.exportData.setEnabled(True)
+        
+        self.chartview = getGraph(self, self.timeVector, self.samplingRate, 
+                                  metrics, domain, samplingBox, window = "default")
         pathname = (path + '/' + filename)
     
     def getAndReadWav(self):
-        #from main import Main_Window
-        #main = Main_Window()
-        #pathname = main.getPath()
-        global pathname
-        metrics = self.gp.mainBox_2.currentText()
-        domain = self.gp.domainBox_2.currentText()
-        samplingBox = self.gp.samplingBox_2.currentText()
+        metrics = self.gp.mainBox.currentText()
+        domain = self.gp.domainBox.currentText()
+        samplingBox = self.gp.samplingBox.currentText()
         self.timeVector, self.samplingRate = read_wav(pathname)
         self.timeVector = 2*(self.timeVector/(2**16))
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "expand")
+        self.chartview = getGraph(self, self.timeVector, self.samplingRate,
+                                     metrics, domain, samplingBox, window = "expand")
 
-#    def getPathname(self):
-#        global pathname
-#        return pathname
+    def getPathname(self):
+        global pathname
+        return pathname
 
-#    def changeGraph(self):
-#        metrics = self.ui.mainBox.currentText()
-#        domain = self.ui.domainBox.currentText()
-#        samplingBox = self.ui.samplingBox.currentText()
-#        self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "default")
+    def changeGraph(self):
+        metrics = self.ui.mainBox.currentText()
+        domain = self.ui.domainBox.currentText()
+        samplingBox = self.ui.samplingBox.currentText()
+        self.chartview = getGraph(self, self.timeVector, self.samplingRate,
+                                     metrics, domain, samplingBox, window="default")
 
     def expandGraph(self):
         self.gp = Expand_Graph()
@@ -145,7 +172,6 @@ class UI_Buttons_Graph():
         from Utils.graph_utils import x, y
         lista_xy = list(zip(x, y))
         df = pd.DataFrame(lista_xy, columns=['x', 'y'])
-
         name = QFileDialog.getSaveFileName(self, 'Save File', filter='*.csv')
         df.to_csv(name[0], index = False, sep = ";")
 

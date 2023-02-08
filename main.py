@@ -9,6 +9,7 @@ import pygame
 import Buttons.login as bt_lo
 import Buttons.filter as bt_fi
 import Buttons.graph as bt_gh
+import Buttons.calibration as bt_ca
 
 
 
@@ -44,7 +45,10 @@ class Main_Window(QMainWindow):
         self.ui.infoBar.installEventFilter(self)
         self.ui.mainBox.addItems(['Time-Frequency', 'Metrics'])
         self.ui.domainBox.addItems(['Time', 'Frequency'])
-        self.ui.samplingBox.addItems(['Linear', '3º octave'])
+        self.ui.samplingBox.addItems(['Linear', '1/3 octave'])
+        self.ui.typeHeadBox.addItems(['None', 'Sennheiser'])
+        self.ui.typeHatsBox.addItems(['None', 'HeadAcoustics', 'GRASS'])
+
         pygame.init()
         
     def getPath(self):
@@ -75,7 +79,6 @@ class Main_Window(QMainWindow):
         self.ui.userButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.userButton(self))
         self.ui.homeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.homeButton(self))
         self.ui.newProjectButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.newProject(self))
-        #self.ui.refreshButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.refresh(self))
 
         # FILTER PAGE
 
@@ -110,10 +113,15 @@ class Main_Window(QMainWindow):
         self.ui.removeGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'graph'))
         self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
         self.ui.listWidget2.itemClicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
-        self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
+        self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
         self.ui.expandGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self))
         self.ui.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "default"))
-        self.ui.exportButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
+        self.ui.exportData.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
+
+        # CALIBRATION PAGE
+
+        self.ui.typeHeadBox.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeTypeHead(self))
+        self.ui.typeHatsBox.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeTypeHats(self))
 
 def centerWindow(widget):
     window = widget.window()
