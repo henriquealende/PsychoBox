@@ -425,7 +425,7 @@ QPushButton:hover{
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="frame_axis_2">
+          <widget class="QFrame" name="frame_axis">
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -561,7 +561,7 @@ QSpinBox::up-arrow:disabled {
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="spinBox_5">
+                <widget class="QSpinBox" name="spinBox_3">
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
@@ -620,7 +620,7 @@ QSpinBox::up-arrow:disabled {
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="spinBox_6">
+                <widget class="QSpinBox" name="spinBox_4">
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
@@ -710,7 +710,7 @@ QSpinBox::up-arrow:disabled {
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="spinBox_7">
+                <widget class="QSpinBox" name="spinBox">
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
@@ -769,7 +769,7 @@ QSpinBox::up-arrow:disabled {
                 </widget>
                </item>
                <item>
-                <widget class="QSpinBox" name="spinBox_8">
+                <widget class="QSpinBox" name="spinBox_2">
                  <property name="enabled">
                   <bool>true</bool>
                  </property>
@@ -946,13 +946,13 @@ QSpinBox::up-arrow:disabled {
            <property name="minimumSize">
             <size>
              <width>225</width>
-             <height>100</height>
+             <height>80</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>225</width>
-             <height>100</height>
+             <height>80</height>
             </size>
            </property>
            <property name="frameShape">
@@ -996,7 +996,7 @@ QSpinBox::up-arrow:disabled {
                <string notr="true">color: rgb(255, 255, 255);</string>
               </property>
               <property name="text">
-               <string>Metrics:</string>
+               <string>metrics:</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1004,10 +1004,10 @@ QSpinBox::up-arrow:disabled {
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="mainBox_2">
+             <widget class="QComboBox" name="mainBox">
               <property name="minimumSize">
                <size>
-                <width>235</width>
+                <width>195</width>
                 <height>30</height>
                </size>
               </property>
@@ -1080,13 +1080,13 @@ QComboBox QAbstractView{
            <property name="minimumSize">
             <size>
              <width>225</width>
-             <height>100</height>
+             <height>80</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>225</width>
-             <height>100</height>
+             <height>80</height>
             </size>
            </property>
            <property name="frameShape">
@@ -1130,7 +1130,7 @@ QComboBox QAbstractView{
                <string notr="true">color: rgb(255, 255, 255);</string>
               </property>
               <property name="text">
-               <string>Domain:</string>
+               <string>domain:</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1138,13 +1138,13 @@ QComboBox QAbstractView{
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="domainBox_2">
+             <widget class="QComboBox" name="domainBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
               <property name="minimumSize">
                <size>
-                <width>235</width>
+                <width>195</width>
                 <height>30</height>
                </size>
               </property>
@@ -1219,17 +1219,17 @@ QComboBox QAbstractView{
           </widget>
          </item>
          <item>
-          <widget class="QFrame" name="frame_samplingBox_2">
+          <widget class="QFrame" name="frame_samplingBox">
            <property name="minimumSize">
             <size>
              <width>225</width>
-             <height>100</height>
+             <height>80</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>225</width>
-             <height>100</height>
+             <width>80</width>
+             <height>150</height>
             </size>
            </property>
            <property name="frameShape">
@@ -1273,7 +1273,7 @@ QComboBox QAbstractView{
                <string notr="true">color: rgb(255, 255, 255);</string>
               </property>
               <property name="text">
-               <string>Format:</string>
+               <string>format:</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1281,13 +1281,13 @@ QComboBox QAbstractView{
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="samplingBox_2">
+             <widget class="QComboBox" name="samplingBox">
               <property name="enabled">
                <bool>true</bool>
               </property>
               <property name="minimumSize">
                <size>
-                <width>235</width>
+                <width>195</width>
                 <height>30</height>
                </size>
               </property>
@@ -1421,7 +1421,7 @@ QComboBox QAbstractView{
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="automaticCheckBox_2">
+             <widget class="QCheckBox" name="automaticCheckBox">
               <property name="enabled">
                <bool>true</bool>
               </property>

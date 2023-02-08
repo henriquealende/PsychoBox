@@ -8554,6 +8554,9 @@ QCheckBox::indicator:checked:disabled{
                           <pointsize>9</pointsize>
                          </font>
                         </property>
+                        <property name="minimum">
+                         <number>-99000</number>
+                        </property>
                         <property name="maximum">
                          <number>99000</number>
                         </property>

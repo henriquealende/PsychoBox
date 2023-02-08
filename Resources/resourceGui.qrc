@@ -29,6 +29,8 @@
         <file>img/maximize.png</file>
         <file>img/trash-can.png</file>
         <file>img/calibration.png</file>
+        <file>img/HATS.png</file>
+        <file>img/headphones.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/embracoLogo.png</file>
