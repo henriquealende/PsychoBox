@@ -104,33 +104,42 @@ class UI_Buttons_Graph():
         self.ui.listWidget2.addItem(filename)
 
     def selectItem(self):
-        global path, pathname
-        self.ui.mainBox.setCurrentIndex(0)
+        global path, pathname       
 
         metrics = self.ui.mainBox.currentText()
         domain = self.ui.domainBox.currentText()
         samplingBox = self.ui.samplingBox.currentText()
-
-        if domain == "Time":
-            self.ui.domainBox.setCurrentIndex(0)
-            self.ui.domainBox.setEnabled(True)
-            #self.ui.samplingBox.setCurrentIndex(0)
-            self.ui.samplingBox.setEnabled(False)
-            self.ui.automaticCheckBox.setEnabled(True)
-            self.ui.automaticCheckBox.setChecked(True)
-            self.ui.applyButton.setEnabled(True)
-
-        filename = str(self.ui.listWidget2.currentItem().text())
-        self.timeVector, self.samplingRate = read_wav(path + '/' + filename)
-        self.timeVector = 2*(self.timeVector/(2**16))
-        self.ui.expandGraph.setEnabled(True)
-        self.ui.exportFig.setEnabled(True)
-        self.ui.exportData.setEnabled(True)
         
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate, 
-                                  metrics, domain, samplingBox, window = "default")
-        pathname = (path + '/' + filename)
-    
+        presetImport(self, domain)  
+        selectMulti(self)        
+        nSelectItems = len(self.ui.listWidget2.selectedItems())
+        
+        if nSelectItems > 2:
+            self.ui.listWidget2.clearSelection()
+            self.ui.mainBox.setCurrentIndex(0)
+            self.ui.expandGraph.setEnabled(False)
+            self.ui.exportFig.setEnabled(False)
+            self.ui.exportData.setEnabled(False)
+            self.ui.domainBox.setCurrentIndex(0)
+            self.ui.domainBox.setEnabled(False)
+            self.ui.samplingBox.setCurrentIndex(0)
+            self.ui.samplingBox.setEnabled(False)
+            self.ui.automaticCheckBox.setEnabled(False)
+            self.ui.automaticCheckBox.setChecked(True)
+            self.ui.applyButton.setEnabled(False)
+       
+        elif nSelectItems > 1:
+            pass
+       
+        else:            
+            filename = str(self.ui.listWidget2.currentItem().text())
+            self.timeVector, self.samplingRate = read_wav(path + '/' + filename)
+            self.timeVector = 2*(self.timeVector/(2**16))
+        
+            self.chartview = getGraph(self, self.timeVector, self.samplingRate, 
+                                    metrics, domain, samplingBox, window = "default")
+            pathname = (path + '/' + filename)
+               
     def getAndReadWav(self):
         metrics = self.gp.mainBox.currentText()
         domain = self.gp.domainBox.currentText()

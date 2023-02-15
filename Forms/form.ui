@@ -7728,6 +7728,42 @@ QPushButton:disabled{
                            </property>
                            <layout class="QVBoxLayout" name="verticalLayout_56">
                             <item>
+                             <widget class="QCheckBox" name="holdOnCheck">
+                              <property name="font">
+                               <font>
+                                <family>PF BeauSans Pro</family>
+                                <pointsize>10</pointsize>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QCheckBox{
+	color: rgb(255,255,255);
+}
+QCheckBox::indicator{
+	background-color: rgb(70,70,70);
+	color: rgb(241,102,55);
+	border-radius:6px;
+}
+
+QCheckBox::indicator:checked{
+	background-color: rgb(241,102,55);
+	border: 2px solid rgb(70,70,70);
+}
+
+QCheckBox:disabled{
+ color: rgb(136, 138, 133);
+}
+
+QCheckBox::indicator:checked:disabled{
+	background-color: rgb(136, 138, 133);
+}</string>
+                              </property>
+                              <property name="text">
+                               <string>hold on</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item>
                              <widget class="QListWidget" name="listWidget2">
                               <property name="font">
                                <font>
