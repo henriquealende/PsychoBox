@@ -2,23 +2,25 @@ import numpy as np
 from PySide2.QtCharts import *
 from PySide2 import  QtGui
 from PySide2.QtGui import  QPainter, QBrush, QColor, QPen
+from PySide2.QtWidgets import QAbstractItemView
 
 from Utils.utils import *
 
 
 def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window):
+    
+    
     chart = QtCharts.QChart()
     chart.legend().hide()
     chart.setBackgroundRoundness(12.0)
     chart.setDropShadowEnabled(True)
-    chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
     chart.setAnimationOptions(QtCharts.QChart.AllAnimations)
-
+    chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
     series = QtCharts.QLineSeries()
+    
     pen = QPen(QtGui.QColor(0, 155, 74))
     pen.setWidth(1)
     series.setPen(pen)
-    
     if domain == 'Time':
         y = timeData
         T = len(timeData)/samplingRate
@@ -63,8 +65,11 @@ def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window)
         self.axis_y.setTitleText("SPL [dB]")
         limitsAdjust(self, window, domain, np.max(x))
 
-    chart.setAxisY(self.axis_y, series)
     chart.setAxisX(self.axis_x, series)
+    chart.setAxisY(self.axis_y, series)
+    series.attachAxis(self.axis_x)
+    series.attachAxis(self.axis_y)
+    
     chartView = QtCharts.QChartView(chart)
     chartView.setRenderHint(QPainter.Antialiasing)
     plotGraph(self, window, chartView)
@@ -121,4 +126,29 @@ def plotGraph(self, window, chartView):
     elif window == "expand":
         self.gp.gridLayout_2.addWidget(chartView, 1, 0)
     return chartView
+
+def selectMulti(self):
+    if self.ui.holdOnCheck.isChecked():
+        self.ui.listWidget2.setSelectionMode(QAbstractItemView.MultiSelection)
+    else:
+        self.ui.listWidget2.setSelectionMode(QAbstractItemView.SingleSelection)
+    
+def presetImport(self, domain):
+    self.ui.mainBox.setCurrentIndex(0)
+    self.ui.expandGraph.setEnabled(True)
+    self.ui.exportFig.setEnabled(True)
+    self.ui.exportData.setEnabled(True)
+    if domain == "Time":
+        self.ui.domainBox.setCurrentIndex(0)
+        self.ui.domainBox.setEnabled(True)
+        self.ui.samplingBox.setCurrentIndex(0)
+        self.ui.samplingBox.setEnabled(False)
+        self.ui.automaticCheckBox.setEnabled(True)
+        self.ui.automaticCheckBox.setChecked(True)
+        self.ui.applyButton.setEnabled(True)
+            
+ #   items = self.ui.listWidget2.selectedItems()
+ #   if len(items) >= 3:
+ #       print(len(items))
+
 
