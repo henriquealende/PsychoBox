@@ -4,6 +4,7 @@ from scipy import signal
 import numpy as np
 from PySide2.QtWidgets import (QFileDialog)
 from scipy.fft import fft
+import yulewalker as yw
 
 def getInitParameters(self):
     self.sliders = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250, 
@@ -58,9 +59,14 @@ def getBandValue(freqData, samplingRate):
     return matrixSum
     
 
-def applySliders(self, timeVector, bandEnergy, linearSliderValues):
-    filterCorrection = sum(bandEnergy)-timeVector
-    bandEnergyFiltered = np.empty([len(self.sliders), len(timeVector)])
+def applySliders(self, inputSignal, bandEnergy, linearSliderValues):
+    '''Filter an input signal from the sliders curve inputed by the user
+    Inputs: 
+        inputSignal: input signal array in the time domain
+        bandEnergy'''
+
+    filterCorrection = sum(bandEnergy)-inputSignal
+    bandEnergyFiltered = np.empty([len(self.sliders), len(inputSignal)])
     for n in range(len(self.sliders)):
         bandEnergyFiltered[n] = (bandEnergy[n]*(linearSliderValues[n]))
     filteredSignal = sum(bandEnergyFiltered) - filterCorrection
