@@ -73,6 +73,7 @@ def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window)
     chartView = QtCharts.QChartView(chart)
     chartView.setRenderHint(QPainter.Antialiasing)
     plotGraph(self, window, chartView)
+    
 
 def limitsAdjust(self, window, domain, LIM):
     if domain == "Time":
