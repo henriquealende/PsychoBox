@@ -198,10 +198,19 @@ class Ui_Form(object):
 
         self.verticalLayout_10.addWidget(self.frame_19)
 
-        self.frame_axis_2 = QFrame(self.frame_17)
-        self.frame_axis_2.setObjectName(u"frame_axis_2")
-        self.frame_axis_2.setMaximumSize(QSize(16777215, 40))
-        self.frame_axis_2.setStyleSheet(u"QSpinBox {\n"
+        self.frame_axis = QFrame(self.frame_17)
+        self.frame_axis.setObjectName(u"frame_axis")
+        self.frame_axis.setMaximumSize(QSize(16777215, 40))
+        self.frame_axis.setStyleSheet(u"QPushButton {\n"
+"	border: 1px solid #333333;\n"
+"	border-radius: 14px;\n"
+"	background:  rgb(70, 70, 70);\n"
+"	color: rgb(255, 255, 255);\n"
+"	padding: 3px 0px 2px 2px\n"
+"\n"
+"}\n"
+"\n"
+"QSpinBox {\n"
 "	border: 1px solid #333333;\n"
 "	border-radius: 15px;\n"
 "	background:  rgb(70, 70, 70);\n"
@@ -242,7 +251,8 @@ class Ui_Form(object):
 "QSpinBox::down-arrow:disabled {    \n"
 "	image: url(:/icons/img/downArrowDis.png);\n"
 "	width : 10px;\n"
-"	margin-right:4px;\n"
+""
+                        "	margin-right:4px;\n"
 "}\n"
 "\n"
 "QSpinBox::up-arrow:disabled {    \n"
@@ -250,13 +260,13 @@ class Ui_Form(object):
 "	width : 10px;\n"
 "	margin-right:4px;\n"
 "}")
-        self.frame_axis_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_axis_2.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_6 = QHBoxLayout(self.frame_axis_2)
+        self.frame_axis.setFrameShape(QFrame.StyledPanel)
+        self.frame_axis.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_axis)
         self.horizontalLayout_6.setSpacing(50)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.horizontalLayout_6.setContentsMargins(5, 5, 5, 5)
-        self.frame_20 = QFrame(self.frame_axis_2)
+        self.frame_20 = QFrame(self.frame_axis)
         self.frame_20.setObjectName(u"frame_20")
         self.frame_20.setFrameShape(QFrame.NoFrame)
         self.frame_20.setFrameShadow(QFrame.Raised)
@@ -283,19 +293,19 @@ class Ui_Form(object):
 
         self.horizontalLayout_43.addWidget(self.label_78)
 
-        self.spinBox_5 = QSpinBox(self.frame_20)
-        self.spinBox_5.setObjectName(u"spinBox_5")
-        self.spinBox_5.setEnabled(True)
-        self.spinBox_5.setMinimumSize(QSize(70, 30))
-        self.spinBox_5.setMaximumSize(QSize(60, 30))
+        self.spinBox_3 = QSpinBox(self.frame_20)
+        self.spinBox_3.setObjectName(u"spinBox_3")
+        self.spinBox_3.setEnabled(True)
+        self.spinBox_3.setMinimumSize(QSize(70, 30))
+        self.spinBox_3.setMaximumSize(QSize(60, 30))
         font3 = QFont()
         font3.setFamilies([u"PF BeauSans Pro Light"])
         font3.setPointSize(9)
-        self.spinBox_5.setFont(font3)
-        self.spinBox_5.setMaximum(99000)
-        self.spinBox_5.setValue(0)
+        self.spinBox_3.setFont(font3)
+        self.spinBox_3.setMaximum(99000)
+        self.spinBox_3.setValue(0)
 
-        self.horizontalLayout_43.addWidget(self.spinBox_5)
+        self.horizontalLayout_43.addWidget(self.spinBox_3)
 
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -308,21 +318,21 @@ class Ui_Form(object):
 
         self.horizontalLayout_43.addWidget(self.label_79)
 
-        self.spinBox_6 = QSpinBox(self.frame_20)
-        self.spinBox_6.setObjectName(u"spinBox_6")
-        self.spinBox_6.setEnabled(True)
-        self.spinBox_6.setMinimumSize(QSize(70, 30))
-        self.spinBox_6.setMaximumSize(QSize(60, 30))
-        self.spinBox_6.setFont(font3)
-        self.spinBox_6.setMaximum(99000)
-        self.spinBox_6.setValue(99000)
+        self.spinBox_4 = QSpinBox(self.frame_20)
+        self.spinBox_4.setObjectName(u"spinBox_4")
+        self.spinBox_4.setEnabled(True)
+        self.spinBox_4.setMinimumSize(QSize(70, 30))
+        self.spinBox_4.setMaximumSize(QSize(60, 30))
+        self.spinBox_4.setFont(font3)
+        self.spinBox_4.setMaximum(99000)
+        self.spinBox_4.setValue(99000)
 
-        self.horizontalLayout_43.addWidget(self.spinBox_6)
+        self.horizontalLayout_43.addWidget(self.spinBox_4)
 
 
         self.horizontalLayout_6.addWidget(self.frame_20)
 
-        self.frame_100 = QFrame(self.frame_axis_2)
+        self.frame_100 = QFrame(self.frame_axis)
         self.frame_100.setObjectName(u"frame_100")
         self.frame_100.setFrameShape(QFrame.NoFrame)
         self.frame_100.setFrameShadow(QFrame.Raised)
@@ -348,16 +358,16 @@ class Ui_Form(object):
 
         self.horizontalLayout_48.addWidget(self.label_80)
 
-        self.spinBox_7 = QSpinBox(self.frame_100)
-        self.spinBox_7.setObjectName(u"spinBox_7")
-        self.spinBox_7.setEnabled(True)
-        self.spinBox_7.setMinimumSize(QSize(70, 30))
-        self.spinBox_7.setMaximumSize(QSize(60, 30))
-        self.spinBox_7.setFont(font3)
-        self.spinBox_7.setMaximum(99000)
-        self.spinBox_7.setValue(0)
+        self.spinBox = QSpinBox(self.frame_100)
+        self.spinBox.setObjectName(u"spinBox")
+        self.spinBox.setEnabled(True)
+        self.spinBox.setMinimumSize(QSize(70, 30))
+        self.spinBox.setMaximumSize(QSize(60, 30))
+        self.spinBox.setFont(font3)
+        self.spinBox.setMaximum(99000)
+        self.spinBox.setValue(0)
 
-        self.horizontalLayout_48.addWidget(self.spinBox_7)
+        self.horizontalLayout_48.addWidget(self.spinBox)
 
         self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -370,23 +380,32 @@ class Ui_Form(object):
 
         self.horizontalLayout_48.addWidget(self.label_81)
 
-        self.spinBox_8 = QSpinBox(self.frame_100)
-        self.spinBox_8.setObjectName(u"spinBox_8")
-        self.spinBox_8.setEnabled(True)
-        self.spinBox_8.setMinimumSize(QSize(70, 30))
-        self.spinBox_8.setMaximumSize(QSize(60, 30))
-        self.spinBox_8.setFont(font3)
-        self.spinBox_8.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.spinBox_8.setMaximum(99000)
-        self.spinBox_8.setValue(99000)
+        self.spinBox_2 = QSpinBox(self.frame_100)
+        self.spinBox_2.setObjectName(u"spinBox_2")
+        self.spinBox_2.setEnabled(True)
+        self.spinBox_2.setMinimumSize(QSize(70, 30))
+        self.spinBox_2.setMaximumSize(QSize(60, 30))
+        self.spinBox_2.setFont(font3)
+        self.spinBox_2.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.spinBox_2.setMaximum(99000)
+        self.spinBox_2.setValue(99000)
 
-        self.horizontalLayout_48.addWidget(self.spinBox_8)
+        self.horizontalLayout_48.addWidget(self.spinBox_2)
+
+        self.refresh = QPushButton(self.frame_100)
+        self.refresh.setObjectName(u"refresh")
+        self.refresh.setMaximumSize(QSize(30, 30))
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.refresh.setIcon(icon2)
+
+        self.horizontalLayout_48.addWidget(self.refresh)
 
 
         self.horizontalLayout_6.addWidget(self.frame_100)
 
 
-        self.verticalLayout_10.addWidget(self.frame_axis_2)
+        self.verticalLayout_10.addWidget(self.frame_axis)
 
 
         self.horizontalLayout_47.addWidget(self.frame_17)
@@ -441,8 +460,8 @@ class Ui_Form(object):
 
         self.frame_23 = QFrame(self.frame_21)
         self.frame_23.setObjectName(u"frame_23")
-        self.frame_23.setMinimumSize(QSize(225, 100))
-        self.frame_23.setMaximumSize(QSize(225, 100))
+        self.frame_23.setMinimumSize(QSize(225, 80))
+        self.frame_23.setMaximumSize(QSize(225, 80))
         self.frame_23.setFrameShape(QFrame.StyledPanel)
         self.frame_23.setFrameShadow(QFrame.Raised)
         self.verticalLayout_13 = QVBoxLayout(self.frame_23)
@@ -458,15 +477,15 @@ class Ui_Form(object):
 
         self.verticalLayout_13.addWidget(self.label_16)
 
-        self.mainBox_2 = QComboBox(self.frame_23)
-        self.mainBox_2.setObjectName(u"mainBox_2")
-        self.mainBox_2.setMinimumSize(QSize(235, 30))
-        self.mainBox_2.setMaximumSize(QSize(225, 30))
+        self.mainBox = QComboBox(self.frame_23)
+        self.mainBox.setObjectName(u"mainBox")
+        self.mainBox.setMinimumSize(QSize(235, 30))
+        self.mainBox.setMaximumSize(QSize(225, 30))
         font5 = QFont()
         font5.setFamilies([u"PF BeauSans Pro"])
         font5.setPointSize(11)
-        self.mainBox_2.setFont(font5)
-        self.mainBox_2.setStyleSheet(u"QComboBox {\n"
+        self.mainBox.setFont(font5)
+        self.mainBox.setStyleSheet(u"QComboBox {\n"
 "	border: 1px solid #333333;\n"
 "	border-radius: 15px;\n"
 "	background:  rgb(70, 70, 70);\n"
@@ -512,15 +531,15 @@ class Ui_Form(object):
 "}\n"
 "")
 
-        self.verticalLayout_13.addWidget(self.mainBox_2)
+        self.verticalLayout_13.addWidget(self.mainBox)
 
 
         self.verticalLayout_12.addWidget(self.frame_23)
 
         self.frame_24 = QFrame(self.frame_21)
         self.frame_24.setObjectName(u"frame_24")
-        self.frame_24.setMinimumSize(QSize(225, 100))
-        self.frame_24.setMaximumSize(QSize(225, 100))
+        self.frame_24.setMinimumSize(QSize(225, 80))
+        self.frame_24.setMaximumSize(QSize(225, 80))
         self.frame_24.setFrameShape(QFrame.StyledPanel)
         self.frame_24.setFrameShadow(QFrame.Raised)
         self.verticalLayout_14 = QVBoxLayout(self.frame_24)
@@ -536,13 +555,13 @@ class Ui_Form(object):
 
         self.verticalLayout_14.addWidget(self.label_17)
 
-        self.domainBox_2 = QComboBox(self.frame_24)
-        self.domainBox_2.setObjectName(u"domainBox_2")
-        self.domainBox_2.setEnabled(True)
-        self.domainBox_2.setMinimumSize(QSize(235, 30))
-        self.domainBox_2.setMaximumSize(QSize(225, 30))
-        self.domainBox_2.setFont(font5)
-        self.domainBox_2.setStyleSheet(u"QComboBox {\n"
+        self.domainBox = QComboBox(self.frame_24)
+        self.domainBox.setObjectName(u"domainBox")
+        self.domainBox.setEnabled(True)
+        self.domainBox.setMinimumSize(QSize(235, 30))
+        self.domainBox.setMaximumSize(QSize(225, 30))
+        self.domainBox.setFont(font5)
+        self.domainBox.setStyleSheet(u"QComboBox {\n"
 "	border: 1px solid #333333;\n"
 "	border-radius: 15px;\n"
 "	background:  rgb(70, 70, 70);\n"
@@ -587,24 +606,24 @@ class Ui_Form(object):
 "	selection-color: #4f4f4f;\n"
 "}\n"
 "")
-        self.domainBox_2.setEditable(False)
+        self.domainBox.setEditable(False)
 
-        self.verticalLayout_14.addWidget(self.domainBox_2)
+        self.verticalLayout_14.addWidget(self.domainBox)
 
 
         self.verticalLayout_12.addWidget(self.frame_24)
 
-        self.frame_samplingBox_2 = QFrame(self.frame_21)
-        self.frame_samplingBox_2.setObjectName(u"frame_samplingBox_2")
-        self.frame_samplingBox_2.setMinimumSize(QSize(225, 100))
-        self.frame_samplingBox_2.setMaximumSize(QSize(225, 100))
-        self.frame_samplingBox_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_samplingBox_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_15 = QVBoxLayout(self.frame_samplingBox_2)
+        self.frame_samplingBox = QFrame(self.frame_21)
+        self.frame_samplingBox.setObjectName(u"frame_samplingBox")
+        self.frame_samplingBox.setMinimumSize(QSize(225, 80))
+        self.frame_samplingBox.setMaximumSize(QSize(80, 150))
+        self.frame_samplingBox.setFrameShape(QFrame.StyledPanel)
+        self.frame_samplingBox.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_15 = QVBoxLayout(self.frame_samplingBox)
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.label_18 = QLabel(self.frame_samplingBox_2)
+        self.label_18 = QLabel(self.frame_samplingBox)
         self.label_18.setObjectName(u"label_18")
         self.label_18.setMaximumSize(QSize(16777215, 20))
         self.label_18.setFont(font4)
@@ -613,13 +632,13 @@ class Ui_Form(object):
 
         self.verticalLayout_15.addWidget(self.label_18)
 
-        self.samplingBox_2 = QComboBox(self.frame_samplingBox_2)
-        self.samplingBox_2.setObjectName(u"samplingBox_2")
-        self.samplingBox_2.setEnabled(True)
-        self.samplingBox_2.setMinimumSize(QSize(235, 30))
-        self.samplingBox_2.setMaximumSize(QSize(225, 30))
-        self.samplingBox_2.setFont(font5)
-        self.samplingBox_2.setStyleSheet(u"QComboBox {\n"
+        self.samplingBox = QComboBox(self.frame_samplingBox)
+        self.samplingBox.setObjectName(u"samplingBox")
+        self.samplingBox.setEnabled(True)
+        self.samplingBox.setMinimumSize(QSize(235, 30))
+        self.samplingBox.setMaximumSize(QSize(225, 30))
+        self.samplingBox.setFont(font5)
+        self.samplingBox.setStyleSheet(u"QComboBox {\n"
 "	border: 1px solid #333333;\n"
 "	border-radius: 15px;\n"
 "	background:  rgb(70, 70, 70);\n"
@@ -664,12 +683,12 @@ class Ui_Form(object):
 "	selection-color: #4f4f4f;\n"
 "}\n"
 "")
-        self.samplingBox_2.setEditable(False)
+        self.samplingBox.setEditable(False)
 
-        self.verticalLayout_15.addWidget(self.samplingBox_2)
+        self.verticalLayout_15.addWidget(self.samplingBox)
 
 
-        self.verticalLayout_12.addWidget(self.frame_samplingBox_2)
+        self.verticalLayout_12.addWidget(self.frame_samplingBox)
 
         self.frame_98 = QFrame(self.frame_21)
         self.frame_98.setObjectName(u"frame_98")
@@ -690,15 +709,15 @@ class Ui_Form(object):
 
         self.horizontalLayout_49.addWidget(self.usernameLabel_9)
 
-        self.automaticCheckBox_2 = QCheckBox(self.frame_98)
-        self.automaticCheckBox_2.setObjectName(u"automaticCheckBox_2")
-        self.automaticCheckBox_2.setEnabled(True)
+        self.automaticCheckBox = QCheckBox(self.frame_98)
+        self.automaticCheckBox.setObjectName(u"automaticCheckBox")
+        self.automaticCheckBox.setEnabled(True)
         font6 = QFont()
         font6.setFamilies([u"PF BeauSans Pro"])
         font6.setPointSize(10)
         font6.setBold(False)
-        self.automaticCheckBox_2.setFont(font6)
-        self.automaticCheckBox_2.setStyleSheet(u"QCheckBox{\n"
+        self.automaticCheckBox.setFont(font6)
+        self.automaticCheckBox.setStyleSheet(u"QCheckBox{\n"
 "	color: rgb(255,255,255);\n"
 "}\n"
 "QCheckBox::indicator{\n"
@@ -719,10 +738,10 @@ class Ui_Form(object):
 "QCheckBox::indicator:checked:disabled{\n"
 "	background-color: rgb(136, 138, 133);\n"
 "}")
-        self.automaticCheckBox_2.setCheckable(True)
-        self.automaticCheckBox_2.setChecked(True)
+        self.automaticCheckBox.setCheckable(True)
+        self.automaticCheckBox.setChecked(True)
 
-        self.horizontalLayout_49.addWidget(self.automaticCheckBox_2)
+        self.horizontalLayout_49.addWidget(self.automaticCheckBox)
 
 
         self.verticalLayout_12.addWidget(self.frame_98)
@@ -871,14 +890,15 @@ class Ui_Form(object):
         self.label_66.setText(QCoreApplication.translate("Form", u"y-axis", None))
         self.label_80.setText(QCoreApplication.translate("Form", u"from:", None))
         self.label_81.setText(QCoreApplication.translate("Form", u"to:", None))
+        self.refresh.setText("")
         self.label_14.setText("")
         self.label_15.setText(QCoreApplication.translate("Form", u"Settings", None))
-        self.label_16.setText(QCoreApplication.translate("Form", u"Metrics:", None))
-        self.label_17.setText(QCoreApplication.translate("Form", u"Domain:", None))
-        self.domainBox_2.setCurrentText("")
-        self.label_18.setText(QCoreApplication.translate("Form", u"Format:", None))
+        self.label_16.setText(QCoreApplication.translate("Form", u"metrics:", None))
+        self.label_17.setText(QCoreApplication.translate("Form", u"domain:", None))
+        self.domainBox.setCurrentText("")
+        self.label_18.setText(QCoreApplication.translate("Form", u"format:", None))
         self.usernameLabel_9.setText(QCoreApplication.translate("Form", u"limits:", None))
-        self.automaticCheckBox_2.setText(QCoreApplication.translate("Form", u"automatic", None))
+        self.automaticCheckBox.setText(QCoreApplication.translate("Form", u"automatic", None))
         self.exportFig_2.setText(QCoreApplication.translate("Form", u"export figure", None))
         self.exportButton_2.setText(QCoreApplication.translate("Form", u"export data", None))
         self.label.setText(QCoreApplication.translate("Form", u"\u00a9 2021 Nidec\n"
