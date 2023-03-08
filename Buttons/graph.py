@@ -165,10 +165,11 @@ class UI_Buttons_Graph():
         self.gp.show()
 
     def saveGraph(self, window):
+        from Utils.graph_utils import chartView
         fileName, _ = QFileDialog.getSaveFileName(
             self, "Save Image", r"H:\Image", "Image Files (*.png *.jpg *.bmp)")
         fileName = fileName + '.png'
-        image = self.chartview.grab()
+        image = chartView.grab()
 
         if window == "default":
             image = image.scaled(800, 800)

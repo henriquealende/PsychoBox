@@ -61,6 +61,8 @@ class Expand_Graph(QMainWindow):
         self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
         self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="expand"))
         self.gp.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self, window = "expand"))
+        self.gp.refresh.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
+
 
     def getAndReadWav(self):
         from main import Main_Window

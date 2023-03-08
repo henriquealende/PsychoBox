@@ -6,9 +6,10 @@ from PySide2.QtWidgets import QAbstractItemView
 
 from Utils.utils import *
 
+global chartView
 
 def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window):
-    
+    global chartView
     
     chart = QtCharts.QChart()
     chart.legend().hide()
@@ -72,56 +73,49 @@ def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window)
     
     chartView = QtCharts.QChartView(chart)
     chartView.setRenderHint(QPainter.Antialiasing)
-    plotGraph(self, window, chartView)
+    plotGraph(self, chartView, window)
     
 
 def limitsAdjust(self, window, domain, LIM):
+    if window == "default":
+        automaticCheckBox = self.ui.automaticCheckBox
+        spinBox = self.ui.spinBox
+        spinBox_2 = self.ui.spinBox_2
+        spinBox_3 = self.ui.spinBox_3
+        spinBox_4 = self.ui.spinBox_4
+
+    elif window == "expand":
+        automaticCheckBox = self.gp.automaticCheckBox
+        spinBox = self.gp.spinBox
+        spinBox_2 = self.gp.spinBox_2
+        spinBox_3 = self.gp.spinBox_3
+        spinBox_4 = self.gp.spinBox_4
+
     if domain == "Time":
-        if window == 'default':
-            if self.ui.automaticCheckBox.isChecked():
-                self.axis_x.setRange(0, LIM)
-                self.axis_y.setRange(-1, 1)
-            else:
-                xlim_inf = self.ui.spinBox_3.value()
-                xlim_sup = self.ui.spinBox_4.value()
-                ylim_inf = self.ui.spinBox.value()
-                ylim_sup = self.ui.spinBox_2.value()
-                self.axis_x.setRange(xlim_inf, xlim_sup)
-                self.axis_y.setRange(ylim_inf, ylim_sup)
+        if automaticCheckBox.isChecked():
+            self.axis_x.setRange(0, LIM)
+            self.axis_y.setRange(-1, 1)
         else:
-            if self.gp.automaticCheckBox.isChecked():
-                self.axis_x.setRange(0, LIM)
-                self.axis_y.setRange(-1, 1)
-            else:
-                xlim_inf = self.gp.spinBox_3.value()
-                xlim_sup = self.gp.spinBox_4.value()
-                ylim_inf = self.gp.spinBox.value()
-                ylim_sup = self.gp.spinBox_2.value()
-                self.axis_x.setRange(xlim_inf, xlim_sup)
-                self.axis_y.setRange(ylim_inf, ylim_sup)
+            xlim_inf = spinBox_3.value()
+            xlim_sup = spinBox_4.value()
+            ylim_inf = spinBox.value()
+            ylim_sup = spinBox_2.value()
+            self.axis_x.setRange(xlim_inf, xlim_sup)
+            self.axis_y.setRange(ylim_inf, ylim_sup)
+
     elif domain == "Frequency":
-        if window == 'default':
-            if self.ui.automaticCheckBox.isChecked():
-                self.axis_x.setRange(20, np.max(LIM))
-            else:
-                xlim_inf = self.ui.spinBox_3.value()
-                xlim_sup = self.ui.spinBox_4.value()
-                ylim_inf = self.ui.spinBox.value()
-                ylim_sup = self.ui.spinBox_2.value()
-                self.axis_x.setRange(xlim_inf, xlim_sup)
-                self.axis_y.setRange(ylim_inf, ylim_sup)
+        if automaticCheckBox.isChecked():
+            self.axis_x.setRange(20, np.max(LIM))
         else:
-            if self.gp.automaticCheckBox.isChecked():
-                self.axis_x.setRange(20, np.max(LIM))
-            else:
-                xlim_inf = self.gp.spinBox_3.value()
-                xlim_sup = self.gp.spinBox_4.value()
-                ylim_inf = self.gp.spinBox.value()
-                ylim_sup = self.gp.spinBox_2.value()
-                self.axis_x.setRange(xlim_inf, xlim_sup)
-                self.axis_y.setRange(ylim_inf, ylim_sup)
+            xlim_inf = spinBox_3.value()
+            xlim_sup = spinBox_4.value()
+            ylim_inf = spinBox.value()
+            ylim_sup = spinBox_2.value()
+            self.axis_x.setRange(xlim_inf, xlim_sup)
+            self.axis_y.setRange(ylim_inf, ylim_sup)
+
                 
-def plotGraph(self, window, chartView):
+def plotGraph(self, chartView, window):
     if window == "default":
         self.ui.gridLayout.addWidget(chartView, 1, 0)
     elif window == "expand":
