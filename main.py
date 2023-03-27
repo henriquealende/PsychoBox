@@ -11,8 +11,6 @@ import Buttons.filter as bt_fi
 import Buttons.graph as bt_gh
 import Buttons.calibration as bt_ca
 
-
-
 from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtWidgets import (QApplication, QWidget, QGraphicsOpacityEffect, QMessageBox, QGraphicsColorizeEffect, QLabel, QVBoxLayout, QMainWindow)
 from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargins, QTime, QPoint)
@@ -22,8 +20,6 @@ from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
 pathname = {}
 path = {}
 projects = []
-
-
 
 class Main_Window(QMainWindow):
     def __init__(self):

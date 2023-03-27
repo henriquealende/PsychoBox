@@ -104,12 +104,10 @@ class UI_Buttons_Graph():
         self.ui.listWidget2.addItem(filename)
 
     def selectItem(self):
-        global path, pathname       
-
+        global path, pathname      
         metrics = self.ui.mainBox.currentText()
         domain = self.ui.domainBox.currentText()
-        samplingBox = self.ui.samplingBox.currentText()
-        
+        samplingBox = self.ui.samplingBox.currentText()        
         presetImport(self, domain)  
         selectMulti(self)        
         nSelectItems = len(self.ui.listWidget2.selectedItems())
@@ -127,9 +125,9 @@ class UI_Buttons_Graph():
             self.ui.automaticCheckBox.setEnabled(False)
             self.ui.automaticCheckBox.setChecked(True)
             self.ui.applyButton.setEnabled(False)
-       
+
         elif nSelectItems > 1:
-            pass
+            print('Hello world')
        
         else:            
             filename = str(self.ui.listWidget2.currentItem().text())
