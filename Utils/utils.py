@@ -45,9 +45,8 @@ def getBandValue(freqData, samplingRate):
     lowerFrequencies = centralFrequencies/filterFactor
     upperLoc = np.round((N/samplingRate)*upperFrequencies)
     lowerLoc = np.round((N/samplingRate)*lowerFrequencies)
-    
-    
-    
+
+
     matrix = np.zeros([len(centralFrequencies), len(freqData)])
   
     for n in range(len(centralFrequencies)):

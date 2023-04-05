@@ -111,7 +111,6 @@ class UI_Buttons_Graph():
         presetImport(self, domain)  
         selectMulti(self)        
         nSelectItems = len(self.ui.listWidget2.selectedItems())
-        
         if nSelectItems > 2:
             self.ui.listWidget2.clearSelection()
             self.ui.mainBox.setCurrentIndex(0)
@@ -127,14 +126,14 @@ class UI_Buttons_Graph():
             self.ui.applyButton.setEnabled(False)
 
         elif nSelectItems > 1:
-            print('Hello world')
-       
+            print(self.ui.listWidget2.selectedItems());
+    
         else:            
             filename = str(self.ui.listWidget2.currentItem().text())
-            self.timeVector, self.samplingRate = read_wav(path + '/' + filename)
-            self.timeVector = 2*(self.timeVector/(2**16))
+            self.timeData, self.samplingRate = read_wav(path + '/' + filename)
+            self.timeData = 2*(self.timeData/(2**16))
         
-            self.chartview = getGraph(self, self.timeVector, self.samplingRate, 
+            self.chartview = getGraph(self, self.timeData, self.samplingRate,
                                     metrics, domain, samplingBox, window = "default")
             pathname = (path + '/' + filename)
                
