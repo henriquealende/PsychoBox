@@ -111,12 +111,37 @@ def limitsAdjust(self, window, domain, LIM):
             self.axis_y.setRange(ylim_inf, ylim_sup)
 
 
-def selectMulti(self):
+def selectMulti(self, path, metrics, domain, samplingBox):
     if self.ui.holdOnCheck.isChecked():
         self.ui.listWidget2.setSelectionMode(QAbstractItemView.MultiSelection)
+        nSelectItems = len(self.ui.listWidget2.selectedItems())
+        if nSelectItems > 2:
+            self.ui.listWidget2.clearSelection()
+            self.ui.mainBox.setCurrentIndex(0)
+            self.ui.expandGraph.setEnabled(False)
+            self.ui.exportFig.setEnabled(False)
+            self.ui.exportData.setEnabled(False)
+            self.ui.domainBox.setCurrentIndex(0)
+            self.ui.domainBox.setEnabled(False)
+            self.ui.samplingBox.setCurrentIndex(0)
+            self.ui.samplingBox.setEnabled(False)
+            self.ui.automaticCheckBox.setEnabled(False)
+            self.ui.automaticCheckBox.setChecked(True)
+            self.ui.applyButton.setEnabled(False)
+        elif nSelectItems > 1:
+            print(self.ui.listWidget2.selectedItems());
     else:
         self.ui.listWidget2.setSelectionMode(QAbstractItemView.SingleSelection)
+        filename = str(self.ui.listWidget2.currentItem().text())
+        self.timeData, self.samplingRate = read_wav(path + '/' + filename)
+        self.timeData = 2*(self.timeData/(2**16))
     
+        self.chartview = getGraph(self, self.timeData, self.samplingRate,
+                                metrics, domain, samplingBox, window = "default")
+        pathname = (path + '/' + filename)
+        return pathname
+        
+        
 def presetImport(self, domain):
     self.ui.mainBox.setCurrentIndex(0)
     self.ui.expandGraph.setEnabled(True)

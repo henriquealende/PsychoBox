@@ -9,7 +9,11 @@ import pandas as pd
 class UI_Buttons_Graph():
     def __init__(self):
         super(UI_Buttons_Graph, self).__init__()
-
+        
+    def graphButton(self):
+        if self.online:
+            self.ui.rightContent.setCurrentWidget(self.ui.graphPage)
+            
     def selectGraph(self):
         condition = self.ui.mainBox.currentText()
         if condition != 'Time-Frequency':
@@ -90,11 +94,6 @@ class UI_Buttons_Graph():
                     self.gp.spinBox_3.setValue(20)
                     self.gp.spinBox_4.setValue(10000)
 
-
-    def graphButton(self):
-        if self.online:
-            self.ui.rightContent.setCurrentWidget(self.ui.graphPage)
-
     def importButton(self):
         global path
         importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')
@@ -109,41 +108,15 @@ class UI_Buttons_Graph():
         domain = self.ui.domainBox.currentText()
         samplingBox = self.ui.samplingBox.currentText()        
         presetImport(self, domain)  
-        selectMulti(self)        
-        nSelectItems = len(self.ui.listWidget2.selectedItems())
-        if nSelectItems > 2:
-            self.ui.listWidget2.clearSelection()
-            self.ui.mainBox.setCurrentIndex(0)
-            self.ui.expandGraph.setEnabled(False)
-            self.ui.exportFig.setEnabled(False)
-            self.ui.exportData.setEnabled(False)
-            self.ui.domainBox.setCurrentIndex(0)
-            self.ui.domainBox.setEnabled(False)
-            self.ui.samplingBox.setCurrentIndex(0)
-            self.ui.samplingBox.setEnabled(False)
-            self.ui.automaticCheckBox.setEnabled(False)
-            self.ui.automaticCheckBox.setChecked(True)
-            self.ui.applyButton.setEnabled(False)
-
-        elif nSelectItems > 1:
-            print(self.ui.listWidget2.selectedItems());
-    
-        else:            
-            filename = str(self.ui.listWidget2.currentItem().text())
-            self.timeData, self.samplingRate = read_wav(path + '/' + filename)
-            self.timeData = 2*(self.timeData/(2**16))
-        
-            self.chartview = getGraph(self, self.timeData, self.samplingRate,
-                                    metrics, domain, samplingBox, window = "default")
-            pathname = (path + '/' + filename)
+        pathname = selectMulti(self, path, metrics, domain, samplingBox)      
                
     def getAndReadWav(self):
         metrics = self.gp.mainBox.currentText()
         domain = self.gp.domainBox.currentText()
         samplingBox = self.gp.samplingBox.currentText()
-        self.timeVector, self.samplingRate = read_wav(pathname)
-        self.timeVector = 2*(self.timeVector/(2**16))
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate,
+        self.timeData, self.samplingRate = read_wav(pathname)
+        self.timeData = 2*(self.timeData/(2**16))
+        self.chartview = getGraph(self, self.timeData, self.samplingRate,
                                      metrics, domain, samplingBox, window = "expand")
 
     def getPathname(self):
@@ -154,7 +127,7 @@ class UI_Buttons_Graph():
         metrics = self.ui.mainBox.currentText()
         domain = self.ui.domainBox.currentText()
         samplingBox = self.ui.samplingBox.currentText()
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate,
+        self.chartview = getGraph(self, self.timeData, self.samplingRate,
                                      metrics, domain, samplingBox, window="default")
 
     def expandGraph(self):
