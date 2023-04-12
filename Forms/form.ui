@@ -3739,8 +3739,8 @@ QPushButton:disabled{
                         </property>
                         <property name="styleSheet">
                          <string notr="true">
-QSlider::groove:horizontal {
-				background: rgb(182,182,182);
+QSlider::groove:horizontal {				
+				background-color: rgb(218, 218, 218);
                  width:170px;
 				height: 10px;
 				  border-radius: 5px;

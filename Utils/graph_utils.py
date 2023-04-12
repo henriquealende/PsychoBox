@@ -16,10 +16,17 @@ def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window)
     chart.legend().hide()
     chart.setBackgroundRoundness(12.0)
     chart.setDropShadowEnabled(True)
-    chart.setAnimationOptions(QtCharts.QChart.AllAnimations)
+    chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
     chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
-    series = QtCharts.QLineSeries()
+        
+    defineDomain(self, chart, domain, window, timeData, samplingRate, samplingBox)    
+    
+    pen = QPen(QtGui.QColor(0, 155, 74))
+    pen.setWidth(1)
+    self.series.setPen(pen)
+    plotGraph(self, self.series, chart, window)       
 
+def defineDomain(self, chart, domain, window, timeData, samplingRate, samplingBox):
     if domain == 'Time':
         y = timeData
         T = len(timeData)/samplingRate
@@ -27,10 +34,10 @@ def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window)
         self.data_table = prepareData(x, y)       
         name = "Series "
         for i, lst in enumerate(self.data_table):
-            series = QtCharts.QLineSeries(chart)
+            self.series = QtCharts.QLineSeries(chart)
             for data in lst:
-                series.append(data[0])
-            series.setName(f"{name}{i}") 
+                self.series.append(data[0])
+            self.series.setName(f"{name}{i}") 
         self.axis_x = QtCharts.QValueAxis()
         self.axis_x.setTickCount(5)
         self.axis_x.setLabelFormat("%.2f")
@@ -52,10 +59,10 @@ def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window)
         self.data_table = prepareData(x, y)       
         name = "Series "
         for i, lst in enumerate(self.data_table):
-            series = QtCharts.QLineSeries(chart)
+            self.series = QtCharts.QLineSeries(chart)
             for data in lst:
-                series.append(data[0])
-            series.setName(f"{name}{i}")           
+                self.series.append(data[0])
+            self.series.setName(f"{name}{i}")           
 
         self.axis_x = QtCharts.QLogValueAxis()
         self.axis_x.setLabelFormat("%.0f")
@@ -66,11 +73,19 @@ def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window)
         self.axis_y.setTitleText("SPL [dB]")
         limitsAdjust(self, window, domain, np.max(x))
     
-    pen = QPen(QtGui.QColor(0, 155, 74))
-    pen.setWidth(1)
-    series.setPen(pen)
-    plotGraph(self, series, chart, window)
-    
+
+def prepareData(x, y, list_count = 1):
+    data_table = []
+    N = len(x)
+    for i in range(list_count):
+        data_list = []
+        for j in range(N):
+            value = QPointF(x[j], y[j])
+            label = f"Slice {i}: {j}"
+            data_list.append((value, label))
+        data_table.append(data_list)
+    return data_table
+
 
 def limitsAdjust(self, window, domain, LIM):
     if window == "default":
@@ -79,14 +94,12 @@ def limitsAdjust(self, window, domain, LIM):
         spinBox_2 = self.ui.spinBox_2
         spinBox_3 = self.ui.spinBox_3
         spinBox_4 = self.ui.spinBox_4
-
     elif window == "expand":
         automaticCheckBox = self.gp.automaticCheckBox
         spinBox = self.gp.spinBox
         spinBox_2 = self.gp.spinBox_2
         spinBox_3 = self.gp.spinBox_3
         spinBox_4 = self.gp.spinBox_4
-
     if domain == "Time":
         if automaticCheckBox.isChecked():
             self.axis_x.setRange(0, LIM)
@@ -98,7 +111,6 @@ def limitsAdjust(self, window, domain, LIM):
             ylim_sup = spinBox_2.value()
             self.axis_x.setRange(xlim_inf, xlim_sup)
             self.axis_y.setRange(ylim_inf, ylim_sup)
-
     elif domain == "Frequency":
         if automaticCheckBox.isChecked():
             self.axis_x.setRange(20, np.max(LIM))
@@ -109,7 +121,20 @@ def limitsAdjust(self, window, domain, LIM):
             ylim_sup = spinBox_2.value()
             self.axis_x.setRange(xlim_inf, xlim_sup)
             self.axis_y.setRange(ylim_inf, ylim_sup)
+                
+def plotGraph(self, series, chart, window):    
+    chart.addSeries(series)
+    chart.setAxisX(self.axis_x, series)
+    chart.setAxisY(self.axis_y, series)
+    chartView = QtCharts.QChartView(chart)
+    chartView.setRenderHint(QPainter.Antialiasing)
+    if window == "default":
+        self.ui.gridLayout.addWidget(chartView, 1, 0)
+    elif window == "expand":
+        self.gp.gridLayout_2.addWidget(chartView, 1, 0)
+    return chartView
 
+###########################################################################
 
 def selectMulti(self, path, metrics, domain, samplingBox):
     if self.ui.holdOnCheck.isChecked():
@@ -133,15 +158,14 @@ def selectMulti(self, path, metrics, domain, samplingBox):
     else:
         self.ui.listWidget2.setSelectionMode(QAbstractItemView.SingleSelection)
         filename = str(self.ui.listWidget2.currentItem().text())
-        self.timeData, self.samplingRate = read_wav(path + '/' + filename)
+        self.timeData, self.samplingRate = getAudio(path + '/' + filename)
         self.timeData = 2*(self.timeData/(2**16))
     
         self.chartview = getGraph(self, self.timeData, self.samplingRate,
                                 metrics, domain, samplingBox, window = "default")
         pathname = (path + '/' + filename)
         return pathname
-        
-        
+    
 def presetImport(self, domain):
     self.ui.mainBox.setCurrentIndex(0)
     self.ui.expandGraph.setEnabled(True)
@@ -155,33 +179,3 @@ def presetImport(self, domain):
         self.ui.automaticCheckBox.setEnabled(True)
         self.ui.automaticCheckBox.setChecked(True)
         self.ui.applyButton.setEnabled(True)
-
-def prepareData(x, y, list_count = 1):
-    data_table = []
-    N = len(x)
-    for i in range(list_count):
-        data_list = []
-        for j in range(N):
-            value = QPointF(x[j], y[j])
-            label = f"Slice {i}: {j}"
-            data_list.append((value, label))
-        data_table.append(data_list)
-    return data_table
-                
-def plotGraph(self, series, chart, window):    
-    chart.addSeries(series)
-    chart.setAxisX(self.axis_x, series)
-    chart.setAxisY(self.axis_y, series)
-    chartView = QtCharts.QChartView(chart)
-    chartView.setRenderHint(QPainter.Antialiasing)
-    if window == "default":
-        self.ui.gridLayout.addWidget(chartView, 1, 0)
-    elif window == "expand":
-        self.gp.gridLayout_2.addWidget(chartView, 1, 0)
-    return chartView
-
- #   items = self.ui.listWidget2.selectedItems()
- #   if len(items) >= 3:
- #       print(len(items))
-
-

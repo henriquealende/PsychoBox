@@ -83,7 +83,7 @@ class UI_Buttons_Filter():
         self.ui.filterAudioButton.setEnabled(True)
         self.ui.muteButton.setEnabled(True)
         self.ui.volumeSlider.setEnabled(True)
-        self.timeVector, self.samplingRate = read_wav(path + '/' + filename)
+        self.timeData, self.samplingRate = getAudio(path + '/' + filename)
         #mixer.pre_init(frequency=self.samplingRate)
         mixer.music.load(path + '/' + filename)
         self.pause = False
@@ -156,7 +156,7 @@ class UI_Buttons_Filter():
         self.ui.resetButton.setDisabled(True)
 
     def filterAudioButton(self):
-        bandEnergy = thirdOctaveFilter(self, self.timeVector, self.samplingRate)
-        filteredSignal = applySliders(self, self.timeVector, bandEnergy, self.linearSliderValue)
-        savedFile = save_wav(self, filteredSignal, self.samplingRate)
+        bandEnergy = applyOctaveFilter(self.timeData, self.samplingRate)
+        filteredSignal = applySliders(self, self.timeData, bandEnergy, self.linearSliderValue)
+        savedFile = saveAudio(self, filteredSignal, self.samplingRate)
         self.ui.listWidget.addItem(savedFile)

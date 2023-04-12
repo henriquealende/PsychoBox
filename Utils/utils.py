@@ -4,36 +4,34 @@ from scipy import signal
 import numpy as np
 from PySide2.QtWidgets import (QFileDialog)
 from scipy.fft import fft
-import yulewalker as yw
 
 def getInitParameters(self):
     self.sliders = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250, 
     1600, 2000, 2500,3150, 4000, 5000, 6300, 8000, 10000])
     return self.sliders
 
-def read_wav(filename):
-    samplingRate, timeVector = wav.read(str(filename))    
-    #timeVector = 2*(timeVector.astype(np.int16)/(2**16))
-    timeVector = timeVector.astype(np.int16)
-    return timeVector, samplingRate
+def getAudio(filename):
+    samplingRate, audioData = wav.read(str(filename))    
+    audioData = audioData.astype(np.int16)
+    return audioData, samplingRate
 
-def setMono(timeVector):
-    shape = len(np.shape(timeVector))
+def setMono(timeData):
+    shape = len(np.shape(timeData))
     if shape >= 2:
-        timeVector = timeVector[:,0]
-    return timeVector
+        timeData = timeData[:,0]
+    return timeData
 
-def thirdOctaveFilter(timeVector, samplingRate):
+def applyOctaveFilter(timeData, samplingRate):
     centralFrequencies = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
     1600, 2000, 2500,3150, 4000, 5000, 6300, 8000, 10000])
     filterFactor = np.power(2,1/(6))
     lowerFrequencyBand = centralFrequencies/filterFactor
     upperFrequencyBand = centralFrequencies*filterFactor
-    bandEnergy = np.empty([len(centralFrequencies), len(timeVector)])
+    bandEnergy = np.empty([len(centralFrequencies), len(timeData)])
     for n in range(len(centralFrequencies)):
         filter = signal.butter(N=6, Wn=np.array([lowerFrequencyBand[n], upperFrequencyBand[n]])/(samplingRate/2), 
                         btype='bandpass', analog=False, output='sos')
-        bandEnergy[n] = signal.sosfiltfilt(filter, timeVector)
+        bandEnergy[n] = signal.sosfiltfilt(filter, timeData)
     return bandEnergy
 
 def getBandValue(freqData, samplingRate):
@@ -45,8 +43,6 @@ def getBandValue(freqData, samplingRate):
     lowerFrequencies = centralFrequencies/filterFactor
     upperLoc = np.round((N/samplingRate)*upperFrequencies)
     lowerLoc = np.round((N/samplingRate)*lowerFrequencies)
-
-
     matrix = np.zeros([len(centralFrequencies), len(freqData)])
   
     for n in range(len(centralFrequencies)):
@@ -63,7 +59,6 @@ def applySliders(self, inputSignal, bandEnergy, linearSliderValues):
     Inputs: 
         inputSignal: input signal array in the time domain
         bandEnergy'''
-
     filterCorrection = sum(bandEnergy)-inputSignal
     bandEnergyFiltered = np.empty([len(self.sliders), len(inputSignal)])
     for n in range(len(self.sliders)):
@@ -71,10 +66,10 @@ def applySliders(self, inputSignal, bandEnergy, linearSliderValues):
     filteredSignal = sum(bandEnergyFiltered) - filterCorrection
     return filteredSignal.astype(np.int16)
 
-def save_wav(self, timeVector, samplingRate):
+def saveAudio(self, timeData, samplingRate):
     saveAdress = QFileDialog.getSaveFileName(self, 'Save File','', 'WAV files (*.wav)')
     savePathname = str(saveAdress[0])
-    wav.write(savePathname, samplingRate, timeVector)
+    wav.write(savePathname, samplingRate, timeData)
     savedFile = os.path.basename(str(savePathname))
     return savedFile
 
