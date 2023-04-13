@@ -1,4 +1,4 @@
-from Utils.utils import *
+from Utils.filter_utils import *
 from Utils.graph_utils import *
 
 import Buttons.login as bt_lo
@@ -57,23 +57,23 @@ class Expand_Graph(QMainWindow):
         self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
         self.gp.exportFig_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "expand"))
         self.gp.exportButton_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
-        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
-        self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
+        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window="expand"))
+        self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window="expand"))
         self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="expand"))
         self.gp.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self, window = "expand"))
-        self.gp.refresh.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.getAndReadWav(self))
+        self.gp.refresh.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window = "expand"))
 
 
     def getAndReadWav(self):
         from main import Main_Window
         main = Main_Window()
-        pathname = main.getPath()
+        self.pathname = main.getPath()
         metrics = self.gp.mainBox.currentText()
         domain = self.gp.domainBox.currentText()
         samplingBox = self.gp.samplingBox.currentText()
-        self.timeVector, self.samplingRate = read_wav(pathname)
-        self.timeVector = 2*(self.timeVector/(2**16))
-        self.chartview = getGraph(self, self.timeVector, self.samplingRate, metrics, domain, samplingBox, window = "expand")
+        self.timeData, self.samplingRate = getAudio(self.pathname)
+        self.timeData = 2*(self.timeData/(2**16))
+        self.chartview = getGraph(self, metrics, domain, samplingBox, window = "expand")
 
 
 def centerWindow(widget):

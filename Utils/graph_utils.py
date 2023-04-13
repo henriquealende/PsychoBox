@@ -5,39 +5,59 @@ from PySide2 import  QtGui
 from PySide2.QtGui import  QPainter, QBrush, QColor, QPen
 from PySide2.QtWidgets import QAbstractItemView
 
-from Utils.utils import *
+from Utils.filter_utils import *
 
 global chartView
 
-def getGraph(self, timeData, samplingRate, metrics, domain, samplingBox, window):
+
+def addNewSeries(self):
+ # Criar uma nova série de dados
+    new_series = QtCharts.QLineSeries()
+    new_series.append(0, 0)
+    new_series.append(2, 2)
+
+    # Adicionar as séries anteriores e a nova série ao gráfico
+    self.chart.addSeries(self.previous_series)
+    self.chart.addSeries(new_series)
+
+    # Definir os eixos para as novas séries de dados
+    self.previous_series.attachAxis(self.chart.axisX())
+    self.previous_series.attachAxis(self.chart.axisY())
+    new_series.attachAxis(self.chart.axisX())
+    new_series.attachAxis(self.chart.axisY())
+
+    # Salvar a nova série como a série anterior
+    self.previous_series = new_series
+
+def getGraph(self, metrics, domain, samplingBox, window):
     global chartView
     
-    chart = QtCharts.QChart()
-    chart.legend().hide()
-    chart.setBackgroundRoundness(12.0)
-    chart.setDropShadowEnabled(True)
-    chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
-    chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
-        
-    defineDomain(self, chart, domain, window, timeData, samplingRate, samplingBox)    
-    
+    self.chart = QtCharts.QChart()
+    self.chart.legend().hide()
+    self.chart.setBackgroundRoundness(12.0)
+    self.chart.setDropShadowEnabled(True)
+    self.chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
+    self.chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
+    # Define o domínio e prepara os dados para o plot
+    defineDomain(self, domain, window, samplingBox)    
+    # Cor do plot
     pen = QPen(QtGui.QColor(0, 155, 74))
     pen.setWidth(1)
     self.series.setPen(pen)
-    plotGraph(self, self.series, chart, window)       
+    plotGraph(self, window)       
 
-def defineDomain(self, chart, domain, window, timeData, samplingRate, samplingBox):
+def defineDomain(self, domain, window, samplingBox):
+    # Domínio do tempo
     if domain == 'Time':
-        y = timeData
-        T = len(timeData)/samplingRate
+        # Entrada de dados
+        y = self.timeData
+        T = len(self.timeData)/self.samplingRate
         x = np.linspace(0, T, len(y))        
-        self.data_table = prepareData(x, y)       
-        name = "Series "
-        for i, lst in enumerate(self.data_table):
-            self.series = QtCharts.QLineSeries(chart)
-            for data in lst:
-                self.series.append(data[0])
-            self.series.setName(f"{name}{i}") 
+        # Criação da série de dados
+        self.series = QtCharts.QLineSeries()
+        for i in range(len(y)):
+            self.series.append(x[i], y[i])
+        # Configuração dos eixos
         self.axis_x = QtCharts.QValueAxis()
         self.axis_x.setTickCount(5)
         self.axis_x.setLabelFormat("%.2f")
@@ -46,24 +66,22 @@ def defineDomain(self, chart, domain, window, timeData, samplingRate, samplingBo
         self.axis_y.setTickCount(5)
         self.axis_y.setLabelFormat("%.2f")
         self.axis_y.setTitleText("Amplitude")
+        # Ajuste de Limites
         limitsAdjust(self, window, domain, T)
-
+    # Domínio da frequência
     elif domain == 'Frequency':
-        x, y, Yplot = getFFT(timeData, samplingRate)
+        x, y, Yplot = getFFT(self.timeData, self.samplingRate)
         if samplingBox == "1/3 octave":
-            y = getBandValue(Yplot, samplingRate)
+            y = getBandValue(Yplot, self.samplingRate)
             x = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500,
                             630, 800, 1000, 1250, 1600, 2000, 2500, 3150, 4000,
                             5000, 6300, 8000, 10000])
             y = 20*np.log10(y/2e-5)
-        self.data_table = prepareData(x, y)       
-        name = "Series "
-        for i, lst in enumerate(self.data_table):
-            self.series = QtCharts.QLineSeries(chart)
-            for data in lst:
-                self.series.append(data[0])
-            self.series.setName(f"{name}{i}")           
-
+        # Criação da série de dados
+        self.series = QtCharts.QLineSeries()
+        for i in range(len(y)):
+            self.series.append(x[i], y[i])
+        # Configuração dos eixos
         self.axis_x = QtCharts.QLogValueAxis()
         self.axis_x.setLabelFormat("%.0f")
         self.axis_x.setTitleText("Frequency [Hz]")
@@ -71,20 +89,8 @@ def defineDomain(self, chart, domain, window, timeData, samplingRate, samplingBo
         self.axis_y.setTickCount(5)
         self.axis_y.setLabelFormat("%.2f")
         self.axis_y.setTitleText("SPL [dB]")
+        # Ajuste de Limites
         limitsAdjust(self, window, domain, np.max(x))
-    
-
-def prepareData(x, y, list_count = 1):
-    data_table = []
-    N = len(x)
-    for i in range(list_count):
-        data_list = []
-        for j in range(N):
-            value = QPointF(x[j], y[j])
-            label = f"Slice {i}: {j}"
-            data_list.append((value, label))
-        data_table.append(data_list)
-    return data_table
 
 
 def limitsAdjust(self, window, domain, LIM):
@@ -122,11 +128,13 @@ def limitsAdjust(self, window, domain, LIM):
             self.axis_x.setRange(xlim_inf, xlim_sup)
             self.axis_y.setRange(ylim_inf, ylim_sup)
                 
-def plotGraph(self, series, chart, window):    
-    chart.addSeries(series)
-    chart.setAxisX(self.axis_x, series)
-    chart.setAxisY(self.axis_y, series)
-    chartView = QtCharts.QChartView(chart)
+def plotGraph(self, window):    
+    # Adiciona a série ao gráfico
+    self.chart.addSeries(self.series)
+    self.chart.setAxisX(self.axis_x, self.series)
+    self.chart.setAxisY(self.axis_y, self.series)
+    # Adiciona o gráfico à visualização
+    chartView = QtCharts.QChartView(self.chart)
     chartView.setRenderHint(QPainter.Antialiasing)
     if window == "default":
         self.ui.gridLayout.addWidget(chartView, 1, 0)
@@ -136,7 +144,7 @@ def plotGraph(self, series, chart, window):
 
 ###########################################################################
 
-def selectMulti(self, path, metrics, domain, samplingBox):
+def selectMulti(self, metrics, domain, samplingBox):
     if self.ui.holdOnCheck.isChecked():
         self.ui.listWidget2.setSelectionMode(QAbstractItemView.MultiSelection)
         nSelectItems = len(self.ui.listWidget2.selectedItems())
@@ -157,14 +165,13 @@ def selectMulti(self, path, metrics, domain, samplingBox):
             print(self.ui.listWidget2.selectedItems());
     else:
         self.ui.listWidget2.setSelectionMode(QAbstractItemView.SingleSelection)
-        filename = str(self.ui.listWidget2.currentItem().text())
-        self.timeData, self.samplingRate = getAudio(path + '/' + filename)
+        # filename = str(self.ui.listWidget2.currentItem().text())
+        self.timeData, self.samplingRate = getAudio(self.pathname)
         self.timeData = 2*(self.timeData/(2**16))
     
-        self.chartview = getGraph(self, self.timeData, self.samplingRate,
-                                metrics, domain, samplingBox, window = "default")
-        pathname = (path + '/' + filename)
-        return pathname
+        self.chartview = getGraph(self, metrics, domain, samplingBox, window = "default")
+        # pathname = (path + '/' + filename)
+        # return pathname
     
 def presetImport(self, domain):
     self.ui.mainBox.setCurrentIndex(0)

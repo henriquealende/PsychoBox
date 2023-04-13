@@ -2,7 +2,7 @@ from expandGraph import *
 
 from Database.database import *
 from Utils.graph_utils import *
-from Utils.utils import *   
+from Utils.filter_utils import *   
 
 import pandas as pd
 
@@ -95,41 +95,37 @@ class UI_Buttons_Graph():
                     self.gp.spinBox_4.setValue(10000)
 
     def importButton(self):
-        global path
-        importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')
-        importPathname = importAdress[0]
-        filename = os.path.basename(str(importPathname))
-        path = os.path.dirname(str(importPathname))
-        self.ui.listWidget2.addItem(filename)
+        file_dialog = QFileDialog(self)
+        file_dialog.setNameFilter("Arquivos de áudio (*.wav)")
+        if file_dialog.exec_() == QFileDialog.Accepted:
+            self.pathname = file_dialog.selectedFiles()[0]
+            filename = os.path.basename(str(self.pathname))
+            self.ui.listWidget2.addItem(filename)
 
     def selectItem(self):
-        global path, pathname      
+        global path    
         metrics = self.ui.mainBox.currentText()
         domain = self.ui.domainBox.currentText()
         samplingBox = self.ui.samplingBox.currentText()        
         presetImport(self, domain)  
-        pathname = selectMulti(self, path, metrics, domain, samplingBox)      
-               
-    def getAndReadWav(self):
-        metrics = self.gp.mainBox.currentText()
-        domain = self.gp.domainBox.currentText()
-        samplingBox = self.gp.samplingBox.currentText()
-        self.timeData, self.samplingRate = read_wav(pathname)
-        self.timeData = 2*(self.timeData/(2**16))
-        self.chartview = getGraph(self, self.timeData, self.samplingRate,
-                                     metrics, domain, samplingBox, window = "expand")
-
-    def getPathname(self):
-        global pathname
-        return pathname
-
-    def changeGraph(self):
-        metrics = self.ui.mainBox.currentText()
-        domain = self.ui.domainBox.currentText()
-        samplingBox = self.ui.samplingBox.currentText()
-        self.chartview = getGraph(self, self.timeData, self.samplingRate,
-                                     metrics, domain, samplingBox, window="default")
-
+        selectMulti(self, metrics, domain, samplingBox) 
+        path = self.pathname   
+     
+    def changeGraph(self, window):
+        if window == 'default':
+            metrics = self.ui.mainBox.currentText()
+            domain = self.ui.domainBox.currentText()
+            samplingBox = self.ui.samplingBox.currentText()
+            self.chartview = getGraph(self, metrics, domain, samplingBox, window)
+        else:
+            metrics = self.gp.mainBox.currentText()
+            domain = self.gp.domainBox.currentText()
+            samplingBox = self.gp.samplingBox.currentText()
+            self.chartview = getGraph(self, metrics, domain, samplingBox, window)
+     #############################################################          
+    def getPathname(self):        
+        return path
+    
     def expandGraph(self):
         self.gp = Expand_Graph()
         self.gp.show()
@@ -155,6 +151,3 @@ class UI_Buttons_Graph():
         name = QFileDialog.getSaveFileName(self, 'Save File', filter='*.csv')
         df.to_csv(name[0], index = False, sep = ";")
 
-#    def changeDomainExpand(self):
- #       domain = self.gp.domainBox.currentText()
-  #      self.chartview = getGraph(self, self.timeVector, self.samplingRate, domain = domain, window = "expand")

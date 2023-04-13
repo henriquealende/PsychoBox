@@ -1,9 +1,5 @@
 # This Python file uses the following encoding: utf-8
-
-import os
-from pathlib import Path
 import sys
-from Resources import resourceGUI
 
 import pygame
 import Buttons.login as bt_lo
@@ -17,7 +13,6 @@ from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargin
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
 
-pathname = {}
 path = {}
 projects = []
 
@@ -48,8 +43,8 @@ class Main_Window(QMainWindow):
         pygame.init()
         
     def getPath(self):
-        pathname = bt_gh.UI_Buttons_Graph.getPathname(self)
-        return pathname
+        path = bt_gh.UI_Buttons_Graph.getPathname(self)
+        return path
     
     def eventFilter(self, source, event):
         if source == self.ui.infoBar:
@@ -109,7 +104,7 @@ class Main_Window(QMainWindow):
         self.ui.removeGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'graph'))
         self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
         self.ui.listWidget2.itemClicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
-        self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
+        self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window = "default"))
         self.ui.expandGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self))
         self.ui.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "default"))
         self.ui.exportData.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
