@@ -21,17 +21,17 @@ def setMono(timeData):
         timeData = timeData[:,0]
     return timeData
 
-def applyOctaveFilter(timeData, samplingRate):
+def applyOctaveFilter(self):
     centralFrequencies = np.array([50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800, 1000, 1250,
     1600, 2000, 2500,3150, 4000, 5000, 6300, 8000, 10000])
     filterFactor = np.power(2,1/(6))
     lowerFrequencyBand = centralFrequencies/filterFactor
     upperFrequencyBand = centralFrequencies*filterFactor
-    bandEnergy = np.empty([len(centralFrequencies), len(timeData)])
+    bandEnergy = np.empty([len(centralFrequencies), len(self.timeData)])
     for n in range(len(centralFrequencies)):
-        filter = signal.butter(N=6, Wn=np.array([lowerFrequencyBand[n], upperFrequencyBand[n]])/(samplingRate/2), 
+        filter = signal.butter(N=6, Wn=np.array([lowerFrequencyBand[n], upperFrequencyBand[n]])/(self.samplingRate/2), 
                         btype='bandpass', analog=False, output='sos')
-        bandEnergy[n] = signal.sosfiltfilt(filter, timeData)
+        bandEnergy[n] = signal.sosfiltfilt(filter, self.timeData)
     return bandEnergy
 
 def getBandValue(freqData, samplingRate):
@@ -54,15 +54,15 @@ def getBandValue(freqData, samplingRate):
     return matrixSum
     
 
-def applySliders(self, inputSignal, bandEnergy, linearSliderValues):
+def applySliders(self, linearSliderValues):
     '''Filter an input signal from the sliders curve inputed by the user
     Inputs: 
         inputSignal: input signal array in the time domain
         bandEnergy'''
-    filterCorrection = sum(bandEnergy)-inputSignal
-    bandEnergyFiltered = np.empty([len(self.sliders), len(inputSignal)])
+    filterCorrection = sum(self.bandEnergy)-self.timeData
+    bandEnergyFiltered = np.empty([len(self.sliders), len(self.timeData)])
     for n in range(len(self.sliders)):
-        bandEnergyFiltered[n] = (bandEnergy[n]*(linearSliderValues[n]))
+        bandEnergyFiltered[n] = (self.bandEnergy[n]*(linearSliderValues[n]))
     filteredSignal = sum(bandEnergyFiltered) - filterCorrection
     return filteredSignal.astype(np.int16)
 
@@ -80,4 +80,3 @@ def getFFT(timeData, samplingRate):
     Yplot = fC*Yf[1:int(np.round(N/2+1))]
     f = samplingRate*(np.arange(1,N/2+1))/N   
     return f, 20*np.log10(Yplot/2e-5), Yplot
-

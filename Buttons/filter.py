@@ -1,7 +1,7 @@
 import os
 
 from pygame import mixer
-from Utils.utils import *
+from Utils.filter_utils import *
 
 from PySide2.QtWidgets import (QFileDialog)
 
@@ -38,7 +38,7 @@ class UI_Buttons_Filter():
                 self.ui.resetButton.setDisabled(True)
                 self.ui.muteButton.setDisabled(True)
                 self.ui.volumeSlider.setDisabled(True)
-                for index, slider in enumerate(self.sliders):
+                for _, slider in enumerate(self.sliders):
                     eval('self.ui.switch_{}.setChecked(False)'.format(slider))
                     eval("self.ui.slider_{}.setDisabled(True)".format(slider))
                     eval("self.ui.switch_{}.setText('off')".format(slider))
@@ -61,7 +61,7 @@ class UI_Buttons_Filter():
             self.ui.resetButton.setDisabled(True)
             self.ui.muteButton.setDisabled(True)
             self.ui.volumeSlider.setDisabled(True)
-            for index, slider in enumerate(self.sliders):
+            for _, slider in enumerate(self.sliders):
                 eval('self.ui.switch_{}.setChecked(False)'.format(slider))
                 eval("self.ui.slider_{}.setDisabled(True)".format(slider))
                 eval("self.ui.switch_{}.setText('off')".format(slider))
@@ -71,7 +71,7 @@ class UI_Buttons_Filter():
     def selectItem(self):
         global path
         self.sliders = getInitParameters(self)
-        for index, slider in enumerate(self.sliders):
+        for _, slider in enumerate(self.sliders):
             eval('self.ui.switch_{}.setChecked(True)'.format(slider))
             eval('self.ui.slider_{}.setEnabled(True)'.format(slider))
             db = ' dB'
@@ -80,14 +80,11 @@ class UI_Buttons_Filter():
         self.ui.playButton.setEnabled(True)
         filename = str(self.ui.listWidget.currentItem().text())
         self.ui.graphButton.setEnabled(True)
-        self.ui.filterAudioButton.setEnabled(True)
         self.ui.muteButton.setEnabled(True)
         self.ui.volumeSlider.setEnabled(True)
         self.timeData, self.samplingRate = getAudio(path + '/' + filename)
-        #mixer.pre_init(frequency=self.samplingRate)
         mixer.music.load(path + '/' + filename)
         self.pause = False
-        #self.timeVector = setMono(self.timeVector)
 
     def playButton(self):
         self.currentVolume = self.ui.volumeSlider.value()
@@ -139,24 +136,19 @@ class UI_Buttons_Filter():
             txt = 'str(round(self.ui.slider_{}.value()*.3, 2))+db'.format(slider)
             eval('self.ui.switch_{}.setText({})'.format(slider, txt))
             self.ui.resetButton.setEnabled(True)
-            #if eval('self.ui.switch_{}.isChecked()'.format(slider)):
-            #    db = ' dB'
-            #    txt = 'str(round(self.ui.slider_{}.value()*.3, 2))+db'.format(slider)
-            #    eval('self.ui.slider_{}.setEnabled(True)'.format(slider))
-            #    eval('self.ui.switch_{}.setText({})'.format(slider, txt))
-            #    exec('sliderValue[{}] = round(self.ui.slider_{}.value()*.3, 2)'.format(index, slider))
-            #else:
-            #    eval("self.ui.slider_{}.setDisabled(True)".format(slider))
-            #    eval("self.ui.switch_{}.setText('off')".format(slider))?
         self.linearSliderValue = 10**(self.sliderValue/20)
+        self.ui.filterAudioButton.setEnabled(True)
+
 
     def resetButton(self):
         for slider in self.sliders:
             eval("self.ui.slider_{}.setValue(0)".format(slider))
         self.ui.resetButton.setDisabled(True)
+        self.ui.filterAudioButton.setEnabled(False)
+
 
     def filterAudioButton(self):
-        bandEnergy = applyOctaveFilter(self.timeData, self.samplingRate)
-        filteredSignal = applySliders(self, self.timeData, bandEnergy, self.linearSliderValue)
+        self.bandEnergy = applyOctaveFilter(self)
+        filteredSignal = applySliders(self, self.linearSliderValue)
         savedFile = saveAudio(self, filteredSignal, self.samplingRate)
         self.ui.listWidget.addItem(savedFile)
