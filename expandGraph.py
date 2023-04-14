@@ -68,6 +68,7 @@ class Expand_Graph(QMainWindow):
         from main import Main_Window
         main = Main_Window()
         self.pathname = main.getPath()
+        print(self.pathname)
         metrics = self.gp.mainBox.currentText()
         domain = self.gp.domainBox.currentText()
         samplingBox = self.gp.samplingBox.currentText()

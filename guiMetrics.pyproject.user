@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 7.0.1, 2023-04-13T14:19:22. -->
+<!-- Written by QtCreator 7.0.1, 2023-04-14T10:45:47. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -273,25 +273,7 @@
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
     <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/alend/OneDrive/Documentos/UFSC/EMBRACO/ProjetoPython/v.003/PsychoBox/Buttons</value>
    </valuemap>
-   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.9">
-    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
-    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
-    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
-    <valuelist type="QVariantList" key="CustomOutputParsers"/>
-    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
-    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">C:/Users/alend/OneDrive/Documentos/UFSC/EMBRACO/ProjetoPython/v.003/PsychoBox/Utils/utils.py</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/alend/OneDrive/Documentos/UFSC/EMBRACO/ProjetoPython/v.003/PsychoBox/Utils/utils.py</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/alend/OneDrive/Documentos/UFSC/EMBRACO/ProjetoPython/v.003/PsychoBox/Utils/utils.py</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{faed87fe-2682-47bf-866f-e1c21ff73753}</value>
-    <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\alend\OneDrive\Documentos\UFSC\EMBRACO\ProjetoPython\v.003\PsychoBox\Utils\utils.py</value>
-    <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
-    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
-    <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
-    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">C:/Users/alend/OneDrive/Documentos/UFSC/EMBRACO/ProjetoPython/v.003/PsychoBox/Utils</value>
-   </valuemap>
-   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">10</value>
+   <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">9</value>
   </valuemap>
  </data>
  <data>
