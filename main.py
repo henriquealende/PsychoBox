@@ -13,6 +13,7 @@ from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargin
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
 
+pathExport={}
 path = {}
 projects = []
 
@@ -43,8 +44,8 @@ class Main_Window(QMainWindow):
         pygame.init()
         
     def getPath(self):
-        path = bt_gh.UI_Buttons_Graph.getPathname(self)
-        return path
+        pathExport = bt_gh.UI_Buttons_Graph.getPathname(self)
+        return pathExport
     
     def eventFilter(self, source, event):
         if source == self.ui.infoBar:

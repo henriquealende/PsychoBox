@@ -95,22 +95,26 @@ class UI_Buttons_Graph():
                     self.gp.spinBox_4.setValue(10000)
 
     def importButton(self):
-        file_dialog = QFileDialog(self)
-        file_dialog.setNameFilter("Arquivos de áudio (*.wav)")
-        if file_dialog.exec_() == QFileDialog.Accepted:
-            self.pathname = file_dialog.selectedFiles()[0]
-            filename = os.path.basename(str(self.pathname))
-            self.ui.listWidget2.addItem(filename)
+        global path
+        importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')
+        importPathname = importAdress[0]
+        filename = os.path.basename(str(importPathname))
+        path = os.path.dirname(str(importPathname))        
+        self.ui.listWidget2.addItem(filename)
+        
 
     def selectItem(self):
-        global path    
+        global path, pathExport   
         metrics = self.ui.mainBox.currentText()
         domain = self.ui.domainBox.currentText()
         samplingBox = self.ui.samplingBox.currentText()        
-        presetImport(self, domain)  
+        presetImport(self, domain)
+        filename = str(self.ui.listWidget2.currentItem().text())  
+        self.pathname = (path + '/' + filename)
         selectMulti(self, metrics, domain, samplingBox) 
-        path = self.pathname   
-     
+        pathExport = self.pathname   
+        
+        
     def changeGraph(self, window):
         if window == 'default':
             metrics = self.ui.mainBox.currentText()
@@ -124,7 +128,7 @@ class UI_Buttons_Graph():
             self.chartview = getGraph(self, metrics, domain, samplingBox, window)
      #############################################################          
     def getPathname(self):        
-        return path
+        return pathExport
     
     def expandGraph(self):
         self.gp = Expand_Graph()
