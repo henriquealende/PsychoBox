@@ -1,28 +1,23 @@
-from Utils.filter_utils import *
-from Utils.graph_utils import *
-
+import sys
 import Buttons.login as bt_lo
 import Buttons.graph as bt_gh
 
+from Utils.graph_utils import *
 from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtWidgets import (QApplication, QWidget, QGraphicsOpacityEffect, QMessageBox, QGraphicsColorizeEffect, QLabel, QVBoxLayout, QMainWindow, QGraphicsDropShadowEffect)
-from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargins, QTime, QPoint)
+from PySide2.QtWidgets import (QApplication, QMainWindow)
+from PySide2.QtCore import (Qt, QFile)
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon, QPixmap
-from PySide2.QtSql import QSqlDatabase, QSqlQuery
-
-from PIL import ImageQt
-
 from Resources import resourceGUI
+##############################################################################
 
-import sys
 
 class Expand_Graph(QMainWindow):
-    def __init__(self):
+    def __init__(self, dados, type):
         super(Expand_Graph, self).__init__()
         self.initUI()
         self.buttonCallback()
-        self.getAndReadWav()
+        self.getAndReadWav(dados, type)
+
 
 
     def initUI(self):
@@ -39,6 +34,8 @@ class Expand_Graph(QMainWindow):
         self.gp.domainBox.addItems(['Time', 'Frequency'])
         self.gp.frame_samplingBox.hide()
         self.gp.frame_axis.hide()
+        self.gp.frame_21.hide()
+        self.gp.pushButton2_2.hide()
 
     def eventFilter(self, source, event):
         if source == self.gp.infoBar3:
@@ -55,26 +52,37 @@ class Expand_Graph(QMainWindow):
     def buttonCallback(self):
         self.gp.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
-        self.gp.exportFig_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "expand"))
+        self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "expand"))
         self.gp.exportButton_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
         self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window="expand"))
         self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window="expand"))
         self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="expand"))
         self.gp.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self, window = "expand"))
         self.gp.refresh.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window = "expand"))
+        self.gp.pushButton2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.showSettings(self, 'show'))
+        self.gp.pushButton2_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.showSettings(self, 'hide'))
 
 
-    def getAndReadWav(self):
+    def getAndReadWav(self, dados, type):
         from main import Main_Window
+        print(type)
         main = Main_Window()
         self.pathname = main.getPath()
         print(self.pathname)
-        metrics = self.gp.mainBox.currentText()
-        domain = self.gp.domainBox.currentText()
-        samplingBox = self.gp.samplingBox.currentText()
+        metrics = dados[0]
+        domain = dados[1]
+        samplingBox = dados[2]
+
+        if domain == 'Frequency':
+            self.gp.domainBox.setCurrentIndex(1)
+            self.gp.frame_samplingBox.show()
+
+            if samplingBox == '1/3 octave':
+                self.gp.samplingBox.setCurrentIndex(1)
+
         self.timeData, self.samplingRate = getAudio(self.pathname)
         self.timeData = 2*(self.timeData/(2**16))
-        self.chartview = getGraph(self, metrics, domain, samplingBox, window = "expand")
+        self.chartview = getGraph(self, metrics, domain, samplingBox, type, window = "expand")
 
 
 def centerWindow(widget):

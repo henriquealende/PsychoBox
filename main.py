@@ -1,6 +1,4 @@
-# This Python file uses the following encoding: utf-8
 import sys
-
 import pygame
 import Buttons.login as bt_lo
 import Buttons.filter as bt_fi
@@ -8,10 +6,12 @@ import Buttons.graph as bt_gh
 import Buttons.calibration as bt_ca
 
 from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtWidgets import (QApplication, QWidget, QGraphicsOpacityEffect, QMessageBox, QGraphicsColorizeEffect, QLabel, QVBoxLayout, QMainWindow)
-from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargins, QTime, QPoint)
+from PySide2.QtWidgets import (QApplication, QMainWindow)
+from PySide2.QtCore import (Qt, QFile)
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
+from PySide2.QtGui import QIcon
+from Resources import resourceGUI
+##############################################################################
 
 pathExport={}
 path = {}
@@ -38,8 +38,8 @@ class Main_Window(QMainWindow):
         self.ui.mainBox.addItems(['Time-Frequency', 'Metrics'])
         self.ui.domainBox.addItems(['Time', 'Frequency'])
         self.ui.samplingBox.addItems(['Linear', '1/3 octave'])
-        self.ui.typeHeadBox.addItems(['None', 'Sennheiser'])
-        self.ui.typeHatsBox.addItems(['None', 'HeadAcoustics', 'GRASS'])
+        self.ui.typeHeadBox_2.addItems(['None', 'Sennheiser'])
+        self.ui.typeHatsBox_2.addItems(['None', 'HeadAcoustics', 'GRASS'])
 
         pygame.init()
         
@@ -63,6 +63,7 @@ class Main_Window(QMainWindow):
         self.setWindowIcon(appIcon)
 
     def buttonCallback(self):
+        #INTERFACE
         self.ui.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.ui.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
         self.ui.connectButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.login(self))
@@ -72,8 +73,9 @@ class Main_Window(QMainWindow):
         self.ui.homeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.homeButton(self))
         self.ui.newProjectButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.newProject(self))
 
-        # FILTER PAGE
 
+
+        # FILTER PAGE
         self.ui.filterButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.filterButton(self))
         self.ui.importButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.importButton(self))
         self.ui.removeButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'filter'))
@@ -95,8 +97,9 @@ class Main_Window(QMainWindow):
         self.ui.resetButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.resetButton(self))
         self.ui.filterAudioButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.filterAudioButton(self))
 
-        # GRAPH PAGE
 
+
+        # GRAPH PAGE
         self.ui.mainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectGraph(self))
         self.ui.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="defaut"))
         self.ui.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self, window = "defaut"))
@@ -105,15 +108,23 @@ class Main_Window(QMainWindow):
         self.ui.removeGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'graph'))
         self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
         self.ui.listWidget2.itemClicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
-        self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window = "default"))
-        self.ui.expandGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self))
-        self.ui.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "default"))
-        self.ui.exportData.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
+        #self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window = "default"))
+        #self.ui.expandGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self))
+        #self.ui.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "default"))
+        #self.ui.exportData.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
+
+
 
         # CALIBRATION PAGE
+        self.ui.typeHeadBox_2.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeTypeHead(self))
+        self.ui.typeHatsBox_2.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeTypeHats(self))
+        self.ui.modelHeadBox_2.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeModelHead(self))
+        self.ui.modelHatsBox_2.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeModelHats(self))
+        self.ui.plot.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'plot'))
+        self.ui.join.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'join'))
+        self.ui.convolve.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'convolve'))
 
-        self.ui.typeHeadBox.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeTypeHead(self))
-        self.ui.typeHatsBox.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeTypeHats(self))
+
 
 def centerWindow(widget):
     window = widget.window()

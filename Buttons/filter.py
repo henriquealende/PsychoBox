@@ -2,8 +2,9 @@ import os
 
 from pygame import mixer
 from Utils.filter_utils import *
-
 from PySide2.QtWidgets import (QFileDialog)
+##############################################################################
+
 
 class UI_Buttons_Filter():
     def __init__(self):
@@ -50,6 +51,14 @@ class UI_Buttons_Filter():
             for item in listItems:
                 self.ui.listWidget2.takeItem(self.ui.listWidget2.row(item))
 
+        elif where == 'calibration':
+            allItems = self.ui.listWidget2_3.count()
+            listItems = self.ui.listWidget2_3.selectedItems()
+            if not listItems:
+                return
+            for item in listItems:
+                self.ui.listWidget2_3.takeItem(self.ui.listWidget2_3.row(item))
+
     def removeAllButton(self, where):
         if where == 'filter':
             self.ui.listWidget.clear()
@@ -66,6 +75,9 @@ class UI_Buttons_Filter():
                 eval("self.ui.slider_{}.setDisabled(True)".format(slider))
                 eval("self.ui.switch_{}.setText('off')".format(slider))
         elif where == 'graph':
+            self.ui.listWidget2.clear()
+
+        elif where == 'calibration':
             self.ui.listWidget2.clear()
 
     def selectItem(self):

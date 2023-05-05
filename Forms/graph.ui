@@ -388,6 +388,64 @@ QPushButton:hover{
               </property>
              </widget>
             </item>
+            <item>
+             <widget class="QPushButton" name="pushButton2">
+              <property name="minimumSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	background-color: rgb(70,70,70);
+	border-radius: 15px;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../Resources/resourceGui.qrc">
+                <normaloff>:/icons/img/addEnabled.png</normaloff>:/icons/img/addEnabled.png</iconset>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton2_2">
+              <property name="minimumSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+	background-color: rgb(70,70,70);
+	border-radius: 15px;
+}</string>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../Resources/resourceGui.qrc">
+                <normaloff>:/icons/img/closepp.png</normaloff>:/icons/img/closepp.png</iconset>
+              </property>
+             </widget>
+            </item>
            </layout>
           </widget>
          </item>
@@ -1548,7 +1606,7 @@ QCheckBox::indicator:checked:disabled{
              <number>0</number>
             </property>
             <item alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="exportFig_2">
+             <widget class="QPushButton" name="exportFig">
               <property name="enabled">
                <bool>true</bool>
               </property>

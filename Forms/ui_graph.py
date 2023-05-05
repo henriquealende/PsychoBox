@@ -178,6 +178,34 @@ class Ui_Form(object):
 
         self.horizontalLayout_4.addWidget(self.label_13)
 
+        self.pushButton2 = QPushButton(self.frame_18)
+        self.pushButton2.setObjectName(u"pushButton2")
+        self.pushButton2.setMinimumSize(QSize(30, 30))
+        self.pushButton2.setMaximumSize(QSize(30, 30))
+        self.pushButton2.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border-radius: 15px;\n"
+"}")
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/img/addEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton2.setIcon(icon2)
+
+        self.horizontalLayout_4.addWidget(self.pushButton2)
+
+        self.pushButton2_2 = QPushButton(self.frame_18)
+        self.pushButton2_2.setObjectName(u"pushButton2_2")
+        self.pushButton2_2.setMinimumSize(QSize(30, 30))
+        self.pushButton2_2.setMaximumSize(QSize(30, 30))
+        self.pushButton2_2.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border-radius: 15px;\n"
+"}")
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/img/closepp.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton2_2.setIcon(icon3)
+
+        self.horizontalLayout_4.addWidget(self.pushButton2_2)
+
 
         self.verticalLayout_10.addWidget(self.frame_18)
 
@@ -395,9 +423,9 @@ class Ui_Form(object):
         self.refresh = QPushButton(self.frame_100)
         self.refresh.setObjectName(u"refresh")
         self.refresh.setMaximumSize(QSize(30, 30))
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.refresh.setIcon(icon2)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.refresh.setIcon(icon4)
 
         self.horizontalLayout_48.addWidget(self.refresh)
 
@@ -761,13 +789,13 @@ class Ui_Form(object):
         self.verticalLayout_16.setSpacing(10)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
         self.verticalLayout_16.setContentsMargins(0, 0, 0, 0)
-        self.exportFig_2 = QPushButton(self.frame_25)
-        self.exportFig_2.setObjectName(u"exportFig_2")
-        self.exportFig_2.setEnabled(True)
-        self.exportFig_2.setMinimumSize(QSize(220, 30))
-        self.exportFig_2.setMaximumSize(QSize(218, 30))
-        self.exportFig_2.setFont(font1)
-        self.exportFig_2.setStyleSheet(u"\n"
+        self.exportFig = QPushButton(self.frame_25)
+        self.exportFig.setObjectName(u"exportFig")
+        self.exportFig.setEnabled(True)
+        self.exportFig.setMinimumSize(QSize(220, 30))
+        self.exportFig.setMaximumSize(QSize(218, 30))
+        self.exportFig.setFont(font1)
+        self.exportFig.setStyleSheet(u"\n"
 "QPushButton {\n"
 "	padding-left: 5px;\n"
 "	text-align: left;\n"
@@ -792,7 +820,7 @@ class Ui_Form(object):
 "	}\n"
 "")
 
-        self.verticalLayout_16.addWidget(self.exportFig_2, 0, Qt.AlignHCenter)
+        self.verticalLayout_16.addWidget(self.exportFig, 0, Qt.AlignHCenter)
 
         self.exportButton_2 = QPushButton(self.frame_25)
         self.exportButton_2.setObjectName(u"exportButton_2")
@@ -884,6 +912,8 @@ class Ui_Form(object):
         self.closeAllButton.setText("")
         self.label_12.setText("")
         self.label_13.setText(QCoreApplication.translate("Form", u"Chart", None))
+        self.pushButton2.setText("")
+        self.pushButton2_2.setText("")
         self.label_77.setText(QCoreApplication.translate("Form", u"x-axis", None))
         self.label_78.setText(QCoreApplication.translate("Form", u"from:", None))
         self.label_79.setText(QCoreApplication.translate("Form", u"to:", None))
@@ -899,7 +929,7 @@ class Ui_Form(object):
         self.label_18.setText(QCoreApplication.translate("Form", u"format:", None))
         self.usernameLabel_9.setText(QCoreApplication.translate("Form", u"limits:", None))
         self.automaticCheckBox.setText(QCoreApplication.translate("Form", u"automatic", None))
-        self.exportFig_2.setText(QCoreApplication.translate("Form", u"export figure", None))
+        self.exportFig.setText(QCoreApplication.translate("Form", u"export figure", None))
         self.exportButton_2.setText(QCoreApplication.translate("Form", u"export data", None))
         self.label.setText(QCoreApplication.translate("Form", u"\u00a9 2021 Nidec\n"
 "All rights reserved to Nidec ", None))
