@@ -1,32 +1,42 @@
 import numpy as np
+import scipy.signal
+
 from PySide2.QtCharts import *
 from PySide2.QtCore import QPointF
 from PySide2 import  QtGui
 from PySide2.QtCore import Qt
 from PySide2.QtGui import  QPainter, QBrush, QColor, QPen
 from PySide2.QtWidgets import QAbstractItemView
-
 from Utils.filter_utils import *
-import scipy.signal
-#global chartView
+##############################################################################
 
-def getGraph(self, metrics, domain, samplingBox, window):
-    global chartView 
-    self.chart = QtCharts.QChart()
-    self.chart.removeAllSeries()
-    self.chart.legend().hide()
-    self.chart.setBackgroundRoundness(12.0)
-    self.chart.setDropShadowEnabled(True)
-    self.chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
-    self.chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
-    # Define o domínio e prepara os dados para o plot
-    defineDomain(self, domain, window, samplingBox)    
-    # Cor do plot
-    pen = QPen(QtGui.QColor(0, 155, 74))
-    pen.setWidth(1)
-    self.series.setPen(pen)
-    plotGraph(self, window)       
-    self.previous_series = self.series
+global chartView
+
+def getGraph(self, metrics, domain, samplingBox, type, window):
+    #global chartView
+
+    if type == 'convolve':
+        pass
+
+    elif type == 'join':
+        pass
+
+    elif type == 'plot':
+        self.chart = QtCharts.QChart()
+        self.chart.removeAllSeries()
+        self.chart.legend().hide()
+        self.chart.setBackgroundRoundness(12.0)
+        self.chart.setDropShadowEnabled(True)
+        self.chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
+        self.chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
+        # Define o domínio e prepara os dados para o plot
+        defineDomain(self, domain, window, samplingBox)
+        # Cor do plot
+        pen = QPen(QtGui.QColor(0, 155, 74))
+        pen.setWidth(1)
+        self.series.setPen(pen)
+        plotGraph(self, window)
+        self.previous_series = self.series
     
 def defineDomain(self, domain, window, samplingBox):
     # Resample do sinal para plotar
@@ -111,7 +121,8 @@ def limitsAdjust(self, window, domain, LIM):
             self.axis_x.setRange(xlim_inf, xlim_sup)
             self.axis_y.setRange(ylim_inf, ylim_sup)
                 
-def plotGraph(self, window):    
+def plotGraph(self, window):
+    global chartView
     # Adiciona a série ao gráfico
     self.chart.addSeries(self.series)
     self.chart.setAxisX(self.axis_x, self.series)
@@ -120,7 +131,8 @@ def plotGraph(self, window):
     chartView = QtCharts.QChartView(self.chart)
     chartView.setRenderHint(QPainter.Antialiasing)
     if window == "default":
-        self.ui.gridLayout.addWidget(chartView, 1, 0)
+        pass
+#        self.ui.gridLayout.addWidget(chartView, 1, 0)
     elif window == "expand":
         self.gp.gridLayout_2.addWidget(chartView, 1, 0)
     return chartView
@@ -186,6 +198,7 @@ def decimateAudioSignal(self):
 ###########################################################################
 
 def selectMulti(self, metrics, domain, samplingBox):
+    global chartView
     if self.ui.holdOnCheck.isChecked():
         self.ui.listWidget2.setSelectionMode(QAbstractItemView.MultiSelection)
         nSelectItems = len(self.ui.listWidget2.selectedItems())
@@ -208,18 +221,19 @@ def selectMulti(self, metrics, domain, samplingBox):
             # self.new_timeData = 2*(self.new_timeData/(2**16))    
             # addNewSeries(self, metrics, domain, samplingBox, window = "default")
     else:
+        type == 'plot'
         self.ui.listWidget2.setSelectionMode(QAbstractItemView.SingleSelection)
         self.timeData, self.samplingRate = getAudio(self.pathname)
         self.timeData = 2*(self.timeData/(2**16))    
-        self.chartview = getGraph(self, metrics, domain, samplingBox, window = "default")   
+        self.chartview = getGraph(self, metrics, domain, samplingBox, type, window = "default")
         # pathname = (path + '/' + filename)
         # return pathname
     
 def presetImport(self, domain):
     self.ui.mainBox.setCurrentIndex(0)
-    self.ui.expandGraph.setEnabled(True)
-    self.ui.exportFig.setEnabled(True)
-    self.ui.exportData.setEnabled(True)
+    #self.ui.expandGraph.setEnabled(True)
+    #self.ui.exportFig.setEnabled(True)
+    #self.ui.exportData.setEnabled(True)
     if domain == "Time":
         self.ui.domainBox.setCurrentIndex(0)
         self.ui.domainBox.setEnabled(True)
@@ -227,4 +241,4 @@ def presetImport(self, domain):
         self.ui.samplingBox.setEnabled(False)
         self.ui.automaticCheckBox.setEnabled(True)
         self.ui.automaticCheckBox.setChecked(True)
-        self.ui.applyButton.setEnabled(True)
+        #self.ui.applyButton.setEnabled(True)

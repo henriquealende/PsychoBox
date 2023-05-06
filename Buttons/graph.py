@@ -1,10 +1,10 @@
-from expandGraph import *
+import pandas as pd
 
+from expandGraph import *
 from Database.database import *
 from Utils.graph_utils import *
 from Utils.filter_utils import *   
-
-import pandas as pd
+##############################################################################
 
 class UI_Buttons_Graph():
     def __init__(self):
@@ -62,7 +62,6 @@ class UI_Buttons_Graph():
                 self.ui.spinBox_3.setValue(0)
                 self.ui.spinBox_4.setValue(99000)
             else:                
-               
                 self.ui.spinBox.setEnabled(True)
                 self.ui.spinBox_2.setEnabled(True)
                 self.ui.spinBox_3.setEnabled(True)
@@ -107,51 +106,63 @@ class UI_Buttons_Graph():
         global path, pathExport   
         metrics = self.ui.mainBox.currentText()
         domain = self.ui.domainBox.currentText()
-        samplingBox = self.ui.samplingBox.currentText()        
+        samplingBox = self.ui.samplingBox.currentText()
+#        print(metrics, domain, samplingBox)
         presetImport(self, domain)
         filename = str(self.ui.listWidget2.currentItem().text())  
         self.pathname = (path + '/' + filename)
+        print(self.pathname)
         selectMulti(self, metrics, domain, samplingBox) 
         pathExport = self.pathname   
-        
+
         
     def changeGraph(self, window):
-        if window == 'default':
-            metrics = self.ui.mainBox.currentText()
-            domain = self.ui.domainBox.currentText()
-            samplingBox = self.ui.samplingBox.currentText()
-            self.chartview = getGraph(self, metrics, domain, samplingBox, window)
-        else:
-            metrics = self.gp.mainBox.currentText()
-            domain = self.gp.domainBox.currentText()
-            samplingBox = self.gp.samplingBox.currentText()
-            self.chartview = getGraph(self, metrics, domain, samplingBox, window)
-     #############################################################          
-    def getPathname(self):        
+        print(1)
+        metrics = self.gp.mainBox.currentText()
+        domain = self.gp.domainBox.currentText()
+        samplingBox = self.gp.samplingBox.currentText()
+        self.chartview = getGraph(self, metrics, domain, samplingBox, type ='plot', window='expand')
+
+
+    def getPathname(self):
         return pathExport
     
-    def expandGraph(self):
-        self.gp = Expand_Graph()
+    def expandGraph(self, type):
+        dados = ['metrics', 'domain', 'samplingBox']
+        dados[0] = self.ui.mainBox.currentText()
+        dados[1] = self.ui.domainBox.currentText()
+        dados[2] = self.ui.samplingBox.currentText()
+        self.gp = Expand_Graph(dados, type)
         self.gp.show()
+
+    def showSettings(self, x):
+        if x == 'show':
+            self.gp.frame_21.show()
+            self.gp.pushButton2.hide()
+            self.gp.pushButton2_2.show()
+        else:
+            self.gp.frame_21.hide()
+            self.gp.pushButton2.show()
+            self.gp.pushButton2_2.hide()
+
+
+
 
     def saveGraph(self, window):
         from Utils.graph_utils import chartView
+        #global chartView
+        x = chartView
         fileName, _ = QFileDialog.getSaveFileName(
             self, "Save Image", r"H:\Image", "Image Files (*.png *.jpg *.bmp)")
         fileName = fileName + '.png'
-        image = chartView.grab()
+        image = x.grab()
+        #image.scaled(1000, 1000)
+        image.save(fileName)
 
-        if window == "default":
-            image = image.scaled(800, 800)
-            image.save(fileName)
-
-        else:
-            image.save(fileName)
-
-    def saveData(self):
-        from Utils.graph_utils import x, y
-        lista_xy = list(zip(x, y))
-        df = pd.DataFrame(lista_xy, columns=['x', 'y'])
-        name = QFileDialog.getSaveFileName(self, 'Save File', filter='*.csv')
-        df.to_csv(name[0], index = False, sep = ";")
+#    def saveData(self):
+#        from Utils.graph_utils import x, y
+#        lista_xy = list(zip(x, y))
+#        df = pd.DataFrame(lista_xy, columns=['x', 'y'])
+#        name = QFileDialog.getSaveFileName(self, 'Save File', filter='*.csv')
+#        df.to_csv(name[0], index = False, sep = ";")
 

@@ -1,17 +1,14 @@
-from main import *
-
+import sys
 import Buttons.login as bt_lo
 
+from main import *
 from PySide2 import QtCore, QtGui, QtWidgets
-from PySide2.QtWidgets import (QApplication, QWidget, QGraphicsOpacityEffect, QMessageBox, QGraphicsColorizeEffect, QLabel, QVBoxLayout, QMainWindow, QGraphicsDropShadowEffect)
-from PySide2.QtCore import (Qt, QFile, QPropertyAnimation, QEasingCurve, QMargins, QTime, QPoint)
+from PySide2.QtWidgets import (QApplication, QMainWindow)
+from PySide2.QtCore import (Qt, QFile)
 from PySide2.QtUiTools import QUiLoader
-from PySide2.QtGui import QValidator, QDoubleValidator, QColor, QIcon
-from PySide2.QtSql import QSqlDatabase, QSqlQuery
-
 from Resources import resourceGUI
+##############################################################################
 
-import sys
 
 class New_Project_Widget(QMainWindow):
     def __init__(self):
