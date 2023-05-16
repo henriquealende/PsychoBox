@@ -25,7 +25,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(962, 665)
+        Form.resize(1116, 665)
         Form.setMinimumSize(QSize(962, 665))
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setSpacing(0)
@@ -33,8 +33,13 @@ class Ui_Form(object):
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.infoBar3 = QFrame(Form)
         self.infoBar3.setObjectName(u"infoBar3")
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.infoBar3.sizePolicy().hasHeightForWidth())
+        self.infoBar3.setSizePolicy(sizePolicy)
         self.infoBar3.setMinimumSize(QSize(0, 50))
-        self.infoBar3.setMaximumSize(QSize(16777215, 50))
+        self.infoBar3.setMaximumSize(QSize(16777215, 300))
         self.infoBar3.setStyleSheet(u"QFrame{\n"
 "	background-color : #006d34;\n"
 "}")
@@ -64,22 +69,23 @@ class Ui_Form(object):
 
         self.horizontalLayout_5.addWidget(self.frame_5)
 
-        self.frame_6 = QFrame(self.infoBar3)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setMaximumSize(QSize(75, 16777215))
-        self.frame_6.setStyleSheet(u"")
-        self.frame_6.setFrameShape(QFrame.NoFrame)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_7 = QHBoxLayout(self.frame_6)
-        self.horizontalLayout_7.setSpacing(0)
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.horizontalLayout_7.setContentsMargins(10, 0, 10, 0)
-        self.minimizeButton = QPushButton(self.frame_6)
+        self.frameButtons = QFrame(self.infoBar3)
+        self.frameButtons.setObjectName(u"frameButtons")
+        self.frameButtons.setMaximumSize(QSize(120, 16777215))
+        self.frameButtons.setStyleSheet(u"QPushButton {\n"
+"	border-radius: 10px;\n"
+"}")
+        self.frameButtons.setFrameShape(QFrame.NoFrame)
+        self.frameButtons.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frameButtons)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(10, 0, 10, 0)
+        self.minimizeButton = QPushButton(self.frameButtons)
         self.minimizeButton.setObjectName(u"minimizeButton")
         self.minimizeButton.setMaximumSize(QSize(20, 20))
         self.minimizeButton.setStyleSheet(u"QPushButton {\n"
 "	background-color: #ffbe38;\n"
-"	border-radius: 10px;\n"
 "	border: 2px solid  #d5a342;\n"
 "}\n"
 "\n"
@@ -90,14 +96,27 @@ class Ui_Form(object):
         icon.addFile(u":/icons/img/minus.png", QSize(), QIcon.Normal, QIcon.Off)
         self.minimizeButton.setIcon(icon)
 
-        self.horizontalLayout_7.addWidget(self.minimizeButton, 0, Qt.AlignRight)
+        self.horizontalLayout.addWidget(self.minimizeButton)
 
-        self.closeAllButton = QPushButton(self.frame_6)
+        self.maximizeButton = QPushButton(self.frameButtons)
+        self.maximizeButton.setObjectName(u"maximizeButton")
+        self.maximizeButton.setMaximumSize(QSize(20, 20))
+        self.maximizeButton.setStyleSheet(u"QPushButton {\n"
+"	background-color:  qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));\n"
+"	border: 2px solid  qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color:  rgb(220, 147, 0)\n"
+"}")
+
+        self.horizontalLayout.addWidget(self.maximizeButton)
+
+        self.closeAllButton = QPushButton(self.frameButtons)
         self.closeAllButton.setObjectName(u"closeAllButton")
         self.closeAllButton.setMaximumSize(QSize(20, 20))
         self.closeAllButton.setStyleSheet(u"QPushButton {\n"
 "	background-color: #fc5753;\n"
-"	border-radius: 10px;\n"
 "	border: 2px solid  #cf5254;\n"
 "}\n"
 "\n"
@@ -109,16 +128,22 @@ class Ui_Form(object):
         self.closeAllButton.setIcon(icon1)
         self.closeAllButton.setIconSize(QSize(12, 12))
 
-        self.horizontalLayout_7.addWidget(self.closeAllButton, 0, Qt.AlignRight)
+        self.horizontalLayout.addWidget(self.closeAllButton)
 
 
-        self.horizontalLayout_5.addWidget(self.frame_6)
+        self.horizontalLayout_5.addWidget(self.frameButtons)
 
 
         self.verticalLayout.addWidget(self.infoBar3)
 
         self.chart = QFrame(Form)
         self.chart.setObjectName(u"chart")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.MinimumExpanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.chart.sizePolicy().hasHeightForWidth())
+        self.chart.setSizePolicy(sizePolicy1)
+        self.chart.setMaximumSize(QSize(16777215, 16777215))
         self.chart.setStyleSheet(u"QFrame{	\n"
 "	background-color: rgb(237, 237, 237);\n"
 "}")
@@ -220,6 +245,13 @@ class Ui_Form(object):
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2 = QGridLayout()
         self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.frame = QFrame(self.frame_19)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+
+        self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
+
 
         self.verticalLayout_11.addLayout(self.gridLayout_2)
 
@@ -229,6 +261,7 @@ class Ui_Form(object):
         self.frame_axis = QFrame(self.frame_17)
         self.frame_axis.setObjectName(u"frame_axis")
         self.frame_axis.setMaximumSize(QSize(16777215, 40))
+        self.frame_axis.setLayoutDirection(Qt.LeftToRight)
         self.frame_axis.setStyleSheet(u"QPushButton {\n"
 "	border: 1px solid #333333;\n"
 "	border-radius: 14px;\n"
@@ -294,6 +327,10 @@ class Ui_Form(object):
         self.horizontalLayout_6.setSpacing(50)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.horizontalLayout_6.setContentsMargins(5, 5, 5, 5)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer)
+
         self.frame_20 = QFrame(self.frame_axis)
         self.frame_20.setObjectName(u"frame_20")
         self.frame_20.setFrameShape(QFrame.NoFrame)
@@ -335,7 +372,7 @@ class Ui_Form(object):
 
         self.horizontalLayout_43.addWidget(self.spinBox_3)
 
-        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_43.addItem(self.horizontalSpacer_3)
 
@@ -397,7 +434,7 @@ class Ui_Form(object):
 
         self.horizontalLayout_48.addWidget(self.spinBox)
 
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_4 = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_48.addItem(self.horizontalSpacer_4)
 
@@ -432,6 +469,10 @@ class Ui_Form(object):
 
         self.horizontalLayout_6.addWidget(self.frame_100)
 
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_6.addItem(self.horizontalSpacer_2)
+
 
         self.verticalLayout_10.addWidget(self.frame_axis)
 
@@ -440,8 +481,8 @@ class Ui_Form(object):
 
         self.frame_21 = QFrame(self.chart)
         self.frame_21.setObjectName(u"frame_21")
-        self.frame_21.setMinimumSize(QSize(235, 0))
-        self.frame_21.setMaximumSize(QSize(235, 16777215))
+        self.frame_21.setMinimumSize(QSize(300, 0))
+        self.frame_21.setMaximumSize(QSize(500, 16777215))
         self.frame_21.setStyleSheet(u"QFrame{\n"
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px;\n"
@@ -489,7 +530,7 @@ class Ui_Form(object):
         self.frame_23 = QFrame(self.frame_21)
         self.frame_23.setObjectName(u"frame_23")
         self.frame_23.setMinimumSize(QSize(225, 80))
-        self.frame_23.setMaximumSize(QSize(225, 80))
+        self.frame_23.setMaximumSize(QSize(16777215, 16777215))
         self.frame_23.setFrameShape(QFrame.StyledPanel)
         self.frame_23.setFrameShadow(QFrame.Raised)
         self.verticalLayout_13 = QVBoxLayout(self.frame_23)
@@ -508,7 +549,7 @@ class Ui_Form(object):
         self.mainBox = QComboBox(self.frame_23)
         self.mainBox.setObjectName(u"mainBox")
         self.mainBox.setMinimumSize(QSize(235, 30))
-        self.mainBox.setMaximumSize(QSize(225, 30))
+        self.mainBox.setMaximumSize(QSize(16777215, 30))
         font5 = QFont()
         font5.setFamilies([u"PF BeauSans Pro"])
         font5.setPointSize(11)
@@ -567,7 +608,7 @@ class Ui_Form(object):
         self.frame_24 = QFrame(self.frame_21)
         self.frame_24.setObjectName(u"frame_24")
         self.frame_24.setMinimumSize(QSize(225, 80))
-        self.frame_24.setMaximumSize(QSize(225, 80))
+        self.frame_24.setMaximumSize(QSize(16777215, 16777215))
         self.frame_24.setFrameShape(QFrame.StyledPanel)
         self.frame_24.setFrameShadow(QFrame.Raised)
         self.verticalLayout_14 = QVBoxLayout(self.frame_24)
@@ -587,7 +628,7 @@ class Ui_Form(object):
         self.domainBox.setObjectName(u"domainBox")
         self.domainBox.setEnabled(True)
         self.domainBox.setMinimumSize(QSize(235, 30))
-        self.domainBox.setMaximumSize(QSize(225, 30))
+        self.domainBox.setMaximumSize(QSize(16777215, 30))
         self.domainBox.setFont(font5)
         self.domainBox.setStyleSheet(u"QComboBox {\n"
 "	border: 1px solid #333333;\n"
@@ -644,7 +685,7 @@ class Ui_Form(object):
         self.frame_samplingBox = QFrame(self.frame_21)
         self.frame_samplingBox.setObjectName(u"frame_samplingBox")
         self.frame_samplingBox.setMinimumSize(QSize(225, 80))
-        self.frame_samplingBox.setMaximumSize(QSize(80, 150))
+        self.frame_samplingBox.setMaximumSize(QSize(16777215, 16777215))
         self.frame_samplingBox.setFrameShape(QFrame.StyledPanel)
         self.frame_samplingBox.setFrameShadow(QFrame.Raised)
         self.verticalLayout_15 = QVBoxLayout(self.frame_samplingBox)
@@ -664,7 +705,7 @@ class Ui_Form(object):
         self.samplingBox.setObjectName(u"samplingBox")
         self.samplingBox.setEnabled(True)
         self.samplingBox.setMinimumSize(QSize(235, 30))
-        self.samplingBox.setMaximumSize(QSize(225, 30))
+        self.samplingBox.setMaximumSize(QSize(16777215, 30))
         self.samplingBox.setFont(font5)
         self.samplingBox.setStyleSheet(u"QComboBox {\n"
 "	border: 1px solid #333333;\n"
@@ -721,7 +762,7 @@ class Ui_Form(object):
         self.frame_98 = QFrame(self.frame_21)
         self.frame_98.setObjectName(u"frame_98")
         self.frame_98.setMinimumSize(QSize(225, 50))
-        self.frame_98.setMaximumSize(QSize(225, 50))
+        self.frame_98.setMaximumSize(QSize(16777215, 100))
         self.frame_98.setFrameShape(QFrame.NoFrame)
         self.frame_98.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_49 = QHBoxLayout(self.frame_98)
@@ -781,7 +822,7 @@ class Ui_Form(object):
         self.frame_25 = QFrame(self.frame_21)
         self.frame_25.setObjectName(u"frame_25")
         self.frame_25.setMinimumSize(QSize(225, 100))
-        self.frame_25.setMaximumSize(QSize(225, 100))
+        self.frame_25.setMaximumSize(QSize(16777215, 100))
         self.frame_25.setLayoutDirection(Qt.LeftToRight)
         self.frame_25.setFrameShape(QFrame.NoFrame)
         self.frame_25.setFrameShadow(QFrame.Raised)
@@ -793,7 +834,7 @@ class Ui_Form(object):
         self.exportFig.setObjectName(u"exportFig")
         self.exportFig.setEnabled(True)
         self.exportFig.setMinimumSize(QSize(220, 30))
-        self.exportFig.setMaximumSize(QSize(218, 30))
+        self.exportFig.setMaximumSize(QSize(16777215, 30))
         self.exportFig.setFont(font1)
         self.exportFig.setStyleSheet(u"\n"
 "QPushButton {\n"
@@ -826,7 +867,7 @@ class Ui_Form(object):
         self.exportButton_2.setObjectName(u"exportButton_2")
         self.exportButton_2.setEnabled(True)
         self.exportButton_2.setMinimumSize(QSize(220, 30))
-        self.exportButton_2.setMaximumSize(QSize(218, 30))
+        self.exportButton_2.setMaximumSize(QSize(16777215, 30))
         self.exportButton_2.setFont(font1)
         self.exportButton_2.setStyleSheet(u"\n"
 "QPushButton {\n"
@@ -866,8 +907,10 @@ class Ui_Form(object):
 
         self.bottomContent = QFrame(Form)
         self.bottomContent.setObjectName(u"bottomContent")
+        sizePolicy.setHeightForWidth(self.bottomContent.sizePolicy().hasHeightForWidth())
+        self.bottomContent.setSizePolicy(sizePolicy)
         self.bottomContent.setMinimumSize(QSize(0, 50))
-        self.bottomContent.setMaximumSize(QSize(16777215, 50))
+        self.bottomContent.setMaximumSize(QSize(16777215, 150))
         self.bottomContent.setStyleSheet(u"QFrame{\n"
 "	background-color: rgb(70, 70, 70);\n"
 "}")
@@ -909,6 +952,7 @@ class Ui_Form(object):
         Form.setWindowTitle(QCoreApplication.translate("Form", u"Form", None))
         self.label_3.setText("")
         self.minimizeButton.setText("")
+        self.maximizeButton.setText("")
         self.closeAllButton.setText("")
         self.label_12.setText("")
         self.label_13.setText(QCoreApplication.translate("Form", u"Chart", None))

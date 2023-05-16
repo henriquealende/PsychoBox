@@ -1,5 +1,5 @@
 import sys
-import Buttons.login as bt_lo
+import Buttons.general as bt_lo
 
 from main import *
 from PySide2 import QtCore, QtGui, QtWidgets
@@ -46,9 +46,10 @@ class New_Project_Widget(QMainWindow):
         return super().eventFilter(source, event)
 
     def buttonCallback(self):
-        self.np.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
-        self.np.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
-        self.np.applyButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.applyProject(self, self.main_window))
+
+        self.np.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_GeneralFunctions.closeAll(self))
+        self.np.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_GeneralFunctions.minimize(self))
+        self.np.applyButton.clicked.connect(lambda: bt_lo.UI_Buttons_GeneralFunctions.applyProject(self, self.main_window))
         
 def centerWindow(widget):
     window = widget.window()

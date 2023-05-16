@@ -1,6 +1,7 @@
 import sys
-import Buttons.login as bt_lo
+import Buttons.general as bt_lo
 import Buttons.graph as bt_gh
+import Buttons.settingsPages as bt_lp
 
 from Utils.graph_utils import *
 from PySide2 import QtCore, QtGui, QtWidgets
@@ -12,12 +13,11 @@ from Resources import resourceGUI
 
 
 class Expand_Graph(QMainWindow):
-    def __init__(self, dados, type):
+    def __init__(self, dados, pathExport, type):
         super(Expand_Graph, self).__init__()
         self.initUI()
         self.buttonCallback()
-        self.getAndReadWav(dados, type)
-
+        self.getAndReadWav(dados, pathExport, type)
 
 
     def initUI(self):
@@ -37,6 +37,7 @@ class Expand_Graph(QMainWindow):
         self.gp.frame_21.hide()
         self.gp.pushButton2_2.hide()
 
+
     def eventFilter(self, source, event):
         if source == self.gp.infoBar3:
             if event.type() == QtCore.QEvent.MouseButtonPress:
@@ -50,25 +51,28 @@ class Expand_Graph(QMainWindow):
 
 
     def buttonCallback(self):
-        self.gp.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
-        self.gp.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
-        self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "expand"))
+        self.clique = 0
+        self.gp.closeAllButton.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.closeAll(self))
+        self.gp.minimizeButton.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.minimize(self))
+        self.gp.maximizeButton.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.maximize(self, window="expand"))
+        self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self))
         self.gp.exportButton_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
-        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window="expand"))
-        self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window="expand"))
-        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.selectDomain(self, window="expand"))
-        self.gp.automaticCheckBox.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.automaticCheckBox(self, window = "expand"))
-        self.gp.refresh.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window = "expand"))
+        self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
+        self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
+        self.gp.domainBox.activated[str].connect(lambda: bt_lp.UI_Buttons_Layout.selectDomain(self, window="expand"))
+        self.gp.automaticCheckBox.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.automaticCheckBox(self, window = "expand"))
+        self.gp.refresh.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
         self.gp.pushButton2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.showSettings(self, 'show'))
         self.gp.pushButton2_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.showSettings(self, 'hide'))
 
 
-    def getAndReadWav(self, dados, type):
-        from main import Main_Window
-        print(type)
-        main = Main_Window()
-        self.pathname = main.getPath()
-        print(self.pathname)
+    def getAndReadWav(self, dados, pathExport, type):
+#        from main import Main_Window
+#        main = Main_Window()
+#        self.pathname = main.getPath()
+#        self.pathname = bt_gh.UI_Buttons_Graph.getPathname(self)
+
+        self.pathname = pathExport
         metrics = dados[0]
         domain = dados[1]
         samplingBox = dados[2]
@@ -100,7 +104,7 @@ def centerWindow(widget):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     widget = Expand_Graph()
-    widget.resize(1046,665)
+    #widget.resize(1046,665)
     widget.show()
     QtCore.QTimer.singleShot(0, lambda: centerWindow(widget))
     sys.exit(app.exec_())
