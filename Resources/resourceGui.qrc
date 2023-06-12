@@ -31,6 +31,8 @@
         <file>img/calibration.png</file>
         <file>img/HATS.png</file>
         <file>img/headphones.png</file>
+        <file>img/business-graphic-sketch-of-two-lines.png</file>
+        <file>img/graphic.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/embracoLogo.png</file>

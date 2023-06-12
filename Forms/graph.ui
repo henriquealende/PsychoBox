@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>962</width>
+    <width>1116</width>
     <height>665</height>
    </rect>
   </property>
@@ -37,6 +37,12 @@
    </property>
    <item>
     <widget class="QFrame" name="infoBar3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -46,7 +52,7 @@
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>50</height>
+       <height>300</height>
       </size>
      </property>
      <property name="styleSheet">
@@ -129,15 +135,17 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_6">
+       <widget class="QFrame" name="frameButtons">
         <property name="maximumSize">
          <size>
-          <width>75</width>
+          <width>120</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true"/>
+         <string notr="true">QPushButton {
+	border-radius: 10px;
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
@@ -145,7 +153,7 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
+        <layout class="QHBoxLayout" name="horizontalLayout">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -161,7 +169,7 @@
          <property name="bottomMargin">
           <number>0</number>
          </property>
-         <item alignment="Qt::AlignRight">
+         <item>
           <widget class="QPushButton" name="minimizeButton">
            <property name="maximumSize">
             <size>
@@ -172,7 +180,6 @@
            <property name="styleSheet">
             <string notr="true">QPushButton {
 	background-color: #ffbe38;
-	border-radius: 10px;
 	border: 2px solid  #d5a342;
 }
 
@@ -189,7 +196,30 @@ QPushButton:hover {
            </property>
           </widget>
          </item>
-         <item alignment="Qt::AlignRight">
+         <item>
+          <widget class="QPushButton" name="maximizeButton">
+           <property name="maximumSize">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	background-color:  qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
+	border: 2px solid  qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
+}
+
+QPushButton:hover {
+	background-color:  rgb(220, 147, 0)
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="closeAllButton">
            <property name="maximumSize">
             <size>
@@ -200,7 +230,6 @@ QPushButton:hover {
            <property name="styleSheet">
             <string notr="true">QPushButton {
 	background-color: #fc5753;
-	border-radius: 10px;
 	border: 2px solid  #cf5254;
 }
 
@@ -231,6 +260,18 @@ QPushButton:hover{
    </item>
    <item>
     <widget class="QFrame" name="chart">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
      <property name="styleSheet">
       <string notr="true">QFrame{	
 	background-color: rgb(237, 237, 237);
@@ -477,7 +518,18 @@ QPushButton:hover{
              <number>0</number>
             </property>
             <item>
-             <layout class="QGridLayout" name="gridLayout_2"/>
+             <layout class="QGridLayout" name="gridLayout_2">
+              <item row="0" column="0">
+               <widget class="QFrame" name="frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
           </widget>
@@ -489,6 +541,9 @@ QPushButton:hover{
              <width>16777215</width>
              <height>40</height>
             </size>
+           </property>
+           <property name="layoutDirection">
+            <enum>Qt::LeftToRight</enum>
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {
@@ -572,6 +627,19 @@ QSpinBox::up-arrow:disabled {
             <property name="bottomMargin">
              <number>5</number>
             </property>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
             <item>
              <widget class="QFrame" name="frame_20">
               <property name="frameShape">
@@ -665,7 +733,7 @@ QSpinBox::up-arrow:disabled {
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>40</width>
+                   <width>20</width>
                    <height>20</height>
                   </size>
                  </property>
@@ -814,7 +882,7 @@ QSpinBox::up-arrow:disabled {
                  </property>
                  <property name="sizeHint" stdset="0">
                   <size>
-                   <width>40</width>
+                   <width>20</width>
                    <height>20</height>
                   </size>
                  </property>
@@ -889,6 +957,19 @@ QSpinBox::up-arrow:disabled {
               </layout>
              </widget>
             </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
            </layout>
           </widget>
          </item>
@@ -899,13 +980,13 @@ QSpinBox::up-arrow:disabled {
        <widget class="QFrame" name="frame_21">
         <property name="minimumSize">
          <size>
-          <width>235</width>
+          <width>300</width>
           <height>0</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>235</width>
+          <width>500</width>
           <height>16777215</height>
          </size>
         </property>
@@ -1035,8 +1116,8 @@ QSpinBox::up-arrow:disabled {
            </property>
            <property name="maximumSize">
             <size>
-             <width>225</width>
-             <height>80</height>
+             <width>16777215</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="frameShape">
@@ -1097,7 +1178,7 @@ QSpinBox::up-arrow:disabled {
               </property>
               <property name="maximumSize">
                <size>
-                <width>225</width>
+                <width>16777215</width>
                 <height>30</height>
                </size>
               </property>
@@ -1169,8 +1250,8 @@ QComboBox QAbstractView{
            </property>
            <property name="maximumSize">
             <size>
-             <width>225</width>
-             <height>80</height>
+             <width>16777215</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="frameShape">
@@ -1234,7 +1315,7 @@ QComboBox QAbstractView{
               </property>
               <property name="maximumSize">
                <size>
-                <width>225</width>
+                <width>16777215</width>
                 <height>30</height>
                </size>
               </property>
@@ -1312,8 +1393,8 @@ QComboBox QAbstractView{
            </property>
            <property name="maximumSize">
             <size>
-             <width>80</width>
-             <height>150</height>
+             <width>16777215</width>
+             <height>16777215</height>
             </size>
            </property>
            <property name="frameShape">
@@ -1377,7 +1458,7 @@ QComboBox QAbstractView{
               </property>
               <property name="maximumSize">
                <size>
-                <width>225</width>
+                <width>16777215</width>
                 <height>30</height>
                </size>
               </property>
@@ -1452,8 +1533,8 @@ QComboBox QAbstractView{
            </property>
            <property name="maximumSize">
             <size>
-             <width>225</width>
-             <height>50</height>
+             <width>16777215</width>
+             <height>100</height>
             </size>
            </property>
            <property name="frameShape">
@@ -1576,7 +1657,7 @@ QCheckBox::indicator:checked:disabled{
            </property>
            <property name="maximumSize">
             <size>
-             <width>225</width>
+             <width>16777215</width>
              <height>100</height>
             </size>
            </property>
@@ -1618,7 +1699,7 @@ QCheckBox::indicator:checked:disabled{
               </property>
               <property name="maximumSize">
                <size>
-                <width>218</width>
+                <width>16777215</width>
                 <height>30</height>
                </size>
               </property>
@@ -1672,7 +1753,7 @@ QPushButton:disabled{
               </property>
               <property name="maximumSize">
                <size>
-                <width>218</width>
+                <width>16777215</width>
                 <height>30</height>
                </size>
               </property>
@@ -1724,6 +1805,12 @@ QPushButton:disabled{
    </item>
    <item>
     <widget class="QFrame" name="bottomContent">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -1733,7 +1820,7 @@ QPushButton:disabled{
      <property name="maximumSize">
       <size>
        <width>16777215</width>
-       <height>50</height>
+       <height>150</height>
       </size>
      </property>
      <property name="styleSheet">
