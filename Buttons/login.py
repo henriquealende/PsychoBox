@@ -13,6 +13,15 @@ class UI_Buttons_Login():
     def minimize(self):
         self.showMinimized()
 
+    def maximize(self):
+        if self.maximized:
+            self.showNormal()
+            self.maximized = False
+        else:
+            self.showFullScreen()
+            self.maximized = True
+      #  self.showMaximized()
+
     def login(self):
         username = self.ui.loginLineEdit.text()
         password = self.ui.passwordLlineEdit.text()

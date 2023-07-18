@@ -20,7 +20,7 @@ projects = []
 class Main_Window(QMainWindow):
     def __init__(self):
         super(Main_Window, self).__init__()
-
+        self.maximized = False
         self.initUI()
         self.buttonCallback()
 
@@ -66,6 +66,7 @@ class Main_Window(QMainWindow):
         #INTERFACE
         self.ui.closeAllButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.closeAll(self))
         self.ui.minimizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.minimize(self))
+        self.ui.maximizeButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.maximize(self))
         self.ui.connectButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.login(self))
         self.ui.registerButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.register(self))
         self.ui.menuButton.clicked.connect(lambda: bt_lo.UI_Buttons_Login.toogleMenu(self))
@@ -108,6 +109,7 @@ class Main_Window(QMainWindow):
         self.ui.removeGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'graph'))
         self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
         self.ui.listWidget2.itemClicked.connect(lambda: bt_gh.UI_Buttons_Graph.selectItem(self))
+
         #self.ui.applyButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self, window = "default"))
         #self.ui.expandGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self))
         #self.ui.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self, window = "default"))
@@ -121,8 +123,8 @@ class Main_Window(QMainWindow):
         self.ui.modelHeadBox_2.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeModelHead(self))
         self.ui.modelHatsBox_2.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeModelHats(self))
         self.ui.plot.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'plot'))
-        self.ui.join.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'join'))
-        self.ui.convolve.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'convolve'))
+        self.ui.auralize.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'join'))
+        #self.ui.convolve.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'convolve'))
 
 
 

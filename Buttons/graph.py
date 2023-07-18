@@ -4,6 +4,7 @@ from expandGraph import *
 from Database.database import *
 from Utils.graph_utils import *
 from Utils.filter_utils import *   
+from Utils.general_utils import *
 ##############################################################################
 
 class UI_Buttons_Graph():
@@ -158,6 +159,7 @@ class UI_Buttons_Graph():
         image = x.grab()
         #image.scaled(1000, 1000)
         image.save(fileName)
+
 
 #    def saveData(self):
 #        from Utils.graph_utils import x, y
