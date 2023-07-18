@@ -34,6 +34,8 @@
         <file>img/graphic.png</file>
         <file>img/puzzle.png</file>
         <file>img/bar-graph.png</file>
+        <file>img/bar-graph_dis.png</file>
+        <file>img/puzzle_disabled.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/embracoLogo.png</file>

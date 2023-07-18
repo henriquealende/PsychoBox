@@ -37,14 +37,11 @@ class Main_Window(QMainWindow):
         self.setWindowTitle('PsychoBox | v.003')
         self.setIcon()
         self.ui.infoBar.installEventFilter(self)
-        self.ui.mainBox.addItems(['Time-Frequency', 'Metrics'])
-        self.ui.domainBox.addItems(['Time', 'Frequency'])
-        self.ui.samplingBox.addItems(['Linear', '1/3 octave'])
         self.ui.typeHeadBox_2.addItems(['None', 'Sennheiser'])
         self.ui.typeHatsBox_2.addItems(['None', 'HeadAcoustics', 'GRASS'])
 
         pygame.init()
-        
+
     def eventFilter(self, source, event):
         if source == self.ui.infoBar:
             if event.type() == QtCore.QEvent.MouseButtonPress:
@@ -65,6 +62,7 @@ class Main_Window(QMainWindow):
 #        return pathExport
 
     def buttonCallback(self):
+
         #GENERAL BUTTONS
         self.clique = 0
         self.ui.closeAllButton.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.closeAll(self))
@@ -81,7 +79,6 @@ class Main_Window(QMainWindow):
         #NEW PROJECT PAGE
         self.ui.newProjectButton.clicked.connect(lambda: bt_lo.UI_Buttons_GeneralFunctions.newProject(self))
         self.ui.refreshButton.clicked.connect(lambda: bt_lo.UI_Buttons_GeneralFunctions.refresh(self))
-
 
         #FILTER PAGE
         self.ui.filterButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.filterButton(self))
@@ -103,12 +100,10 @@ class Main_Window(QMainWindow):
         self.ui.resetButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.resetButton(self))
         self.ui.filterAudioButton.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.filterAudioButton(self))
 
-
-
         #CALIBRATION PAGE LAYOUT
-        self.ui.mainBox.activated[str].connect(lambda: bt_lp.UI_Buttons_Layout.selectGraph(self))
-        self.ui.domainBox.activated[str].connect(lambda: bt_lp.UI_Buttons_Layout.selectDomain(self, window="defaut"))
-        self.ui.automaticCheckBox.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.automaticCheckBox(self, window = "defaut"))
+        #self.ui.mainBox.activated[str].connect(lambda: bt_lp.UI_Buttons_Layout.selectGraph(self))
+        #self.ui.domainBox.activated[str].connect(lambda: bt_lp.UI_Buttons_Layout.selectDomain(self, window="defaut"))
+        #self.ui.automaticCheckBox.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.automaticCheckBox(self, window = "defaut"))
 
         #CALIBRATION PAGE FUNCTION
         self.ui.graphButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.graphButton(self))
