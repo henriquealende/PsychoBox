@@ -104,8 +104,8 @@ class Ui_Widget(object):
 
         self.infoBar = QFrame(self.topContent)
         self.infoBar.setObjectName(u"infoBar")
-        self.infoBar.setStyleSheet(u"QFrame{\n"
-"	background-color : #006d34;\n"
+        self.infoBar.setStyleSheet(u"QFrame{ \n"
+"	background-color : rgb(182, 182, 182);\n"
 "}")
         self.infoBar.setFrameShape(QFrame.NoFrame)
         self.infoBar.setFrameShadow(QFrame.Raised)
@@ -118,7 +118,7 @@ class Ui_Widget(object):
         self.frame_5.setFrameShape(QFrame.NoFrame)
         self.frame_5.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_5)
-        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setSpacing(3)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(10, 0, 0, 0)
         self.label_2 = QLabel(self.frame_5)
@@ -135,18 +135,32 @@ class Ui_Widget(object):
 
         self.frame_6 = QFrame(self.infoBar)
         self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setMaximumSize(QSize(75, 16777215))
+        self.frame_6.setMaximumSize(QSize(100, 16777215))
         self.frame_6.setStyleSheet(u"")
         self.frame_6.setFrameShape(QFrame.NoFrame)
         self.frame_6.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.frame_6)
-        self.horizontalLayout_7.setSpacing(0)
+        self.horizontalLayout_7.setSpacing(4)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
         self.horizontalLayout_7.setContentsMargins(10, 0, 10, 0)
-        self.pushButton = QPushButton(self.frame_6)
-        self.pushButton.setObjectName(u"pushButton")
+        self.maximizeButton = QPushButton(self.frame_6)
+        self.maximizeButton.setObjectName(u"maximizeButton")
+        self.maximizeButton.setMinimumSize(QSize(0, 0))
+        self.maximizeButton.setMaximumSize(QSize(20, 20))
+        self.maximizeButton.setStyleSheet(u"QPushButton {\n"
+"	background-color: #00CA4E;\n"
+"	border-radius: 10px;\n"
+"	border: 2px solid  rgb(15, 136, 19);\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(0, 241, 92)\n"
+"}")
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/img/maximize2.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.maximizeButton.setIcon(icon1)
 
-        self.horizontalLayout_7.addWidget(self.pushButton)
+        self.horizontalLayout_7.addWidget(self.maximizeButton)
 
         self.minimizeButton = QPushButton(self.frame_6)
         self.minimizeButton.setObjectName(u"minimizeButton")
@@ -160,9 +174,9 @@ class Ui_Widget(object):
 "QPushButton:hover {\n"
 "	background-color: rgb(255, 255, 58)\n"
 "}")
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/img/minus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.minimizeButton.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/img/minus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.minimizeButton.setIcon(icon2)
 
         self.horizontalLayout_7.addWidget(self.minimizeButton, 0, Qt.AlignRight)
 
@@ -173,14 +187,15 @@ class Ui_Widget(object):
 "	background-color: #fc5753;\n"
 "	border-radius: 10px;\n"
 "	border: 2px solid  #cf5254;\n"
+"	padding: 3px;\n"
 "}\n"
 "\n"
 "QPushButton:hover{\n"
 "	background-color: rgb(255, 119, 119)\n"
 "}")
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/img/close.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.closeAllButton.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/img/close.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.closeAllButton.setIcon(icon3)
         self.closeAllButton.setIconSize(QSize(12, 12))
 
         self.horizontalLayout_7.addWidget(self.closeAllButton, 0, Qt.AlignRight)
@@ -258,9 +273,9 @@ class Ui_Widget(object):
         font2.setPointSize(15)
         font2.setBold(True)
         self.homeButton.setFont(font2)
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/img/homeEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.homeButton.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/img/homeEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.homeButton.setIcon(icon4)
         self.homeButton.setIconSize(QSize(30, 30))
         self.homeButton.setCheckable(True)
         self.homeButton.setChecked(True)
@@ -274,9 +289,9 @@ class Ui_Widget(object):
         self.filterButton.setMinimumSize(QSize(50, 50))
         self.filterButton.setMaximumSize(QSize(50, 50))
         self.filterButton.setFont(font2)
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/img/equalizerEnable.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.filterButton.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/img/equalizerEnable.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.filterButton.setIcon(icon5)
         self.filterButton.setIconSize(QSize(30, 30))
         self.filterButton.setCheckable(True)
         self.filterButton.setChecked(False)
@@ -290,9 +305,9 @@ class Ui_Widget(object):
         self.graphButton.setMinimumSize(QSize(50, 50))
         self.graphButton.setMaximumSize(QSize(50, 50))
         self.graphButton.setFont(font2)
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/img/graphicsEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.graphButton.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/img/graphicsEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.graphButton.setIcon(icon6)
         self.graphButton.setIconSize(QSize(30, 30))
         self.graphButton.setCheckable(True)
         self.graphButton.setAutoExclusive(True)
@@ -305,9 +320,9 @@ class Ui_Widget(object):
         self.calibrationButton.setMinimumSize(QSize(50, 50))
         self.calibrationButton.setMaximumSize(QSize(50, 50))
         self.calibrationButton.setStyleSheet(u"padding-left: 6px;")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/img/calibration.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.calibrationButton.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/img/calibration.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.calibrationButton.setIcon(icon7)
         self.calibrationButton.setIconSize(QSize(40, 40))
         self.calibrationButton.setCheckable(True)
         self.calibrationButton.setAutoRepeat(False)
@@ -366,9 +381,9 @@ class Ui_Widget(object):
 "	border-radius:25px;\n"
 "	padding-left:9px\n"
 "}")
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/img/userEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.userButton.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/img/userEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.userButton.setIcon(icon8)
         self.userButton.setIconSize(QSize(20, 20))
         self.userButton.setCheckable(True)
         self.userButton.setChecked(False)
@@ -381,9 +396,9 @@ class Ui_Widget(object):
         self.settingsButton.setMaximumSize(QSize(50, 50))
         self.settingsButton.setFont(font3)
         self.settingsButton.setLayoutDirection(Qt.LeftToRight)
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/img/settingsEnable.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.settingsButton.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/img/settingsEnable.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.settingsButton.setIcon(icon9)
         self.settingsButton.setIconSize(QSize(20, 20))
         self.settingsButton.setCheckable(True)
         self.settingsButton.setChecked(False)
@@ -974,9 +989,9 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/img/addEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.newProjectButton.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/img/addEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.newProjectButton.setIcon(icon10)
         self.newProjectButton.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_45.addWidget(self.newProjectButton, 0, Qt.AlignLeft)
@@ -999,9 +1014,9 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon10 = QIcon()
-        icon10.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.refreshButton.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.refreshButton.setIcon(icon11)
         self.refreshButton.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_45.addWidget(self.refreshButton)
@@ -1105,15 +1120,6 @@ class Ui_Widget(object):
         self.verticalLayout_69.setSpacing(5)
         self.verticalLayout_69.setObjectName(u"verticalLayout_69")
         self.verticalLayout_69.setContentsMargins(0, 0, 0, 0)
-        self.frame_79 = QFrame(self.frame_75)
-        self.frame_79.setObjectName(u"frame_79")
-        self.frame_79.setMinimumSize(QSize(0, 120))
-        self.frame_79.setMaximumSize(QSize(16777215, 120))
-        self.frame_79.setFrameShape(QFrame.StyledPanel)
-        self.frame_79.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_69.addWidget(self.frame_79)
-
         self.label_30 = QLabel(self.frame_75)
         self.label_30.setObjectName(u"label_30")
         self.label_30.setAlignment(Qt.AlignCenter)
@@ -1637,9 +1643,9 @@ class Ui_Widget(object):
         self.playButton.setEnabled(False)
         self.playButton.setMinimumSize(QSize(36, 36))
         self.playButton.setMaximumSize(QSize(36, 36))
-        icon11 = QIcon()
-        icon11.addFile(u":/icons/img/play.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.playButton.setIcon(icon11)
+        icon12 = QIcon()
+        icon12.addFile(u":/icons/img/play.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.playButton.setIcon(icon12)
         self.playButton.setIconSize(QSize(15, 25))
 
         self.horizontalLayout_31.addWidget(self.playButton)
@@ -1649,9 +1655,9 @@ class Ui_Widget(object):
         self.pauseButton.setEnabled(False)
         self.pauseButton.setMinimumSize(QSize(36, 36))
         self.pauseButton.setMaximumSize(QSize(36, 36))
-        icon12 = QIcon()
-        icon12.addFile(u":/icons/img/pause.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pauseButton.setIcon(icon12)
+        icon13 = QIcon()
+        icon13.addFile(u":/icons/img/pause.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pauseButton.setIcon(icon13)
         self.pauseButton.setIconSize(QSize(15, 25))
 
         self.horizontalLayout_31.addWidget(self.pauseButton)
@@ -1661,9 +1667,9 @@ class Ui_Widget(object):
         self.stopButton.setEnabled(False)
         self.stopButton.setMinimumSize(QSize(36, 36))
         self.stopButton.setMaximumSize(QSize(36, 36))
-        icon13 = QIcon()
-        icon13.addFile(u":/icons/img/stop.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.stopButton.setIcon(icon13)
+        icon14 = QIcon()
+        icon14.addFile(u":/icons/img/stop.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stopButton.setIcon(icon14)
         self.stopButton.setIconSize(QSize(13, 25))
 
         self.horizontalLayout_31.addWidget(self.stopButton)
@@ -1744,11 +1750,11 @@ class Ui_Widget(object):
 "	background-color: rgb(241, 102, 55)\n"
 "}\n"
 "")
-        icon14 = QIcon()
-        icon14.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon14.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
-        icon14.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
-        self.muteButton.setIcon(icon14)
+        icon15 = QIcon()
+        icon15.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
+        icon15.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
+        self.muteButton.setIcon(icon15)
         self.muteButton.setCheckable(True)
         self.muteButton.setChecked(False)
         self.muteButton.setAutoRepeat(False)
@@ -3884,7 +3890,7 @@ class Ui_Widget(object):
 "\n"
 "	text-align: center;\n"
 "	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));\n"
-"	border-radius:25px;\n"
+"	border-radius:18px;\n"
 "	color: rgb(255, 255, 255)\n"
 "}\n"
 "\n"
@@ -3909,46 +3915,26 @@ class Ui_Widget(object):
         self.plot = QPushButton(self.frame_13)
         self.plot.setObjectName(u"plot")
         self.plot.setEnabled(True)
-        self.plot.setMinimumSize(QSize(45, 50))
-        self.plot.setMaximumSize(QSize(50, 50))
+        self.plot.setMinimumSize(QSize(90, 36))
+        self.plot.setMaximumSize(QSize(90, 36))
         font20 = QFont()
         font20.setFamilies([u"PF BeauSans Pro"])
         font20.setPointSize(13)
         font20.setBold(False)
         self.plot.setFont(font20)
-        icon15 = QIcon()
-        icon15.addFile(u":/icons/img/graphic.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.plot.setIcon(icon15)
         self.plot.setIconSize(QSize(50, 50))
 
         self.horizontalLayout_18.addWidget(self.plot)
 
-        self.join = QPushButton(self.frame_13)
-        self.join.setObjectName(u"join")
-        self.join.setEnabled(True)
-        self.join.setMinimumSize(QSize(50, 50))
-        self.join.setMaximumSize(QSize(50, 50))
-        self.join.setFont(font20)
-        icon16 = QIcon()
-        icon16.addFile(u"../Resources/img/business-graphic-sketch-of-two-lines.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.join.setIcon(icon16)
-        self.join.setIconSize(QSize(40, 40))
+        self.auralize = QPushButton(self.frame_13)
+        self.auralize.setObjectName(u"auralize")
+        self.auralize.setEnabled(True)
+        self.auralize.setMinimumSize(QSize(90, 36))
+        self.auralize.setMaximumSize(QSize(90, 36))
+        self.auralize.setFont(font20)
+        self.auralize.setIconSize(QSize(40, 40))
 
-        self.horizontalLayout_18.addWidget(self.join)
-
-        self.convolve = QPushButton(self.frame_13)
-        self.convolve.setObjectName(u"convolve")
-        self.convolve.setEnabled(True)
-        self.convolve.setMinimumSize(QSize(50, 50))
-        self.convolve.setMaximumSize(QSize(50, 50))
-        self.convolve.setFont(font20)
-        icon17 = QIcon()
-        icon17.addFile(u"../Resources/img/headphones.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.convolve.setIcon(icon17)
-        self.convolve.setIconSize(QSize(30, 30))
-        self.convolve.setAutoRepeatDelay(303)
-
-        self.horizontalLayout_18.addWidget(self.convolve)
+        self.horizontalLayout_18.addWidget(self.auralize)
 
 
         self.verticalLayout_90.addWidget(self.frame_13)
@@ -4001,7 +3987,7 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-        self.rightContent.setCurrentIndex(1)
+        self.rightContent.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(Widget)
@@ -4011,7 +3997,7 @@ class Ui_Widget(object):
         Widget.setWindowTitle(QCoreApplication.translate("Widget", u"Widget", None))
         self.menuButton.setText("")
         self.label_2.setText("")
-        self.pushButton.setText(QCoreApplication.translate("Widget", u"PushButton", None))
+        self.maximizeButton.setText("")
         self.minimizeButton.setText("")
         self.closeAllButton.setText("")
         self.homeButton.setText("")
@@ -4163,12 +4149,11 @@ class Ui_Widget(object):
         self.label_103.setText(QCoreApplication.translate("Widget", u"HATS", None))
         self.label_104.setText(QCoreApplication.translate("Widget", u"type:", None))
         self.label_105.setText(QCoreApplication.translate("Widget", u"model:", None))
-        self.plot.setText("")
-        self.join.setText("")
-        self.convolve.setText("")
+        self.plot.setText(QCoreApplication.translate("Widget", u"plotar", None))
+        self.auralize.setText(QCoreApplication.translate("Widget", u"auralizar", None))
         self.label.setText(QCoreApplication.translate("Widget", u"\u00a9 2021 Nidec\n"
 "All rights reserved to Nidec ", None))
-        self.label_23.setText(QCoreApplication.translate("Widget", u"Develop by Henrique Silveira\n"
-" and Ricardo Brum", None))
+        self.label_23.setText(QCoreApplication.translate("Widget", u"Develop by Henrique Silveira \n"
+"Juc\u00e9lio Tavares and Ricardo Brum", None))
     # retranslateUi
 
