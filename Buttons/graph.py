@@ -9,7 +9,7 @@ from Utils.filter_utils import *
 class UI_Buttons_Graph():
     def __init__(self):
         super(UI_Buttons_Graph, self).__init__()
-        
+
         global pathExport, dados
 
     def graphButton(self):
@@ -21,34 +21,28 @@ class UI_Buttons_Graph():
         importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')
         importPathname = importAdress[0]
         filename = os.path.basename(str(importPathname))
-        path = os.path.dirname(str(importPathname))        
+        path = os.path.dirname(str(importPathname))
         self.ui.listWidget2.addItem(filename)
-        
 
     def selectItem(self):
         global path, pathExport   
-        metrics = self.ui.mainBox.currentText()
-        domain = self.ui.domainBox.currentText()
-        samplingBox = self.ui.samplingBox.currentText()
-#        print(metrics, domain, samplingBox)
-        presetImport(self, domain)
+
+        #presetImport(self, domain)
         filename = str(self.ui.listWidget2.currentItem().text())  
         self.pathname = (path + '/' + filename)
-        print(self.pathname)
-        selectMulti(self, metrics, domain, samplingBox) 
-        pathExport = self.pathname   
-
-
+        #selectMulti(self, metrics, domain, samplingBox)
+        pathExport = self.pathname
+        self.ui.plot.setEnabled(True)
 
 #    def getPathname(self):
 #        return pathExport
-    
+
     def expandGraph(self, type):
         global dados
         dados = ['metrics', 'domain', 'samplingBox']
-        dados[0] = self.ui.mainBox.currentText()
-        dados[1] = self.ui.domainBox.currentText()
-        dados[2] = self.ui.samplingBox.currentText()
+        dados[0] = 'Time-Frequency'
+        dados[1] = 'Time'
+        dados[2] ='Linear'
         self.gp = Expand_Graph(dados, pathExport, type)
         self.gp.show()
 
