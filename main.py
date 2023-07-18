@@ -122,8 +122,7 @@ class Main_Window(QMainWindow):
         self.ui.modelHeadBox_2.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeModelHead(self))
         self.ui.modelHatsBox_2.activated[str].connect(lambda: bt_ca.UI_Buttons_Cali.changeModelHats(self))
         self.ui.plot.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'plot'))
-        self.ui.join.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'join'))
-        self.ui.convolve.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'convolve'))
+        #self.ui.auralize.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.expandGraph(self, 'join'))
 
 
 
