@@ -1064,6 +1064,40 @@ your procects</string>
                         </property>
                        </widget>
                       </item>
+                      <item>
+                       <widget class="QLabel" name="registerInfo">
+                        <property name="minimumSize">
+                         <size>
+                          <width>0</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>40</height>
+                         </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>PF BeauSans Pro</family>
+                          <pointsize>12</pointsize>
+                         </font>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">padding-right:10</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+                        </property>
+                        <property name="margin">
+                         <number>0</number>
+                        </property>
+                       </widget>
+                      </item>
                      </layout>
                     </widget>
                    </item>
@@ -1078,7 +1112,7 @@ your procects</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="0,0,0">
+                  <layout class="QHBoxLayout" name="horizontalLayout_19" stretch="0,0">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -1098,7 +1132,7 @@ your procects</string>
                     <widget class="QFrame" name="frame_35">
                      <property name="minimumSize">
                       <size>
-                       <width>750</width>
+                       <width>0</width>
                        <height>0</height>
                       </size>
                      </property>
@@ -1130,41 +1164,7 @@ your procects</string>
                       <property name="bottomMargin">
                        <number>0</number>
                       </property>
-                      <item>
-                       <widget class="QLabel" name="registerInfo">
-                        <property name="minimumSize">
-                         <size>
-                          <width>0</width>
-                          <height>40</height>
-                         </size>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>40</height>
-                         </size>
-                        </property>
-                        <property name="font">
-                         <font>
-                          <family>PF BeauSans Pro</family>
-                          <pointsize>12</pointsize>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">padding-right:10</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                        </property>
-                        <property name="margin">
-                         <number>0</number>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_31">
                         <property name="minimumSize">
                          <size>
@@ -1208,7 +1208,7 @@ your procects</string>
                      </layout>
                     </widget>
                    </item>
-                   <item>
+                   <item alignment="Qt::AlignRight">
                     <widget class="QFrame" name="loginFrame">
                      <property name="minimumSize">
                       <size>
@@ -1399,19 +1399,6 @@ QPushButton:pressed {
                       </item>
                      </layout>
                     </widget>
-                   </item>
-                   <item>
-                    <spacer name="horizontalSpacer_3">
-                     <property name="orientation">
-                      <enum>Qt::Horizontal</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>40</width>
-                       <height>20</height>
-                      </size>
-                     </property>
-                    </spacer>
                    </item>
                   </layout>
                  </widget>
@@ -3495,16 +3482,16 @@ QSlider::sub-page:vertical:disabled{
                   </property>
                   <layout class="QHBoxLayout" name="horizontalLayout_14">
                    <property name="spacing">
-                    <number>5</number>
+                    <number>30</number>
                    </property>
                    <property name="leftMargin">
-                    <number>10</number>
+                    <number>20</number>
                    </property>
                    <property name="topMargin">
                     <number>0</number>
                    </property>
                    <property name="rightMargin">
-                    <number>10</number>
+                    <number>20</number>
                    </property>
                    <property name="bottomMargin">
                     <number>0</number>
@@ -3519,7 +3506,7 @@ QSlider::sub-page:vertical:disabled{
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>590</width>
+                       <width>16777215</width>
                        <height>16777215</height>
                       </size>
                      </property>
@@ -3592,6 +3579,12 @@ QSlider::sub-page:vertical:disabled{
                              <height>0</height>
                             </size>
                            </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>16777215</height>
+                            </size>
+                           </property>
                            <property name="font">
                             <font>
                              <family>PF BeauSans Pro</family>
@@ -3648,18 +3641,18 @@ QListView::item {
                         </layout>
                        </widget>
                       </item>
-                      <item>
+                      <item alignment="Qt::AlignLeft">
                        <widget class="QFrame" name="frame_53">
                         <property name="minimumSize">
                          <size>
-                          <width>130</width>
+                          <width>150</width>
                           <height>0</height>
                          </size>
                         </property>
                         <property name="maximumSize">
                          <size>
-                          <width>130</width>
-                          <height>140</height>
+                          <width>16777215</width>
+                          <height>16777215</height>
                          </size>
                         </property>
                         <property name="styleSheet">
@@ -3787,7 +3780,7 @@ QPushButton:pressed {
                      <property name="minimumSize">
                       <size>
                        <width>0</width>
-                       <height>100</height>
+                       <height>0</height>
                       </size>
                      </property>
                      <property name="maximumSize">
@@ -4261,7 +4254,7 @@ QPushButton:pressed {
                         </property>
                         <property name="styleSheet">
                          <string notr="true">QPushButton {
-	text-align: left;
+	text-align: center;
 	
 	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
 	border-radius:15px;
@@ -7493,7 +7486,7 @@ QPushButton:checked {
            <widget class="QFrame" name="InfCalibrationSetup">
             <property name="minimumSize">
              <size>
-              <width>600</width>
+              <width>0</width>
               <height>0</height>
              </size>
             </property>
@@ -7844,7 +7837,7 @@ QPushButton:pressed {
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>300</width>
+                 <width>16777215</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -8065,7 +8058,7 @@ QSpinBox::up-arrow:disabled {
                   </property>
                   <property name="minimumSize">
                    <size>
-                    <width>298</width>
+                    <width>258</width>
                     <height>30</height>
                    </size>
                   </property>
@@ -8156,7 +8149,7 @@ QSpinBox::up-arrow:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>298</width>
+                       <width>258</width>
                        <height>30</height>
                       </size>
                      </property>
@@ -8210,7 +8203,7 @@ QSpinBox::up-arrow:disabled {
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>298</width>
+                       <width>258</width>
                        <height>30</height>
                       </size>
                      </property>
@@ -8663,13 +8656,13 @@ QCheckBox::indicator:checked:disabled{
               <widget class="QFrame" name="RightCalibrationSetup">
                <property name="minimumSize">
                 <size>
-                 <width>300</width>
+                 <width>0</width>
                  <height>0</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>300</width>
+                 <width>16777215</width>
                  <height>16777215</height>
                 </size>
                </property>
@@ -8910,7 +8903,7 @@ QComboBox QAbstractView{
                        <widget class="QComboBox" name="typeHeadBox_2">
                         <property name="minimumSize">
                          <size>
-                          <width>248</width>
+                          <width>208</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -8963,7 +8956,7 @@ QComboBox QAbstractView{
                         </property>
                         <property name="minimumSize">
                          <size>
-                          <width>248</width>
+                          <width>208</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -9199,7 +9192,7 @@ QComboBox QAbstractView{
                        <widget class="QComboBox" name="typeHatsBox_2">
                         <property name="minimumSize">
                          <size>
-                          <width>248</width>
+                          <width>208</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -9252,7 +9245,7 @@ QComboBox QAbstractView{
                         </property>
                         <property name="minimumSize">
                          <size>
-                          <width>248</width>
+                          <width>208</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -9291,10 +9284,10 @@ QComboBox QAbstractView{
 }	
 
 QPushButton {
-
-	text-align: center;
+	padding-left: 8px;
+	text-align: left;
 	background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
-	border-radius:25px;
+	border-radius:18px;
 	color: rgb(255, 255, 255)
 }
 
@@ -9327,14 +9320,14 @@ QPushButton:disabled{
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>45</width>
-                       <height>50</height>
+                       <width>130</width>
+                       <height>36</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>130</width>
+                       <height>36</height>
                       </size>
                      </property>
                      <property name="font">
@@ -9345,16 +9338,16 @@ QPushButton:disabled{
                       </font>
                      </property>
                      <property name="text">
-                      <string/>
+                      <string>plot</string>
                      </property>
                      <property name="icon">
-                      <iconset>
-                       <normaloff>../Resources/img/graphic.png</normaloff>../Resources/img/graphic.png</iconset>
+                      <iconset resource="../Resources/resourceGui.qrc">
+                       <normaloff>:/icons/img/bar-graph.png</normaloff>:/icons/img/bar-graph.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>20</width>
+                       <height>20</height>
                       </size>
                      </property>
                     </widget>
@@ -9366,14 +9359,14 @@ QPushButton:disabled{
                      </property>
                      <property name="minimumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>130</width>
+                       <height>36</height>
                       </size>
                      </property>
                      <property name="maximumSize">
                       <size>
-                       <width>50</width>
-                       <height>50</height>
+                       <width>130</width>
+                       <height>36</height>
                       </size>
                      </property>
                      <property name="font">
@@ -9384,59 +9377,17 @@ QPushButton:disabled{
                       </font>
                      </property>
                      <property name="text">
-                      <string/>
+                      <string>convolve</string>
                      </property>
                      <property name="icon">
-                      <iconset>
-                       <normaloff>../Resources/img/business-graphic-sketch-of-two-lines.png</normaloff>../Resources/img/business-graphic-sketch-of-two-lines.png</iconset>
+                      <iconset resource="../Resources/resourceGui.qrc">
+                       <normaloff>:/icons/img/puzzle.png</normaloff>:/icons/img/puzzle.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
-                       <width>40</width>
-                       <height>40</height>
+                       <width>25</width>
+                       <height>25</height>
                       </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="convolve">
-                     <property name="enabled">
-                      <bool>true</bool>
-                     </property>
-                     <property name="minimumSize">
-                      <size>
-                       <width>50</width>
-                       <height>50</height>
-                      </size>
-                     </property>
-                     <property name="maximumSize">
-                      <size>
-                       <width>50</width>
-                       <height>50</height>
-                      </size>
-                     </property>
-                     <property name="font">
-                      <font>
-                       <family>PF BeauSans Pro</family>
-                       <pointsize>13</pointsize>
-                       <bold>false</bold>
-                      </font>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>../Resources/img/headphones.png</normaloff>../Resources/img/headphones.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>30</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="autoRepeatDelay">
-                      <number>303</number>
                      </property>
                     </widget>
                    </item>
@@ -9531,7 +9482,7 @@ All rights reserved to Nidec </string>
         </property>
         <property name="text">
          <string>Develop by Henrique Silveira
- and Ricardo Brum</string>
+Jucélio Tavares and Ricardo Brum</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>

@@ -1172,7 +1172,7 @@ QSpinBox::up-arrow:disabled {
              <widget class="QComboBox" name="mainBox">
               <property name="minimumSize">
                <size>
-                <width>235</width>
+                <width>195</width>
                 <height>30</height>
                </size>
               </property>
@@ -1309,7 +1309,7 @@ QComboBox QAbstractView{
               </property>
               <property name="minimumSize">
                <size>
-                <width>235</width>
+                <width>195</width>
                 <height>30</height>
                </size>
               </property>
@@ -1452,7 +1452,7 @@ QComboBox QAbstractView{
               </property>
               <property name="minimumSize">
                <size>
-                <width>235</width>
+                <width>195</width>
                 <height>30</height>
                </size>
               </property>
@@ -1884,7 +1884,7 @@ All rights reserved to Nidec </string>
         </property>
         <property name="text">
          <string>Develop by Henrique Silveira
- and Ricardo Brum</string>
+Jucélio Tavares and Ricardo Brum</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
