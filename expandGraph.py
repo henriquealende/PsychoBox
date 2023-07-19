@@ -1,7 +1,7 @@
 import sys
-import Buttons.general as bt_lo
-import Buttons.graph as bt_gh
-import Buttons.settingsPages as bt_lp
+import Pages.general as bt_lo
+import Pages.graph as bt_gh
+import Pages.settingsPages as bt_lp
 
 from Utils.graph_utils import *
 from PySide2 import QtCore, QtGui, QtWidgets
