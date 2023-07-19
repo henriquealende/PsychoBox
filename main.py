@@ -1,10 +1,10 @@
 import sys
 import pygame
-import Buttons.general as bt_lo
-import Buttons.filter as bt_fi
-import Buttons.graph as bt_gh
-import Buttons.calibration as bt_ca
-import Buttons.settingsPages as bt_lp
+import Pages.general as bt_lo
+import Pages.filter as bt_fi
+import Pages.graph as bt_gh
+import Pages.calibration as bt_ca
+import Pages.settingsPages as bt_lp
 
 from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtWidgets import (QApplication, QMainWindow)

@@ -1,5 +1,5 @@
 import sys
-import Buttons.general as bt_lo
+import Pages.general as bt_lo
 
 from main import *
 from PySide2 import QtCore, QtGui, QtWidgets
