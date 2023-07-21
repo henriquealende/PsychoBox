@@ -12,9 +12,9 @@ class UI_Buttons_Graph():
 
         global pathExport, dados
 
-    def graphButton(self):
+    def calibrationButton(self):
        if self.online:
-            self.ui.rightContent.setCurrentWidget(self.ui.graphPage)
+            self.ui.rightContent.setCurrentWidget(self.ui.calibrationPage)
 
     def importButton(self):
         global path
@@ -46,22 +46,10 @@ class UI_Buttons_Graph():
         self.gp = Expand_Graph(dados, pathExport, type)
         self.gp.show()
 
-
-    def showSettings(self, x):
-        if x == 'show':
-            self.gp.frame_21.show()
-            self.gp.pushButton2.hide()
-            self.gp.pushButton2_2.show()
-        else:
-            self.gp.frame_21.hide()
-            self.gp.pushButton2.show()
-            self.gp.pushButton2_2.hide()
-
     def changeGraph(self):
-        metrics = self.gp.mainBox.currentText()
         domain = self.gp.domainBox.currentText()
         samplingBox = self.gp.samplingBox.currentText()
-        self.chartview = getGraph(self, metrics, domain, samplingBox, type ='plot', window='expand')
+        self.chartview = getGraph(self, domain, samplingBox)
 
 
     def saveGraph(self):

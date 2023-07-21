@@ -20,6 +20,7 @@ def loginUser(self, username, password):
         self.animation.setEndValue(1)
         self.animation.start()
         self.ui.filterButton.setEnabled(True)
+        self.ui.calibrationButton.setEnabled(True)
         self.ui.usernameLabel.setText(username.title())
         self.ui.userButton.setEnabled(True)
         self.ui.userButton.setChecked(True)

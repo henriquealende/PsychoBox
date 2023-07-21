@@ -8,37 +8,31 @@ from PySide2.QtCore import Qt
 from PySide2.QtGui import  QPainter, QBrush, QColor, QPen
 from PySide2.QtWidgets import QAbstractItemView
 from Utils.filter_utils import *
+from Psychoacoustics.mpi import MPI
 ##############################################################################
 
 global chartView
+mpi = MPI()
 
-def getGraph(self, metrics, domain, samplingBox, type, window):
+def getGraph(self, domain, samplingBox):
     #global chartView
+    self.chart = QtCharts.QChart()
+    self.chart.removeAllSeries()
+    self.chart.legend().hide()
+    self.chart.setBackgroundRoundness(12.0)
+    self.chart.setDropShadowEnabled(True)
+    self.chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
+    self.chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
+    # Define o domínio e prepara os dados para o plot
+    defineDomain(self, domain, samplingBox)
+    # Cor do plot
+    pen = QPen(QtGui.QColor(0, 155, 74))
+    pen.setWidth(1)
+    self.series.setPen(pen)
+    plotGraph(self)
+    self.previous_series = self.series
 
-    if type == 'convolve':
-        pass
-
-    elif type == 'join':
-        pass
-
-    elif type == 'plot':
-        self.chart = QtCharts.QChart()
-        self.chart.removeAllSeries()
-        self.chart.legend().hide()
-        self.chart.setBackgroundRoundness(12.0)
-        self.chart.setDropShadowEnabled(True)
-        self.chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
-        self.chart.setBackgroundBrush(QBrush(QColor(242, 240, 241)))
-        # Define o domínio e prepara os dados para o plot
-        defineDomain(self, domain, window, samplingBox)
-        # Cor do plot
-        pen = QPen(QtGui.QColor(0, 155, 74))
-        pen.setWidth(1)
-        self.series.setPen(pen)
-        plotGraph(self, window)
-        self.previous_series = self.series
-    
-def defineDomain(self, domain, window, samplingBox):
+def defineDomain(self, domain, samplingBox):
     # Resample do sinal para plotar
     self.plotTimeData, self.plotSamplingRate = decimateAudioSignal(self)
     # Domínio do tempo
@@ -61,7 +55,7 @@ def defineDomain(self, domain, window, samplingBox):
         self.axis_y.setLabelFormat("%.2f")
         self.axis_y.setTitleText("Amplitude")
         # Ajuste de Limites
-        limitsAdjust(self, window, domain, T)
+        limitsAdjust(self, domain, T)
     # Domínio da frequência
     elif domain == 'Frequency':
         x, y, Yplot = getFFT(self.timeData, self.samplingRate)
@@ -84,21 +78,32 @@ def defineDomain(self, domain, window, samplingBox):
         self.axis_y.setLabelFormat("%.2f")
         self.axis_y.setTitleText("SPL [dB]")
         # Ajuste de Limites
-        limitsAdjust(self, window, domain, np.max(x))
-
-def limitsAdjust(self, window, domain, LIM):
-    if window == "default":
-        automaticCheckBox = self.ui.automaticCheckBox
-        spinBox = self.ui.spinBox
-        spinBox_2 = self.ui.spinBox_2
-        spinBox_3 = self.ui.spinBox_3
-        spinBox_4 = self.ui.spinBox_4
-    elif window == "expand":
-        automaticCheckBox = self.gp.automaticCheckBox
-        spinBox = self.gp.spinBox
-        spinBox_2 = self.gp.spinBox_2
-        spinBox_3 = self.gp.spinBox_3
-        spinBox_4 = self.gp.spinBox_4
+        limitsAdjust(self, domain, np.max(x))
+    elif domain == 'MPI':
+        x, MPI_values = mpi.calculateMPI(self.timeData, self.samplingRate)
+        y = MPI_values[0,:]
+        print(y)
+        self.series = QtCharts.QLineSeries()
+        for i in range(len(y)):
+            self.series.append(x[i], y[i])
+        # Configuração dos eixos
+        self.axis_x = QtCharts.QValueAxis()
+        self.axis_x.setLabelFormat("%.0f")
+        self.axis_x.setTitleText("Frequency [Bark]")
+        self.axis_y = QtCharts.QValueAxis()
+        self.axis_y.setTickCount(5)
+        self.axis_y.setLabelFormat("%.2f")
+        self.axis_y.setTitleText("MPI [-]")
+        # Ajuste de Limites
+        limitsAdjust(self, domain, np.max(x))
+        
+        
+def limitsAdjust(self, domain, LIM):
+    automaticCheckBox = self.gp.automaticCheckBox
+    spinBox = self.gp.spinBox
+    spinBox_2 = self.gp.spinBox_2
+    spinBox_3 = self.gp.spinBox_3
+    spinBox_4 = self.gp.spinBox_4
     if domain == "Time":
         if automaticCheckBox.isChecked():
             self.axis_x.setRange(0, LIM)
@@ -120,8 +125,19 @@ def limitsAdjust(self, window, domain, LIM):
             ylim_sup = spinBox_2.value()
             self.axis_x.setRange(xlim_inf, xlim_sup)
             self.axis_y.setRange(ylim_inf, ylim_sup)
+    elif domain == 'MPI':
+        if automaticCheckBox.isChecked():
+            self.axis_x.setRange(0, LIM)
+            self.axis_y.setRange(0, 10)
+        else:
+            xlim_inf = spinBox_3.value()
+            xlim_sup = spinBox_4.value()
+            ylim_inf = spinBox.value()
+            ylim_sup = spinBox_2.value()
+            self.axis_x.setRange(xlim_inf, xlim_sup)
+            self.axis_y.setRange(ylim_inf, ylim_sup)
                 
-def plotGraph(self, window):
+def plotGraph(self):
     global chartView
     # Adiciona a série ao gráfico
     self.chart.addSeries(self.series)
@@ -130,11 +146,7 @@ def plotGraph(self, window):
     # Adiciona o gráfico à visualização
     chartView = QtCharts.QChartView(self.chart)
     chartView.setRenderHint(QPainter.Antialiasing)
-    if window == "default":
-        pass
-#        self.ui.gridLayout.addWidget(chartView, 1, 0)
-    elif window == "expand":
-        self.gp.gridLayout_2.addWidget(chartView, 1, 0)
+    self.gp.gridLayout_2.addWidget(chartView, 1, 0)
     return chartView
 
 

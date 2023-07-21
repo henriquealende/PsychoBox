@@ -205,8 +205,8 @@ class UI_Buttons_Layout():
                 self.ui.settingsButton.setMinimumWidth(maxWidth)
                 self.ui.filterButton.setText('Filters')
                 self.ui.filterButton.setMinimumWidth(maxWidth)
-                self.ui.graphButton.setText('Psycho')
-                self.ui.graphButton.setMinimumWidth(maxWidth)
+                self.ui.calibrationButton.setText('Psycho')
+                self.ui.calibrationButton.setMinimumWidth(maxWidth)
                 if self.ui.userButton.isChecked():
                     self.ui.userButton.setText(
                         self.ui.usernameLabel.text()+'\nSair')
@@ -226,8 +226,8 @@ class UI_Buttons_Layout():
                 self.ui.filterButton.setMinimumWidth(minWidth)
                 self.ui.userButton.setText('')
                 self.ui.userButton.setMinimumWidth(minWidth)
-                self.ui.graphButton.setText('')
-                self.ui.graphButton.setMinimumWidth(minWidth)
+                self.ui.calibrationButton.setText('')
+                self.ui.calibrationButton.setMinimumWidth(minWidth)
             # ANIMATION
             self.animation = QPropertyAnimation(
                 self.ui.leftMenu, b"minimumWidth")
@@ -257,8 +257,8 @@ class UI_Buttons_Layout():
 
         self.ui.userButton.setDisabled(True)
         self.ui.userButton.setChecked(False)
-        self.ui.graphButton.setDisabled(True)
-        self.ui.graphButton.setChecked(False)
+        self.ui.calibrationButton.setDisabled(True)
+        self.ui.calibrationButton.setChecked(False)
         self.ui.filterButton.setDisabled(True)
         self.ui.filterButton.setChecked(False)
         self.ui.homeButton.setChecked(True)
@@ -294,48 +294,24 @@ class UI_Buttons_Layout():
             self.ui.automaticCheckBox.setChecked(True)
             self.ui.applyButton.setEnabled(True)
 
-    def selectDomain(self, window):
-        if window == "defaut":
-            domain = self.ui.domainBox.currentText()
-            if domain == "Time":
-                self.ui.samplingBox.setDisabled(True)
-            elif domain == "Frequency":
-                self.ui.samplingBox.setEnabled(True)
+    def selectMetrics(self):
+        metrics = self.gp.mainBox.currentText()
+        if metrics == "Metrics":
+            self.gp.domainBox.clear()
+            self.gp.domainBox.addItems(['Loudness', 'Sharpness', 'MPI'])
+            self.gp.frame_samplingBox.hide()
         else:
-            domain = self.gp.domainBox.currentText()
-            if domain == "Time":
-                self.gp.frame_samplingBox.hide()
-            else:
-                self.gp.frame_samplingBox.show()
+            self.gp.domainBox.clear()
+            self.gp.samplingBox.addItems(['Linear', '1/3 octave'])
+
+    def selectDomain(self):
+                domain = self.gp.domainBox.currentText()
+                if domain == "Frequency":
+                    self.gp.frame_samplingBox.show()
+                else:
+                    self.gp.frame_samplingBox.hide()
 
     def automaticCheckBox(self, window):
-        if window == "defaut":
-            domain = self.ui.domainBox.currentText()
-            if self.ui.automaticCheckBox.isChecked():
-                self.ui.spinBox.setDisabled(True)
-                self.ui.spinBox_2.setDisabled(True)
-                self.ui.spinBox_3.setDisabled(True)
-                self.ui.spinBox_4.setDisabled(True)
-                self.ui.spinBox.setValue(0)
-                self.ui.spinBox_2.setValue(99000)
-                self.ui.spinBox_3.setValue(0)
-                self.ui.spinBox_4.setValue(99000)
-            else:
-                self.ui.spinBox.setEnabled(True)
-                self.ui.spinBox_2.setEnabled(True)
-                self.ui.spinBox_3.setEnabled(True)
-                self.ui.spinBox_4.setEnabled(True)
-                if domain == 'Time':
-                    self.ui.spinBox.setValue(-1)
-                    self.ui.spinBox_2.setValue(1)
-                    self.ui.spinBox_3.setValue(0)
-                    self.ui.spinBox_4.setValue(10)
-                elif domain == "Frequency":
-                    self.ui.spinBox.setValue(0)
-                    self.ui.spinBox_2.setValue(80)
-                    self.ui.spinBox_3.setValue(20)
-                    self.ui.spinBox_4.setValue(10000)
-        else:
             domain = self.gp.domainBox.currentText()
             if self.gp.automaticCheckBox.isChecked():
                 self.gp.frame_axis.hide()

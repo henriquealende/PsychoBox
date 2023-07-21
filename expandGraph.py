@@ -33,9 +33,6 @@ class Expand_Graph(QMainWindow):
         self.gp.samplingBox.addItems(['Linear', '1/3 octave'])
         self.gp.domainBox.addItems(['Time', 'Frequency'])
         self.gp.frame_samplingBox.hide()
-        self.gp.frame_axis.hide()
-        self.gp.frame_21.hide()
-        self.gp.pushButton2_2.hide()
 
 
     def eventFilter(self, source, event):
@@ -56,22 +53,16 @@ class Expand_Graph(QMainWindow):
         self.gp.minimizeButton.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.minimize(self))
         self.gp.maximizeButton.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.maximize(self, window="expand"))
         self.gp.exportFig.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveGraph(self))
-        self.gp.exportButton_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
+        self.gp.exportData.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.saveData(self))
         self.gp.domainBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
         self.gp.samplingBox.activated[str].connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
-        self.gp.domainBox.activated[str].connect(lambda: bt_lp.UI_Buttons_Layout.selectDomain(self, window="expand"))
-        self.gp.automaticCheckBox.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.automaticCheckBox(self, window = "expand"))
+        self.gp.domainBox.activated[str].connect(lambda: bt_lp.UI_Buttons_Layout.selectDomain(self))
+        self.gp.mainBox.activated[str].connect(lambda: bt_lp.UI_Buttons_Layout.selectMetrics(self))
+        self.gp.automaticCheckBox.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.automaticCheckBox(self))
         self.gp.refresh.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.changeGraph(self))
-        self.gp.pushButton2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.showSettings(self, 'show'))
-        self.gp.pushButton2_2.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.showSettings(self, 'hide'))
 
 
     def getAndReadWav(self, dados, pathExport, type):
-#        from main import Main_Window
-#        main = Main_Window()
-#        self.pathname = main.getPath()
-#        self.pathname = bt_gh.UI_Buttons_Graph.getPathname(self)
-
         self.pathname = pathExport
         metrics = dados[0]
         domain = dados[1]
@@ -86,7 +77,7 @@ class Expand_Graph(QMainWindow):
 
         self.timeData, self.samplingRate = getAudio(self.pathname)
         self.timeData = 2*(self.timeData/(2**16))
-        self.chartview = getGraph(self, metrics, domain, samplingBox, type, window = "expand")
+        self.chartview = getGraph(self, domain, samplingBox)
 
 
 def centerWindow(widget):

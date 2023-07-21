@@ -430,7 +430,7 @@ QPushButton:hover{
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="pushButton2">
+             <widget class="QPushButton" name="plusButton">
               <property name="minimumSize">
                <size>
                 <width>30</width>
@@ -455,35 +455,6 @@ QPushButton:hover{
               <property name="icon">
                <iconset resource="../Resources/resourceGui.qrc">
                 <normaloff>:/icons/img/addEnabled.png</normaloff>:/icons/img/addEnabled.png</iconset>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="pushButton2_2">
-              <property name="minimumSize">
-               <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton{
-	background-color: rgb(70,70,70);
-	border-radius: 15px;
-}</string>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../Resources/resourceGui.qrc">
-                <normaloff>:/icons/img/closepp.png</normaloff>:/icons/img/closepp.png</iconset>
               </property>
              </widget>
             </item>
@@ -995,7 +966,74 @@ QSpinBox::up-arrow:disabled {
 	background-color: rgb(182, 182, 182);
 	border-radius: 6px;
 }
-</string>
+
+QComboBox {
+	border: 1px solid #333333;
+	border-radius: 15px;
+	background:  rgb(70, 70, 70);
+	padding: 10x 23px 5px 5x;
+	min-width: 10em;
+	color: rgb(255, 255, 255);
+	margin-left: 5px;
+	margin-right: 5px;
+	padding-left: 8px
+}
+
+QComboBox::disabled{
+	color: rgb(136, 138, 133)
+}
+
+QComboBox::down-arrow:disabled {    
+	image: url(:/icons/img/downArrowDis.png);
+}
+
+QComboBox::hover{
+border: 3px solid  #009b4a;
+}
+
+QComboBox::drop-down {
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 20px;
+ 
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+QComboBox::down-arrow {    
+	image: url(:/icons/img/downArrow.png);
+	width : 12px;
+}
+
+QComboBox QAbstractView{
+	background-color: #4f4f4f;
+	color: #999999;
+ 
+	selection-background-color: rgb(70, 70, 70);
+	selection-color: #4f4f4f;
+}
+
+QCheckBox{
+	color: rgb(255,255,255);
+}
+QCheckBox::indicator{
+	background-color: rgb(70,70,70);
+	color: rgb(241,102,55);
+	border-radius:6px;
+}
+
+QCheckBox::indicator:checked{
+	background-color: rgb(241,102,55);
+	border: 2px solid rgb(70,70,70);
+}
+
+QCheckBox:disabled{
+ color: rgb(136, 138, 133);
+}
+
+QCheckBox::indicator:checked:disabled{
+	background-color: rgb(136, 138, 133);
+}</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -1172,7 +1210,7 @@ QSpinBox::up-arrow:disabled {
              <widget class="QComboBox" name="mainBox">
               <property name="minimumSize">
                <size>
-                <width>195</width>
+                <width>203</width>
                 <height>30</height>
                </size>
               </property>
@@ -1189,51 +1227,7 @@ QSpinBox::up-arrow:disabled {
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QComboBox {
-	border: 1px solid #333333;
-	border-radius: 15px;
-	background:  rgb(70, 70, 70);
-	padding: 10x 23px 5px 5x;
-	min-width: 10em;
-	color: rgb(255, 255, 255);
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-QComboBox::disabled{
-	color: rgb(136, 138, 133)
-}
-
-QComboBox::down-arrow:disabled {    
-	image: url(:/icons/img/downArrowDis.png);
-}
-
-QComboBox::hover{
-border: 3px solid  #009b4a;
-}
-
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 20px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {    
-	image: url(:/icons/img/downArrow.png);
-	width : 12px;
-}
-
-QComboBox QAbstractView{
-	background-color: #4f4f4f;
-	color: #999999;
- 
-	selection-background-color: rgb(70, 70, 70);
-	selection-color: #4f4f4f;
-}
-</string>
+               <string notr="true"/>
               </property>
              </widget>
             </item>
@@ -1309,7 +1303,7 @@ QComboBox QAbstractView{
               </property>
               <property name="minimumSize">
                <size>
-                <width>195</width>
+                <width>203</width>
                 <height>30</height>
                </size>
               </property>
@@ -1324,53 +1318,6 @@ QComboBox QAbstractView{
                 <family>PF BeauSans Pro</family>
                 <pointsize>11</pointsize>
                </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QComboBox {
-	border: 1px solid #333333;
-	border-radius: 15px;
-	background:  rgb(70, 70, 70);
-	padding: 10x 23px 5px 5x;
-	min-width: 10em;
-	color: rgb(255, 255, 255);
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-QComboBox::disabled{
-	color: rgb(136, 138, 133)
-}
-
-QComboBox::down-arrow:disabled {    
-	image: url(:/icons/img/downArrowDis.png);
-}
-
-QComboBox::hover{
-border: 3px solid  #009b4a;
-}
-
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 20px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {    
-	image: url(:/icons/img/downArrow.png);
-	width : 12px;
-}
-
-QComboBox QAbstractView{
-	background-color: #4f4f4f;
-	color: #999999;
- 
-	selection-background-color: rgb(70, 70, 70);
-	selection-color: #4f4f4f;
-}
-</string>
               </property>
               <property name="editable">
                <bool>false</bool>
@@ -1452,7 +1399,7 @@ QComboBox QAbstractView{
               </property>
               <property name="minimumSize">
                <size>
-                <width>195</width>
+                <width>203</width>
                 <height>30</height>
                </size>
               </property>
@@ -1467,53 +1414,6 @@ QComboBox QAbstractView{
                 <family>PF BeauSans Pro</family>
                 <pointsize>11</pointsize>
                </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QComboBox {
-	border: 1px solid #333333;
-	border-radius: 15px;
-	background:  rgb(70, 70, 70);
-	padding: 10x 23px 5px 5x;
-	min-width: 10em;
-	color: rgb(255, 255, 255);
-	margin-left: 5px;
-	margin-right: 5px;
-}
-
-QComboBox::disabled{
-	color: rgb(136, 138, 133)
-}
-
-QComboBox::down-arrow:disabled {    
-	image: url(:/icons/img/downArrowDis.png);
-}
-
-QComboBox::hover{
-border: 3px solid  #009b4a;
-}
-
-QComboBox::drop-down {
-	subcontrol-origin: padding;
-	subcontrol-position: top right;
-	width: 20px;
- 
-	border-top-right-radius: 3px;
-	border-bottom-right-radius: 3px;
-}
-
-QComboBox::down-arrow {    
-	image: url(:/icons/img/downArrow.png);
-	width : 12px;
-}
-
-QComboBox QAbstractView{
-	background-color: #4f4f4f;
-	color: #999999;
- 
-	selection-background-color: rgb(70, 70, 70);
-	selection-color: #4f4f4f;
-}
-</string>
               </property>
               <property name="editable">
                <bool>false</bool>
@@ -1598,27 +1498,7 @@ QComboBox QAbstractView{
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">QCheckBox{
-	color: rgb(255,255,255);
-}
-QCheckBox::indicator{
-	background-color: rgb(70,70,70);
-	color: rgb(241,102,55);
-	border-radius:6px;
-}
-
-QCheckBox::indicator:checked{
-	background-color: rgb(241,102,55);
-	border: 2px solid rgb(70,70,70);
-}
-
-QCheckBox:disabled{
- color: rgb(136, 138, 133);
-}
-
-QCheckBox::indicator:checked:disabled{
-	background-color: rgb(136, 138, 133);
-}</string>
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>automatic</string>
@@ -1741,7 +1621,7 @@ QPushButton:disabled{
              </widget>
             </item>
             <item alignment="Qt::AlignHCenter">
-             <widget class="QPushButton" name="exportButton_2">
+             <widget class="QPushButton" name="exportData">
               <property name="enabled">
                <bool>true</bool>
               </property>
