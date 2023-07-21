@@ -106,7 +106,7 @@ class Main_Window(QMainWindow):
         #self.ui.automaticCheckBox.clicked.connect(lambda: bt_lp.UI_Buttons_Layout.automaticCheckBox(self, window = "defaut"))
 
         #CALIBRATION PAGE FUNCTION
-        self.ui.graphButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.graphButton(self))
+        self.ui.calibrationButton.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.calibrationButton(self))
         self.ui.importGraph.clicked.connect(lambda: bt_gh.UI_Buttons_Graph.importButton(self))
         self.ui.removeGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.remove(self, 'graph'))
         self.ui.removeAllGraph.clicked.connect(lambda: bt_fi.UI_Buttons_Filter.removeAllButton(self, 'graph'))
