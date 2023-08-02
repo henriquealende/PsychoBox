@@ -3639,7 +3639,7 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-        self.rightContent.setCurrentIndex(0)
+        self.rightContent.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(Widget)
