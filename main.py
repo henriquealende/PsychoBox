@@ -12,7 +12,7 @@ from PySide2.QtCore import (Qt, QFile)
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtGui import QIcon
 from Resources import resourceGUI
-##############################################################################
+#####################################pip install#########################################
 
 #pathExport={}
 path = {}
