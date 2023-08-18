@@ -203,33 +203,19 @@ class Ui_Form(object):
 
         self.horizontalLayout_4.addWidget(self.label_13)
 
-        self.pushButton2 = QPushButton(self.frame_18)
-        self.pushButton2.setObjectName(u"pushButton2")
-        self.pushButton2.setMinimumSize(QSize(30, 30))
-        self.pushButton2.setMaximumSize(QSize(30, 30))
-        self.pushButton2.setStyleSheet(u"QPushButton{\n"
+        self.plusButton = QPushButton(self.frame_18)
+        self.plusButton.setObjectName(u"plusButton")
+        self.plusButton.setMinimumSize(QSize(30, 30))
+        self.plusButton.setMaximumSize(QSize(30, 30))
+        self.plusButton.setStyleSheet(u"QPushButton{\n"
 "	background-color: rgb(70,70,70);\n"
 "	border-radius: 15px;\n"
 "}")
         icon2 = QIcon()
         icon2.addFile(u":/icons/img/addEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton2.setIcon(icon2)
+        self.plusButton.setIcon(icon2)
 
-        self.horizontalLayout_4.addWidget(self.pushButton2)
-
-        self.pushButton2_2 = QPushButton(self.frame_18)
-        self.pushButton2_2.setObjectName(u"pushButton2_2")
-        self.pushButton2_2.setMinimumSize(QSize(30, 30))
-        self.pushButton2_2.setMaximumSize(QSize(30, 30))
-        self.pushButton2_2.setStyleSheet(u"QPushButton{\n"
-"	background-color: rgb(70,70,70);\n"
-"	border-radius: 15px;\n"
-"}")
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/img/closepp.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton2_2.setIcon(icon3)
-
-        self.horizontalLayout_4.addWidget(self.pushButton2_2)
+        self.horizontalLayout_4.addWidget(self.plusButton)
 
 
         self.verticalLayout_10.addWidget(self.frame_18)
@@ -249,6 +235,9 @@ class Ui_Form(object):
         self.frame.setObjectName(u"frame")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
+        self.widget = QWidget(self.frame)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(180, 100, 120, 80))
 
         self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
 
@@ -460,9 +449,9 @@ class Ui_Form(object):
         self.refresh = QPushButton(self.frame_100)
         self.refresh.setObjectName(u"refresh")
         self.refresh.setMaximumSize(QSize(30, 30))
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.refresh.setIcon(icon4)
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.refresh.setIcon(icon3)
 
         self.horizontalLayout_48.addWidget(self.refresh)
 
@@ -487,7 +476,75 @@ class Ui_Form(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px;\n"
 "}\n"
-"")
+"\n"
+"QComboBox {\n"
+"	border: 1px solid #333333;\n"
+"	border-radius: 15px;\n"
+"	background:  rgb(70, 70, 70);\n"
+"	padding: 10x 23px 5px 5x;\n"
+"	min-width: 10em;\n"
+"	color: rgb(255, 255, 255);\n"
+"	margin-left: 5px;\n"
+"	margin-right: 5px;\n"
+"	padding-left: 8px\n"
+"}\n"
+"\n"
+"QComboBox::disabled{\n"
+"	color: rgb(136, 138, 133)\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow:disabled {    \n"
+"	image: url(:/icons/img/downArrowDis.png);\n"
+"}\n"
+"\n"
+"QComboBox::hover{\n"
+"border: 3px solid  #009b4a;\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"	subcontrol-origin: padding;\n"
+"	subcontrol-position: top right;\n"
+"	width: 20px;\n"
+" \n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {    \n"
+"	image: url(:/icons/img/downArrow.png);\n"
+"	width : 12px;\n"
+"}\n"
+"\n"
+"QComboBox QAbstractView{\n"
+"	background-color: #4f4f4f;\n"
+"	color: #999999;\n"
+" \n"
+"	selection-background-color: "
+                        "rgb(70, 70, 70);\n"
+"	selection-color: #4f4f4f;\n"
+"}\n"
+"\n"
+"QCheckBox{\n"
+"	color: rgb(255,255,255);\n"
+"}\n"
+"QCheckBox::indicator{\n"
+"	background-color: rgb(70,70,70);\n"
+"	color: rgb(241,102,55);\n"
+"	border-radius:6px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked{\n"
+"	background-color: rgb(241,102,55);\n"
+"	border: 2px solid rgb(70,70,70);\n"
+"}\n"
+"\n"
+"QCheckBox:disabled{\n"
+" color: rgb(136, 138, 133);\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked:disabled{\n"
+"	background-color: rgb(136, 138, 133);\n"
+"}")
         self.frame_21.setFrameShape(QFrame.StyledPanel)
         self.frame_21.setFrameShadow(QFrame.Raised)
         self.verticalLayout_12 = QVBoxLayout(self.frame_21)
@@ -547,58 +604,16 @@ class Ui_Form(object):
         self.verticalLayout_13.addWidget(self.label_16)
 
         self.mainBox = QComboBox(self.frame_23)
+        self.mainBox.addItem("")
+        self.mainBox.addItem("")
         self.mainBox.setObjectName(u"mainBox")
-        self.mainBox.setMinimumSize(QSize(235, 30))
+        self.mainBox.setMinimumSize(QSize(243, 30))
         self.mainBox.setMaximumSize(QSize(16777215, 30))
         font5 = QFont()
         font5.setFamilies([u"PF BeauSans Pro"])
         font5.setPointSize(11)
         self.mainBox.setFont(font5)
-        self.mainBox.setStyleSheet(u"QComboBox {\n"
-"	border: 1px solid #333333;\n"
-"	border-radius: 15px;\n"
-"	background:  rgb(70, 70, 70);\n"
-"	padding: 10x 23px 5px 5x;\n"
-"	min-width: 10em;\n"
-"	color: rgb(255, 255, 255);\n"
-"	margin-left: 5px;\n"
-"	margin-right: 5px;\n"
-"}\n"
-"\n"
-"QComboBox::disabled{\n"
-"	color: rgb(136, 138, 133)\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow:disabled {    \n"
-"	image: url(:/icons/img/downArrowDis.png);\n"
-"}\n"
-"\n"
-"QComboBox::hover{\n"
-"border: 3px solid  #009b4a;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"	subcontrol-origin: padding;\n"
-"	subcontrol-position: top right;\n"
-"	width: 20px;\n"
-" \n"
-"	border-top-right-radius: 3px;\n"
-"	border-bottom-right-radius: 3px;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {    \n"
-"	image: url(:/icons/img/downArrow.png);\n"
-"	width : 12px;\n"
-"}\n"
-"\n"
-"QComboBox QAbstractView{\n"
-"	background-color: #4f4f4f;\n"
-"	color: #999999;\n"
-" \n"
-"	selection-background-color: rgb(70, 70, 70);\n"
-"	selection-color: #4f4f4f;\n"
-"}\n"
-"")
+        self.mainBox.setStyleSheet(u"")
 
         self.verticalLayout_13.addWidget(self.mainBox)
 
@@ -625,56 +640,13 @@ class Ui_Form(object):
         self.verticalLayout_14.addWidget(self.label_17)
 
         self.domainBox = QComboBox(self.frame_24)
+        self.domainBox.addItem("")
+        self.domainBox.addItem("")
         self.domainBox.setObjectName(u"domainBox")
         self.domainBox.setEnabled(True)
-        self.domainBox.setMinimumSize(QSize(235, 30))
+        self.domainBox.setMinimumSize(QSize(243, 30))
         self.domainBox.setMaximumSize(QSize(16777215, 30))
         self.domainBox.setFont(font5)
-        self.domainBox.setStyleSheet(u"QComboBox {\n"
-"	border: 1px solid #333333;\n"
-"	border-radius: 15px;\n"
-"	background:  rgb(70, 70, 70);\n"
-"	padding: 10x 23px 5px 5x;\n"
-"	min-width: 10em;\n"
-"	color: rgb(255, 255, 255);\n"
-"	margin-left: 5px;\n"
-"	margin-right: 5px;\n"
-"}\n"
-"\n"
-"QComboBox::disabled{\n"
-"	color: rgb(136, 138, 133)\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow:disabled {    \n"
-"	image: url(:/icons/img/downArrowDis.png);\n"
-"}\n"
-"\n"
-"QComboBox::hover{\n"
-"border: 3px solid  #009b4a;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"	subcontrol-origin: padding;\n"
-"	subcontrol-position: top right;\n"
-"	width: 20px;\n"
-" \n"
-"	border-top-right-radius: 3px;\n"
-"	border-bottom-right-radius: 3px;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {    \n"
-"	image: url(:/icons/img/downArrow.png);\n"
-"	width : 12px;\n"
-"}\n"
-"\n"
-"QComboBox QAbstractView{\n"
-"	background-color: #4f4f4f;\n"
-"	color: #999999;\n"
-" \n"
-"	selection-background-color: rgb(70, 70, 70);\n"
-"	selection-color: #4f4f4f;\n"
-"}\n"
-"")
         self.domainBox.setEditable(False)
 
         self.verticalLayout_14.addWidget(self.domainBox)
@@ -702,56 +674,13 @@ class Ui_Form(object):
         self.verticalLayout_15.addWidget(self.label_18)
 
         self.samplingBox = QComboBox(self.frame_samplingBox)
+        self.samplingBox.addItem("")
+        self.samplingBox.addItem("")
         self.samplingBox.setObjectName(u"samplingBox")
         self.samplingBox.setEnabled(True)
-        self.samplingBox.setMinimumSize(QSize(235, 30))
+        self.samplingBox.setMinimumSize(QSize(243, 30))
         self.samplingBox.setMaximumSize(QSize(16777215, 30))
         self.samplingBox.setFont(font5)
-        self.samplingBox.setStyleSheet(u"QComboBox {\n"
-"	border: 1px solid #333333;\n"
-"	border-radius: 15px;\n"
-"	background:  rgb(70, 70, 70);\n"
-"	padding: 10x 23px 5px 5x;\n"
-"	min-width: 10em;\n"
-"	color: rgb(255, 255, 255);\n"
-"	margin-left: 5px;\n"
-"	margin-right: 5px;\n"
-"}\n"
-"\n"
-"QComboBox::disabled{\n"
-"	color: rgb(136, 138, 133)\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow:disabled {    \n"
-"	image: url(:/icons/img/downArrowDis.png);\n"
-"}\n"
-"\n"
-"QComboBox::hover{\n"
-"border: 3px solid  #009b4a;\n"
-"}\n"
-"\n"
-"QComboBox::drop-down {\n"
-"	subcontrol-origin: padding;\n"
-"	subcontrol-position: top right;\n"
-"	width: 20px;\n"
-" \n"
-"	border-top-right-radius: 3px;\n"
-"	border-bottom-right-radius: 3px;\n"
-"}\n"
-"\n"
-"QComboBox::down-arrow {    \n"
-"	image: url(:/icons/img/downArrow.png);\n"
-"	width : 12px;\n"
-"}\n"
-"\n"
-"QComboBox QAbstractView{\n"
-"	background-color: #4f4f4f;\n"
-"	color: #999999;\n"
-" \n"
-"	selection-background-color: rgb(70, 70, 70);\n"
-"	selection-color: #4f4f4f;\n"
-"}\n"
-"")
         self.samplingBox.setEditable(False)
 
         self.verticalLayout_15.addWidget(self.samplingBox)
@@ -786,27 +715,7 @@ class Ui_Form(object):
         font6.setPointSize(10)
         font6.setBold(False)
         self.automaticCheckBox.setFont(font6)
-        self.automaticCheckBox.setStyleSheet(u"QCheckBox{\n"
-"	color: rgb(255,255,255);\n"
-"}\n"
-"QCheckBox::indicator{\n"
-"	background-color: rgb(70,70,70);\n"
-"	color: rgb(241,102,55);\n"
-"	border-radius:6px;\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:checked{\n"
-"	background-color: rgb(241,102,55);\n"
-"	border: 2px solid rgb(70,70,70);\n"
-"}\n"
-"\n"
-"QCheckBox:disabled{\n"
-" color: rgb(136, 138, 133);\n"
-"}\n"
-"\n"
-"QCheckBox::indicator:checked:disabled{\n"
-"	background-color: rgb(136, 138, 133);\n"
-"}")
+        self.automaticCheckBox.setStyleSheet(u"")
         self.automaticCheckBox.setCheckable(True)
         self.automaticCheckBox.setChecked(True)
 
@@ -863,13 +772,13 @@ class Ui_Form(object):
 
         self.verticalLayout_16.addWidget(self.exportFig, 0, Qt.AlignHCenter)
 
-        self.exportButton_2 = QPushButton(self.frame_25)
-        self.exportButton_2.setObjectName(u"exportButton_2")
-        self.exportButton_2.setEnabled(True)
-        self.exportButton_2.setMinimumSize(QSize(220, 30))
-        self.exportButton_2.setMaximumSize(QSize(16777215, 30))
-        self.exportButton_2.setFont(font1)
-        self.exportButton_2.setStyleSheet(u"\n"
+        self.exportData = QPushButton(self.frame_25)
+        self.exportData.setObjectName(u"exportData")
+        self.exportData.setEnabled(True)
+        self.exportData.setMinimumSize(QSize(220, 30))
+        self.exportData.setMaximumSize(QSize(16777215, 30))
+        self.exportData.setFont(font1)
+        self.exportData.setStyleSheet(u"\n"
 "QPushButton {\n"
 "	padding-left: 5px;\n"
 "	text-align: left;\n"
@@ -894,7 +803,7 @@ class Ui_Form(object):
 "	}\n"
 "")
 
-        self.verticalLayout_16.addWidget(self.exportButton_2, 0, Qt.AlignHCenter)
+        self.verticalLayout_16.addWidget(self.exportData, 0, Qt.AlignHCenter)
 
 
         self.verticalLayout_12.addWidget(self.frame_25)
@@ -956,8 +865,7 @@ class Ui_Form(object):
         self.closeAllButton.setText("")
         self.label_12.setText("")
         self.label_13.setText(QCoreApplication.translate("Form", u"Chart", None))
-        self.pushButton2.setText("")
-        self.pushButton2_2.setText("")
+        self.plusButton.setText("")
         self.label_77.setText(QCoreApplication.translate("Form", u"x-axis", None))
         self.label_78.setText(QCoreApplication.translate("Form", u"from:", None))
         self.label_79.setText(QCoreApplication.translate("Form", u"to:", None))
@@ -968,16 +876,25 @@ class Ui_Form(object):
         self.label_14.setText("")
         self.label_15.setText(QCoreApplication.translate("Form", u"Settings", None))
         self.label_16.setText(QCoreApplication.translate("Form", u"metrics:", None))
+        self.mainBox.setItemText(0, QCoreApplication.translate("Form", u"Time-Frequency", None))
+        self.mainBox.setItemText(1, QCoreApplication.translate("Form", u"Metrics", None))
+
         self.label_17.setText(QCoreApplication.translate("Form", u"domain:", None))
-        self.domainBox.setCurrentText("")
+        self.domainBox.setItemText(0, QCoreApplication.translate("Form", u"Time", None))
+        self.domainBox.setItemText(1, QCoreApplication.translate("Form", u"Frequency", None))
+
+        self.domainBox.setCurrentText(QCoreApplication.translate("Form", u"Time", None))
         self.label_18.setText(QCoreApplication.translate("Form", u"format:", None))
+        self.samplingBox.setItemText(0, QCoreApplication.translate("Form", u"Linear", None))
+        self.samplingBox.setItemText(1, QCoreApplication.translate("Form", u"1/3 octave", None))
+
         self.usernameLabel_9.setText(QCoreApplication.translate("Form", u"limits:", None))
         self.automaticCheckBox.setText(QCoreApplication.translate("Form", u"automatic", None))
         self.exportFig.setText(QCoreApplication.translate("Form", u"export figure", None))
-        self.exportButton_2.setText(QCoreApplication.translate("Form", u"export data", None))
+        self.exportData.setText(QCoreApplication.translate("Form", u"export data", None))
         self.label.setText(QCoreApplication.translate("Form", u"\u00a9 2021 Nidec\n"
 "All rights reserved to Nidec ", None))
         self.label_6.setText(QCoreApplication.translate("Form", u"Develop by Henrique Silveira\n"
-" and Ricardo Brum", None))
+"Juc\u00e9lio Tavares and Ricardo Brum", None))
     # retranslateUi
 
