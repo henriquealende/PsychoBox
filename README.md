@@ -1,4 +1,7 @@
 # PsychoBox
+<p align = "center">
+ <img width = "470" src = "/Resources/img/psychobox_logo.png">
+</p>
 
 ## Introduction
 
