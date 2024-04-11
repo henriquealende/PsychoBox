@@ -235,6 +235,9 @@ class Ui_Form(object):
         self.frame.setObjectName(u"frame")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
+        self.widget = QWidget(self.frame)
+        self.widget.setObjectName(u"widget")
+        self.widget.setGeometry(QRect(180, 100, 120, 80))
 
         self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
 
@@ -601,8 +604,10 @@ class Ui_Form(object):
         self.verticalLayout_13.addWidget(self.label_16)
 
         self.mainBox = QComboBox(self.frame_23)
+        self.mainBox.addItem("")
+        self.mainBox.addItem("")
         self.mainBox.setObjectName(u"mainBox")
-        self.mainBox.setMinimumSize(QSize(203, 30))
+        self.mainBox.setMinimumSize(QSize(243, 30))
         self.mainBox.setMaximumSize(QSize(16777215, 30))
         font5 = QFont()
         font5.setFamilies([u"PF BeauSans Pro"])
@@ -635,9 +640,11 @@ class Ui_Form(object):
         self.verticalLayout_14.addWidget(self.label_17)
 
         self.domainBox = QComboBox(self.frame_24)
+        self.domainBox.addItem("")
+        self.domainBox.addItem("")
         self.domainBox.setObjectName(u"domainBox")
         self.domainBox.setEnabled(True)
-        self.domainBox.setMinimumSize(QSize(203, 30))
+        self.domainBox.setMinimumSize(QSize(243, 30))
         self.domainBox.setMaximumSize(QSize(16777215, 30))
         self.domainBox.setFont(font5)
         self.domainBox.setEditable(False)
@@ -667,9 +674,11 @@ class Ui_Form(object):
         self.verticalLayout_15.addWidget(self.label_18)
 
         self.samplingBox = QComboBox(self.frame_samplingBox)
+        self.samplingBox.addItem("")
+        self.samplingBox.addItem("")
         self.samplingBox.setObjectName(u"samplingBox")
         self.samplingBox.setEnabled(True)
-        self.samplingBox.setMinimumSize(QSize(203, 30))
+        self.samplingBox.setMinimumSize(QSize(243, 30))
         self.samplingBox.setMaximumSize(QSize(16777215, 30))
         self.samplingBox.setFont(font5)
         self.samplingBox.setEditable(False)
@@ -867,9 +876,18 @@ class Ui_Form(object):
         self.label_14.setText("")
         self.label_15.setText(QCoreApplication.translate("Form", u"Settings", None))
         self.label_16.setText(QCoreApplication.translate("Form", u"metrics:", None))
+        self.mainBox.setItemText(0, QCoreApplication.translate("Form", u"Time-Frequency", None))
+        self.mainBox.setItemText(1, QCoreApplication.translate("Form", u"Metrics", None))
+
         self.label_17.setText(QCoreApplication.translate("Form", u"domain:", None))
-        self.domainBox.setCurrentText("")
+        self.domainBox.setItemText(0, QCoreApplication.translate("Form", u"Time", None))
+        self.domainBox.setItemText(1, QCoreApplication.translate("Form", u"Frequency", None))
+
+        self.domainBox.setCurrentText(QCoreApplication.translate("Form", u"Time", None))
         self.label_18.setText(QCoreApplication.translate("Form", u"format:", None))
+        self.samplingBox.setItemText(0, QCoreApplication.translate("Form", u"Linear", None))
+        self.samplingBox.setItemText(1, QCoreApplication.translate("Form", u"1/3 octave", None))
+
         self.usernameLabel_9.setText(QCoreApplication.translate("Form", u"limits:", None))
         self.automaticCheckBox.setText(QCoreApplication.translate("Form", u"automatic", None))
         self.exportFig.setText(QCoreApplication.translate("Form", u"export figure", None))

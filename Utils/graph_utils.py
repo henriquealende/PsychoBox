@@ -6,7 +6,11 @@ from PySide2.QtCharts import QtCharts
 from PySide2.QtGui import  QPainter, QBrush, QPen, QColor
 
 from Utils.filter_utils import FilterUtils
+from Psychoacoustics.mpi import MPI
+from Psychoacoustics.loudness_zwk import Loudness_ZWK
 
+mpi = MPI()
+loudness_zwk = Loudness_ZWK()
 
 class GraphUtils():
     def __init__(self):
@@ -70,24 +74,34 @@ class GraphUtils():
             self.axis_y.setLabelFormat("%.2f")
             self.axis_y.setTitleText("SPL [dB]")
 
-        elif domain == 'MPI':
-            pass
-#            x, MPI_values = mpi.calculateMPI(self.timeData, self.samplingRate)
-#            y = MPI_values[0,:]
-#            print(y)
-#            self.series = QtCharts.QLineSeries()
-#            for i in range(len(y)):
-#                self.series.append(x[i], y[i])
-#            # Configuração dos eixos
-#            self.axis_x = QtCharts.QValueAxis()
-#            self.axis_x.setLabelFormat("%.0f")
-#            self.axis_x.setTitleText("Frequency [Bark]")
-#            self.axis_y = QtCharts.QValueAxis()
-#            self.axis_y.setTickCount(5)
-#            self.axis_y.setLabelFormat("%.2f")
-#            self.axis_y.setTitleText("MPI [-]")
-#            # Ajuste de Limites
-#            self.limitsAdjust(domain, np.max(x))
+        elif domain == 'MPI':    
+            x, MPI_values = mpi.calculateMPI(self.timeData, self.samplingRate)
+            y = MPI_values[0,:]
+            self.series = QtCharts.QLineSeries()
+            for i in range(len(y)):
+                self.series.append(x[i], y[i])
+            # Configuração dos eixos
+            self.axis_x = QtCharts.QValueAxis()
+            self.axis_x.setLabelFormat("%.0f")
+            self.axis_x.setTitleText("Frequency [Bark]")
+            self.axis_y = QtCharts.QValueAxis()
+            self.axis_y.setTickCount(5)
+            self.axis_y.setLabelFormat("%.2f")
+            self.axis_y.setTitleText("MPI [-]")
+            
+        elif domain == 'Loudness':
+            x, _, y = loudness_zwk.loudnessCalculation(self.timeData, self.samplingRate)
+            self.series = QtCharts.QLineSeries()
+            for i in range(len(y)):
+                self.series.append(x[i], y[i])
+            # Configuração dos eixos
+            self.axis_x = QtCharts.QValueAxis()
+            self.axis_x.setLabelFormat("%.0f")
+            self.axis_x.setTitleText("Frequency [Bark]")
+            self.axis_y = QtCharts.QValueAxis()
+            self.axis_y.setTickCount(5)
+            self.axis_y.setLabelFormat("%.2f")
+            self.axis_y.setTitleText("Loudness [sone/Bark]")
 
 
     def plotGraph(self):
