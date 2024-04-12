@@ -44,6 +44,7 @@ class SetCalibration():
             self.gp.frame_samplingBox.hide()
         else:
             self.gp.domainBox.clear()
+            self.gp.domainBox.addItems(['Time', 'Frequency'])
             self.gp.samplingBox.addItems(['Linear', '1/3 octave'])
 
     def selectDomain(self):

@@ -75,6 +75,7 @@ class ButtonSignals():
         #Functions Callbacks
         self.gp.exportFig.clicked.connect(lambda: UI_Buttons_Graph.saveGraph(self))
         self.gp.exportData.clicked.connect(lambda: UI_Buttons_Graph.saveData(self))
+        self.gp.mainBox.activated[str].connect(lambda: UI_Buttons_Graph.changeGraph(self, window="expand"))
         self.gp.domainBox.activated[str].connect(lambda: UI_Buttons_Graph.changeGraph(self, window="expand"))
         self.gp.samplingBox.activated[str].connect(lambda: UI_Buttons_Graph.changeGraph(self, window="expand"))
         self.gp.refresh.clicked.connect(lambda: UI_Buttons_Graph.changeGraph(self, window="expand"))
