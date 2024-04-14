@@ -40,7 +40,6 @@ class GraphUtils():
             y = self.timeData
             T = len(self.timeData)/self.samplingRate
             x = np.linspace(0, T, len(y))
-
             self.series = QtCharts.QLineSeries()
             for i in range(len(y)):
                 self.series.append(x[i], y[i])
@@ -52,6 +51,8 @@ class GraphUtils():
             self.axis_y.setTickCount(5)
             self.axis_y.setLabelFormat("%.2f")
             self.axis_y.setTitleText("Amplitude")
+            self.x = x
+            self.y = y
 
         elif domain == 'Frequency':
             x, y, Yplot = FilterUtils.getFFT(self.timeData, self.samplingRate)
@@ -75,6 +76,8 @@ class GraphUtils():
             self.axis_y.setTickCount(5)
             self.axis_y.setLabelFormat("%.2f")
             self.axis_y.setTitleText("SPL [dB]")
+            self.x = x
+            self.y = y
 
         elif domain == 'MPI':    
             x, MPI_values = mpi.calculateMPI(self.timeData, self.samplingRate)
@@ -90,6 +93,8 @@ class GraphUtils():
             self.axis_y.setTickCount(5)
             self.axis_y.setLabelFormat("%.2f")
             self.axis_y.setTitleText("MPI [-]")
+            self.x = x
+            self.y = y
             
         elif domain == 'Loudness':
             x, _, y = loudness_zwk.loudnessCalculation(self.timeData, self.samplingRate)
@@ -104,6 +109,8 @@ class GraphUtils():
             self.axis_y.setTickCount(5)
             self.axis_y.setLabelFormat("%.2f")
             self.axis_y.setTitleText("Loudness [sone/Bark]")
+            self.x = x
+            self.y = y
             
         elif domain == 'Sharpness':
             x, y = sharpness_din.specificSharpnessCalculation(self.timeData, self.samplingRate)
@@ -118,6 +125,8 @@ class GraphUtils():
             self.axis_y.setTickCount(5)
             self.axis_y.setLabelFormat("%.2f")
             self.axis_y.setTitleText("Sharpness [acum/Bark]")
+            self.x = x
+            self.y = y
 
 
     def plotGraph(self):

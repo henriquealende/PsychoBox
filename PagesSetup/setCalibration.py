@@ -70,4 +70,14 @@ class SetCalibration():
                 self.gp.spinBox_2.setValue(80)
                 self.gp.spinBox_3.setValue(20)
                 self.gp.spinBox_4.setValue(10000)
-                
+            elif domain == "Loudness":
+                self.gp.spinBox.setValue(0)
+                self.gp.spinBox_2.setValue(10)
+                self.gp.spinBox_3.setValue(0)
+                self.gp.spinBox_4.setValue(25)
+            elif domain == "Sharpness":
+                self.gp.spinBox.setValue(0)
+                self.gp.spinBox_2.setValue(10)
+                self.gp.spinBox_3.setValue(0)
+                self.gp.spinBox_4.setValue(25)
+

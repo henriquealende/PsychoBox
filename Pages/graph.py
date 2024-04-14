@@ -1,6 +1,6 @@
 import os
 from PySide2.QtWidgets import QFileDialog
-
+import csv
 
 class UI_Buttons_Graph():
     def __init__(self):
@@ -40,6 +40,28 @@ class UI_Buttons_Graph():
         fileName = fileName + '.png'
         image = x.grab()
         image.save(fileName)
+        
+    def saveData(self):
+        domain = self.gp.domainBox.currentText()
+        if domain == 'Time':
+            headers = ['Amplitude []', 'Time [s]']
+        elif domain == "Frequency":
+            headers = ['Amplitude [Pa]', 'Frequency [Hz]']
+        
+        file_name, _ = QFileDialog.getSaveFileName(
+            self, 'Salvar Arquivo', '', 'CSV Files (*.csv)')
+
+        if not file_name:
+            return
+        
+        with open(file_name, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(headers)
+    
+            for x_val, y_val in zip(self.x, self.y):
+                writer.writerow([y_val, x_val])
+            
+ 
 
 
 

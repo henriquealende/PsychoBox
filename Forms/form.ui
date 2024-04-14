@@ -8011,7 +8011,7 @@ QComboBox QAbstractView{
                        <widget class="QComboBox" name="typeHeadBox_2">
                         <property name="minimumSize">
                          <size>
-                          <width>248</width>
+                          <width>208</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -8083,7 +8083,7 @@ QComboBox QAbstractView{
                         </property>
                         <property name="minimumSize">
                          <size>
-                          <width>248</width>
+                          <width>208</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -8319,7 +8319,7 @@ QComboBox QAbstractView{
                        <widget class="QComboBox" name="typeHatsBox_2">
                         <property name="minimumSize">
                          <size>
-                          <width>248</width>
+                          <width>208</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -8387,7 +8387,7 @@ QComboBox QAbstractView{
                         </property>
                         <property name="minimumSize">
                          <size>
-                          <width>248</width>
+                          <width>208</width>
                           <height>30</height>
                          </size>
                         </property>
@@ -8458,7 +8458,7 @@ QPushButton:disabled{
                    <item>
                     <widget class="QPushButton" name="plot">
                      <property name="enabled">
-                      <bool>true</bool>
+                      <bool>false</bool>
                      </property>
                      <property name="minimumSize">
                       <size>

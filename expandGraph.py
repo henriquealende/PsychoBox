@@ -10,6 +10,7 @@ class Expand_Graph(QMainWindow):
         super(Expand_Graph, self).__init__()
         self.initUI()
         self.set()
+        self.gp.frame_axis.hide()
 #        self.set2()
 
     def initUI(self):

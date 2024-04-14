@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'form.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.0
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QFram
     QHBoxLayout, QLabel, QLineEdit, QListWidget,
     QListWidgetItem, QPushButton, QSizePolicy, QSlider,
     QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
-import resourceGui_rc
+import rc_resourceGui
 
 class Ui_Widget(object):
     def setupUi(self, Widget):
@@ -3353,7 +3353,7 @@ class Ui_Widget(object):
         self.typeHeadBox_2.addItem("")
         self.typeHeadBox_2.addItem("")
         self.typeHeadBox_2.setObjectName(u"typeHeadBox_2")
-        self.typeHeadBox_2.setMinimumSize(QSize(248, 30))
+        self.typeHeadBox_2.setMinimumSize(QSize(208, 30))
         self.typeHeadBox_2.setMaximumSize(QSize(16777215, 30))
         self.typeHeadBox_2.setFont(font6)
         self.typeHeadBox_2.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
@@ -3373,7 +3373,7 @@ class Ui_Widget(object):
         self.modelHeadBox_2 = QComboBox(self.frame_134)
         self.modelHeadBox_2.setObjectName(u"modelHeadBox_2")
         self.modelHeadBox_2.setEnabled(False)
-        self.modelHeadBox_2.setMinimumSize(QSize(248, 30))
+        self.modelHeadBox_2.setMinimumSize(QSize(208, 30))
         self.modelHeadBox_2.setMaximumSize(QSize(16777215, 30))
         self.modelHeadBox_2.setFont(font6)
 
@@ -3495,7 +3495,7 @@ class Ui_Widget(object):
         self.typeHatsBox_2.addItem("")
         self.typeHatsBox_2.addItem("")
         self.typeHatsBox_2.setObjectName(u"typeHatsBox_2")
-        self.typeHatsBox_2.setMinimumSize(QSize(248, 30))
+        self.typeHatsBox_2.setMinimumSize(QSize(208, 30))
         self.typeHatsBox_2.setMaximumSize(QSize(16777215, 30))
         self.typeHatsBox_2.setFont(font6)
 
@@ -3513,7 +3513,7 @@ class Ui_Widget(object):
         self.modelHatsBox_2 = QComboBox(self.frame_136)
         self.modelHatsBox_2.setObjectName(u"modelHatsBox_2")
         self.modelHatsBox_2.setEnabled(False)
-        self.modelHatsBox_2.setMinimumSize(QSize(248, 30))
+        self.modelHatsBox_2.setMinimumSize(QSize(208, 30))
         self.modelHatsBox_2.setMaximumSize(QSize(16777215, 30))
         self.modelHatsBox_2.setFont(font6)
 
@@ -3561,7 +3561,7 @@ class Ui_Widget(object):
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.plot = QPushButton(self.frame_13)
         self.plot.setObjectName(u"plot")
-        self.plot.setEnabled(True)
+        self.plot.setEnabled(False)
         self.plot.setMinimumSize(QSize(130, 36))
         self.plot.setMaximumSize(QSize(130, 36))
         font15 = QFont()

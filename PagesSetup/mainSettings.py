@@ -72,8 +72,10 @@ class MainSettings():
     def callFunctionsEditor(self, parameter):
         if parameter == "removeGraph":
             SetEditor.remove(self, 'graph')
+            self.ui.plot.setEnabled(False)
         elif parameter == "removeAllGraph":
             SetEditor.removeAllButton(self, 'graph')
+            self.ui.plot.setEnabled(False)
         elif parameter == "reset":
             SetEditor.resetButton(self)
         elif parameter == "remove":
