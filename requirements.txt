@@ -1,0 +1,10 @@
+numpy
+scipy
+matplotlib
+pygame
+sounddevice
+PySide2
+mysql-connector-python
+pandas
+csv
+mosqito
