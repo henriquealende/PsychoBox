@@ -11,9 +11,6 @@ class UI_Buttons_Filter():
     def __init__(self):
         super(UI_Buttons_Filter, self).__init__()
 
-    def filterButton(self):
-        self.ui.rightContent.setCurrentWidget(self.ui.filterPage)
-
     def importButton(self):
         global path
         importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')

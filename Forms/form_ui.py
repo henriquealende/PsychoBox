@@ -176,6 +176,10 @@ class Ui_Widget(object):
 "QPushButton:hover {\n"
 "	background-color:  rgb(220, 147, 0)\n"
 "}")
+        icon3 = QIcon()
+        icon3.addFile(u":/logos/img/maximizar-janela.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.maximizeButton.setIcon(icon3)
+        self.maximizeButton.setIconSize(QSize(12, 16))
 
         self.horizontalLayout_7.addWidget(self.maximizeButton)
 
@@ -190,9 +194,9 @@ class Ui_Widget(object):
 "QPushButton:hover{\n"
 "	background-color: rgb(255, 119, 119)\n"
 "}")
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/img/close.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.closeAllButton.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/img/close.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.closeAllButton.setIcon(icon4)
         self.closeAllButton.setIconSize(QSize(12, 12))
 
         self.horizontalLayout_7.addWidget(self.closeAllButton)
@@ -270,44 +274,52 @@ class Ui_Widget(object):
         font2.setPointSize(15)
         font2.setBold(True)
         self.homeButton.setFont(font2)
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/img/homeEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.homeButton.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/img/homeEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.homeButton.setIcon(icon5)
         self.homeButton.setIconSize(QSize(30, 30))
         self.homeButton.setCheckable(True)
-        self.homeButton.setChecked(True)
+        self.homeButton.setChecked(False)
         self.homeButton.setAutoExclusive(True)
 
         self.verticalLayout_3.addWidget(self.homeButton)
 
         self.filterButton = QPushButton(self.frame)
         self.filterButton.setObjectName(u"filterButton")
-        self.filterButton.setEnabled(False)
+        self.filterButton.setEnabled(True)
         self.filterButton.setMinimumSize(QSize(50, 50))
         self.filterButton.setMaximumSize(QSize(16777215, 16777215))
         self.filterButton.setFont(font2)
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/img/equalizerEnable.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.filterButton.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/img/equalizerEnable.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.filterButton.setIcon(icon6)
         self.filterButton.setIconSize(QSize(30, 30))
         self.filterButton.setCheckable(True)
-        self.filterButton.setChecked(False)
+        self.filterButton.setChecked(True)
         self.filterButton.setAutoExclusive(True)
 
         self.verticalLayout_3.addWidget(self.filterButton)
 
         self.calibrationButton = QPushButton(self.frame)
         self.calibrationButton.setObjectName(u"calibrationButton")
-        self.calibrationButton.setEnabled(False)
+        self.calibrationButton.setEnabled(True)
         self.calibrationButton.setMinimumSize(QSize(50, 50))
         self.calibrationButton.setMaximumSize(QSize(16777215, 16777215))
         self.calibrationButton.setFont(font2)
-        self.calibrationButton.setStyleSheet(u"padding-left: 6px;")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/img/calibration.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.calibrationButton.setIcon(icon6)
+        self.calibrationButton.setStyleSheet(u"QPushButton{\n"
+"	padding-left:6px;\n"
+"}\n"
+"QPushButton:checked {\n"
+"	background-color:#009b4a;\n"
+"	padding-left:1px;\n"
+"	border-left: 5px solid  rgb(241, 102, 55);\n"
+"}")
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/img/calibration.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.calibrationButton.setIcon(icon7)
         self.calibrationButton.setIconSize(QSize(40, 40))
         self.calibrationButton.setCheckable(True)
+        self.calibrationButton.setChecked(False)
         self.calibrationButton.setAutoRepeat(False)
         self.calibrationButton.setAutoExclusive(True)
 
@@ -342,9 +354,9 @@ class Ui_Widget(object):
 "	border-radius:25px;\n"
 "	padding-left:9px\n"
 "}")
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/img/userEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.userButton.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/img/userEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.userButton.setIcon(icon8)
         self.userButton.setIconSize(QSize(20, 20))
         self.userButton.setCheckable(True)
         self.userButton.setChecked(False)
@@ -357,9 +369,9 @@ class Ui_Widget(object):
         self.settingsButton.setMaximumSize(QSize(16777215, 16777215))
         self.settingsButton.setFont(font3)
         self.settingsButton.setLayoutDirection(Qt.LeftToRight)
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/img/settingsEnable.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.settingsButton.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/img/settingsEnable.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.settingsButton.setIcon(icon9)
         self.settingsButton.setIconSize(QSize(20, 20))
         self.settingsButton.setCheckable(True)
         self.settingsButton.setChecked(False)
@@ -987,9 +999,9 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/img/addEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.newProjectButton.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/img/addEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.newProjectButton.setIcon(icon10)
         self.newProjectButton.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_45.addWidget(self.newProjectButton, 0, Qt.AlignLeft)
@@ -1012,9 +1024,9 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon10 = QIcon()
-        icon10.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.refreshButton.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.refreshButton.setIcon(icon11)
         self.refreshButton.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_45.addWidget(self.refreshButton)
@@ -1670,9 +1682,9 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon11 = QIcon()
-        icon11.addFile(u":/icons/img/play.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.playButton.setIcon(icon11)
+        icon12 = QIcon()
+        icon12.addFile(u":/icons/img/play.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.playButton.setIcon(icon12)
         self.playButton.setIconSize(QSize(15, 25))
 
         self.horizontalLayout_31.addWidget(self.playButton)
@@ -1697,9 +1709,9 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon12 = QIcon()
-        icon12.addFile(u":/icons/img/pause.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pauseButton.setIcon(icon12)
+        icon13 = QIcon()
+        icon13.addFile(u":/icons/img/pause.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pauseButton.setIcon(icon13)
         self.pauseButton.setIconSize(QSize(15, 25))
 
         self.horizontalLayout_31.addWidget(self.pauseButton)
@@ -1724,9 +1736,9 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon13 = QIcon()
-        icon13.addFile(u":/icons/img/stop.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.stopButton.setIcon(icon13)
+        icon14 = QIcon()
+        icon14.addFile(u":/icons/img/stop.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stopButton.setIcon(icon14)
         self.stopButton.setIconSize(QSize(13, 25))
 
         self.horizontalLayout_31.addWidget(self.stopButton)
@@ -1812,11 +1824,11 @@ class Ui_Widget(object):
         self.muteButton.setStyleSheet(u"QPushButton {\n"
 "	border-radius:10px;\n"
 "}")
-        icon14 = QIcon()
-        icon14.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon14.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
-        icon14.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
-        self.muteButton.setIcon(icon14)
+        icon15 = QIcon()
+        icon15.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
+        icon15.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
+        self.muteButton.setIcon(icon15)
         self.muteButton.setCheckable(True)
         self.muteButton.setChecked(False)
         self.muteButton.setAutoRepeat(False)
@@ -3353,7 +3365,7 @@ class Ui_Widget(object):
         self.typeHeadBox_2.addItem("")
         self.typeHeadBox_2.addItem("")
         self.typeHeadBox_2.setObjectName(u"typeHeadBox_2")
-        self.typeHeadBox_2.setMinimumSize(QSize(248, 30))
+        self.typeHeadBox_2.setMinimumSize(QSize(208, 30))
         self.typeHeadBox_2.setMaximumSize(QSize(16777215, 30))
         self.typeHeadBox_2.setFont(font6)
         self.typeHeadBox_2.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
@@ -3373,7 +3385,7 @@ class Ui_Widget(object):
         self.modelHeadBox_2 = QComboBox(self.frame_134)
         self.modelHeadBox_2.setObjectName(u"modelHeadBox_2")
         self.modelHeadBox_2.setEnabled(False)
-        self.modelHeadBox_2.setMinimumSize(QSize(248, 30))
+        self.modelHeadBox_2.setMinimumSize(QSize(208, 30))
         self.modelHeadBox_2.setMaximumSize(QSize(16777215, 30))
         self.modelHeadBox_2.setFont(font6)
 
@@ -3495,7 +3507,7 @@ class Ui_Widget(object):
         self.typeHatsBox_2.addItem("")
         self.typeHatsBox_2.addItem("")
         self.typeHatsBox_2.setObjectName(u"typeHatsBox_2")
-        self.typeHatsBox_2.setMinimumSize(QSize(248, 30))
+        self.typeHatsBox_2.setMinimumSize(QSize(208, 30))
         self.typeHatsBox_2.setMaximumSize(QSize(16777215, 30))
         self.typeHatsBox_2.setFont(font6)
 
@@ -3513,7 +3525,7 @@ class Ui_Widget(object):
         self.modelHatsBox_2 = QComboBox(self.frame_136)
         self.modelHatsBox_2.setObjectName(u"modelHatsBox_2")
         self.modelHatsBox_2.setEnabled(False)
-        self.modelHatsBox_2.setMinimumSize(QSize(248, 30))
+        self.modelHatsBox_2.setMinimumSize(QSize(208, 30))
         self.modelHatsBox_2.setMaximumSize(QSize(16777215, 30))
         self.modelHatsBox_2.setFont(font6)
 
@@ -3561,7 +3573,7 @@ class Ui_Widget(object):
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
         self.plot = QPushButton(self.frame_13)
         self.plot.setObjectName(u"plot")
-        self.plot.setEnabled(True)
+        self.plot.setEnabled(False)
         self.plot.setMinimumSize(QSize(130, 36))
         self.plot.setMaximumSize(QSize(130, 36))
         font15 = QFont()
@@ -3569,10 +3581,10 @@ class Ui_Widget(object):
         font15.setPointSize(13)
         font15.setBold(False)
         self.plot.setFont(font15)
-        icon15 = QIcon()
-        icon15.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon15.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.plot.setIcon(icon15)
+        icon16 = QIcon()
+        icon16.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon16.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
+        self.plot.setIcon(icon16)
         self.plot.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_18.addWidget(self.plot)
@@ -3583,10 +3595,10 @@ class Ui_Widget(object):
         self.join.setMinimumSize(QSize(130, 36))
         self.join.setMaximumSize(QSize(130, 36))
         self.join.setFont(font15)
-        icon16 = QIcon()
-        icon16.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon16.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.join.setIcon(icon16)
+        icon17 = QIcon()
+        icon17.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon17.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
+        self.join.setIcon(icon17)
         self.join.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_18.addWidget(self.join)
@@ -3649,7 +3661,7 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-        self.rightContent.setCurrentIndex(3)
+        self.rightContent.setCurrentIndex(2)
         self.typeHeadBox_2.setCurrentIndex(0)
 
 

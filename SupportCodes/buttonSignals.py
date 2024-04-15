@@ -26,13 +26,14 @@ class ButtonSignals():
         self.ui.homeButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "home"))
         self.ui.userButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "user"))
         self.ui.calibrationButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "calibration"))
+        self.ui.filterButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "filter"))
 
         #FILTER PAGE
         self.ui.removeButton.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "remove"))
         self.ui.removeAllButton.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "removeAll"))
         self.ui.resetButton.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "reset"))
 
-        self.ui.filterButton.clicked.connect(lambda: UI_Buttons_Filter.filterButton(self))
+        
         self.ui.importButton.clicked.connect(lambda: UI_Buttons_Filter.importButton(self))
         self.ui.listWidget.itemClicked.connect(lambda: UI_Buttons_Filter.selectItem(self))
         self.ui.playButton.clicked.connect(lambda: UI_Buttons_Filter.playButton(self))

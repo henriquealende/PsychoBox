@@ -88,9 +88,17 @@ class SetLeftMenu():
             self.ui.userButton.setText("")
 
     def homeButton(self):
-        if self.online:
-            self.ui.rightContent.setCurrentWidget(self.ui.welcomePage)
+        #if self.online:
+        self.ui.rightContent.setCurrentWidget(self.ui.welcomePage)
+        self.ui.homeButton.setChecked(True)
 
     def calibrationButton(self):
-       if self.online:
-            self.ui.rightContent.setCurrentWidget(self.ui.calibrationPage)
+        #if self.online:
+        self.ui.rightContent.setCurrentWidget(self.ui.calibrationPage)
+        self.ui.calibrationButton.setChecked(True)
+        
+    def filterButton(self):
+        #if self.online:
+        self.ui.rightContent.setCurrentWidget(self.ui.filterPage)
+        self.ui.filterButton.setChecked(True)
+

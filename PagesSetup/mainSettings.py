@@ -104,6 +104,9 @@ class MainSettings():
             SetLeftMenu.userButton(self)
         elif parameter == "calibration":
             SetLeftMenu.calibrationButton(self)
+        elif parameter == "filter":
+            SetLeftMenu.filterButton(self)
+
 
 
 
