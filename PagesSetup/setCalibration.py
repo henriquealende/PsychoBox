@@ -40,7 +40,7 @@ class SetCalibration():
         metrics = self.gp.mainBox.currentText()
         if metrics == "Metrics":
             self.gp.domainBox.clear()
-            self.gp.domainBox.addItems(['Loudness', 'Sharpness', 'MPI'])
+            self.gp.domainBox.addItems(['Loudness', 'Sharpness', 'IPM'])
             self.gp.frame_samplingBox.hide()
         else:
             self.gp.domainBox.clear()

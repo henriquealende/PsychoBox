@@ -1,16 +1,13 @@
 {
     "files": [
         "Pages/login.py",
-        "MainFiles/expandGraph.py",
         "PagesSetup/mainSettings.py",
-        "PagesSetup/setWindow.py",
         "Utils/filter_utils.py",
         "Utils/5.py",
         "PagesSetup/setGraph.py",
         "Pages/graph.py",
         "PagesSetup/setCalibration.py",
         "PagesSetup/setLogin.py",
-        "Signals/buttonSignals.py",
         "Pages/calibration.py",
         "Resources/resourceGui.qrc",
         "Forms/form.ui",
@@ -25,9 +22,7 @@
         "Pages/welcome.py",
         "expandGraph.py",
         "Pages/editor.py",
-        "Readme.txt",
         "main.py",
-        "Pages/setWindow.py",
         "Utils/graph_utils2.py"
     ]
 }

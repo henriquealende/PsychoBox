@@ -8,9 +8,9 @@ import matplotlib
 
 matplotlib.rcParams['font.size'] = 16
 
-class MPI():
+class IPM():
     def __init__(self):
-        super(MPI, self).__init__()
+        super(IPM, self).__init__()
     def calculateMPI(self, timeData, samplingRate):
         self._applyFilter(timeData, samplingRate)
         self._impulseParameters()

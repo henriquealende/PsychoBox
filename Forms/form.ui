@@ -30,7 +30,28 @@
     <normaloff>:/icons/img/psychobox.png</normaloff>:/icons/img/psychobox.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">
+QCheckBox{
+	color: rgb(255,255,255);
+}
+QCheckBox::indicator{
+	background-color: rgb(70,70,70);
+	color: rgb(241,102,55);
+	border-radius:6px;
+}
+
+QCheckBox::indicator:checked{
+	background-color: rgb(241,102,55);
+	border: 2px solid rgb(70,70,70);
+}
+
+QCheckBox:disabled{
+ color: rgb(136, 138, 133);
+}
+
+QCheckBox::indicator:checked:disabled{
+	background-color: rgb(136, 138, 133);
+}</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -877,7 +898,7 @@ QPushButton:checked {
          <enum>QFrame::Raised</enum>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="loginPage">
          <layout class="QHBoxLayout" name="horizontalLayout_24">
@@ -7621,6 +7642,22 @@ QPushButton:checked {
                      </property>
                      <property name="text">
                       <string>Basket</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item alignment="Qt::AlignRight">
+                    <widget class="QCheckBox" name="checkHold">
+                     <property name="font">
+                      <font>
+                       <family>PF BeauSans Pro</family>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                     <property name="text">
+                      <string>Hold on</string>
+                     </property>
+                     <property name="checked">
+                      <bool>false</bool>
                      </property>
                     </widget>
                    </item>

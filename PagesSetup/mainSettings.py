@@ -93,8 +93,6 @@ class MainSettings():
             SetEditor.VolumeButton(self, self.currentVolume)
 
 
-
-
     def callFunctionsLeftMenu(self, parameter):
         if parameter == "menu":
             SetLeftMenu.toogleMenu(self)

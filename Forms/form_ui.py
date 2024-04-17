@@ -15,10 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QComboBox, QFrame,
-    QHBoxLayout, QLabel, QLineEdit, QListWidget,
-    QListWidgetItem, QPushButton, QSizePolicy, QSlider,
-    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComboBox,
+    QFrame, QHBoxLayout, QLabel, QLineEdit,
+    QListWidget, QListWidgetItem, QPushButton, QSizePolicy,
+    QSlider, QSpacerItem, QStackedWidget, QVBoxLayout,
+    QWidget)
 import resourceGui_rc
 
 class Ui_Widget(object):
@@ -31,7 +32,28 @@ class Ui_Widget(object):
         icon = QIcon()
         icon.addFile(u":/icons/img/psychobox.png", QSize(), QIcon.Normal, QIcon.Off)
         Widget.setWindowIcon(icon)
-        Widget.setStyleSheet(u"")
+        Widget.setStyleSheet(u"\n"
+"QCheckBox{\n"
+"	color: rgb(255,255,255);\n"
+"}\n"
+"QCheckBox::indicator{\n"
+"	background-color: rgb(70,70,70);\n"
+"	color: rgb(241,102,55);\n"
+"	border-radius:6px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked{\n"
+"	background-color: rgb(241,102,55);\n"
+"	border: 2px solid rgb(70,70,70);\n"
+"}\n"
+"\n"
+"QCheckBox:disabled{\n"
+" color: rgb(136, 138, 133);\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked:disabled{\n"
+"	background-color: rgb(136, 138, 133);\n"
+"}")
         self.verticalLayout = QVBoxLayout(Widget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -3153,6 +3175,15 @@ class Ui_Widget(object):
 
         self.horizontalLayout_59.addWidget(self.label_87)
 
+        self.checkBox = QCheckBox(self.frame_121)
+        self.checkBox.setObjectName(u"checkBox")
+        font15 = QFont()
+        font15.setFamilies([u"PF BeauSans Pro"])
+        font15.setPointSize(10)
+        self.checkBox.setFont(font15)
+
+        self.horizontalLayout_59.addWidget(self.checkBox, 0, Qt.AlignRight)
+
 
         self.verticalLayout_84.addWidget(self.frame_121)
 
@@ -3576,11 +3607,11 @@ class Ui_Widget(object):
         self.plot.setEnabled(False)
         self.plot.setMinimumSize(QSize(130, 36))
         self.plot.setMaximumSize(QSize(130, 36))
-        font15 = QFont()
-        font15.setFamilies([u"PF BeauSans Pro"])
-        font15.setPointSize(13)
-        font15.setBold(False)
-        self.plot.setFont(font15)
+        font16 = QFont()
+        font16.setFamilies([u"PF BeauSans Pro"])
+        font16.setPointSize(13)
+        font16.setBold(False)
+        self.plot.setFont(font16)
         icon16 = QIcon()
         icon16.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
         icon16.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
@@ -3594,7 +3625,7 @@ class Ui_Widget(object):
         self.join.setEnabled(False)
         self.join.setMinimumSize(QSize(130, 36))
         self.join.setMaximumSize(QSize(130, 36))
-        self.join.setFont(font15)
+        self.join.setFont(font16)
         icon17 = QIcon()
         icon17.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
         icon17.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
@@ -3634,10 +3665,7 @@ class Ui_Widget(object):
         self.horizontalLayout_11.setContentsMargins(5, 5, 5, 5)
         self.label = QLabel(self.bottomContent)
         self.label.setObjectName(u"label")
-        font16 = QFont()
-        font16.setFamilies([u"PF BeauSans Pro"])
-        font16.setPointSize(10)
-        self.label.setFont(font16)
+        self.label.setFont(font15)
         self.label.setStyleSheet(u"color:rgb(255, 255, 255)")
         self.label.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
@@ -3661,7 +3689,7 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-        self.rightContent.setCurrentIndex(2)
+        self.rightContent.setCurrentIndex(3)
         self.typeHeadBox_2.setCurrentIndex(0)
 
 
@@ -3799,6 +3827,7 @@ class Ui_Widget(object):
         self.logo_3.setText("")
         self.label_86.setText("")
         self.label_87.setText(QCoreApplication.translate("Widget", u"Basket", None))
+        self.checkBox.setText(QCoreApplication.translate("Widget", u"Hold on", None))
         self.importGraph.setText(QCoreApplication.translate("Widget", u"import", None))
         self.removeGraph.setText(QCoreApplication.translate("Widget", u"remove", None))
         self.removeAllGraph.setText(QCoreApplication.translate("Widget", u"remove all", None))

@@ -28,7 +28,6 @@ class SetupWindow():
             self.gp.frame_samplingBox.hide()
 
     def centerWindow(widget):
-        print("arquivo setWindow")
         window = widget.window()
         window.setGeometry(
            QtWidgets.QStyle.alignedRect(

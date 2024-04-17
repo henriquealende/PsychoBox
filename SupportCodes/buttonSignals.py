@@ -56,10 +56,10 @@ class ButtonSignals():
         self.ui.typeHatsBox_2.activated[str].connect(lambda: MainSettings.callFunctionsCalibration(self, "typeHatsBox"))
 
         self.ui.importGraph.clicked.connect(lambda: UI_Buttons_Graph.importButton(self))
-        self.ui.listWidget2.itemClicked.connect(lambda: UI_Buttons_Graph.selectItem(self))
+        self.ui.listWidget2.itemClicked.connect(lambda: UI_Buttons_Graph.selectMulti(self))
         self.ui.modelHeadBox_2.activated[str].connect(lambda: UI_Buttons_Cali.changeModelHead(self))
         self.ui.modelHatsBox_2.activated[str].connect(lambda: UI_Buttons_Cali.changeModelHats(self))
-        self.ui.plot.clicked.connect(lambda: UI_Buttons_Graph.expandGraph(self, 'plot'))
+        self.ui.plot.clicked.connect(lambda: UI_Buttons_Graph.expandGraph(self))
 
 
 
