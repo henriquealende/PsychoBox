@@ -3175,14 +3175,15 @@ class Ui_Widget(object):
 
         self.horizontalLayout_59.addWidget(self.label_87)
 
-        self.checkBox = QCheckBox(self.frame_121)
-        self.checkBox.setObjectName(u"checkBox")
+        self.checkHold = QCheckBox(self.frame_121)
+        self.checkHold.setObjectName(u"checkHold")
         font15 = QFont()
         font15.setFamilies([u"PF BeauSans Pro"])
         font15.setPointSize(10)
-        self.checkBox.setFont(font15)
+        self.checkHold.setFont(font15)
+        self.checkHold.setChecked(False)
 
-        self.horizontalLayout_59.addWidget(self.checkBox, 0, Qt.AlignRight)
+        self.horizontalLayout_59.addWidget(self.checkHold, 0, Qt.AlignRight)
 
 
         self.verticalLayout_84.addWidget(self.frame_121)
@@ -3689,7 +3690,7 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-        self.rightContent.setCurrentIndex(3)
+        self.rightContent.setCurrentIndex(2)
         self.typeHeadBox_2.setCurrentIndex(0)
 
 
@@ -3827,7 +3828,7 @@ class Ui_Widget(object):
         self.logo_3.setText("")
         self.label_86.setText("")
         self.label_87.setText(QCoreApplication.translate("Widget", u"Basket", None))
-        self.checkBox.setText(QCoreApplication.translate("Widget", u"Hold on", None))
+        self.checkHold.setText(QCoreApplication.translate("Widget", u"Hold on", None))
         self.importGraph.setText(QCoreApplication.translate("Widget", u"import", None))
         self.removeGraph.setText(QCoreApplication.translate("Widget", u"remove", None))
         self.removeAllGraph.setText(QCoreApplication.translate("Widget", u"remove all", None))

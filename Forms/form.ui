@@ -898,7 +898,7 @@ QPushButton:checked {
          <enum>QFrame::Raised</enum>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="loginPage">
          <layout class="QHBoxLayout" name="horizontalLayout_24">
