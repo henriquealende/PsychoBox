@@ -86,7 +86,7 @@ class UI_Buttons_Graph():
         if num_curves > 1:
             headers.extend(f'Amplitude ({os.path.basename(path)})' for i, path in enumerate(pathExport))
         else:
-            headers.extend(f'Amplitude')
+            headers.extend('Amplitude')
 
         # Prepara os dados de cada curva para exportação
         for i in range(num_curves):
