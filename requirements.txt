@@ -7,3 +7,4 @@ PySide2
 mysql-connector-python
 pandas
 mosqito
+PyQt5
