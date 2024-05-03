@@ -317,7 +317,7 @@ class Ui_Widget(object):
         self.filterButton.setIcon(icon6)
         self.filterButton.setIconSize(QSize(30, 30))
         self.filterButton.setCheckable(True)
-        self.filterButton.setChecked(True)
+        self.filterButton.setChecked(False)
         self.filterButton.setAutoExclusive(True)
 
         self.verticalLayout_3.addWidget(self.filterButton)
@@ -341,7 +341,7 @@ class Ui_Widget(object):
         self.calibrationButton.setIcon(icon7)
         self.calibrationButton.setIconSize(QSize(40, 40))
         self.calibrationButton.setCheckable(True)
-        self.calibrationButton.setChecked(False)
+        self.calibrationButton.setChecked(True)
         self.calibrationButton.setAutoRepeat(False)
         self.calibrationButton.setAutoExclusive(True)
 

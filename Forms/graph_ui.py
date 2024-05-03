@@ -25,7 +25,7 @@ class Ui_Form(object):
     def setupUi(self, Form):
         if not Form.objectName():
             Form.setObjectName(u"Form")
-        Form.resize(1116, 665)
+        Form.resize(1200, 800)
         Form.setMinimumSize(QSize(962, 665))
         self.verticalLayout = QVBoxLayout(Form)
         self.verticalLayout.setSpacing(0)
@@ -235,9 +235,6 @@ class Ui_Form(object):
         self.frame.setObjectName(u"frame")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
-        self.widget = QWidget(self.frame)
-        self.widget.setObjectName(u"widget")
-        self.widget.setGeometry(QRect(180, 100, 120, 80))
 
         self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
 
@@ -607,7 +604,7 @@ class Ui_Form(object):
         self.mainBox.addItem("")
         self.mainBox.addItem("")
         self.mainBox.setObjectName(u"mainBox")
-        self.mainBox.setMinimumSize(QSize(243, 30))
+        self.mainBox.setMinimumSize(QSize(203, 30))
         self.mainBox.setMaximumSize(QSize(16777215, 30))
         font5 = QFont()
         font5.setFamilies([u"PF BeauSans Pro"])
@@ -644,7 +641,7 @@ class Ui_Form(object):
         self.domainBox.addItem("")
         self.domainBox.setObjectName(u"domainBox")
         self.domainBox.setEnabled(True)
-        self.domainBox.setMinimumSize(QSize(243, 30))
+        self.domainBox.setMinimumSize(QSize(203, 30))
         self.domainBox.setMaximumSize(QSize(16777215, 30))
         self.domainBox.setFont(font5)
         self.domainBox.setEditable(False)
@@ -678,7 +675,7 @@ class Ui_Form(object):
         self.samplingBox.addItem("")
         self.samplingBox.setObjectName(u"samplingBox")
         self.samplingBox.setEnabled(True)
-        self.samplingBox.setMinimumSize(QSize(243, 30))
+        self.samplingBox.setMinimumSize(QSize(203, 30))
         self.samplingBox.setMaximumSize(QSize(16777215, 30))
         self.samplingBox.setFont(font5)
         self.samplingBox.setEditable(False)

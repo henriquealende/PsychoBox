@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1116</width>
-    <height>665</height>
+    <width>1200</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -498,16 +498,6 @@ QPushButton:hover{
                 <property name="frameShadow">
                  <enum>QFrame::Raised</enum>
                 </property>
-                <widget class="QWidget" name="widget" native="true">
-                 <property name="geometry">
-                  <rect>
-                   <x>180</x>
-                   <y>100</y>
-                   <width>120</width>
-                   <height>80</height>
-                  </rect>
-                 </property>
-                </widget>
                </widget>
               </item>
              </layout>
@@ -1220,7 +1210,7 @@ QCheckBox::indicator:checked:disabled{
              <widget class="QComboBox" name="mainBox">
               <property name="minimumSize">
                <size>
-                <width>243</width>
+                <width>203</width>
                 <height>30</height>
                </size>
               </property>
@@ -1323,7 +1313,7 @@ QCheckBox::indicator:checked:disabled{
               </property>
               <property name="minimumSize">
                <size>
-                <width>243</width>
+                <width>203</width>
                 <height>30</height>
                </size>
               </property>
@@ -1429,7 +1419,7 @@ QCheckBox::indicator:checked:disabled{
               </property>
               <property name="minimumSize">
                <size>
-                <width>243</width>
+                <width>203</width>
                 <height>30</height>
                </size>
               </property>

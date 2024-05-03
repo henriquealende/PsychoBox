@@ -7,11 +7,11 @@ from Utils.filter_utils import FilterUtils
 import numpy as np
 
 from Psychoacoustics.mpi import IPM
-from Psychoacoustics.loudness_zwk import Loudness_ZWK
-from Psychoacoustics.sharnpness_din import Sharpnes_DIN
+from Psychoacoustics.loudness import Loudness
+from Psychoacoustics.sharpness_din import Sharpnes_DIN
 
 mpi = IPM()
-loudness_zwk = Loudness_ZWK()
+loudness = Loudness()
 sharpness_din = Sharpnes_DIN()
 
 class GraphUtils():
@@ -40,11 +40,11 @@ class GraphUtils():
                 y = timeData
                 T = len(timeData) / samplingRate
                 x = np.linspace(0, T, len(y))
-                series = QtCharts.QLineSeries()
+                self.series = QtCharts.QLineSeries()
                 for xi, yi in zip(x, y):  # Usa zip para garantir que xi e yi sejam escalares
-                    series.append(float(xi), float(yi))  # Converte xi e yi em float para garantir compatibilidade
-                series.setColor(color)
-                self.chart.addSeries(series)
+                    self.series.append(float(xi), float(yi))  # Converte xi e yi em float para garantir compatibilidade
+                self.series.setColor(color)
+                self.chart.addSeries(self.series)
                 GraphUtils.configureAxes(self, "Time [s]", "Amplitude")
                 
             elif domain == 'Frequency':
@@ -55,41 +55,50 @@ class GraphUtils():
                                 630, 800, 1000, 1250, 1600, 2000, 2500, 3150, 4000,
                                 5000, 6300, 8000, 10000])
                     y = 20*np.log10(y/2e-5)
-                series = QtCharts.QLineSeries()
+                self.series = QtCharts.QLineSeries()
                 for xi, yi in zip(x, y):  # Usa zip para garantir que xi e yi sejam escalares
-                    series.append(float(xi), float(yi))  # Converte xi e yi em float para garantir compatibilidade
-                series.setColor(color)
-                self.chart.addSeries(series)
+                    self.series.append(float(xi), float(yi))  # Converte xi e yi em float para garantir compatibilidade
+                self.series.setColor(color)
+                self.chart.addSeries(self.series)
                 GraphUtils.configureAxes(self, "Frequency [Hz]", "SPL [dB]")
                 
             elif domain == 'IPM':    
                 x, MPI_values = mpi.calculateMPI(timeData, samplingRate)
                 y = MPI_values[0,:]
-                series = QtCharts.QLineSeries()
+                self.series = QtCharts.QLineSeries()
                 for xi, yi in zip(x, y):  
-                    series.append(float(xi), float(yi)) 
-                series.setColor(color)
-                self.chart.addSeries(series)
+                    self.series.append(float(xi), float(yi)) 
+                self.series.setColor(color)
+                self.chart.addSeries(self.series)
                 GraphUtils.configureAxes(self, "Frequency [Bark]", "IPM [dB/Bark]")
                 
-            elif domain == 'Loudness':
-                x, _, y = loudness_zwk.loudnessCalculation(timeData, samplingRate)
-                series = QtCharts.QLineSeries()
+            elif domain == 'Loudness Zwicker':
+                x, _, y = loudness.loudnessZWK(timeData, samplingRate)
+                self.series = QtCharts.QLineSeries()
                 for xi, yi in zip(x, y):  
-                    series.append(float(xi), float(yi)) 
-                series.setColor(color)
-                self.chart.addSeries(series)
+                    self.series.append(float(xi), float(yi)) 
+                self.series.setColor(color)
+                self.chart.addSeries(self.series)
                 GraphUtils.configureAxes(self, "Frequency [Bark]", "Loudness [sone/Bark]")
+                
+            elif domain == 'Loudness ECMA':
+                x, _, y = loudness.loudnessECMA(timeData, samplingRate)
+                y = np.mean(y, axis=1)
+                self.series = QtCharts.QLineSeries()
+                for xi, yi in zip(x, y):  
+                    self.series.append(float(xi), float(yi)) 
+                self.series.setColor(color)
+                self.chart.addSeries(self.series)
+                GraphUtils.configureAxes(self, "Frequency [Bark HMS]", "Loudness [sone/Bark HMS]")
             
             elif domain == 'Sharpness':
                 x, y = sharpness_din.specificSharpnessCalculation(timeData, samplingRate)
-                series = QtCharts.QLineSeries()
+                self.series = QtCharts.QLineSeries()
                 for xi, yi in zip(x, y):  
-                    series.append(float(xi), float(yi)) 
-                series.setColor(color)
-                self.chart.addSeries(series)
+                    self.series.append(float(xi), float(yi)) 
+                self.series.setColor(color)
+                self.chart.addSeries(self.series)
                 GraphUtils.configureAxes(self, "Frequency [Bark]", "Sharpness [acum/Bark]")
-            # print(x)
             x_list.append(x)
             y_list.append(y)  
         return(x_list, y_list)   
@@ -99,17 +108,22 @@ class GraphUtils():
         axis_x = QtCharts.QValueAxis()
         axis_x.setTickCount(5)
         axis_x.setLabelFormat("%.2f")
-        axis_x.setTitleText(x_title)
+        axis_x.setTitleText(x_title) 
         axis_y = QtCharts.QValueAxis()
+        axis_y.setTitleText(y_title) 
         axis_y.setTickCount(5)
         axis_y.setLabelFormat("%.2f")
-        axis_y.setTitleText(y_title)
+       
+        
+        self.chart.addAxis(axis_x, Qt.AlignBottom)
+        self.chart.addAxis(axis_y, Qt.AlignLeft)
+       
         for series in self.chart.series():
-            self.chart.setAxisX(axis_x, series)
-            self.chart.setAxisY(axis_y, series)
+            series.attachAxis(axis_x)
+            series.attachAxis(axis_y)
 
     def plotGraph(self):
-        self.chart.createDefaultAxes()  # Configura os eixos X e Y baseados nas séries adicionadas
+        #self.chart.createDefaultAxes()  # Configura os eixos X e Y baseados nas séries adicionadas
         chartView = QtCharts.QChartView(self.chart)
         chartView.setRenderHint(QPainter.Antialiasing)  # Habilita o antialiasing para melhor qualidade visual
         self.gp.gridLayout_2.addWidget(chartView, 1, 0)

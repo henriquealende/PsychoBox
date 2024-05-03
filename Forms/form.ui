@@ -654,7 +654,7 @@ QPushButton:checked {
                <bool>true</bool>
               </property>
               <property name="checked">
-               <bool>true</bool>
+               <bool>false</bool>
               </property>
               <property name="autoExclusive">
                <bool>true</bool>
@@ -712,7 +712,7 @@ QPushButton:checked {
                <bool>true</bool>
               </property>
               <property name="checked">
-               <bool>false</bool>
+               <bool>true</bool>
               </property>
               <property name="autoRepeat">
                <bool>false</bool>
@@ -898,7 +898,7 @@ QPushButton:checked {
          <enum>QFrame::Raised</enum>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>3</number>
         </property>
         <widget class="QWidget" name="loginPage">
          <layout class="QHBoxLayout" name="horizontalLayout_24">

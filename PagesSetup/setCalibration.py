@@ -40,7 +40,7 @@ class SetCalibration():
         metrics = self.gp.mainBox.currentText()
         if metrics == "Metrics":
             self.gp.domainBox.clear()
-            self.gp.domainBox.addItems(['Loudness', 'Sharpness', 'IPM'])
+            self.gp.domainBox.addItems(['Loudness Zwicker', 'Loudness ECMA', 'Sharpness', 'IPM'])
             self.gp.frame_samplingBox.hide()
         else:
             self.gp.domainBox.clear()
@@ -70,7 +70,12 @@ class SetCalibration():
                 self.gp.spinBox_2.setValue(80)
                 self.gp.spinBox_3.setValue(20)
                 self.gp.spinBox_4.setValue(10000)
-            elif domain == "Loudness":
+            elif domain == "Loudness Zwicker":
+                self.gp.spinBox.setValue(0)
+                self.gp.spinBox_2.setValue(10)
+                self.gp.spinBox_3.setValue(0)
+                self.gp.spinBox_4.setValue(25)
+            elif domain == "Loudness ECMA":
                 self.gp.spinBox.setValue(0)
                 self.gp.spinBox_2.setValue(10)
                 self.gp.spinBox_3.setValue(0)

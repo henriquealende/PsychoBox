@@ -1,8 +1,8 @@
 import numpy as np
 from mosqito.sq_metrics import sharpness_din_st
-from Psychoacoustics.loudness_zwk import Loudness_ZWK
+from Psychoacoustics.loudness import Loudness
 
-loud_zwk = Loudness_ZWK()
+loud_zwk = Loudness()
 
 class Sharpnes_DIN():
     def __init__(self):
@@ -17,7 +17,7 @@ class Sharpnes_DIN():
     def specificSharpnessCalculation(self, timeData, samplingRate):        
     # Bark scale
         if len(timeData) > 0:
-            Bark, _, sL = loud_zwk.loudnessCalculation(timeData, samplingRate)
+            Bark, _, sL = loud_zwk.loudnessZWK(timeData, samplingRate)
             z = np.arange(1, 241) / 10
 
             # Small value to avoid divide-by-zero
