@@ -9,7 +9,6 @@ from SupportCodes.setWindow import SetupWindow
 from Resources import resourceGUI
 
 
-
 class Main_Window(QMainWindow):
     def __init__(self):
         super(Main_Window, self).__init__()

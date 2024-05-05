@@ -3250,6 +3250,7 @@ class Ui_Widget(object):
         self.importGraph = QPushButton(self.frame_123)
         self.importGraph.setObjectName(u"importGraph")
         self.importGraph.setMinimumSize(QSize(0, 30))
+        self.importGraph.setMaximumSize(QSize(120, 16777215))
         self.importGraph.setFont(font6)
 
         self.verticalLayout_86.addWidget(self.importGraph)
@@ -3257,6 +3258,7 @@ class Ui_Widget(object):
         self.removeGraph = QPushButton(self.frame_123)
         self.removeGraph.setObjectName(u"removeGraph")
         self.removeGraph.setMinimumSize(QSize(0, 30))
+        self.removeGraph.setMaximumSize(QSize(120, 16777215))
         self.removeGraph.setFont(font6)
 
         self.verticalLayout_86.addWidget(self.removeGraph)
@@ -3264,6 +3266,7 @@ class Ui_Widget(object):
         self.removeAllGraph = QPushButton(self.frame_123)
         self.removeAllGraph.setObjectName(u"removeAllGraph")
         self.removeAllGraph.setMinimumSize(QSize(0, 30))
+        self.removeAllGraph.setMaximumSize(QSize(120, 16777215))
         self.removeAllGraph.setFont(font6)
 
         self.verticalLayout_86.addWidget(self.removeAllGraph)

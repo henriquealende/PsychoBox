@@ -7759,6 +7759,12 @@ QPushButton:pressed {
                           <height>30</height>
                          </size>
                         </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>120</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <family>PF BeauSans Pro</family>
@@ -7778,6 +7784,12 @@ QPushButton:pressed {
                           <height>30</height>
                          </size>
                         </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>120</width>
+                          <height>16777215</height>
+                         </size>
+                        </property>
                         <property name="font">
                          <font>
                           <family>PF BeauSans Pro</family>
@@ -7795,6 +7807,12 @@ QPushButton:pressed {
                          <size>
                           <width>0</width>
                           <height>30</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>120</width>
+                          <height>16777215</height>
                          </size>
                         </property>
                         <property name="font">

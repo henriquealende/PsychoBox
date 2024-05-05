@@ -1,23 +1,27 @@
 
 from PySide2.QtCharts import QtCharts
 from PySide2.QtGui import  QPainter, QColor
+from PySide2.QtWidgets import QApplication
 from PySide2.QtCore import Qt
 
 from Utils.filter_utils import FilterUtils
 import numpy as np
+from tqdm import tqdm
 
 from Psychoacoustics.mpi import IPM
 from Psychoacoustics.loudness import Loudness
 from Psychoacoustics.sharpness_din import Sharpnes_DIN
+from Psychoacoustics.roughness import Roughness
 
 mpi = IPM()
 loudness = Loudness()
 sharpness_din = Sharpnes_DIN()
+roughness = Roughness()
 
 class GraphUtils():
     def __init__(self):
         super(GraphUtils, self).__init__()
-        
+               
     def getGraph(self, domain, samplingBox):
         self.chart = QtCharts.QChart()
         self.chart.removeAllSeries()
@@ -27,15 +31,13 @@ class GraphUtils():
         self.chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
         self.chart.setBackgroundBrush(QColor(242, 240, 241))        
         self.x, self.y = GraphUtils.defineDomain(self, domain, samplingBox)      
-        GraphUtils.plotGraph(self)
-        
-        
+        GraphUtils.plotGraph(self)  
 
     def defineDomain(self, domain, samplingBox):
         x_list = []
         y_list =[]
         colors = [QColor("#009b4a"), QColor(241, 102, 55)] # Lista de cores para as séries
-        for timeData, samplingRate, color in zip(self.timeData, self.samplingRate, colors):
+        for timeData, samplingRate, color in tqdm(zip(self.timeData, self.samplingRate, colors), total=len(self.timeData), desc="Processing data"):
             if domain == 'Time':
                 y = timeData
                 T = len(timeData) / samplingRate
@@ -91,7 +93,7 @@ class GraphUtils():
                 self.chart.addSeries(self.series)
                 GraphUtils.configureAxes(self, "Frequency [Bark HMS]", "Loudness [sone/Bark HMS]")
             
-            elif domain == 'Sharpness':
+            elif domain == 'Sharpness DIN':
                 x, y = sharpness_din.specificSharpnessCalculation(timeData, samplingRate)
                 self.series = QtCharts.QLineSeries()
                 for xi, yi in zip(x, y):  
@@ -99,6 +101,26 @@ class GraphUtils():
                 self.series.setColor(color)
                 self.chart.addSeries(self.series)
                 GraphUtils.configureAxes(self, "Frequency [Bark]", "Sharpness [acum/Bark]")
+    
+            elif domain == 'Roughness DW':
+                x, _, y = roughness.roughnessDW(timeData, samplingRate)
+                y = np.mean(y, axis=1)
+                self.series = QtCharts.QLineSeries()
+                for xi, yi in zip(x, y):  
+                    self.series.append(float(xi), float(yi)) 
+                self.series.setColor(color)
+                self.chart.addSeries(self.series)
+                GraphUtils.configureAxes(self, "Frequency [Bark]", "Roughness [vacil/Bark]")            
+                
+            elif domain == 'Roughness ECMA':
+                x, _, y = roughness.roughnessECMA(timeData, samplingRate)
+                self.series = QtCharts.QLineSeries()
+                for xi, yi in zip(x, y):  
+                    self.series.append(float(xi), float(yi)) 
+                self.series.setColor(color)
+                self.chart.addSeries(self.series)
+                GraphUtils.configureAxes(self, "Frequency [Bark HMS]", "Roughness [vacil/Bark HMS]")            
+            
             x_list.append(x)
             y_list.append(y)  
         return(x_list, y_list)   
@@ -112,8 +134,7 @@ class GraphUtils():
         axis_y = QtCharts.QValueAxis()
         axis_y.setTitleText(y_title) 
         axis_y.setTickCount(5)
-        axis_y.setLabelFormat("%.2f")
-       
+        axis_y.setLabelFormat("%.2f")       
         
         self.chart.addAxis(axis_x, Qt.AlignBottom)
         self.chart.addAxis(axis_y, Qt.AlignLeft)

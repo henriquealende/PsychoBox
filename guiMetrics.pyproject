@@ -3,7 +3,6 @@
         "Pages/login.py",
         "PagesSetup/mainSettings.py",
         "Utils/filter_utils.py",
-        "Utils/5.py",
         "PagesSetup/setGraph.py",
         "Pages/graph.py",
         "PagesSetup/setCalibration.py",
@@ -11,7 +10,6 @@
         "Pages/calibration.py",
         "Resources/resourceGui.qrc",
         "Forms/form.ui",
-        "Utils/utils.py",
         "PagesSetup/setLeftMenu.py",
         "Utils/graph_utils.py",
         "Forms/graph.ui",
@@ -22,7 +20,6 @@
         "Pages/welcome.py",
         "expandGraph.py",
         "Pages/editor.py",
-        "main.py",
-        "Utils/graph_utils2.py"
+        "main.py"
     ]
 }

@@ -222,6 +222,7 @@ class Ui_Form(object):
 
         self.frame_19 = QFrame(self.frame_17)
         self.frame_19.setObjectName(u"frame_19")
+        self.frame_19.setMinimumSize(QSize(873, 545))
         self.frame_19.setStyleSheet(u"")
         self.frame_19.setFrameShape(QFrame.StyledPanel)
         self.frame_19.setFrameShadow(QFrame.Raised)
@@ -233,7 +234,9 @@ class Ui_Form(object):
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.frame = QFrame(self.frame_19)
         self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setMinimumSize(QSize(0, 0))
+        self.frame.setMaximumSize(QSize(16777215, 16777215))
+        self.frame.setFrameShape(QFrame.NoFrame)
         self.frame.setFrameShadow(QFrame.Raised)
 
         self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
