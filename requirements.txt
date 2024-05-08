@@ -6,5 +6,6 @@ sounddevice
 PySide2
 mysql-connector-python
 pandas
-mosqito
+tdqm
+mosqito==1.2.1
 PyQt5
