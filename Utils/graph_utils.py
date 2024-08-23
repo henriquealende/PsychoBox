@@ -8,12 +8,10 @@ from Utils.filter_utils import FilterUtils
 import numpy as np
 from tqdm import tqdm
 
-from Psychoacoustics.mpi import IPM
 from Psychoacoustics.loudness import Loudness
 from Psychoacoustics.sharpness_din import Sharpnes_DIN
 from Psychoacoustics.roughness import Roughness
 
-mpi = IPM()
 loudness = Loudness()
 sharpness_din = Sharpnes_DIN()
 roughness = Roughness()
@@ -36,7 +34,7 @@ class GraphUtils():
     def defineDomain(self, domain, samplingBox):
         x_list = []
         y_list =[]
-        colors = [QColor("#009b4a"), QColor(241, 102, 55)] # Lista de cores para as séries
+        colors = [QColor("#50b89e"), QColor(241, 102, 55)] # Lista de cores para as séries
         for timeData, samplingRate, color in tqdm(zip(self.timeData, self.samplingRate, colors), total=len(self.timeData), desc="Processing data"):
             if domain == 'Time':
                 y = timeData
@@ -64,15 +62,15 @@ class GraphUtils():
                 self.chart.addSeries(self.series)
                 GraphUtils.configureAxes(self, "Frequency [Hz]", "SPL [dB]")
                 
-            elif domain == 'IPM':    
-                x, MPI_values = mpi.calculateMPI(timeData, samplingRate)
-                y = MPI_values[0,:]
-                self.series = QtCharts.QLineSeries()
-                for xi, yi in zip(x, y):  
-                    self.series.append(float(xi), float(yi)) 
-                self.series.setColor(color)
-                self.chart.addSeries(self.series)
-                GraphUtils.configureAxes(self, "Frequency [Bark]", "IPM [dB/Bark]")
+            # elif domain == 'IPM':    
+            #     x, MPI_values = mpi.calculateMPI(timeData, samplingRate)
+            #     y = MPI_values[0,:]
+            #     self.series = QtCharts.QLineSeries()
+            #     for xi, yi in zip(x, y):  
+            #         self.series.append(float(xi), float(yi)) 
+            #     self.series.setColor(color)
+            #     self.chart.addSeries(self.series)
+            #     GraphUtils.configureAxes(self, "Frequency [Bark]", "IPM [dB/Bark]")
                 
             elif domain == 'Loudness Zwicker':
                 x, _, y = loudness.loudnessZWK(timeData, samplingRate)

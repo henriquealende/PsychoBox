@@ -41,8 +41,9 @@ class Ui_Form(object):
         self.infoBar3.setMinimumSize(QSize(0, 50))
         self.infoBar3.setMaximumSize(QSize(16777215, 300))
         self.infoBar3.setStyleSheet(u"QFrame{\n"
-"	background-color : #006d34;\n"
-"}")
+"	background-color : rgb(117, 117, 117);\n"
+"}\n"
+"")
         self.infoBar3.setFrameShape(QFrame.NoFrame)
         self.infoBar3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.infoBar3)
@@ -59,12 +60,12 @@ class Ui_Form(object):
         self.verticalLayout_7.setContentsMargins(10, 0, 0, 0)
         self.label_3 = QLabel(self.frame_5)
         self.label_3.setObjectName(u"label_3")
-        self.label_3.setMinimumSize(QSize(115, 30))
-        self.label_3.setMaximumSize(QSize(115, 30))
-        self.label_3.setPixmap(QPixmap(u":/logos/img/nidecLogo.png"))
+        self.label_3.setMinimumSize(QSize(30, 30))
+        self.label_3.setMaximumSize(QSize(30, 30))
+        self.label_3.setPixmap(QPixmap(u":/logos/img/psychobox_logo2.png"))
         self.label_3.setScaledContents(True)
 
-        self.verticalLayout_7.addWidget(self.label_3)
+        self.verticalLayout_7.addWidget(self.label_3, 0, Qt.AlignHCenter)
 
 
         self.horizontalLayout_5.addWidget(self.frame_5)
@@ -199,7 +200,7 @@ class Ui_Form(object):
         font.setPointSize(18)
         font.setBold(True)
         self.label_13.setFont(font)
-        self.label_13.setStyleSheet(u"color: #009b4a;")
+        self.label_13.setStyleSheet(u"color: rgb(70, 70, 70)")
 
         self.horizontalLayout_4.addWidget(self.label_13)
 
@@ -577,7 +578,7 @@ class Ui_Form(object):
         self.label_15 = QLabel(self.frame_22)
         self.label_15.setObjectName(u"label_15")
         self.label_15.setFont(font)
-        self.label_15.setStyleSheet(u"color: #009b4a;")
+        self.label_15.setStyleSheet(u"color: rgb(70, 70, 70)")
 
         self.horizontalLayout_8.addWidget(self.label_15)
 
@@ -733,6 +734,24 @@ class Ui_Form(object):
         self.frame_25.setMinimumSize(QSize(225, 100))
         self.frame_25.setMaximumSize(QSize(16777215, 100))
         self.frame_25.setLayoutDirection(Qt.LeftToRight)
+        self.frame_25.setStyleSheet(u"\n"
+"QPushButton {\n"
+"	padding-left: 5px;\n"
+"	text-align: left;\n"
+"	background-color: rgb(80, 184, 158);\n"
+"	border:none;\n"
+"	border-radius:15px;\n"
+"	color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(255, 161, 78);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(237, 105, 59)\n"
+"}\n"
+"")
         self.frame_25.setFrameShape(QFrame.NoFrame)
         self.frame_25.setFrameShadow(QFrame.Raised)
         self.verticalLayout_16 = QVBoxLayout(self.frame_25)
@@ -745,30 +764,6 @@ class Ui_Form(object):
         self.exportFig.setMinimumSize(QSize(220, 30))
         self.exportFig.setMaximumSize(QSize(16777215, 30))
         self.exportFig.setFont(font1)
-        self.exportFig.setStyleSheet(u"\n"
-"QPushButton {\n"
-"	padding-left: 5px;\n"
-"	text-align: left;\n"
-"	background-color: #006d34;\n"
-"	border:none;\n"
-"	border-radius:15px;\n"
-"	color: rgb(255, 255, 255);\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #009b4a;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"	background-color: rgb(241, 102, 55)\n"
-"}\n"
-"\n"
-"QPushButton:disabled{\n"
-"	background-color:rgb(70, 70, 70);\n"
-"	color: rgb(136,138,133);\n"
-"	}\n"
-"")
 
         self.verticalLayout_16.addWidget(self.exportFig, 0, Qt.AlignHCenter)
 
@@ -778,30 +773,6 @@ class Ui_Form(object):
         self.exportData.setMinimumSize(QSize(220, 30))
         self.exportData.setMaximumSize(QSize(16777215, 30))
         self.exportData.setFont(font1)
-        self.exportData.setStyleSheet(u"\n"
-"QPushButton {\n"
-"	padding-left: 5px;\n"
-"	text-align: left;\n"
-"	background-color: #006d34;\n"
-"	border:none;\n"
-"	border-radius:15px;\n"
-"	color: rgb(255, 255, 255);\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"	background-color: #009b4a;\n"
-"}\n"
-"\n"
-"QPushButton:pressed {\n"
-"	background-color: rgb(241, 102, 55)\n"
-"}\n"
-"\n"
-"QPushButton:disabled{\n"
-"	background-color:rgb(70, 70, 70);\n"
-"	color: rgb(136,138,133);\n"
-"	}\n"
-"")
 
         self.verticalLayout_16.addWidget(self.exportData, 0, Qt.AlignHCenter)
 
@@ -892,8 +863,7 @@ class Ui_Form(object):
         self.automaticCheckBox.setText(QCoreApplication.translate("Form", u"automatic", None))
         self.exportFig.setText(QCoreApplication.translate("Form", u"export figure", None))
         self.exportData.setText(QCoreApplication.translate("Form", u"export data", None))
-        self.label.setText(QCoreApplication.translate("Form", u"\u00a9 2021 Nidec\n"
-"All rights reserved to Nidec ", None))
+        self.label.setText("")
         self.label_6.setText(QCoreApplication.translate("Form", u"Develop by Henrique Silveira\n"
 "Juc\u00e9lio Tavares and Ricardo Brum", None))
     # retranslateUi

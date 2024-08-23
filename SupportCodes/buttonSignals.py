@@ -1,6 +1,5 @@
 from Pages.graph import UI_Buttons_Graph
 from Pages.editor import UI_Buttons_Filter
-from Pages.login import UI_Buttons_LoginFunctions
 from Pages.calibration import UI_Buttons_Cali
 
 from PagesSetup.mainSettings import MainSettings
@@ -17,10 +16,6 @@ class ButtonSignals():
         self.ui.minimizeButton.clicked.connect(lambda: MainSettings.minimize(self))
         self.ui.maximizeButton.clicked.connect(lambda: MainSettings.maximize(self, window="defaut"))
 
-        #LOGIN PAGE
-        self.ui.connectButton.clicked.connect(lambda: UI_Buttons_LoginFunctions.login(self))
-        self.ui.registerButton.clicked.connect(lambda: UI_Buttons_LoginFunctions.register(self))
-
         #LEFL MENU
         self.ui.menuButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "menu"))
         self.ui.homeButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "home"))
@@ -31,9 +26,7 @@ class ButtonSignals():
         #FILTER PAGE
         self.ui.removeButton.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "remove"))
         self.ui.removeAllButton.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "removeAll"))
-        self.ui.resetButton.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "reset"))
-
-        
+        self.ui.resetButton.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "reset"))        
         self.ui.importButton.clicked.connect(lambda: UI_Buttons_Filter.importButton(self))
         self.ui.listWidget.itemClicked.connect(lambda: UI_Buttons_Filter.selectItem(self))
         self.ui.playButton.clicked.connect(lambda: UI_Buttons_Filter.playButton(self))
@@ -60,8 +53,6 @@ class ButtonSignals():
         self.ui.modelHeadBox_2.activated[str].connect(lambda: UI_Buttons_Cali.changeModelHead(self))
         self.ui.modelHatsBox_2.activated[str].connect(lambda: UI_Buttons_Cali.changeModelHats(self))
         self.ui.plot.clicked.connect(lambda: UI_Buttons_Graph.expandGraph(self))
-
-
 
     def buttonCallbackGraphWindow(self):
         #Layout Callbacks

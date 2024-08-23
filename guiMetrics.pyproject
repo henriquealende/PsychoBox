@@ -1,12 +1,10 @@
 {
     "files": [
-        "Pages/login.py",
         "PagesSetup/mainSettings.py",
         "Utils/filter_utils.py",
         "PagesSetup/setGraph.py",
         "Pages/graph.py",
         "PagesSetup/setCalibration.py",
-        "PagesSetup/setLogin.py",
         "Pages/calibration.py",
         "Resources/resourceGui.qrc",
         "Forms/form.ui",

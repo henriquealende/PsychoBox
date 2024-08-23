@@ -57,8 +57,9 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QFrame{
-	background-color : #006d34;
-}</string>
+	background-color : rgb(117, 117, 117);
+}
+</string>
      </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -106,17 +107,17 @@
          <property name="bottomMargin">
           <number>0</number>
          </property>
-         <item>
+         <item alignment="Qt::AlignHCenter">
           <widget class="QLabel" name="label_3">
            <property name="minimumSize">
             <size>
-             <width>115</width>
+             <width>30</width>
              <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
-             <width>115</width>
+             <width>30</width>
              <height>30</height>
             </size>
            </property>
@@ -124,7 +125,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/nidecLogo.png</pixmap>
+            <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/psychobox_logo2.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -422,7 +423,7 @@ QPushButton:hover{
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #009b4a;</string>
+               <string notr="true">color: rgb(70, 70, 70)</string>
               </property>
               <property name="text">
                <string>Chart</string>
@@ -1152,7 +1153,7 @@ QCheckBox::indicator:checked:disabled{
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: #009b4a;</string>
+               <string notr="true">color: rgb(70, 70, 70)</string>
               </property>
               <property name="text">
                <string>Settings</string>
@@ -1592,6 +1593,26 @@ QCheckBox::indicator:checked:disabled{
            <property name="layoutDirection">
             <enum>Qt::LeftToRight</enum>
            </property>
+           <property name="styleSheet">
+            <string notr="true">
+QPushButton {
+	padding-left: 5px;
+	text-align: left;
+	background-color: rgb(80, 184, 158);
+	border:none;
+	border-radius:15px;
+	color: rgb(255, 255, 255)
+}
+
+QPushButton:hover {
+	background-color: rgb(255, 161, 78);
+}
+
+QPushButton:pressed {
+	background-color: rgb(237, 105, 59)
+}
+</string>
+           </property>
            <property name="frameShape">
             <enum>QFrame::NoFrame</enum>
            </property>
@@ -1637,32 +1658,6 @@ QCheckBox::indicator:checked:disabled{
                 <pointsize>12</pointsize>
                </font>
               </property>
-              <property name="styleSheet">
-               <string notr="true">
-QPushButton {
-	padding-left: 5px;
-	text-align: left;
-	background-color: #006d34;
-	border:none;
-	border-radius:15px;
-	color: rgb(255, 255, 255);
-
-}
-
-QPushButton:hover {
-	background-color: #009b4a;
-}
-
-QPushButton:pressed {
-	background-color: rgb(241, 102, 55)
-}
-
-QPushButton:disabled{
-	background-color:rgb(70, 70, 70);
-	color: rgb(136,138,133);
-	}
-</string>
-              </property>
               <property name="text">
                <string>export figure</string>
               </property>
@@ -1690,32 +1685,6 @@ QPushButton:disabled{
                 <family>PF BeauSans Pro</family>
                 <pointsize>12</pointsize>
                </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">
-QPushButton {
-	padding-left: 5px;
-	text-align: left;
-	background-color: #006d34;
-	border:none;
-	border-radius:15px;
-	color: rgb(255, 255, 255);
-
-}
-
-QPushButton:hover {
-	background-color: #009b4a;
-}
-
-QPushButton:pressed {
-	background-color: rgb(241, 102, 55)
-}
-
-QPushButton:disabled{
-	background-color:rgb(70, 70, 70);
-	color: rgb(136,138,133);
-	}
-</string>
               </property>
               <property name="text">
                <string>export data</string>
@@ -1790,8 +1759,7 @@ QPushButton:disabled{
          <string notr="true">color:rgb(255, 255, 255)</string>
         </property>
         <property name="text">
-         <string>© 2021 Nidec
-All rights reserved to Nidec </string>
+         <string/>
         </property>
         <property name="alignment">
          <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>

@@ -42,7 +42,8 @@
         <file>img/embracoLogo.png</file>
         <file>img/embracoLogoAzul.png</file>
         <file>img/nidecLogo.png</file>
-        <file>img/logo.png</file>
         <file>img/maximizar-janela.png</file>
+        <file>img/psychobox_logo.png</file>
+        <file>img/psychobox_logo2.png</file>
     </qresource>
 </RCC>

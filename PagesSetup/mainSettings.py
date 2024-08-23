@@ -1,5 +1,4 @@
 from PagesSetup.setCalibration import SetCalibration
-from PagesSetup.setLogin import SetLogin
 from PagesSetup.setWelcome import SetWelcome
 from PagesSetup.setEditor import SetEditor
 from PagesSetup.setGraph import SetGraph
@@ -23,7 +22,6 @@ class MainSettings():
                 SetGraph.windowLayout(self, "maximazed")
             else:
                 SetCalibration.windowLayout(self, "maximazed")
-                SetLogin.windowLayout(self, "maximazed")
                 SetWelcome.windowLayout(self, "maximazed")
                 SetEditor.windowLayout(self, "maximazed")
 
@@ -42,7 +40,6 @@ class MainSettings():
                 SetGraph.windowLayout(self, "minimazed")
             else:
                 SetCalibration.windowLayout(self, "minimazed")
-                SetLogin.windowLayout(self, "minimazed")
                 SetWelcome.windowLayout(self, "minimazed")
                 SetEditor.windowLayout(self, "minimazed")
 
