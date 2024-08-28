@@ -59,6 +59,8 @@ class MainSettings():
             SetCalibration.changeTypeHead(self)
         elif parameter == "typeHatsBox":
             SetCalibration.changeTypeHats(self)
+        elif parameter == "modelHeadHats":
+            SetCalibration.changeModelHeadHats(self)
         elif parameter == "domainBox":
             SetCalibration.selectDomain(self)
         elif parameter == "mainBox":
@@ -70,9 +72,11 @@ class MainSettings():
         if parameter == "removeGraph":
             SetEditor.remove(self, 'graph')
             self.ui.plot.setEnabled(False)
+            self.ui.convolve.setEnabled(False)
         elif parameter == "removeAllGraph":
             SetEditor.removeAllButton(self, 'graph')
             self.ui.plot.setEnabled(False)
+            self.ui.convolve.setEnabled(False)
         elif parameter == "reset":
             SetEditor.resetButton(self)
         elif parameter == "remove":
