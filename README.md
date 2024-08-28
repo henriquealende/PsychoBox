@@ -11,8 +11,6 @@ Welcome to the PsychoBox Audio Analysis framework! PsychoBox is a comprehensive 
 
 - Signal Analysis: Seamlessly load audio files and generate insightful visualizations like waveforms and spectrograms.
 
-- Audio Manipulation: Apply diverse audio modifications such as trimming, scaling, and noise reduction while preserving audio fidelity.
-
 - Advanced Filtering: Implement various filters including high-pass, low-pass, and band-pass to emphasize or attenuate specific frequency bands.
 
 - Psychoacoustic Insights: Compute crucial psychoacoustic parameters such as loudness, masking thresholds, and perceptual audio quality scores.
@@ -25,17 +23,6 @@ Tutorials are available in the [tutorials folder](). Documentation and validatio
 
 ## Getting PsychoBox
 
-PsychoBox is available on pip. Simply type in a shell the following command:
-
-```
-pip install psychobox
-```
-Note that all the depencies can be installed at once using:
-
-```
-pip install psychobox[all]
-```
- 
 Install the required dependencies:
 
 ```
