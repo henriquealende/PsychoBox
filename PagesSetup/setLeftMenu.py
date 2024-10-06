@@ -19,6 +19,8 @@ class SetLeftMenu():
                 self.ui.menuButton.setMinimumWidth(maxWidth)
                 self.ui.homeButton.setText('Home')
                 self.ui.homeButton.setMinimumWidth(maxWidth)
+                self.ui.recordingButton.setText('Recording')
+                self.ui.recordingButton.setMinimumWidth(maxWidth)
                 self.ui.settingsButton.setText('Settings')
                 self.ui.settingsButton.setMinimumWidth(maxWidth)
                 self.ui.filterButton.setText('Filters')
@@ -38,6 +40,8 @@ class SetLeftMenu():
                 self.ui.menuButton.setMinimumWidth(maxWidth)
                 self.ui.homeButton.setText('')
                 self.ui.homeButton.setMinimumWidth(minWidth)
+                self.ui.recordingButton.setText('')
+                self.ui.recordingButton.setMinimumWidth(minWidth)
                 self.ui.settingsButton.setText('')
                 self.ui.settingsButton.setMinimumWidth(minWidth)
                 self.ui.filterButton.setText('')
@@ -91,7 +95,11 @@ class SetLeftMenu():
         #if self.online:
         self.ui.rightContent.setCurrentWidget(self.ui.welcomePage)
         self.ui.homeButton.setChecked(True)
-
+        
+    def recording(self):
+        self.ui.rightContent.setCurrentWidget(self.ui.recordingPage)
+        self.ui.recordingButton.setChecked(True)
+        
     def calibrationButton(self):
         #if self.online:
         self.ui.rightContent.setCurrentWidget(self.ui.calibrationPage)
@@ -101,4 +109,6 @@ class SetLeftMenu():
         #if self.online:
         self.ui.rightContent.setCurrentWidget(self.ui.filterPage)
         self.ui.filterButton.setChecked(True)
+        
+        
 

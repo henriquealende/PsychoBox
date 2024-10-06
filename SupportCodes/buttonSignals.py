@@ -16,9 +16,10 @@ class ButtonSignals():
         self.ui.minimizeButton.clicked.connect(lambda: MainSettings.minimize(self))
         self.ui.maximizeButton.clicked.connect(lambda: MainSettings.maximize(self, window="defaut"))
 
-        #LEFL MENU
+        #LEFT MENU
         self.ui.menuButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "menu"))
         self.ui.homeButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "home"))
+        self.ui.recordingButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "recording"))
         self.ui.userButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "user"))
         self.ui.calibrationButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "calibration"))
         self.ui.filterButton.clicked.connect(lambda: MainSettings.callFunctionsLeftMenu(self, "filter"))

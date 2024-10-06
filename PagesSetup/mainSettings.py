@@ -99,6 +99,8 @@ class MainSettings():
             SetLeftMenu.toogleMenu(self)
         elif parameter == "home":
             SetLeftMenu.homeButton(self)
+        elif parameter == "recording":
+            SetLeftMenu.recording(self)
         elif parameter == "user":
             SetLeftMenu.userButton(self)
         elif parameter == "calibration":

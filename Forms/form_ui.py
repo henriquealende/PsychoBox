@@ -311,22 +311,23 @@ class Ui_Widget(object):
 
         self.verticalLayout_3.addWidget(self.homeButton)
 
-        self.pushButton = QPushButton(self.frame)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(50, 50))
-        self.pushButton.setStyleSheet(u"QPushButton:checked {\n"
+        self.recordingButton = QPushButton(self.frame)
+        self.recordingButton.setObjectName(u"recordingButton")
+        self.recordingButton.setMinimumSize(QSize(50, 50))
+        self.recordingButton.setFont(font2)
+        self.recordingButton.setStyleSheet(u"QPushButton:checked {\n"
 "	background-color:#rgb(80, 184, 158);\n"
 "	padding-left:5px;\n"
 "	border-left: 5px solid  rgb(241, 102, 55);\n"
 "}")
         icon6 = QIcon()
         icon6.addFile(u":/icons/img/microfone.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon6)
-        self.pushButton.setIconSize(QSize(30, 30))
-        self.pushButton.setCheckable(True)
-        self.pushButton.setAutoExclusive(True)
+        self.recordingButton.setIcon(icon6)
+        self.recordingButton.setIconSize(QSize(30, 30))
+        self.recordingButton.setCheckable(True)
+        self.recordingButton.setAutoExclusive(True)
 
-        self.verticalLayout_3.addWidget(self.pushButton)
+        self.verticalLayout_3.addWidget(self.recordingButton)
 
         self.filterButton = QPushButton(self.frame)
         self.filterButton.setObjectName(u"filterButton")
@@ -3379,7 +3380,7 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-        self.rightContent.setCurrentIndex(1)
+        self.rightContent.setCurrentIndex(0)
         self.typeHeadBox_3.setCurrentIndex(0)
         self.typeHeadBox_2.setCurrentIndex(0)
 
@@ -3395,7 +3396,7 @@ class Ui_Widget(object):
         self.maximizeButton.setText("")
         self.closeAllButton.setText("")
         self.homeButton.setText("")
-        self.pushButton.setText("")
+        self.recordingButton.setText("")
         self.filterButton.setText("")
         self.calibrationButton.setText("")
 #if QT_CONFIG(accessibility)
