@@ -16,9 +16,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComboBox,
-    QFrame, QHBoxLayout, QLabel, QListWidget,
-    QListWidgetItem, QPushButton, QSizePolicy, QSlider,
-    QSpacerItem, QStackedWidget, QVBoxLayout, QWidget)
+    QFrame, QGridLayout, QHBoxLayout, QLabel,
+    QListWidget, QListWidgetItem, QPushButton, QSizePolicy,
+    QSlider, QSpacerItem, QStackedWidget, QVBoxLayout,
+    QWidget)
 import rc_resourceGui
 
 class Ui_Widget(object):
@@ -295,15 +296,37 @@ class Ui_Widget(object):
         font2.setPointSize(15)
         font2.setBold(True)
         self.homeButton.setFont(font2)
+        self.homeButton.setStyleSheet(u"QPushButton:checked {\n"
+"	background-color:#rgb(80, 184, 158);\n"
+"	padding-left:5px;\n"
+"	border-left: 5px solid  rgb(241, 102, 55);\n"
+"}")
         icon5 = QIcon()
         icon5.addFile(u":/icons/img/homeEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
         self.homeButton.setIcon(icon5)
         self.homeButton.setIconSize(QSize(30, 30))
         self.homeButton.setCheckable(True)
-        self.homeButton.setChecked(False)
+        self.homeButton.setChecked(True)
         self.homeButton.setAutoExclusive(True)
 
         self.verticalLayout_3.addWidget(self.homeButton)
+
+        self.pushButton = QPushButton(self.frame)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMinimumSize(QSize(50, 50))
+        self.pushButton.setStyleSheet(u"QPushButton:checked {\n"
+"	background-color:#rgb(80, 184, 158);\n"
+"	padding-left:5px;\n"
+"	border-left: 5px solid  rgb(241, 102, 55);\n"
+"}")
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/img/microfone.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton.setIcon(icon6)
+        self.pushButton.setIconSize(QSize(30, 30))
+        self.pushButton.setCheckable(True)
+        self.pushButton.setAutoExclusive(True)
+
+        self.verticalLayout_3.addWidget(self.pushButton)
 
         self.filterButton = QPushButton(self.frame)
         self.filterButton.setObjectName(u"filterButton")
@@ -311,9 +334,14 @@ class Ui_Widget(object):
         self.filterButton.setMinimumSize(QSize(50, 50))
         self.filterButton.setMaximumSize(QSize(16777215, 16777215))
         self.filterButton.setFont(font2)
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/img/equalizerEnable.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.filterButton.setIcon(icon6)
+        self.filterButton.setStyleSheet(u"QPushButton:checked {\n"
+"	background-color:#rgb(80, 184, 158);\n"
+"	padding-left:5px;\n"
+"	border-left: 5px solid  rgb(241, 102, 55);\n"
+"}")
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/img/equalizerEnable.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.filterButton.setIcon(icon7)
         self.filterButton.setIconSize(QSize(30, 30))
         self.filterButton.setCheckable(True)
         self.filterButton.setChecked(False)
@@ -335,12 +363,12 @@ class Ui_Widget(object):
 "	padding-left:1px;\n"
 "	border-left: 5px solid  rgb(241, 102, 55);\n"
 "}")
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/img/calibration.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.calibrationButton.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/img/calibration.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.calibrationButton.setIcon(icon8)
         self.calibrationButton.setIconSize(QSize(40, 40))
         self.calibrationButton.setCheckable(True)
-        self.calibrationButton.setChecked(True)
+        self.calibrationButton.setChecked(False)
         self.calibrationButton.setAutoRepeat(False)
         self.calibrationButton.setAutoExclusive(True)
 
@@ -375,9 +403,9 @@ class Ui_Widget(object):
 "	border-radius:25px;\n"
 "	padding-left:9px\n"
 "}")
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/img/userEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.userButton.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/img/userEnabled.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.userButton.setIcon(icon9)
         self.userButton.setIconSize(QSize(20, 20))
         self.userButton.setCheckable(True)
         self.userButton.setChecked(False)
@@ -390,9 +418,9 @@ class Ui_Widget(object):
         self.settingsButton.setMaximumSize(QSize(16777215, 16777215))
         self.settingsButton.setFont(font3)
         self.settingsButton.setLayoutDirection(Qt.LeftToRight)
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/img/settingsEnable.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.settingsButton.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u":/icons/img/settingsEnable.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.settingsButton.setIcon(icon10)
         self.settingsButton.setIconSize(QSize(20, 20))
         self.settingsButton.setCheckable(True)
         self.settingsButton.setChecked(False)
@@ -502,14 +530,14 @@ class Ui_Widget(object):
         self.frame_19.setFrameShadow(QFrame.Raised)
         self.verticalLayout_12 = QVBoxLayout(self.frame_19)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.label_3 = QLabel(self.frame_19)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setMinimumSize(QSize(300, 125))
-        self.label_3.setMaximumSize(QSize(300, 125))
-        self.label_3.setPixmap(QPixmap(u":/logos/img/psychobox_logo.png"))
-        self.label_3.setScaledContents(True)
+        self.logo_2 = QLabel(self.frame_19)
+        self.logo_2.setObjectName(u"logo_2")
+        self.logo_2.setMinimumSize(QSize(300, 125))
+        self.logo_2.setMaximumSize(QSize(300, 125))
+        self.logo_2.setPixmap(QPixmap(u":/logos/img/psychobox_logo.png"))
+        self.logo_2.setScaledContents(True)
 
-        self.verticalLayout_12.addWidget(self.label_3)
+        self.verticalLayout_12.addWidget(self.logo_2)
 
 
         self.verticalLayout_11.addWidget(self.frame_19)
@@ -734,6 +762,319 @@ class Ui_Widget(object):
         self.horizontalLayout_4.addWidget(self.mainContent_2)
 
         self.rightContent.addWidget(self.welcomePage)
+        self.recordingPage = QWidget()
+        self.recordingPage.setObjectName(u"recordingPage")
+        self.verticalLayout_9 = QVBoxLayout(self.recordingPage)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.frame_6 = QFrame(self.recordingPage)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setStyleSheet(u"QFrame{	\n"
+"	background-color: rgb(237, 237, 237);\n"
+"}")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_15 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.frame_8 = QFrame(self.frame_6)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setMaximumSize(QSize(16777215, 100))
+        self.frame_8.setFrameShape(QFrame.NoFrame)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_16 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.label_3 = QLabel(self.frame_8)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMinimumSize(QSize(0, 50))
+        self.label_3.setMaximumSize(QSize(16777215, 50))
+        self.label_3.setFont(font4)
+
+        self.verticalLayout_16.addWidget(self.label_3)
+
+
+        self.verticalLayout_15.addWidget(self.frame_8)
+
+        self.frame_11 = QFrame(self.frame_6)
+        self.frame_11.setObjectName(u"frame_11")
+        self.frame_11.setFrameShape(QFrame.NoFrame)
+        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_17 = QVBoxLayout(self.frame_11)
+        self.verticalLayout_17.setObjectName(u"verticalLayout_17")
+        self.frame_12 = QFrame(self.frame_11)
+        self.frame_12.setObjectName(u"frame_12")
+        self.frame_12.setMaximumSize(QSize(16777215, 100))
+        self.frame_12.setFrameShape(QFrame.NoFrame)
+        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_8 = QHBoxLayout(self.frame_12)
+        self.horizontalLayout_8.setSpacing(0)
+        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.frame_18 = QFrame(self.frame_12)
+        self.frame_18.setObjectName(u"frame_18")
+        self.frame_18.setStyleSheet(u"QPushButton {\n"
+"	padding-left: 2px;\n"
+"	text-align: center;\n"
+"	background-color:rgb(80, 184, 158);\n"
+"	border: 3px solid rgb(237, 105, 59);\n"
+"	border-radius:18px;\n"
+"	color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"")
+        self.frame_18.setFrameShape(QFrame.NoFrame)
+        self.frame_18.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_16 = QHBoxLayout(self.frame_18)
+        self.horizontalLayout_16.setSpacing(9)
+        self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
+        self.stopButton_3 = QPushButton(self.frame_18)
+        self.stopButton_3.setObjectName(u"stopButton_3")
+        self.stopButton_3.setEnabled(True)
+        self.stopButton_3.setMinimumSize(QSize(50, 50))
+        self.stopButton_3.setMaximumSize(QSize(50, 50))
+        self.stopButton_3.setStyleSheet(u"QPushButton{\n"
+"  background-color: rgb(94, 217, 186);\n"
+"	border-radius:25px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"")
+        icon11 = QIcon()
+        icon11.addFile(u":/icons/img/botao-de-gravacao_2.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stopButton_3.setIcon(icon11)
+        self.stopButton_3.setIconSize(QSize(32, 32))
+        self.stopButton_3.setCheckable(True)
+
+        self.horizontalLayout_16.addWidget(self.stopButton_3)
+
+        self.playButton_2 = QPushButton(self.frame_18)
+        self.playButton_2.setObjectName(u"playButton_2")
+        self.playButton_2.setEnabled(False)
+        self.playButton_2.setMinimumSize(QSize(36, 36))
+        self.playButton_2.setMaximumSize(QSize(36, 36))
+        self.playButton_2.setStyleSheet(u"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"")
+        icon12 = QIcon()
+        icon12.addFile(u":/icons/img/play.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.playButton_2.setIcon(icon12)
+        self.playButton_2.setIconSize(QSize(15, 25))
+
+        self.horizontalLayout_16.addWidget(self.playButton_2)
+
+        self.pauseButton_2 = QPushButton(self.frame_18)
+        self.pauseButton_2.setObjectName(u"pauseButton_2")
+        self.pauseButton_2.setEnabled(False)
+        self.pauseButton_2.setMinimumSize(QSize(36, 36))
+        self.pauseButton_2.setMaximumSize(QSize(36, 36))
+        self.pauseButton_2.setStyleSheet(u"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"")
+        icon13 = QIcon()
+        icon13.addFile(u":/icons/img/pause.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pauseButton_2.setIcon(icon13)
+        self.pauseButton_2.setIconSize(QSize(15, 25))
+
+        self.horizontalLayout_16.addWidget(self.pauseButton_2)
+
+        self.stopButton_2 = QPushButton(self.frame_18)
+        self.stopButton_2.setObjectName(u"stopButton_2")
+        self.stopButton_2.setEnabled(False)
+        self.stopButton_2.setMinimumSize(QSize(36, 36))
+        self.stopButton_2.setMaximumSize(QSize(36, 36))
+        self.stopButton_2.setStyleSheet(u"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"")
+        icon14 = QIcon()
+        icon14.addFile(u":/icons/img/stop.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.stopButton_2.setIcon(icon14)
+        self.stopButton_2.setIconSize(QSize(13, 25))
+
+        self.horizontalLayout_16.addWidget(self.stopButton_2)
+
+        self.frame_23 = QFrame(self.frame_18)
+        self.frame_23.setObjectName(u"frame_23")
+        self.frame_23.setStyleSheet(u"QComboBox {\n"
+"	border: 1px solid #333333;\n"
+"	border-radius: 15px;\n"
+"	background:  rgb(70, 70, 70);\n"
+"	padding: 3px 23px 3px 3px;\n"
+"	min-width: 10em;\n"
+"	color: rgb(255, 255, 255);\n"
+"	margin-left: 10px;\n"
+"	margin-right: 10px;\n"
+"}\n"
+"\n"
+"QComboBox::disabled{\n"
+"	color: rgb(136, 138, 133)\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow:disabled {    \n"
+"	image: url(:/icons/img/downArrowDis.png);\n"
+"}\n"
+"\n"
+"QComboBox::hover{\n"
+"border : 3px solid rgb(255, 161, 78);\n"
+"}\n"
+"QComboBox::drop-down {\n"
+"	subcontrol-origin: padding;\n"
+"	subcontrol-position: top right;\n"
+"	width: 20px;\n"
+" \n"
+"	border-top-right-radius: 3px;\n"
+"	border-bottom-right-radius: 3px;\n"
+"}\n"
+"QComboBox::down-arrow {    \n"
+"	image: url(:/icons/img/downArrow.png);\n"
+"	width : 12px;\n"
+"}\n"
+"QComboBox QAbstractView{\n"
+"	background-color: #4f4f4f;\n"
+"	color: #999999;\n"
+" \n"
+"	selection-background-color: rgb(70, 70, 70);\n"
+"	selection-color: #4f4f4f;\n"
+"}\n"
+"")
+        self.frame_23.setFrameShape(QFrame.NoFrame)
+        self.frame_23.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_19 = QHBoxLayout(self.frame_23)
+        self.horizontalLayout_19.setSpacing(2)
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.label_4 = QLabel(self.frame_23)
+        self.label_4.setObjectName(u"label_4")
+        font6 = QFont()
+        font6.setFamilies([u"PF BeauSans Pro"])
+        font6.setPointSize(14)
+        self.label_4.setFont(font6)
+
+        self.horizontalLayout_19.addWidget(self.label_4)
+
+        self.typeHeadBox_3 = QComboBox(self.frame_23)
+        self.typeHeadBox_3.addItem("")
+        self.typeHeadBox_3.addItem("")
+        self.typeHeadBox_3.addItem("")
+        self.typeHeadBox_3.setObjectName(u"typeHeadBox_3")
+        self.typeHeadBox_3.setMinimumSize(QSize(150, 30))
+        self.typeHeadBox_3.setMaximumSize(QSize(150, 30))
+        font7 = QFont()
+        font7.setFamilies([u"PF BeauSans Pro"])
+        font7.setPointSize(12)
+        self.typeHeadBox_3.setFont(font7)
+        self.typeHeadBox_3.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
+        self.typeHeadBox_3.setInsertPolicy(QComboBox.InsertAtBottom)
+
+        self.horizontalLayout_19.addWidget(self.typeHeadBox_3)
+
+        self.label_5 = QLabel(self.frame_23)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font6)
+
+        self.horizontalLayout_19.addWidget(self.label_5)
+
+
+        self.horizontalLayout_16.addWidget(self.frame_23)
+
+
+        self.horizontalLayout_8.addWidget(self.frame_18)
+
+        self.frame_22 = QFrame(self.frame_12)
+        self.frame_22.setObjectName(u"frame_22")
+        self.frame_22.setFrameShape(QFrame.NoFrame)
+        self.frame_22.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_8.addWidget(self.frame_22)
+
+
+        self.verticalLayout_17.addWidget(self.frame_12)
+
+        self.frame_14 = QFrame(self.frame_11)
+        self.frame_14.setObjectName(u"frame_14")
+        self.frame_14.setFrameShape(QFrame.NoFrame)
+        self.frame_14.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_18 = QVBoxLayout(self.frame_14)
+        self.verticalLayout_18.setSpacing(0)
+        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
+        self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.recordingFrame = QFrame(self.frame_14)
+        self.recordingFrame.setObjectName(u"recordingFrame")
+        self.recordingFrame.setFrameShape(QFrame.StyledPanel)
+        self.recordingFrame.setFrameShadow(QFrame.Raised)
+
+        self.gridLayout.addWidget(self.recordingFrame, 0, 0, 1, 1)
+
+
+        self.verticalLayout_18.addLayout(self.gridLayout)
+
+
+        self.verticalLayout_17.addWidget(self.frame_14)
+
+        self.frame_15 = QFrame(self.frame_11)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setMaximumSize(QSize(16777215, 100))
+        self.frame_15.setFrameShape(QFrame.NoFrame)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_17.addWidget(self.frame_15)
+
+
+        self.verticalLayout_15.addWidget(self.frame_11)
+
+
+        self.verticalLayout_9.addWidget(self.frame_6)
+
+        self.rightContent.addWidget(self.recordingPage)
         self.filterPage = QWidget()
         self.filterPage.setObjectName(u"filterPage")
         self.filterPage.setStyleSheet(u"QFrame{	\n"
@@ -887,11 +1228,11 @@ class Ui_Widget(object):
         self.listWidget.setObjectName(u"listWidget")
         self.listWidget.setMinimumSize(QSize(0, 0))
         self.listWidget.setMaximumSize(QSize(16777215, 16777215))
-        font6 = QFont()
-        font6.setFamilies([u"PF BeauSans Pro"])
-        font6.setPointSize(14)
-        font6.setBold(True)
-        self.listWidget.setFont(font6)
+        font8 = QFont()
+        font8.setFamilies([u"PF BeauSans Pro"])
+        font8.setPointSize(14)
+        font8.setBold(True)
+        self.listWidget.setFont(font8)
         self.listWidget.setStyleSheet(u"QListWidget {\n"
 "	color: rgb(255, 255, 255);\n"
 "	border : 4px solid rgb(80, 184, 158);\n"
@@ -1049,9 +1390,7 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon10 = QIcon()
-        icon10.addFile(u":/icons/img/play.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.playButton.setIcon(icon10)
+        self.playButton.setIcon(icon12)
         self.playButton.setIconSize(QSize(15, 25))
 
         self.horizontalLayout_31.addWidget(self.playButton)
@@ -1076,9 +1415,7 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon11 = QIcon()
-        icon11.addFile(u":/icons/img/pause.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pauseButton.setIcon(icon11)
+        self.pauseButton.setIcon(icon13)
         self.pauseButton.setIconSize(QSize(15, 25))
 
         self.horizontalLayout_31.addWidget(self.pauseButton)
@@ -1103,9 +1440,7 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon12 = QIcon()
-        icon12.addFile(u":/icons/img/stop.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.stopButton.setIcon(icon12)
+        self.stopButton.setIcon(icon14)
         self.stopButton.setIconSize(QSize(13, 25))
 
         self.horizontalLayout_31.addWidget(self.stopButton)
@@ -1191,11 +1526,11 @@ class Ui_Widget(object):
         self.muteButton.setStyleSheet(u"QPushButton {\n"
 "	border-radius:10px;\n"
 "}")
-        icon13 = QIcon()
-        icon13.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon13.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
-        icon13.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
-        self.muteButton.setIcon(icon13)
+        icon15 = QIcon()
+        icon15.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
+        icon15.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
+        self.muteButton.setIcon(icon15)
         self.muteButton.setCheckable(True)
         self.muteButton.setChecked(False)
         self.muteButton.setAutoRepeat(False)
@@ -1342,11 +1677,11 @@ class Ui_Widget(object):
         self.switch_50.setEnabled(True)
         self.switch_50.setMinimumSize(QSize(66, 20))
         self.switch_50.setMaximumSize(QSize(65, 20))
-        font7 = QFont()
-        font7.setFamilies([u"PF BeauSans Pro"])
-        font7.setPointSize(11)
-        font7.setBold(False)
-        self.switch_50.setFont(font7)
+        font9 = QFont()
+        font9.setFamilies([u"PF BeauSans Pro"])
+        font9.setPointSize(11)
+        font9.setBold(False)
+        self.switch_50.setFont(font9)
         self.switch_50.setCheckable(True)
         self.switch_50.setChecked(False)
 
@@ -1366,11 +1701,11 @@ class Ui_Widget(object):
 
         self.label_12 = QLabel(self.frame_56)
         self.label_12.setObjectName(u"label_12")
-        font8 = QFont()
-        font8.setFamilies([u"PF BeauSans Pro"])
-        font8.setPointSize(10)
-        font8.setBold(True)
-        self.label_12.setFont(font8)
+        font10 = QFont()
+        font10.setFamilies([u"PF BeauSans Pro"])
+        font10.setPointSize(10)
+        font10.setBold(True)
+        self.label_12.setFont(font10)
         self.label_12.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_12.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1394,7 +1729,7 @@ class Ui_Widget(object):
         self.switch_63.setObjectName(u"switch_63")
         self.switch_63.setMinimumSize(QSize(66, 20))
         self.switch_63.setMaximumSize(QSize(65, 20))
-        self.switch_63.setFont(font7)
+        self.switch_63.setFont(font9)
         self.switch_63.setCheckable(True)
         self.switch_63.setChecked(False)
 
@@ -1413,7 +1748,7 @@ class Ui_Widget(object):
 
         self.label_13 = QLabel(self.frame_57)
         self.label_13.setObjectName(u"label_13")
-        self.label_13.setFont(font8)
+        self.label_13.setFont(font10)
         self.label_13.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_13.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1436,7 +1771,7 @@ class Ui_Widget(object):
         self.switch_80.setObjectName(u"switch_80")
         self.switch_80.setMinimumSize(QSize(66, 20))
         self.switch_80.setMaximumSize(QSize(65, 20))
-        self.switch_80.setFont(font7)
+        self.switch_80.setFont(font9)
         self.switch_80.setCheckable(True)
         self.switch_80.setChecked(False)
 
@@ -1455,7 +1790,7 @@ class Ui_Widget(object):
 
         self.label_14 = QLabel(self.frame_58)
         self.label_14.setObjectName(u"label_14")
-        self.label_14.setFont(font8)
+        self.label_14.setFont(font10)
         self.label_14.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_14.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1479,7 +1814,7 @@ class Ui_Widget(object):
         self.switch_100.setObjectName(u"switch_100")
         self.switch_100.setMinimumSize(QSize(66, 20))
         self.switch_100.setMaximumSize(QSize(65, 20))
-        self.switch_100.setFont(font7)
+        self.switch_100.setFont(font9)
         self.switch_100.setCheckable(True)
         self.switch_100.setChecked(False)
 
@@ -1498,7 +1833,7 @@ class Ui_Widget(object):
 
         self.label_15 = QLabel(self.frame_59)
         self.label_15.setObjectName(u"label_15")
-        self.label_15.setFont(font8)
+        self.label_15.setFont(font10)
         self.label_15.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_15.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1521,7 +1856,7 @@ class Ui_Widget(object):
         self.switch_125.setObjectName(u"switch_125")
         self.switch_125.setMinimumSize(QSize(66, 20))
         self.switch_125.setMaximumSize(QSize(65, 20))
-        self.switch_125.setFont(font7)
+        self.switch_125.setFont(font9)
         self.switch_125.setCheckable(True)
         self.switch_125.setChecked(False)
 
@@ -1540,7 +1875,7 @@ class Ui_Widget(object):
 
         self.label_16 = QLabel(self.frame_60)
         self.label_16.setObjectName(u"label_16")
-        self.label_16.setFont(font8)
+        self.label_16.setFont(font10)
         self.label_16.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_16.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1563,7 +1898,7 @@ class Ui_Widget(object):
         self.switch_160.setObjectName(u"switch_160")
         self.switch_160.setMinimumSize(QSize(66, 20))
         self.switch_160.setMaximumSize(QSize(65, 20))
-        self.switch_160.setFont(font7)
+        self.switch_160.setFont(font9)
         self.switch_160.setCheckable(True)
         self.switch_160.setChecked(False)
 
@@ -1582,7 +1917,7 @@ class Ui_Widget(object):
 
         self.label_17 = QLabel(self.frame_61)
         self.label_17.setObjectName(u"label_17")
-        self.label_17.setFont(font8)
+        self.label_17.setFont(font10)
         self.label_17.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_17.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1605,7 +1940,7 @@ class Ui_Widget(object):
         self.switch_200.setObjectName(u"switch_200")
         self.switch_200.setMinimumSize(QSize(66, 20))
         self.switch_200.setMaximumSize(QSize(65, 20))
-        self.switch_200.setFont(font7)
+        self.switch_200.setFont(font9)
         self.switch_200.setCheckable(True)
         self.switch_200.setChecked(False)
 
@@ -1624,7 +1959,7 @@ class Ui_Widget(object):
 
         self.label_18 = QLabel(self.frame_62)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setFont(font8)
+        self.label_18.setFont(font10)
         self.label_18.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_18.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1647,7 +1982,7 @@ class Ui_Widget(object):
         self.switch_250.setObjectName(u"switch_250")
         self.switch_250.setMinimumSize(QSize(66, 20))
         self.switch_250.setMaximumSize(QSize(65, 20))
-        self.switch_250.setFont(font7)
+        self.switch_250.setFont(font9)
         self.switch_250.setCheckable(True)
         self.switch_250.setChecked(False)
 
@@ -1666,7 +2001,7 @@ class Ui_Widget(object):
 
         self.label_19 = QLabel(self.frame_63)
         self.label_19.setObjectName(u"label_19")
-        self.label_19.setFont(font8)
+        self.label_19.setFont(font10)
         self.label_19.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_19.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1690,7 +2025,7 @@ class Ui_Widget(object):
         self.switch_315.setEnabled(True)
         self.switch_315.setMinimumSize(QSize(66, 20))
         self.switch_315.setMaximumSize(QSize(65, 20))
-        self.switch_315.setFont(font7)
+        self.switch_315.setFont(font9)
         self.switch_315.setCheckable(True)
         self.switch_315.setChecked(False)
 
@@ -1709,7 +2044,7 @@ class Ui_Widget(object):
 
         self.label_22 = QLabel(self.frame_64)
         self.label_22.setObjectName(u"label_22")
-        self.label_22.setFont(font8)
+        self.label_22.setFont(font10)
         self.label_22.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_22.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1733,7 +2068,7 @@ class Ui_Widget(object):
         self.switch_400.setObjectName(u"switch_400")
         self.switch_400.setMinimumSize(QSize(66, 20))
         self.switch_400.setMaximumSize(QSize(65, 20))
-        self.switch_400.setFont(font7)
+        self.switch_400.setFont(font9)
         self.switch_400.setCheckable(True)
         self.switch_400.setChecked(False)
 
@@ -1752,7 +2087,7 @@ class Ui_Widget(object):
 
         self.label_52 = QLabel(self.frame_65)
         self.label_52.setObjectName(u"label_52")
-        self.label_52.setFont(font8)
+        self.label_52.setFont(font10)
         self.label_52.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_52.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1775,7 +2110,7 @@ class Ui_Widget(object):
         self.switch_500.setObjectName(u"switch_500")
         self.switch_500.setMinimumSize(QSize(66, 20))
         self.switch_500.setMaximumSize(QSize(65, 20))
-        self.switch_500.setFont(font7)
+        self.switch_500.setFont(font9)
         self.switch_500.setCheckable(False)
         self.switch_500.setChecked(False)
 
@@ -1794,7 +2129,7 @@ class Ui_Widget(object):
 
         self.label_53 = QLabel(self.frame_66)
         self.label_53.setObjectName(u"label_53")
-        self.label_53.setFont(font8)
+        self.label_53.setFont(font10)
         self.label_53.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_53.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1818,7 +2153,7 @@ class Ui_Widget(object):
         self.switch_630.setEnabled(True)
         self.switch_630.setMinimumSize(QSize(66, 20))
         self.switch_630.setMaximumSize(QSize(65, 20))
-        self.switch_630.setFont(font7)
+        self.switch_630.setFont(font9)
         self.switch_630.setCheckable(True)
         self.switch_630.setChecked(False)
 
@@ -1837,7 +2172,7 @@ class Ui_Widget(object):
 
         self.label_54 = QLabel(self.frame_67)
         self.label_54.setObjectName(u"label_54")
-        self.label_54.setFont(font8)
+        self.label_54.setFont(font10)
         self.label_54.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_54.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1894,7 +2229,7 @@ class Ui_Widget(object):
         self.switch_800.setObjectName(u"switch_800")
         self.switch_800.setMinimumSize(QSize(66, 20))
         self.switch_800.setMaximumSize(QSize(65, 20))
-        self.switch_800.setFont(font7)
+        self.switch_800.setFont(font9)
         self.switch_800.setCheckable(True)
         self.switch_800.setChecked(False)
 
@@ -1913,7 +2248,7 @@ class Ui_Widget(object):
 
         self.label_6 = QLabel(self.frame_84)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font8)
+        self.label_6.setFont(font10)
         self.label_6.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_6.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1936,7 +2271,7 @@ class Ui_Widget(object):
         self.switch_1000.setObjectName(u"switch_1000")
         self.switch_1000.setMinimumSize(QSize(66, 20))
         self.switch_1000.setMaximumSize(QSize(65, 20))
-        self.switch_1000.setFont(font7)
+        self.switch_1000.setFont(font9)
         self.switch_1000.setCheckable(True)
         self.switch_1000.setChecked(False)
 
@@ -1955,7 +2290,7 @@ class Ui_Widget(object):
 
         self.label_7 = QLabel(self.frame_85)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setFont(font8)
+        self.label_7.setFont(font10)
         self.label_7.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_7.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -1978,7 +2313,7 @@ class Ui_Widget(object):
         self.switch_1250.setObjectName(u"switch_1250")
         self.switch_1250.setMinimumSize(QSize(66, 20))
         self.switch_1250.setMaximumSize(QSize(65, 20))
-        self.switch_1250.setFont(font7)
+        self.switch_1250.setFont(font9)
         self.switch_1250.setCheckable(True)
         self.switch_1250.setChecked(False)
 
@@ -1997,7 +2332,7 @@ class Ui_Widget(object):
 
         self.label_55 = QLabel(self.frame_86)
         self.label_55.setObjectName(u"label_55")
-        self.label_55.setFont(font8)
+        self.label_55.setFont(font10)
         self.label_55.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_55.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2020,7 +2355,7 @@ class Ui_Widget(object):
         self.switch_1600.setObjectName(u"switch_1600")
         self.switch_1600.setMinimumSize(QSize(66, 20))
         self.switch_1600.setMaximumSize(QSize(65, 20))
-        self.switch_1600.setFont(font7)
+        self.switch_1600.setFont(font9)
         self.switch_1600.setCheckable(True)
         self.switch_1600.setChecked(False)
 
@@ -2039,7 +2374,7 @@ class Ui_Widget(object):
 
         self.label_56 = QLabel(self.frame_87)
         self.label_56.setObjectName(u"label_56")
-        self.label_56.setFont(font8)
+        self.label_56.setFont(font10)
         self.label_56.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_56.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2062,7 +2397,7 @@ class Ui_Widget(object):
         self.switch_2000.setObjectName(u"switch_2000")
         self.switch_2000.setMinimumSize(QSize(66, 20))
         self.switch_2000.setMaximumSize(QSize(65, 20))
-        self.switch_2000.setFont(font7)
+        self.switch_2000.setFont(font9)
         self.switch_2000.setCheckable(True)
         self.switch_2000.setChecked(False)
 
@@ -2081,7 +2416,7 @@ class Ui_Widget(object):
 
         self.label_57 = QLabel(self.frame_88)
         self.label_57.setObjectName(u"label_57")
-        self.label_57.setFont(font8)
+        self.label_57.setFont(font10)
         self.label_57.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_57.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2104,7 +2439,7 @@ class Ui_Widget(object):
         self.switch_2500.setObjectName(u"switch_2500")
         self.switch_2500.setMinimumSize(QSize(66, 20))
         self.switch_2500.setMaximumSize(QSize(65, 20))
-        self.switch_2500.setFont(font7)
+        self.switch_2500.setFont(font9)
         self.switch_2500.setCheckable(True)
         self.switch_2500.setChecked(False)
 
@@ -2123,7 +2458,7 @@ class Ui_Widget(object):
 
         self.label_58 = QLabel(self.frame_89)
         self.label_58.setObjectName(u"label_58")
-        self.label_58.setFont(font8)
+        self.label_58.setFont(font10)
         self.label_58.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_58.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2146,7 +2481,7 @@ class Ui_Widget(object):
         self.switch_3150.setObjectName(u"switch_3150")
         self.switch_3150.setMinimumSize(QSize(66, 20))
         self.switch_3150.setMaximumSize(QSize(65, 20))
-        self.switch_3150.setFont(font7)
+        self.switch_3150.setFont(font9)
         self.switch_3150.setCheckable(True)
         self.switch_3150.setChecked(False)
 
@@ -2165,7 +2500,7 @@ class Ui_Widget(object):
 
         self.label_59 = QLabel(self.frame_90)
         self.label_59.setObjectName(u"label_59")
-        self.label_59.setFont(font8)
+        self.label_59.setFont(font10)
         self.label_59.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_59.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2188,7 +2523,7 @@ class Ui_Widget(object):
         self.switch_4000.setObjectName(u"switch_4000")
         self.switch_4000.setMinimumSize(QSize(66, 20))
         self.switch_4000.setMaximumSize(QSize(65, 20))
-        self.switch_4000.setFont(font7)
+        self.switch_4000.setFont(font9)
         self.switch_4000.setCheckable(True)
         self.switch_4000.setChecked(False)
 
@@ -2207,7 +2542,7 @@ class Ui_Widget(object):
 
         self.label_60 = QLabel(self.frame_91)
         self.label_60.setObjectName(u"label_60")
-        self.label_60.setFont(font8)
+        self.label_60.setFont(font10)
         self.label_60.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_60.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2230,7 +2565,7 @@ class Ui_Widget(object):
         self.switch_5000.setObjectName(u"switch_5000")
         self.switch_5000.setMinimumSize(QSize(66, 20))
         self.switch_5000.setMaximumSize(QSize(65, 20))
-        self.switch_5000.setFont(font7)
+        self.switch_5000.setFont(font9)
         self.switch_5000.setCheckable(True)
         self.switch_5000.setChecked(False)
 
@@ -2249,7 +2584,7 @@ class Ui_Widget(object):
 
         self.label_61 = QLabel(self.frame_92)
         self.label_61.setObjectName(u"label_61")
-        self.label_61.setFont(font8)
+        self.label_61.setFont(font10)
         self.label_61.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_61.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2272,7 +2607,7 @@ class Ui_Widget(object):
         self.switch_6300.setObjectName(u"switch_6300")
         self.switch_6300.setMinimumSize(QSize(66, 20))
         self.switch_6300.setMaximumSize(QSize(65, 20))
-        self.switch_6300.setFont(font7)
+        self.switch_6300.setFont(font9)
         self.switch_6300.setCheckable(True)
         self.switch_6300.setChecked(False)
 
@@ -2291,7 +2626,7 @@ class Ui_Widget(object):
 
         self.label_62 = QLabel(self.frame_93)
         self.label_62.setObjectName(u"label_62")
-        self.label_62.setFont(font8)
+        self.label_62.setFont(font10)
         self.label_62.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_62.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2314,7 +2649,7 @@ class Ui_Widget(object):
         self.switch_8000.setObjectName(u"switch_8000")
         self.switch_8000.setMinimumSize(QSize(66, 20))
         self.switch_8000.setMaximumSize(QSize(65, 20))
-        self.switch_8000.setFont(font7)
+        self.switch_8000.setFont(font9)
         self.switch_8000.setCheckable(True)
         self.switch_8000.setChecked(False)
 
@@ -2333,7 +2668,7 @@ class Ui_Widget(object):
 
         self.label_63 = QLabel(self.frame_94)
         self.label_63.setObjectName(u"label_63")
-        self.label_63.setFont(font8)
+        self.label_63.setFont(font10)
         self.label_63.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_63.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2356,7 +2691,7 @@ class Ui_Widget(object):
         self.switch_10000.setObjectName(u"switch_10000")
         self.switch_10000.setMinimumSize(QSize(66, 20))
         self.switch_10000.setMaximumSize(QSize(65, 20))
-        self.switch_10000.setFont(font7)
+        self.switch_10000.setFont(font9)
         self.switch_10000.setCheckable(True)
         self.switch_10000.setChecked(False)
 
@@ -2375,7 +2710,7 @@ class Ui_Widget(object):
 
         self.label_64 = QLabel(self.frame_95)
         self.label_64.setObjectName(u"label_64")
-        self.label_64.setFont(font8)
+        self.label_64.setFont(font10)
         self.label_64.setStyleSheet(u"color: rgb(80, 184, 158)")
         self.label_64.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
 
@@ -2515,21 +2850,21 @@ class Ui_Widget(object):
 
         self.label_87 = QLabel(self.frame_121)
         self.label_87.setObjectName(u"label_87")
-        font9 = QFont()
-        font9.setFamilies([u"PF BeauSans Pro"])
-        font9.setPointSize(18)
-        font9.setBold(True)
-        self.label_87.setFont(font9)
+        font11 = QFont()
+        font11.setFamilies([u"PF BeauSans Pro"])
+        font11.setPointSize(18)
+        font11.setBold(True)
+        self.label_87.setFont(font11)
         self.label_87.setStyleSheet(u"color: rgb(70, 70, 70); ")
 
         self.horizontalLayout_59.addWidget(self.label_87)
 
         self.checkHold = QCheckBox(self.frame_121)
         self.checkHold.setObjectName(u"checkHold")
-        font10 = QFont()
-        font10.setFamilies([u"PF BeauSans Pro"])
-        font10.setPointSize(10)
-        self.checkHold.setFont(font10)
+        font12 = QFont()
+        font12.setFamilies([u"PF BeauSans Pro"])
+        font12.setPointSize(10)
+        self.checkHold.setFont(font12)
         self.checkHold.setChecked(False)
 
         self.horizontalLayout_59.addWidget(self.checkHold, 0, Qt.AlignRight)
@@ -2545,7 +2880,7 @@ class Ui_Widget(object):
         self.verticalLayout_85.setObjectName(u"verticalLayout_85")
         self.listWidget2 = QListWidget(self.frame_122)
         self.listWidget2.setObjectName(u"listWidget2")
-        self.listWidget2.setFont(font6)
+        self.listWidget2.setFont(font8)
         self.listWidget2.setStyleSheet(u"QListWidget {\n"
 "	color: rgb(255, 255, 255);\n"
 "	border : 4px solid rgb(80, 184, 158);\n"
@@ -2602,10 +2937,7 @@ class Ui_Widget(object):
         self.importGraph.setObjectName(u"importGraph")
         self.importGraph.setMinimumSize(QSize(0, 30))
         self.importGraph.setMaximumSize(QSize(120, 16777215))
-        font11 = QFont()
-        font11.setFamilies([u"PF BeauSans Pro"])
-        font11.setPointSize(12)
-        self.importGraph.setFont(font11)
+        self.importGraph.setFont(font7)
 
         self.verticalLayout_86.addWidget(self.importGraph)
 
@@ -2613,7 +2945,7 @@ class Ui_Widget(object):
         self.removeGraph.setObjectName(u"removeGraph")
         self.removeGraph.setMinimumSize(QSize(0, 30))
         self.removeGraph.setMaximumSize(QSize(120, 16777215))
-        self.removeGraph.setFont(font11)
+        self.removeGraph.setFont(font7)
 
         self.verticalLayout_86.addWidget(self.removeGraph)
 
@@ -2621,7 +2953,7 @@ class Ui_Widget(object):
         self.removeAllGraph.setObjectName(u"removeAllGraph")
         self.removeAllGraph.setMinimumSize(QSize(0, 30))
         self.removeAllGraph.setMaximumSize(QSize(120, 16777215))
-        self.removeAllGraph.setFont(font11)
+        self.removeAllGraph.setFont(font7)
 
         self.verticalLayout_86.addWidget(self.removeAllGraph)
 
@@ -2684,7 +3016,7 @@ class Ui_Widget(object):
 
         self.label_99 = QLabel(self.frame_133)
         self.label_99.setObjectName(u"label_99")
-        self.label_99.setFont(font9)
+        self.label_99.setFont(font11)
         self.label_99.setStyleSheet(u"color: rgb(70, 70, 70); ")
 
         self.horizontalLayout_67.addWidget(self.label_99)
@@ -2745,7 +3077,7 @@ class Ui_Widget(object):
         self.label_100.setObjectName(u"label_100")
         self.label_100.setMinimumSize(QSize(0, 20))
         self.label_100.setMaximumSize(QSize(16777215, 20))
-        self.label_100.setFont(font11)
+        self.label_100.setFont(font7)
         self.label_100.setStyleSheet(u"color: white;")
 
         self.verticalLayout_92.addWidget(self.label_100)
@@ -2756,7 +3088,7 @@ class Ui_Widget(object):
         self.typeHeadBox_2.setObjectName(u"typeHeadBox_2")
         self.typeHeadBox_2.setMinimumSize(QSize(208, 30))
         self.typeHeadBox_2.setMaximumSize(QSize(16777215, 30))
-        self.typeHeadBox_2.setFont(font11)
+        self.typeHeadBox_2.setFont(font7)
         self.typeHeadBox_2.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
         self.typeHeadBox_2.setInsertPolicy(QComboBox.InsertAtBottom)
 
@@ -2766,7 +3098,7 @@ class Ui_Widget(object):
         self.label_101.setObjectName(u"label_101")
         self.label_101.setMinimumSize(QSize(0, 20))
         self.label_101.setMaximumSize(QSize(16777215, 20))
-        self.label_101.setFont(font11)
+        self.label_101.setFont(font7)
         self.label_101.setStyleSheet(u"color: white;")
 
         self.verticalLayout_92.addWidget(self.label_101)
@@ -2776,7 +3108,7 @@ class Ui_Widget(object):
         self.modelHeadBox_2.setEnabled(False)
         self.modelHeadBox_2.setMinimumSize(QSize(208, 30))
         self.modelHeadBox_2.setMaximumSize(QSize(16777215, 30))
-        self.modelHeadBox_2.setFont(font11)
+        self.modelHeadBox_2.setFont(font7)
 
         self.verticalLayout_92.addWidget(self.modelHeadBox_2)
 
@@ -2874,7 +3206,7 @@ class Ui_Widget(object):
 
         self.label_103 = QLabel(self.frame_137)
         self.label_103.setObjectName(u"label_103")
-        self.label_103.setFont(font9)
+        self.label_103.setFont(font11)
         self.label_103.setStyleSheet(u"color: rgb(70, 70, 70); ")
 
         self.horizontalLayout_68.addWidget(self.label_103)
@@ -2886,7 +3218,7 @@ class Ui_Widget(object):
         self.label_104.setObjectName(u"label_104")
         self.label_104.setMinimumSize(QSize(0, 20))
         self.label_104.setMaximumSize(QSize(16777215, 20))
-        self.label_104.setFont(font11)
+        self.label_104.setFont(font7)
         self.label_104.setStyleSheet(u"color: white;")
 
         self.verticalLayout_94.addWidget(self.label_104)
@@ -2898,7 +3230,7 @@ class Ui_Widget(object):
         self.typeHatsBox_2.setObjectName(u"typeHatsBox_2")
         self.typeHatsBox_2.setMinimumSize(QSize(208, 30))
         self.typeHatsBox_2.setMaximumSize(QSize(16777215, 30))
-        self.typeHatsBox_2.setFont(font11)
+        self.typeHatsBox_2.setFont(font7)
 
         self.verticalLayout_94.addWidget(self.typeHatsBox_2)
 
@@ -2906,7 +3238,7 @@ class Ui_Widget(object):
         self.label_105.setObjectName(u"label_105")
         self.label_105.setMinimumSize(QSize(0, 20))
         self.label_105.setMaximumSize(QSize(16777215, 20))
-        self.label_105.setFont(font11)
+        self.label_105.setFont(font7)
         self.label_105.setStyleSheet(u"color: white;")
 
         self.verticalLayout_94.addWidget(self.label_105)
@@ -2916,7 +3248,7 @@ class Ui_Widget(object):
         self.modelHatsBox_2.setEnabled(False)
         self.modelHatsBox_2.setMinimumSize(QSize(208, 30))
         self.modelHatsBox_2.setMaximumSize(QSize(16777215, 30))
-        self.modelHatsBox_2.setFont(font11)
+        self.modelHatsBox_2.setFont(font7)
 
         self.verticalLayout_94.addWidget(self.modelHatsBox_2)
 
@@ -2965,32 +3297,32 @@ class Ui_Widget(object):
         self.plot.setEnabled(False)
         self.plot.setMinimumSize(QSize(130, 36))
         self.plot.setMaximumSize(QSize(130, 36))
-        font12 = QFont()
-        font12.setFamilies([u"PF BeauSans Pro"])
-        font12.setPointSize(13)
-        font12.setBold(False)
-        self.plot.setFont(font12)
-        icon14 = QIcon()
-        icon14.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon14.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.plot.setIcon(icon14)
+        font13 = QFont()
+        font13.setFamilies([u"PF BeauSans Pro"])
+        font13.setPointSize(13)
+        font13.setBold(False)
+        self.plot.setFont(font13)
+        icon16 = QIcon()
+        icon16.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon16.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
+        self.plot.setIcon(icon16)
         self.plot.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_18.addWidget(self.plot)
 
-        self.join = QPushButton(self.frame_13)
-        self.join.setObjectName(u"join")
-        self.join.setEnabled(False)
-        self.join.setMinimumSize(QSize(130, 36))
-        self.join.setMaximumSize(QSize(130, 36))
-        self.join.setFont(font12)
-        icon15 = QIcon()
-        icon15.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon15.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.join.setIcon(icon15)
-        self.join.setIconSize(QSize(25, 25))
+        self.convolve = QPushButton(self.frame_13)
+        self.convolve.setObjectName(u"convolve")
+        self.convolve.setEnabled(False)
+        self.convolve.setMinimumSize(QSize(130, 36))
+        self.convolve.setMaximumSize(QSize(130, 36))
+        self.convolve.setFont(font13)
+        icon17 = QIcon()
+        icon17.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon17.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
+        self.convolve.setIcon(icon17)
+        self.convolve.setIconSize(QSize(25, 25))
 
-        self.horizontalLayout_18.addWidget(self.join)
+        self.horizontalLayout_18.addWidget(self.convolve)
 
 
         self.verticalLayout_90.addWidget(self.frame_13)
@@ -3023,7 +3355,7 @@ class Ui_Widget(object):
         self.horizontalLayout_11.setContentsMargins(5, 5, 5, 5)
         self.label = QLabel(self.bottomContent)
         self.label.setObjectName(u"label")
-        self.label.setFont(font10)
+        self.label.setFont(font12)
         self.label.setStyleSheet(u"color:rgb(255, 255, 255)")
         self.label.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
 
@@ -3031,11 +3363,11 @@ class Ui_Widget(object):
 
         self.label_23 = QLabel(self.bottomContent)
         self.label_23.setObjectName(u"label_23")
-        font13 = QFont()
-        font13.setFamilies([u"PF BeauSans Pro"])
-        font13.setPointSize(10)
-        font13.setBold(False)
-        self.label_23.setFont(font13)
+        font14 = QFont()
+        font14.setFamilies([u"PF BeauSans Pro"])
+        font14.setPointSize(10)
+        font14.setBold(False)
+        self.label_23.setFont(font14)
         self.label_23.setStyleSheet(u"color: rgb(238, 238, 236);")
         self.label_23.setAlignment(Qt.AlignBottom|Qt.AlignRight|Qt.AlignTrailing)
 
@@ -3047,7 +3379,8 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-        self.rightContent.setCurrentIndex(0)
+        self.rightContent.setCurrentIndex(1)
+        self.typeHeadBox_3.setCurrentIndex(0)
         self.typeHeadBox_2.setCurrentIndex(0)
 
 
@@ -3062,6 +3395,7 @@ class Ui_Widget(object):
         self.maximizeButton.setText("")
         self.closeAllButton.setText("")
         self.homeButton.setText("")
+        self.pushButton.setText("")
         self.filterButton.setText("")
         self.calibrationButton.setText("")
 #if QT_CONFIG(accessibility)
@@ -3076,7 +3410,7 @@ class Ui_Widget(object):
         self.rightContent.setAccessibleName("")
 #endif // QT_CONFIG(accessibility)
         self.welcome.setText(QCoreApplication.translate("Widget", u"Welcome", None))
-        self.label_3.setText("")
+        self.logo_2.setText("")
         self.label_43.setText(QCoreApplication.translate("Widget", u"IMPORT YOUR FILES", None))
         self.label_32.setText("")
         self.label_45.setText(QCoreApplication.translate("Widget", u"Work directly \n"
@@ -3091,6 +3425,17 @@ class Ui_Widget(object):
         self.label_50.setText("")
         self.label_51.setText(QCoreApplication.translate("Widget", u"Use psychoacoustic \n"
 " metrics to analyze your signal", None))
+        self.label_3.setText(QCoreApplication.translate("Widget", u"Recording", None))
+        self.stopButton_3.setText("")
+        self.playButton_2.setText("")
+        self.pauseButton_2.setText("")
+        self.stopButton_2.setText("")
+        self.label_4.setText(QCoreApplication.translate("Widget", u"sampling rate", None))
+        self.typeHeadBox_3.setItemText(0, QCoreApplication.translate("Widget", u"44100", None))
+        self.typeHeadBox_3.setItemText(1, QCoreApplication.translate("Widget", u"48000", None))
+        self.typeHeadBox_3.setItemText(2, QCoreApplication.translate("Widget", u"22500", None))
+
+        self.label_5.setText(QCoreApplication.translate("Widget", u"Hz", None))
         self.label_9.setText(QCoreApplication.translate("Widget", u"Signal Editor", None))
         self.logo.setText("")
         self.importButton.setText(QCoreApplication.translate("Widget", u"import", None))
@@ -3174,7 +3519,7 @@ class Ui_Widget(object):
 
         self.label_105.setText(QCoreApplication.translate("Widget", u"model:", None))
         self.plot.setText(QCoreApplication.translate("Widget", u"plot", None))
-        self.join.setText(QCoreApplication.translate("Widget", u"convolve", None))
+        self.convolve.setText(QCoreApplication.translate("Widget", u"convolve", None))
         self.label.setText("")
         self.label_23.setText(QCoreApplication.translate("Widget", u"Develop by Henrique Silveira\n"
 "Juc\u00e9lio Tavares and Ricardo Brum", None))

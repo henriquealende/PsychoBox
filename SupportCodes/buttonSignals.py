@@ -1,8 +1,8 @@
 from Pages.graph import UI_Buttons_Graph
 from Pages.editor import UI_Buttons_Filter
-from Pages.calibration import UI_Buttons_Cali
 
 from PagesSetup.mainSettings import MainSettings
+from PagesSetup.setCalibration import SetCalibration
 
 
 class ButtonSignals():
@@ -47,12 +47,12 @@ class ButtonSignals():
         self.ui.removeAllGraph.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "removeAllGraph"))
         self.ui.typeHeadBox_2.activated[str].connect(lambda: MainSettings.callFunctionsCalibration(self, "typeHeadBox"))
         self.ui.typeHatsBox_2.activated[str].connect(lambda: MainSettings.callFunctionsCalibration(self, "typeHatsBox"))
-
+        self.ui.modelHeadBox_2.activated[str].connect(lambda: MainSettings.callFunctionsCalibration(self, "modelHeadHats"))
+        self.ui.modelHatsBox_2.activated[str].connect(lambda: MainSettings.callFunctionsCalibration(self, "modelHeadHats"))
         self.ui.importGraph.clicked.connect(lambda: UI_Buttons_Graph.importButton(self))
         self.ui.listWidget2.itemClicked.connect(lambda: UI_Buttons_Graph.selectMulti(self))
-        self.ui.modelHeadBox_2.activated[str].connect(lambda: UI_Buttons_Cali.changeModelHead(self))
-        self.ui.modelHatsBox_2.activated[str].connect(lambda: UI_Buttons_Cali.changeModelHats(self))
         self.ui.plot.clicked.connect(lambda: UI_Buttons_Graph.expandGraph(self))
+        self.ui.convolve.clicked.connect(lambda: SetCalibration.convolve(self))
 
     def buttonCallbackGraphWindow(self):
         #Layout Callbacks

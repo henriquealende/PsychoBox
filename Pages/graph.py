@@ -17,13 +17,22 @@ class UI_Buttons_Graph():
 
     def selectItem(self):
         global pathExport
+        model_hats = self.ui.modelHatsBox_2.currentText()
+        model_head = self.ui.modelHeadBox_2.currentText()
         filename = str(self.ui.listWidget2.currentItem().text())
         self.pathname = f"{self.path}/{filename}"  
         pathExport = self.pathname
         self.ui.plot.setEnabled(True)
+        if model_hats not in ("", "None") or model_head not in ("", "None"):
+            self.ui.convolve.setEnabled(True)
+        else: 
+            self.ui.convolve.setEnabled(False)
+
         
     def selectMulti(self):
         global pathExport
+        model_head = self.ui.modelHeadBox_2.currentText()
+        model_hats = self.ui.modelHatsBox_2.currentText()
         if self.ui.checkHold.isChecked():
             self.ui.listWidget2.setSelectionMode(QAbstractItemView.MultiSelection)
         else:
@@ -33,13 +42,19 @@ class UI_Buttons_Graph():
         if nSelectItems > 2:
             self.ui.listWidget2.clearSelection()
             self.ui.plot.setEnabled(False)
+            self.ui.convolve.setEnabled(False)
         elif nSelectItems == 1:
             self.ui.plot.setEnabled(True)
             filename = str(self.ui.listWidget2.currentItem().text())
             self.pathname = f"{self.path}/{filename}"  
             pathExport = self.pathname
+            if model_hats not in ("", "None") or model_head not in ("", "None"):
+                self.ui.convolve.setEnabled(True)
+            else: 
+                self.ui.convolve.setEnabled(False)
         elif nSelectItems == 2:
              self.ui.plot.setEnabled(True)
+             self.ui.convolve.setEnabled(False)
              pathnames = []
              for item in selected_items:
                  filename = item.text()

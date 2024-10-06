@@ -2988,19 +2988,19 @@ class Ui_Widget(object):
 
         self.horizontalLayout_18.addWidget(self.plot)
 
-        self.join = QPushButton(self.frame_13)
-        self.join.setObjectName(u"join")
-        self.join.setEnabled(False)
-        self.join.setMinimumSize(QSize(130, 36))
-        self.join.setMaximumSize(QSize(130, 36))
-        self.join.setFont(font12)
+        self.convolve = QPushButton(self.frame_13)
+        self.convolve.setObjectName(u"convolve")
+        self.convolve.setEnabled(False)
+        self.convolve.setMinimumSize(QSize(130, 36))
+        self.convolve.setMaximumSize(QSize(130, 36))
+        self.convolve.setFont(font12)
         icon15 = QIcon()
         icon15.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
         icon15.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.join.setIcon(icon15)
-        self.join.setIconSize(QSize(25, 25))
+        self.convolve.setIcon(icon15)
+        self.convolve.setIconSize(QSize(25, 25))
 
-        self.horizontalLayout_18.addWidget(self.join)
+        self.horizontalLayout_18.addWidget(self.convolve)
 
 
         self.verticalLayout_90.addWidget(self.frame_13)
@@ -3057,7 +3057,7 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-        self.rightContent.setCurrentIndex(0)
+        self.rightContent.setCurrentIndex(2)
         self.typeHeadBox_2.setCurrentIndex(0)
 
 
@@ -3184,7 +3184,7 @@ class Ui_Widget(object):
 
         self.label_105.setText(QCoreApplication.translate("Widget", u"model:", None))
         self.plot.setText(QCoreApplication.translate("Widget", u"plot", None))
-        self.join.setText(QCoreApplication.translate("Widget", u"convolve", None))
+        self.convolve.setText(QCoreApplication.translate("Widget", u"convolve", None))
         self.label.setText("")
         self.label_23.setText(QCoreApplication.translate("Widget", u"Develop by Henrique Silveira\n"
 "Juc\u00e9lio Tavares and Ricardo Brum", None))
