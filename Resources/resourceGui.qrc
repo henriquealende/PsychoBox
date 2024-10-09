@@ -40,6 +40,7 @@
         <file>img/microfone.png</file>
         <file>img/botao-de-gravacao.png</file>
         <file>img/botao-de-gravacao_2.png</file>
+        <file>img/exportar.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/nidecLogo.png</file>

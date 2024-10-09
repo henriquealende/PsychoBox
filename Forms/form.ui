@@ -955,7 +955,7 @@ QPushButton:checked {
          <enum>QFrame::Raised</enum>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>1</number>
         </property>
         <widget class="QWidget" name="welcomePage">
          <layout class="QHBoxLayout" name="horizontalLayout_4">
@@ -1897,7 +1897,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
                        <number>9</number>
                       </property>
                       <item>
-                       <widget class="QPushButton" name="stopButton_3">
+                       <widget class="QPushButton" name="recordingButton_2">
                         <property name="enabled">
                          <bool>true</bool>
                         </property>
@@ -2169,10 +2169,10 @@ QComboBox QAbstractView{
                           </widget>
                          </item>
                          <item>
-                          <widget class="QComboBox" name="typeHeadBox_3">
+                          <widget class="QComboBox" name="samplingRate_Combo">
                            <property name="minimumSize">
                             <size>
-                             <width>150</width>
+                             <width>208</width>
                              <height>30</height>
                             </size>
                            </property>
@@ -2235,12 +2235,76 @@ QComboBox QAbstractView{
                    </item>
                    <item>
                     <widget class="QFrame" name="frame_22">
+                     <property name="styleSheet">
+                      <string notr="true">QPushButton {
+	padding-left: 2px;
+	text-align: center;
+	background-color:rgb(80, 184, 158);
+	border: 3px solid rgb(237, 105, 59);
+	border-radius:18px;
+	color: rgb(255, 255, 255)
+}
+
+</string>
+                     </property>
                      <property name="frameShape">
                       <enum>QFrame::NoFrame</enum>
                      </property>
                      <property name="frameShadow">
                       <enum>QFrame::Raised</enum>
                      </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_19">
+                      <item alignment="Qt::AlignRight">
+                       <widget class="QPushButton" name="exportAudioButton">
+                        <property name="minimumSize">
+                         <size>
+                          <width>50</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>50</width>
+                          <height>50</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">QPushButton{
+  background-color: rgb(94, 217, 186);
+	border-radius:25px;
+}
+QPushButton:hover {
+	background-color: rgb(79,186,160);
+	border: 3px solid rgb(0,124,132);
+}
+
+QPushButton:pressed {
+	background-color: rgb(241, 102, 55)
+}
+
+QPushButton:disabled{
+	background-color: rgb(70,70,70);
+	border: 3px solid rgb(136,138,133);
+}
+
+</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                        <property name="icon">
+                         <iconset resource="../Resources/resourceGui.qrc">
+                          <normaloff>:/icons/img/exportar.png</normaloff>:/icons/img/exportar.png</iconset>
+                        </property>
+                        <property name="iconSize">
+                         <size>
+                          <width>26</width>
+                          <height>26</height>
+                         </size>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
                     </widget>
                    </item>
                   </layout>
@@ -2275,7 +2339,7 @@ QComboBox QAbstractView{
                      <item row="0" column="0">
                       <widget class="QFrame" name="recordingFrame">
                        <property name="frameShape">
-                        <enum>QFrame::StyledPanel</enum>
+                        <enum>QFrame::NoFrame</enum>
                        </property>
                        <property name="frameShadow">
                         <enum>QFrame::Raised</enum>

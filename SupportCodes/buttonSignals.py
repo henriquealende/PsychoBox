@@ -1,5 +1,6 @@
 from Pages.graph import UI_Buttons_Graph
 from Pages.editor import UI_Buttons_Filter
+from Pages.recording import UI_Buttons_Recorder
 
 from PagesSetup.mainSettings import MainSettings
 from PagesSetup.setCalibration import SetCalibration
@@ -43,13 +44,22 @@ class ButtonSignals():
             eval('''self.ui.slider_{}.valueChanged.connect(lambda: UI_Buttons.switchSlider(self))'''.format(
                 slider), params)
 
-        #CALIBRATION PAGE FUNCTION
+        #CALIBRATION PAGE FUNCTIONS
         self.ui.removeGraph.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "removeGraph"))
         self.ui.removeAllGraph.clicked.connect(lambda: MainSettings.callFunctionsEditor(self, "removeAllGraph"))
         self.ui.importGraph.clicked.connect(lambda: UI_Buttons_Graph.importButton(self))
         self.ui.listWidget2.itemClicked.connect(lambda: UI_Buttons_Graph.selectMulti(self))
         self.ui.plot.clicked.connect(lambda: UI_Buttons_Graph.expandGraph(self))
-      
+        
+        #RECORDING PAGE FUNCTIONS
+        self.ui.recordingButton_2.clicked.connect(lambda: UI_Buttons_Recorder.toggle_recording(self))
+        self.ui.exportAudioButton.clicked.connect(lambda: UI_Buttons_Recorder.save_audio(self))
+                
+                
+        
+
+        
+        
     def buttonCallbackGraphWindow(self):
         #Layout Callbacks
         self.clique = 0
