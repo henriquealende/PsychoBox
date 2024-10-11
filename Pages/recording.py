@@ -3,18 +3,21 @@ import wave
 import sounddevice as sd
 
 from PagesSetup.mainSettings import MainSettings
+from PagesSetup.setRecorder import DeviceSelectionDialog
+
 from PySide2.QtWidgets import (QFileDialog)
 
 
 class UI_Buttons_Recorder():
     def __init__(self):
         super(UI_Buttons_Recorder, self).__init__()
-        self.samplerate = 44100  # Taxa de amostragem padrão
-        self.channels = 1  # Número de canais (mono)
+    
+    def initialParameters(self):
         self.is_recording = False
         self.is_playing = False
         self.audio_data = []
         self.stream = None
+        # self.input_devices, self.output_devices = self.get_devices()
         
     def update_samplerate(self):
         """Atualiza a frequência de amostragem com base na seleção do usuário"""
@@ -67,12 +70,17 @@ class UI_Buttons_Recorder():
             wf.writeframes(audio_array.tobytes())
 
     def play_audio(self):
+        play_instace = UI_Buttons_Recorder()
+        play_instace.__init__()
+        samplerate = float(self.ui.samplingRate_Combo.currentText())
         """Reproduz o áudio gravado"""
         if not self.is_playing and self.audio_data:
             self.is_playing = True
-            self.play_stream = sd.OutputStream(samplerate=self.samplerate, channels=self.channels)
+            self.play_stream = sd.OutputStream(samplerate, channels=1)
             self.play_stream.start()
             self.audio_to_play = np.concatenate(self.audio_data, axis=0)
+            self.audio_to_play = self.audio_to_play.astype(np.float32)
+
             self.play_stream.write(self.audio_to_play)
 
     def pause_audio(self):
@@ -110,3 +118,33 @@ class UI_Buttons_Recorder():
             self.stream.stop()
             self.stream.close()
         event.accept()
+        
+    def setMicrophone(self, channel):
+        microfone_channel = []
+        if channel == 1:
+            microfone_channel = self.ui.setMicrophone_1
+        elif channel == 2:
+            microfone_channel = self.ui.setMicrophone_2
+        if microfone_channel.isChecked():
+            dialog = DeviceSelectionDialog("Gravação", self)
+            dialog.exec_()
+            self.ui.recordingButton_2.setEnabled(True)
+        else:
+            self.ui.recordingButton_2.setEnabled(False)
+            
+    def setSource(self):
+        if self.ui.setSource_1.isChecked():
+            dialog = DeviceSelectionDialog("Reprodução", self)
+            dialog.exec_()
+            if self.ui.recordingButton_2.isEnabled():
+                self.ui.playButton_2.setEnabled(True)
+        else:
+            self.ui.playButton_2.setEnabled(False)
+
+            
+            
+        
+        
+        
+
+        

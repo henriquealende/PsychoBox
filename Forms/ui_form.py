@@ -831,7 +831,7 @@ class Ui_Widget(object):
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
         self.recordingButton_2 = QPushButton(self.frame_18)
         self.recordingButton_2.setObjectName(u"recordingButton_2")
-        self.recordingButton_2.setEnabled(True)
+        self.recordingButton_2.setEnabled(False)
         self.recordingButton_2.setMinimumSize(QSize(50, 50))
         self.recordingButton_2.setMaximumSize(QSize(50, 50))
         self.recordingButton_2.setStyleSheet(u"QPushButton{\n"
@@ -855,9 +855,13 @@ class Ui_Widget(object):
 "")
         icon11 = QIcon()
         icon11.addFile(u":/icons/img/botao-de-gravacao_2.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon11.addFile(u":/icons/img/botao-de-gravacao.png", QSize(), QIcon.Normal, QIcon.On)
+        icon11.addFile(u":/icons/img/botao-de-gravacao_2_w.png", QSize(), QIcon.Disabled, QIcon.Off)
+        icon11.addFile(u":/icons/img/botao-de-gravacao_w.png", QSize(), QIcon.Disabled, QIcon.On)
         self.recordingButton_2.setIcon(icon11)
-        self.recordingButton_2.setIconSize(QSize(32, 32))
+        self.recordingButton_2.setIconSize(QSize(30, 32))
         self.recordingButton_2.setCheckable(True)
+        self.recordingButton_2.setChecked(False)
 
         self.horizontalLayout_16.addWidget(self.recordingButton_2)
 
@@ -1005,6 +1009,7 @@ class Ui_Widget(object):
         self.samplingRate_Combo.addItem("")
         self.samplingRate_Combo.addItem("")
         self.samplingRate_Combo.setObjectName(u"samplingRate_Combo")
+        self.samplingRate_Combo.setEnabled(False)
         self.samplingRate_Combo.setMinimumSize(QSize(208, 30))
         self.samplingRate_Combo.setMaximumSize(QSize(150, 30))
         font7 = QFont()
@@ -1042,10 +1047,172 @@ class Ui_Widget(object):
 "")
         self.frame_22.setFrameShape(QFrame.NoFrame)
         self.frame_22.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_19 = QVBoxLayout(self.frame_22)
+        self.horizontalLayout_20 = QHBoxLayout(self.frame_22)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.horizontalLayout_20.setContentsMargins(-1, 0, -1, 0)
+        self.frame_24 = QFrame(self.frame_22)
+        self.frame_24.setObjectName(u"frame_24")
+        self.frame_24.setFrameShape(QFrame.StyledPanel)
+        self.frame_24.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.frame_24)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.recordingButton_3 = QPushButton(self.frame_24)
+        self.recordingButton_3.setObjectName(u"recordingButton_3")
+        self.recordingButton_3.setEnabled(True)
+        self.recordingButton_3.setMinimumSize(QSize(50, 50))
+        self.recordingButton_3.setMaximumSize(QSize(50, 50))
+        self.recordingButton_3.setStyleSheet(u"QPushButton{\n"
+"\n"
+"	border-radius:25px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"	  background-color: rgb(94, 217, 186);\n"
+"}\n"
+"")
+        icon15 = QIcon()
+        icon15.addFile(u":/icons/img/microfone_w.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u":/icons/img/microfone.png", QSize(), QIcon.Normal, QIcon.On)
+        self.recordingButton_3.setIcon(icon15)
+        self.recordingButton_3.setIconSize(QSize(26, 26))
+        self.recordingButton_3.setCheckable(True)
+        self.recordingButton_3.setChecked(False)
+
+        self.verticalLayout_19.addWidget(self.recordingButton_3)
+
+        self.label_8 = QLabel(self.frame_24)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setFont(font7)
+        self.label_8.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.label_8)
+
+
+        self.horizontalLayout_20.addWidget(self.frame_24)
+
+        self.frame_25 = QFrame(self.frame_22)
+        self.frame_25.setObjectName(u"frame_25")
+        self.frame_25.setFrameShape(QFrame.StyledPanel)
+        self.frame_25.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_20 = QVBoxLayout(self.frame_25)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.recordingButton_4 = QPushButton(self.frame_25)
+        self.recordingButton_4.setObjectName(u"recordingButton_4")
+        self.recordingButton_4.setEnabled(True)
+        self.recordingButton_4.setMinimumSize(QSize(50, 50))
+        self.recordingButton_4.setMaximumSize(QSize(50, 50))
+        self.recordingButton_4.setStyleSheet(u"QPushButton{\n"
+"\n"
+"	border-radius:25px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"	  background-color: rgb(94, 217, 186);\n"
+"}\n"
+"")
+        self.recordingButton_4.setIcon(icon15)
+        self.recordingButton_4.setIconSize(QSize(26, 26))
+        self.recordingButton_4.setCheckable(True)
+        self.recordingButton_4.setChecked(False)
+
+        self.verticalLayout_20.addWidget(self.recordingButton_4)
+
+        self.label_10 = QLabel(self.frame_25)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setFont(font7)
+        self.label_10.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_20.addWidget(self.label_10)
+
+
+        self.horizontalLayout_20.addWidget(self.frame_25)
+
+        self.frame_26 = QFrame(self.frame_22)
+        self.frame_26.setObjectName(u"frame_26")
+        self.frame_26.setFrameShape(QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_21 = QVBoxLayout(self.frame_26)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.recordingButton_5 = QPushButton(self.frame_26)
+        self.recordingButton_5.setObjectName(u"recordingButton_5")
+        self.recordingButton_5.setEnabled(True)
+        self.recordingButton_5.setMinimumSize(QSize(50, 50))
+        self.recordingButton_5.setMaximumSize(QSize(50, 50))
+        self.recordingButton_5.setStyleSheet(u"QPushButton{\n"
+"\n"
+"	border-radius:25px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"	  background-color: rgb(94, 217, 186);\n"
+"}\n"
+"")
+        icon16 = QIcon()
+        icon16.addFile(u":/icons/img/dodecaedro.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon16.addFile(u":/icons/img/dodecaedro_o.png", QSize(), QIcon.Normal, QIcon.On)
+        self.recordingButton_5.setIcon(icon16)
+        self.recordingButton_5.setIconSize(QSize(32, 32))
+        self.recordingButton_5.setCheckable(True)
+        self.recordingButton_5.setChecked(False)
+
+        self.verticalLayout_21.addWidget(self.recordingButton_5)
+
+        self.label_11 = QLabel(self.frame_26)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setFont(font7)
+        self.label_11.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_21.addWidget(self.label_11)
+
+
+        self.horizontalLayout_20.addWidget(self.frame_26)
+
+        self.horizontalSpacer_3 = QSpacerItem(244, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_20.addItem(self.horizontalSpacer_3)
+
         self.exportAudioButton = QPushButton(self.frame_22)
         self.exportAudioButton.setObjectName(u"exportAudioButton")
+        self.exportAudioButton.setEnabled(False)
         self.exportAudioButton.setMinimumSize(QSize(50, 50))
         self.exportAudioButton.setMaximumSize(QSize(50, 50))
         self.exportAudioButton.setStyleSheet(u"QPushButton{\n"
@@ -1067,12 +1234,12 @@ class Ui_Widget(object):
 "}\n"
 "\n"
 "")
-        icon15 = QIcon()
-        icon15.addFile(u":/icons/img/exportar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.exportAudioButton.setIcon(icon15)
+        icon17 = QIcon()
+        icon17.addFile(u":/icons/img/exportar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.exportAudioButton.setIcon(icon17)
         self.exportAudioButton.setIconSize(QSize(26, 26))
 
-        self.verticalLayout_19.addWidget(self.exportAudioButton, 0, Qt.AlignRight)
+        self.horizontalLayout_20.addWidget(self.exportAudioButton)
 
 
         self.horizontalLayout_8.addWidget(self.frame_22)
@@ -1569,11 +1736,11 @@ class Ui_Widget(object):
         self.muteButton.setStyleSheet(u"QPushButton {\n"
 "	border-radius:10px;\n"
 "}")
-        icon16 = QIcon()
-        icon16.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon16.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
-        icon16.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
-        self.muteButton.setIcon(icon16)
+        icon18 = QIcon()
+        icon18.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon18.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
+        icon18.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
+        self.muteButton.setIcon(icon18)
         self.muteButton.setCheckable(True)
         self.muteButton.setChecked(False)
         self.muteButton.setAutoRepeat(False)
@@ -3345,10 +3512,10 @@ class Ui_Widget(object):
         font13.setPointSize(13)
         font13.setBold(False)
         self.plot.setFont(font13)
-        icon17 = QIcon()
-        icon17.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon17.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.plot.setIcon(icon17)
+        icon19 = QIcon()
+        icon19.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon19.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
+        self.plot.setIcon(icon19)
         self.plot.setIconSize(QSize(20, 20))
 
         self.horizontalLayout_18.addWidget(self.plot)
@@ -3359,10 +3526,10 @@ class Ui_Widget(object):
         self.convolve.setMinimumSize(QSize(130, 36))
         self.convolve.setMaximumSize(QSize(130, 36))
         self.convolve.setFont(font13)
-        icon18 = QIcon()
-        icon18.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon18.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.convolve.setIcon(icon18)
+        icon20 = QIcon()
+        icon20.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon20.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
+        self.convolve.setIcon(icon20)
         self.convolve.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_18.addWidget(self.convolve)
@@ -3479,6 +3646,12 @@ class Ui_Widget(object):
         self.samplingRate_Combo.setItemText(2, QCoreApplication.translate("Widget", u"22050", None))
 
         self.label_5.setText(QCoreApplication.translate("Widget", u"Hz", None))
+        self.recordingButton_3.setText("")
+        self.label_8.setText(QCoreApplication.translate("Widget", u"Ch. 1", None))
+        self.recordingButton_4.setText("")
+        self.label_10.setText(QCoreApplication.translate("Widget", u"Ch. 2", None))
+        self.recordingButton_5.setText("")
+        self.label_11.setText(QCoreApplication.translate("Widget", u"Output", None))
         self.exportAudioButton.setText("")
         self.label_9.setText(QCoreApplication.translate("Widget", u"Signal Editor", None))
         self.logo.setText("")

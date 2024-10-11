@@ -41,6 +41,11 @@
         <file>img/botao-de-gravacao.png</file>
         <file>img/botao-de-gravacao_2.png</file>
         <file>img/exportar.png</file>
+        <file>img/microfone_w.png</file>
+        <file>img/dodecaedro.png</file>
+        <file>img/botao-de-gravacao_2_w.png</file>
+        <file>img/botao-de-gravacao_w.png</file>
+        <file>img/dodecaedro_o.png</file>
     </qresource>
     <qresource prefix="/logos">
         <file>img/nidecLogo.png</file>
