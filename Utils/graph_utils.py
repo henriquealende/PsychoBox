@@ -29,7 +29,8 @@ class GraphUtils():
         self.chart.setAnimationOptions(QtCharts.QChart.NoAnimation)
         self.chart.setBackgroundBrush(QColor(242, 240, 241))        
         self.x, self.y = GraphUtils.defineDomain(self, domain, samplingBox)      
-        GraphUtils.plotGraph(self)  
+        chartView = GraphUtils.plotGraph(self) 
+        return chartView 
 
     def defineDomain(self, domain, samplingBox):
         x_list = []
@@ -124,6 +125,12 @@ class GraphUtils():
         return(x_list, y_list)   
           
     def configureAxes(self, x_title, y_title):
+        # Remove eixos antigos para evitar sobreposição
+        for axis in self.chart.axes(Qt.Horizontal):
+            self.chart.removeAxis(axis)
+        for axis in self.chart.axes(Qt.Vertical):
+            self.chart.removeAxis(axis)
+
         # Configuração unificada dos eixos
         axis_x = QtCharts.QValueAxis()
         axis_x.setTickCount(5)
@@ -136,7 +143,7 @@ class GraphUtils():
         
         self.chart.addAxis(axis_x, Qt.AlignBottom)
         self.chart.addAxis(axis_y, Qt.AlignLeft)
-       
+        
         for series in self.chart.series():
             series.attachAxis(axis_x)
             series.attachAxis(axis_y)

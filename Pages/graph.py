@@ -1,11 +1,13 @@
 import os
 from PySide2.QtWidgets import QFileDialog,  QAbstractItemView
+from PySide2.QtGui import QImage, QPainter
 import numpy as np
 import csv
 
 class UI_Buttons_Graph():
     def __init__(self):
         super(UI_Buttons_Graph, self).__init__()
+        self.chartview = None
 
 
     def importButton(self):
@@ -73,35 +75,48 @@ class UI_Buttons_Graph():
         domain = self.gp.domainBox.currentText()
         samplingBox = self.gp.samplingBox.currentText()
         self.chartview = GraphUtils.getGraph(self, domain, samplingBox)
+        print(self.chartview)
 
     def saveGraph(self):
-        from Utils.graph_utils import chartView
-        x = chartView
-        fileName, _ = QFileDialog.getSaveFileName(self, "Save Image", r"H:\Image", "Image Files (*.png *.jpg *.bmp)")
-        fileName = fileName + '.png'
-        
+        if self.chartview is None:
+            print("Erro: chartview não foi inicializado.")
+            return
+
+        fileName, fileExtension = QFileDialog.getSaveFileName(self, "Save Image", "", "Image Files (*.png *.jpg *.bmp)")
         if not fileName:
             return
-        image = x.grab()
-        image.save(fileName)          
-        
+
+        self.chartview.update()
+        pixmap = self.chartview.grab()
+
+        # Converter para QImage
+        image = QImage(pixmap.size(), QImage.Format_ARGB32_Premultiplied)
+        painter = QPainter(image)
+        painter.drawPixmap(0, 0, pixmap)
+        painter.end()
+
+        # Salvar a imagem e imprimir o resultado
+        print(image.save(fileName, "PNG")) 
+
     def saveData(self):
         domain = self.gp.domainBox.currentText()
         
         # Inicializa os dados para exportação
         data_to_export = []
         num_curves = len(self.x)
-        print(num_curves)
         
         # Prepara os cabeçalhos incluindo os nomes dos arquivos.
         if domain == 'Time':
-            headers = ['Time [s]']
+            headers = ['Time [s]', 'Amplitude']
         elif domain == "Frequency":
-            headers = ['Frequency [Hz]']
-        if num_curves > 1:
-            headers.extend(f'Amplitude ({os.path.basename(path)})' for i, path in enumerate(pathExport))
+            headers = ['Frequency [Hz]', 'Amplitude']
         else:
-            headers.extend('Amplitude')
+            headers = ['Frequency [Bark]', 'Amplitude']
+            
+        # if num_curves > 1:
+        #     headers.extend(f'Amplitude ({os.path.basename(path)})' for i, path in enumerate(pathExport))
+        # else:
+        #     headers.extend('Amplitude')
 
         # Prepara os dados de cada curva para exportação
         for i in range(num_curves):
@@ -138,40 +153,52 @@ class UI_Buttons_Graph():
     
     #         for x_val, y_val in zip(self.x, self.y):
     #             writer.writerow([y_val, x_val])
-            
- 
-
-
-
 
 class GetWave():
     def __init__(self):
         super(GetWave, self).__init__()
 
+   
     def getAndReadWav(self, pathExports):
         from Utils.filter_utils import FilterUtils
         from Utils.graph_utils import GraphUtils
+
         domain = 'Time'
         samplingBox = 'Linear'
+
         # Garante que pathExports seja uma lista
         if not isinstance(pathExports, list):
             pathExports = [pathExports]
+
         timeDataList = []
         samplingRateList = []
-        for pathExport in pathExports[:2]:  # Limita a processar no máximo dois arquivos
+
+        # Processa no máximo dois arquivos
+        for pathExport in pathExports[:2]:
             self.pathname = pathExport
             timeData, samplingRate = FilterUtils.getAudio(self.pathname)
+            
+            # Normaliza os dados de áudio para o intervalo [-1, 1]
             normalizedTimeData = 2 * (timeData / (2**16))
+            
+            # Padroniza os dados para que sejam arrays 1D, caso não sejam
+            if normalizedTimeData.ndim > 1:
+                normalizedTimeData = normalizedTimeData.flatten()
+            
             timeDataList.append(normalizedTimeData)
             samplingRateList.append(samplingRate)
+
+        # Armazena os dados em atributos padronizados para uso posterior
+        self.timeData = timeDataList
+        self.samplingRate = samplingRateList
+        
+        # Caso queira também armazenar as duas primeiras séries de maneira separada
         if len(timeDataList) > 0:
             self.timeData1 = timeDataList[0]
             self.samplingRate1 = samplingRateList[0]
         if len(timeDataList) > 1:
             self.timeData2 = timeDataList[1]
             self.samplingRate2 = samplingRateList[1]
-        self.timeData = timeDataList
-        self.samplingRate = samplingRateList
-        
+            
         self.chartview = GraphUtils.getGraph(self, domain, samplingBox)
 

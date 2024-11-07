@@ -30,6 +30,7 @@ class UI_Buttons_Filter():
             eval('self.ui.switch_{}.setText({})'.format(slider, txt))
         filename = str(self.ui.listWidget.currentItem().text())
         MainSettings.callFunctionsEditor(self, "selectItem")
+        print(path, filename)
         self.timeData, self.samplingRate = FilterUtils.getAudio(path + '/' + filename)
         mixer.music.load(path + '/' + filename)
         self.pause = False

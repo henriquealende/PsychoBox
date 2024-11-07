@@ -15,18 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-<<<<<<< HEAD
 from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QComboBox,
     QFrame, QGridLayout, QHBoxLayout, QLabel,
     QListWidget, QListWidgetItem, QPushButton, QSizePolicy,
     QSlider, QSpacerItem, QStackedWidget, QVBoxLayout,
     QWidget)
-=======
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QFrame,
-    QHBoxLayout, QLabel, QListWidget, QListWidgetItem,
-    QPushButton, QSizePolicy, QSlider, QSpacerItem,
-    QStackedWidget, QVBoxLayout, QWidget)
->>>>>>> b851d48800f5d5befdcec1327926da1be3e45948
 import rc_resourceGui
 
 class Ui_Widget(object):
@@ -318,22 +311,23 @@ class Ui_Widget(object):
 
         self.verticalLayout_3.addWidget(self.homeButton)
 
-        self.pushButton = QPushButton(self.frame)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(50, 50))
-        self.pushButton.setStyleSheet(u"QPushButton:checked {\n"
+        self.recordingButton = QPushButton(self.frame)
+        self.recordingButton.setObjectName(u"recordingButton")
+        self.recordingButton.setMinimumSize(QSize(50, 50))
+        self.recordingButton.setFont(font2)
+        self.recordingButton.setStyleSheet(u"QPushButton:checked {\n"
 "	background-color:#rgb(80, 184, 158);\n"
 "	padding-left:5px;\n"
 "	border-left: 5px solid  rgb(241, 102, 55);\n"
 "}")
         icon6 = QIcon()
         icon6.addFile(u":/icons/img/microfone.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton.setIcon(icon6)
-        self.pushButton.setIconSize(QSize(30, 30))
-        self.pushButton.setCheckable(True)
-        self.pushButton.setAutoExclusive(True)
+        self.recordingButton.setIcon(icon6)
+        self.recordingButton.setIconSize(QSize(30, 30))
+        self.recordingButton.setCheckable(True)
+        self.recordingButton.setAutoExclusive(True)
 
-        self.verticalLayout_3.addWidget(self.pushButton)
+        self.verticalLayout_3.addWidget(self.recordingButton)
 
         self.filterButton = QPushButton(self.frame)
         self.filterButton.setObjectName(u"filterButton")
@@ -346,15 +340,9 @@ class Ui_Widget(object):
 "	padding-left:5px;\n"
 "	border-left: 5px solid  rgb(241, 102, 55);\n"
 "}")
-<<<<<<< HEAD
         icon7 = QIcon()
         icon7.addFile(u":/icons/img/equalizerEnable.png", QSize(), QIcon.Normal, QIcon.Off)
         self.filterButton.setIcon(icon7)
-=======
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/img/equalizerEnable.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.filterButton.setIcon(icon6)
->>>>>>> b851d48800f5d5befdcec1327926da1be3e45948
         self.filterButton.setIconSize(QSize(30, 30))
         self.filterButton.setCheckable(True)
         self.filterButton.setChecked(False)
@@ -841,12 +829,12 @@ class Ui_Widget(object):
         self.horizontalLayout_16 = QHBoxLayout(self.frame_18)
         self.horizontalLayout_16.setSpacing(9)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.stopButton_3 = QPushButton(self.frame_18)
-        self.stopButton_3.setObjectName(u"stopButton_3")
-        self.stopButton_3.setEnabled(True)
-        self.stopButton_3.setMinimumSize(QSize(50, 50))
-        self.stopButton_3.setMaximumSize(QSize(50, 50))
-        self.stopButton_3.setStyleSheet(u"QPushButton{\n"
+        self.recordingButton_2 = QPushButton(self.frame_18)
+        self.recordingButton_2.setObjectName(u"recordingButton_2")
+        self.recordingButton_2.setEnabled(False)
+        self.recordingButton_2.setMinimumSize(QSize(50, 50))
+        self.recordingButton_2.setMaximumSize(QSize(50, 50))
+        self.recordingButton_2.setStyleSheet(u"QPushButton{\n"
 "  background-color: rgb(94, 217, 186);\n"
 "	border-radius:25px;\n"
 "}\n"
@@ -867,11 +855,15 @@ class Ui_Widget(object):
 "")
         icon11 = QIcon()
         icon11.addFile(u":/icons/img/botao-de-gravacao_2.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.stopButton_3.setIcon(icon11)
-        self.stopButton_3.setIconSize(QSize(32, 32))
-        self.stopButton_3.setCheckable(True)
+        icon11.addFile(u":/icons/img/botao-de-gravacao.png", QSize(), QIcon.Normal, QIcon.On)
+        icon11.addFile(u":/icons/img/botao-de-gravacao_2_w.png", QSize(), QIcon.Disabled, QIcon.Off)
+        icon11.addFile(u":/icons/img/botao-de-gravacao_w.png", QSize(), QIcon.Disabled, QIcon.On)
+        self.recordingButton_2.setIcon(icon11)
+        self.recordingButton_2.setIconSize(QSize(30, 32))
+        self.recordingButton_2.setCheckable(True)
+        self.recordingButton_2.setChecked(False)
 
-        self.horizontalLayout_16.addWidget(self.stopButton_3)
+        self.horizontalLayout_16.addWidget(self.recordingButton_2)
 
         self.playButton_2 = QPushButton(self.frame_18)
         self.playButton_2.setObjectName(u"playButton_2")
@@ -1012,21 +1004,22 @@ class Ui_Widget(object):
 
         self.horizontalLayout_19.addWidget(self.label_4)
 
-        self.typeHeadBox_3 = QComboBox(self.frame_23)
-        self.typeHeadBox_3.addItem("")
-        self.typeHeadBox_3.addItem("")
-        self.typeHeadBox_3.addItem("")
-        self.typeHeadBox_3.setObjectName(u"typeHeadBox_3")
-        self.typeHeadBox_3.setMinimumSize(QSize(150, 30))
-        self.typeHeadBox_3.setMaximumSize(QSize(150, 30))
+        self.samplingRate_Combo = QComboBox(self.frame_23)
+        self.samplingRate_Combo.addItem("")
+        self.samplingRate_Combo.addItem("")
+        self.samplingRate_Combo.addItem("")
+        self.samplingRate_Combo.setObjectName(u"samplingRate_Combo")
+        self.samplingRate_Combo.setEnabled(True)
+        self.samplingRate_Combo.setMinimumSize(QSize(208, 30))
+        self.samplingRate_Combo.setMaximumSize(QSize(150, 30))
         font7 = QFont()
         font7.setFamilies([u"PF BeauSans Pro"])
         font7.setPointSize(12)
-        self.typeHeadBox_3.setFont(font7)
-        self.typeHeadBox_3.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
-        self.typeHeadBox_3.setInsertPolicy(QComboBox.InsertAtBottom)
+        self.samplingRate_Combo.setFont(font7)
+        self.samplingRate_Combo.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
+        self.samplingRate_Combo.setInsertPolicy(QComboBox.InsertAtBottom)
 
-        self.horizontalLayout_19.addWidget(self.typeHeadBox_3)
+        self.horizontalLayout_19.addWidget(self.samplingRate_Combo)
 
         self.label_5 = QLabel(self.frame_23)
         self.label_5.setObjectName(u"label_5")
@@ -1042,8 +1035,212 @@ class Ui_Widget(object):
 
         self.frame_22 = QFrame(self.frame_12)
         self.frame_22.setObjectName(u"frame_22")
+        self.frame_22.setStyleSheet(u"QPushButton {\n"
+"	padding-left: 2px;\n"
+"	text-align: center;\n"
+"	background-color:rgb(80, 184, 158);\n"
+"	border: 3px solid rgb(237, 105, 59);\n"
+"	border-radius:18px;\n"
+"	color: rgb(255, 255, 255)\n"
+"}\n"
+"\n"
+"")
         self.frame_22.setFrameShape(QFrame.NoFrame)
         self.frame_22.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_20 = QHBoxLayout(self.frame_22)
+        self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
+        self.horizontalLayout_20.setContentsMargins(-1, 0, -1, 0)
+        self.frame_24 = QFrame(self.frame_22)
+        self.frame_24.setObjectName(u"frame_24")
+        self.frame_24.setFrameShape(QFrame.StyledPanel)
+        self.frame_24.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_19 = QVBoxLayout(self.frame_24)
+        self.verticalLayout_19.setObjectName(u"verticalLayout_19")
+        self.setMicrophone_1 = QPushButton(self.frame_24)
+        self.setMicrophone_1.setObjectName(u"setMicrophone_1")
+        self.setMicrophone_1.setEnabled(True)
+        self.setMicrophone_1.setMinimumSize(QSize(50, 50))
+        self.setMicrophone_1.setMaximumSize(QSize(50, 50))
+        self.setMicrophone_1.setStyleSheet(u"QPushButton{\n"
+"\n"
+"	border-radius:25px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"	  background-color: rgb(94, 217, 186);\n"
+"}\n"
+"")
+        icon15 = QIcon()
+        icon15.addFile(u":/icons/img/microfone_w.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u":/icons/img/microfone.png", QSize(), QIcon.Normal, QIcon.On)
+        self.setMicrophone_1.setIcon(icon15)
+        self.setMicrophone_1.setIconSize(QSize(26, 26))
+        self.setMicrophone_1.setCheckable(True)
+        self.setMicrophone_1.setChecked(False)
+
+        self.verticalLayout_19.addWidget(self.setMicrophone_1)
+
+        self.label_8 = QLabel(self.frame_24)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setFont(font7)
+        self.label_8.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_19.addWidget(self.label_8)
+
+
+        self.horizontalLayout_20.addWidget(self.frame_24)
+
+        self.frame_25 = QFrame(self.frame_22)
+        self.frame_25.setObjectName(u"frame_25")
+        self.frame_25.setFrameShape(QFrame.StyledPanel)
+        self.frame_25.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_20 = QVBoxLayout(self.frame_25)
+        self.verticalLayout_20.setObjectName(u"verticalLayout_20")
+        self.setMicrophone_2 = QPushButton(self.frame_25)
+        self.setMicrophone_2.setObjectName(u"setMicrophone_2")
+        self.setMicrophone_2.setEnabled(True)
+        self.setMicrophone_2.setMinimumSize(QSize(50, 50))
+        self.setMicrophone_2.setMaximumSize(QSize(50, 50))
+        self.setMicrophone_2.setStyleSheet(u"QPushButton{\n"
+"\n"
+"	border-radius:25px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"	  background-color: rgb(94, 217, 186);\n"
+"}\n"
+"")
+        self.setMicrophone_2.setIcon(icon15)
+        self.setMicrophone_2.setIconSize(QSize(26, 26))
+        self.setMicrophone_2.setCheckable(True)
+        self.setMicrophone_2.setChecked(False)
+
+        self.verticalLayout_20.addWidget(self.setMicrophone_2)
+
+        self.label_10 = QLabel(self.frame_25)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setFont(font7)
+        self.label_10.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_20.addWidget(self.label_10)
+
+
+        self.horizontalLayout_20.addWidget(self.frame_25)
+
+        self.frame_26 = QFrame(self.frame_22)
+        self.frame_26.setObjectName(u"frame_26")
+        self.frame_26.setFrameShape(QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_21 = QVBoxLayout(self.frame_26)
+        self.verticalLayout_21.setObjectName(u"verticalLayout_21")
+        self.setSource_1 = QPushButton(self.frame_26)
+        self.setSource_1.setObjectName(u"setSource_1")
+        self.setSource_1.setEnabled(True)
+        self.setSource_1.setMinimumSize(QSize(50, 50))
+        self.setSource_1.setMaximumSize(QSize(50, 50))
+        self.setSource_1.setStyleSheet(u"QPushButton{\n"
+"\n"
+"	border-radius:25px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"	  background-color: rgb(94, 217, 186);\n"
+"}\n"
+"")
+        icon16 = QIcon()
+        icon16.addFile(u":/icons/img/dodecaedro.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon16.addFile(u":/icons/img/dodecaedro_o.png", QSize(), QIcon.Normal, QIcon.On)
+        self.setSource_1.setIcon(icon16)
+        self.setSource_1.setIconSize(QSize(32, 32))
+        self.setSource_1.setCheckable(True)
+        self.setSource_1.setChecked(False)
+
+        self.verticalLayout_21.addWidget(self.setSource_1)
+
+        self.label_11 = QLabel(self.frame_26)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setFont(font7)
+        self.label_11.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_21.addWidget(self.label_11)
+
+
+        self.horizontalLayout_20.addWidget(self.frame_26)
+
+        self.horizontalSpacer_3 = QSpacerItem(244, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_20.addItem(self.horizontalSpacer_3)
+
+        self.exportAudioButton = QPushButton(self.frame_22)
+        self.exportAudioButton.setObjectName(u"exportAudioButton")
+        self.exportAudioButton.setEnabled(False)
+        self.exportAudioButton.setMinimumSize(QSize(50, 50))
+        self.exportAudioButton.setMaximumSize(QSize(50, 50))
+        self.exportAudioButton.setStyleSheet(u"QPushButton{\n"
+"  background-color: rgb(94, 217, 186);\n"
+"	border-radius:25px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(79,186,160);\n"
+"	border: 3px solid rgb(0,124,132);\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"	background-color: rgb(241, 102, 55)\n"
+"}\n"
+"\n"
+"QPushButton:disabled{\n"
+"	background-color: rgb(70,70,70);\n"
+"	border: 3px solid rgb(136,138,133);\n"
+"}\n"
+"\n"
+"")
+        icon17 = QIcon()
+        icon17.addFile(u":/icons/img/exportar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.exportAudioButton.setIcon(icon17)
+        self.exportAudioButton.setIconSize(QSize(26, 26))
+
+        self.horizontalLayout_20.addWidget(self.exportAudioButton)
+
 
         self.horizontalLayout_8.addWidget(self.frame_22)
 
@@ -1062,7 +1259,7 @@ class Ui_Widget(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.recordingFrame = QFrame(self.frame_14)
         self.recordingFrame.setObjectName(u"recordingFrame")
-        self.recordingFrame.setFrameShape(QFrame.StyledPanel)
+        self.recordingFrame.setFrameShape(QFrame.NoFrame)
         self.recordingFrame.setFrameShadow(QFrame.Raised)
 
         self.gridLayout.addWidget(self.recordingFrame, 0, 0, 1, 1)
@@ -1539,11 +1736,11 @@ class Ui_Widget(object):
         self.muteButton.setStyleSheet(u"QPushButton {\n"
 "	border-radius:10px;\n"
 "}")
-        icon15 = QIcon()
-        icon15.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon15.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
-        icon15.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
-        self.muteButton.setIcon(icon15)
+        icon18 = QIcon()
+        icon18.addFile(u":/icons/img/volume-alto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon18.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Normal, QIcon.On)
+        icon18.addFile(u":/icons/img/volume-mute.png", QSize(), QIcon.Active, QIcon.On)
+        self.muteButton.setIcon(icon18)
         self.muteButton.setCheckable(True)
         self.muteButton.setChecked(False)
         self.muteButton.setAutoRepeat(False)
@@ -2922,7 +3119,6 @@ class Ui_Widget(object):
 
         self.frame_123 = QFrame(self.frame_122)
         self.frame_123.setObjectName(u"frame_123")
-        self.frame_123.setMinimumSize(QSize(0, 130))
         self.frame_123.setStyleSheet(u"\n"
 "QPushButton {\n"
 "	padding-left: 5px;\n"
@@ -2943,42 +3139,37 @@ class Ui_Widget(object):
 "")
         self.frame_123.setFrameShape(QFrame.StyledPanel)
         self.frame_123.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_8 = QHBoxLayout(self.frame_123)
-        self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
-        self.frame_6 = QFrame(self.frame_123)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setFrameShape(QFrame.StyledPanel)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_9 = QVBoxLayout(self.frame_6)
-        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.importGraph = QPushButton(self.frame_6)
+        self.verticalLayout_86 = QVBoxLayout(self.frame_123)
+        self.verticalLayout_86.setSpacing(6)
+        self.verticalLayout_86.setObjectName(u"verticalLayout_86")
+        self.verticalLayout_86.setContentsMargins(0, 0, 0, 0)
+        self.importGraph = QPushButton(self.frame_123)
         self.importGraph.setObjectName(u"importGraph")
         self.importGraph.setMinimumSize(QSize(0, 30))
         self.importGraph.setMaximumSize(QSize(120, 16777215))
         self.importGraph.setFont(font7)
 
-        self.verticalLayout_9.addWidget(self.importGraph)
+        self.verticalLayout_86.addWidget(self.importGraph)
 
-        self.removeGraph = QPushButton(self.frame_6)
+        self.removeGraph = QPushButton(self.frame_123)
         self.removeGraph.setObjectName(u"removeGraph")
         self.removeGraph.setMinimumSize(QSize(0, 30))
         self.removeGraph.setMaximumSize(QSize(120, 16777215))
         self.removeGraph.setFont(font7)
 
-        self.verticalLayout_9.addWidget(self.removeGraph)
+        self.verticalLayout_86.addWidget(self.removeGraph)
 
-        self.removeAllGraph = QPushButton(self.frame_6)
+        self.removeAllGraph = QPushButton(self.frame_123)
         self.removeAllGraph.setObjectName(u"removeAllGraph")
         self.removeAllGraph.setMinimumSize(QSize(0, 30))
         self.removeAllGraph.setMaximumSize(QSize(120, 16777215))
         self.removeAllGraph.setFont(font7)
 
-        self.verticalLayout_9.addWidget(self.removeAllGraph)
+        self.verticalLayout_86.addWidget(self.removeAllGraph)
 
 
-        self.horizontalLayout_8.addWidget(self.frame_6)
+        self.verticalLayout_85.addWidget(self.frame_123)
 
-<<<<<<< HEAD
 
         self.verticalLayout_84.addWidget(self.frame_122)
 
@@ -3281,11 +3472,6 @@ class Ui_Widget(object):
         self.frame_13.setObjectName(u"frame_13")
         self.frame_13.setMaximumSize(QSize(16777215, 150))
         self.frame_13.setStyleSheet(u"QFrame{\n"
-=======
-        self.frame_8 = QFrame(self.frame_123)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setStyleSheet(u"QFrame{\n"
->>>>>>> b851d48800f5d5befdcec1327926da1be3e45948
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px;\n"
 "}	\n"
@@ -3312,11 +3498,11 @@ class Ui_Widget(object):
 "	background-color:rgb(70, 70, 70);\n"
 "}\n"
 "")
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_15 = QVBoxLayout(self.frame_8)
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.plot = QPushButton(self.frame_8)
+        self.frame_13.setFrameShape(QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_18 = QHBoxLayout(self.frame_13)
+        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
+        self.plot = QPushButton(self.frame_13)
         self.plot.setObjectName(u"plot")
         self.plot.setEnabled(False)
         self.plot.setMinimumSize(QSize(130, 36))
@@ -3326,13 +3512,12 @@ class Ui_Widget(object):
         font13.setPointSize(13)
         font13.setBold(False)
         self.plot.setFont(font13)
-        icon16 = QIcon()
-        icon16.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon16.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.plot.setIcon(icon16)
+        icon19 = QIcon()
+        icon19.addFile(u":/icons/img/bar-graph.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon19.addFile(u":/icons/img/bar-graph_dis.png", QSize(), QIcon.Disabled, QIcon.Off)
+        self.plot.setIcon(icon19)
         self.plot.setIconSize(QSize(20, 20))
 
-<<<<<<< HEAD
         self.horizontalLayout_18.addWidget(self.plot)
 
         self.convolve = QPushButton(self.frame_13)
@@ -3341,28 +3526,19 @@ class Ui_Widget(object):
         self.convolve.setMinimumSize(QSize(130, 36))
         self.convolve.setMaximumSize(QSize(130, 36))
         self.convolve.setFont(font13)
-        icon17 = QIcon()
-        icon17.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
-        icon17.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
-        self.convolve.setIcon(icon17)
+        icon20 = QIcon()
+        icon20.addFile(u":/icons/img/puzzle.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon20.addFile(u":/icons/img/puzzle_disabled.png", QSize(), QIcon.Disabled, QIcon.Off)
+        self.convolve.setIcon(icon20)
         self.convolve.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_18.addWidget(self.convolve)
-=======
-        self.verticalLayout_15.addWidget(self.plot, 0, Qt.AlignRight)
->>>>>>> b851d48800f5d5befdcec1327926da1be3e45948
 
 
-        self.horizontalLayout_8.addWidget(self.frame_8)
+        self.verticalLayout_90.addWidget(self.frame_13)
 
 
-        self.verticalLayout_85.addWidget(self.frame_123)
-
-
-        self.verticalLayout_84.addWidget(self.frame_122)
-
-
-        self.horizontalLayout_54.addWidget(self.Import)
+        self.horizontalLayout_54.addWidget(self.RightCalibrationSetup)
 
 
         self.verticalLayout_89.addWidget(self.InfCalibrationSetup)
@@ -3413,13 +3589,9 @@ class Ui_Widget(object):
 
         self.retranslateUi(Widget)
 
-<<<<<<< HEAD
         self.rightContent.setCurrentIndex(1)
-        self.typeHeadBox_3.setCurrentIndex(0)
+        self.samplingRate_Combo.setCurrentIndex(0)
         self.typeHeadBox_2.setCurrentIndex(0)
-=======
-        self.rightContent.setCurrentIndex(0)
->>>>>>> b851d48800f5d5befdcec1327926da1be3e45948
 
 
         QMetaObject.connectSlotsByName(Widget)
@@ -3433,7 +3605,7 @@ class Ui_Widget(object):
         self.maximizeButton.setText("")
         self.closeAllButton.setText("")
         self.homeButton.setText("")
-        self.pushButton.setText("")
+        self.recordingButton.setText("")
         self.filterButton.setText("")
         self.calibrationButton.setText("")
 #if QT_CONFIG(accessibility)
@@ -3464,16 +3636,23 @@ class Ui_Widget(object):
         self.label_51.setText(QCoreApplication.translate("Widget", u"Use psychoacoustic \n"
 " metrics to analyze your signal", None))
         self.label_3.setText(QCoreApplication.translate("Widget", u"Recording", None))
-        self.stopButton_3.setText("")
+        self.recordingButton_2.setText("")
         self.playButton_2.setText("")
         self.pauseButton_2.setText("")
         self.stopButton_2.setText("")
-        self.label_4.setText(QCoreApplication.translate("Widget", u"sampling rate", None))
-        self.typeHeadBox_3.setItemText(0, QCoreApplication.translate("Widget", u"44100", None))
-        self.typeHeadBox_3.setItemText(1, QCoreApplication.translate("Widget", u"48000", None))
-        self.typeHeadBox_3.setItemText(2, QCoreApplication.translate("Widget", u"22500", None))
+        self.label_4.setText(QCoreApplication.translate("Widget", u"sampling rate:", None))
+        self.samplingRate_Combo.setItemText(0, QCoreApplication.translate("Widget", u"44100", None))
+        self.samplingRate_Combo.setItemText(1, QCoreApplication.translate("Widget", u"48000", None))
+        self.samplingRate_Combo.setItemText(2, QCoreApplication.translate("Widget", u"22050", None))
 
         self.label_5.setText(QCoreApplication.translate("Widget", u"Hz", None))
+        self.setMicrophone_1.setText("")
+        self.label_8.setText(QCoreApplication.translate("Widget", u"Ch. 1", None))
+        self.setMicrophone_2.setText("")
+        self.label_10.setText(QCoreApplication.translate("Widget", u"Ch. 2", None))
+        self.setSource_1.setText("")
+        self.label_11.setText(QCoreApplication.translate("Widget", u"Output", None))
+        self.exportAudioButton.setText("")
         self.label_9.setText(QCoreApplication.translate("Widget", u"Signal Editor", None))
         self.logo.setText("")
         self.importButton.setText(QCoreApplication.translate("Widget", u"import", None))
@@ -3541,11 +3720,23 @@ class Ui_Widget(object):
         self.importGraph.setText(QCoreApplication.translate("Widget", u"import", None))
         self.removeGraph.setText(QCoreApplication.translate("Widget", u"remove", None))
         self.removeAllGraph.setText(QCoreApplication.translate("Widget", u"remove all", None))
+        self.label_98.setText("")
+        self.label_99.setText(QCoreApplication.translate("Widget", u"Headphones", None))
+        self.label_100.setText(QCoreApplication.translate("Widget", u"type:", None))
+        self.typeHeadBox_2.setItemText(0, QCoreApplication.translate("Widget", u"None", None))
+        self.typeHeadBox_2.setItemText(1, QCoreApplication.translate("Widget", u"Sennheiser", None))
+
+        self.label_101.setText(QCoreApplication.translate("Widget", u"model:", None))
+        self.label_102.setText("")
+        self.label_103.setText(QCoreApplication.translate("Widget", u"HATS", None))
+        self.label_104.setText(QCoreApplication.translate("Widget", u"type:", None))
+        self.typeHatsBox_2.setItemText(0, QCoreApplication.translate("Widget", u"None", None))
+        self.typeHatsBox_2.setItemText(1, QCoreApplication.translate("Widget", u"HeadAcoustics", None))
+        self.typeHatsBox_2.setItemText(2, QCoreApplication.translate("Widget", u"GRASS", None))
+
+        self.label_105.setText(QCoreApplication.translate("Widget", u"model:", None))
         self.plot.setText(QCoreApplication.translate("Widget", u"plot", None))
-<<<<<<< HEAD
         self.convolve.setText(QCoreApplication.translate("Widget", u"convolve", None))
-=======
->>>>>>> b851d48800f5d5befdcec1327926da1be3e45948
         self.label.setText("")
         self.label_23.setText(QCoreApplication.translate("Widget", u"Develop by Henrique Silveira\n"
 "Juc\u00e9lio Tavares and Ricardo Brum", None))
