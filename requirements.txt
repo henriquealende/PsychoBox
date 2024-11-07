@@ -9,3 +9,4 @@ pandas
 tdqm
 mosqito==1.2.1
 PyQt5
+liborsa
