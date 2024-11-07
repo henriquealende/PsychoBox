@@ -1009,7 +1009,7 @@ class Ui_Widget(object):
         self.samplingRate_Combo.addItem("")
         self.samplingRate_Combo.addItem("")
         self.samplingRate_Combo.setObjectName(u"samplingRate_Combo")
-        self.samplingRate_Combo.setEnabled(False)
+        self.samplingRate_Combo.setEnabled(True)
         self.samplingRate_Combo.setMinimumSize(QSize(208, 30))
         self.samplingRate_Combo.setMaximumSize(QSize(150, 30))
         font7 = QFont()

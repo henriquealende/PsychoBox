@@ -57,9 +57,7 @@ class ButtonSignals():
         self.ui.setMicrophone_1.clicked.connect(lambda: UI_Buttons_Recorder.setMicrophone(self, 1))
         self.ui.setMicrophone_2.clicked.connect(lambda: UI_Buttons_Recorder.setMicrophone(self, 2))
         self.ui.setSource_1.clicked.connect(lambda: UI_Buttons_Recorder.setSource(self))
-        self.ui.playButton_2.clicked.connect(lambda: UI_Buttons_Recorder.play_audio(self))
-
-                
+        self.ui.playButton_2.clicked.connect(lambda: UI_Buttons_Recorder.play_audio(self))         
         
 
         

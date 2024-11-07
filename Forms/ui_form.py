@@ -1009,7 +1009,7 @@ class Ui_Widget(object):
         self.samplingRate_Combo.addItem("")
         self.samplingRate_Combo.addItem("")
         self.samplingRate_Combo.setObjectName(u"samplingRate_Combo")
-        self.samplingRate_Combo.setEnabled(False)
+        self.samplingRate_Combo.setEnabled(True)
         self.samplingRate_Combo.setMinimumSize(QSize(208, 30))
         self.samplingRate_Combo.setMaximumSize(QSize(150, 30))
         font7 = QFont()
@@ -1056,12 +1056,12 @@ class Ui_Widget(object):
         self.frame_24.setFrameShadow(QFrame.Raised)
         self.verticalLayout_19 = QVBoxLayout(self.frame_24)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.recordingButton_3 = QPushButton(self.frame_24)
-        self.recordingButton_3.setObjectName(u"recordingButton_3")
-        self.recordingButton_3.setEnabled(True)
-        self.recordingButton_3.setMinimumSize(QSize(50, 50))
-        self.recordingButton_3.setMaximumSize(QSize(50, 50))
-        self.recordingButton_3.setStyleSheet(u"QPushButton{\n"
+        self.setMicrophone_1 = QPushButton(self.frame_24)
+        self.setMicrophone_1.setObjectName(u"setMicrophone_1")
+        self.setMicrophone_1.setEnabled(True)
+        self.setMicrophone_1.setMinimumSize(QSize(50, 50))
+        self.setMicrophone_1.setMaximumSize(QSize(50, 50))
+        self.setMicrophone_1.setStyleSheet(u"QPushButton{\n"
 "\n"
 "	border-radius:25px;\n"
 "}\n"
@@ -1086,12 +1086,12 @@ class Ui_Widget(object):
         icon15 = QIcon()
         icon15.addFile(u":/icons/img/microfone_w.png", QSize(), QIcon.Normal, QIcon.Off)
         icon15.addFile(u":/icons/img/microfone.png", QSize(), QIcon.Normal, QIcon.On)
-        self.recordingButton_3.setIcon(icon15)
-        self.recordingButton_3.setIconSize(QSize(26, 26))
-        self.recordingButton_3.setCheckable(True)
-        self.recordingButton_3.setChecked(False)
+        self.setMicrophone_1.setIcon(icon15)
+        self.setMicrophone_1.setIconSize(QSize(26, 26))
+        self.setMicrophone_1.setCheckable(True)
+        self.setMicrophone_1.setChecked(False)
 
-        self.verticalLayout_19.addWidget(self.recordingButton_3)
+        self.verticalLayout_19.addWidget(self.setMicrophone_1)
 
         self.label_8 = QLabel(self.frame_24)
         self.label_8.setObjectName(u"label_8")
@@ -1109,12 +1109,12 @@ class Ui_Widget(object):
         self.frame_25.setFrameShadow(QFrame.Raised)
         self.verticalLayout_20 = QVBoxLayout(self.frame_25)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
-        self.recordingButton_4 = QPushButton(self.frame_25)
-        self.recordingButton_4.setObjectName(u"recordingButton_4")
-        self.recordingButton_4.setEnabled(True)
-        self.recordingButton_4.setMinimumSize(QSize(50, 50))
-        self.recordingButton_4.setMaximumSize(QSize(50, 50))
-        self.recordingButton_4.setStyleSheet(u"QPushButton{\n"
+        self.setMicrophone_2 = QPushButton(self.frame_25)
+        self.setMicrophone_2.setObjectName(u"setMicrophone_2")
+        self.setMicrophone_2.setEnabled(True)
+        self.setMicrophone_2.setMinimumSize(QSize(50, 50))
+        self.setMicrophone_2.setMaximumSize(QSize(50, 50))
+        self.setMicrophone_2.setStyleSheet(u"QPushButton{\n"
 "\n"
 "	border-radius:25px;\n"
 "}\n"
@@ -1136,12 +1136,12 @@ class Ui_Widget(object):
 "	  background-color: rgb(94, 217, 186);\n"
 "}\n"
 "")
-        self.recordingButton_4.setIcon(icon15)
-        self.recordingButton_4.setIconSize(QSize(26, 26))
-        self.recordingButton_4.setCheckable(True)
-        self.recordingButton_4.setChecked(False)
+        self.setMicrophone_2.setIcon(icon15)
+        self.setMicrophone_2.setIconSize(QSize(26, 26))
+        self.setMicrophone_2.setCheckable(True)
+        self.setMicrophone_2.setChecked(False)
 
-        self.verticalLayout_20.addWidget(self.recordingButton_4)
+        self.verticalLayout_20.addWidget(self.setMicrophone_2)
 
         self.label_10 = QLabel(self.frame_25)
         self.label_10.setObjectName(u"label_10")
@@ -1159,12 +1159,12 @@ class Ui_Widget(object):
         self.frame_26.setFrameShadow(QFrame.Raised)
         self.verticalLayout_21 = QVBoxLayout(self.frame_26)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
-        self.recordingButton_5 = QPushButton(self.frame_26)
-        self.recordingButton_5.setObjectName(u"recordingButton_5")
-        self.recordingButton_5.setEnabled(True)
-        self.recordingButton_5.setMinimumSize(QSize(50, 50))
-        self.recordingButton_5.setMaximumSize(QSize(50, 50))
-        self.recordingButton_5.setStyleSheet(u"QPushButton{\n"
+        self.setSource_1 = QPushButton(self.frame_26)
+        self.setSource_1.setObjectName(u"setSource_1")
+        self.setSource_1.setEnabled(True)
+        self.setSource_1.setMinimumSize(QSize(50, 50))
+        self.setSource_1.setMaximumSize(QSize(50, 50))
+        self.setSource_1.setStyleSheet(u"QPushButton{\n"
 "\n"
 "	border-radius:25px;\n"
 "}\n"
@@ -1189,12 +1189,12 @@ class Ui_Widget(object):
         icon16 = QIcon()
         icon16.addFile(u":/icons/img/dodecaedro.png", QSize(), QIcon.Normal, QIcon.Off)
         icon16.addFile(u":/icons/img/dodecaedro_o.png", QSize(), QIcon.Normal, QIcon.On)
-        self.recordingButton_5.setIcon(icon16)
-        self.recordingButton_5.setIconSize(QSize(32, 32))
-        self.recordingButton_5.setCheckable(True)
-        self.recordingButton_5.setChecked(False)
+        self.setSource_1.setIcon(icon16)
+        self.setSource_1.setIconSize(QSize(32, 32))
+        self.setSource_1.setCheckable(True)
+        self.setSource_1.setChecked(False)
 
-        self.verticalLayout_21.addWidget(self.recordingButton_5)
+        self.verticalLayout_21.addWidget(self.setSource_1)
 
         self.label_11 = QLabel(self.frame_26)
         self.label_11.setObjectName(u"label_11")
@@ -3646,11 +3646,11 @@ class Ui_Widget(object):
         self.samplingRate_Combo.setItemText(2, QCoreApplication.translate("Widget", u"22050", None))
 
         self.label_5.setText(QCoreApplication.translate("Widget", u"Hz", None))
-        self.recordingButton_3.setText("")
+        self.setMicrophone_1.setText("")
         self.label_8.setText(QCoreApplication.translate("Widget", u"Ch. 1", None))
-        self.recordingButton_4.setText("")
+        self.setMicrophone_2.setText("")
         self.label_10.setText(QCoreApplication.translate("Widget", u"Ch. 2", None))
-        self.recordingButton_5.setText("")
+        self.setSource_1.setText("")
         self.label_11.setText(QCoreApplication.translate("Widget", u"Output", None))
         self.exportAudioButton.setText("")
         self.label_9.setText(QCoreApplication.translate("Widget", u"Signal Editor", None))
