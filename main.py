@@ -6,7 +6,7 @@ from PySide2.QtCore import Qt, QFile
 from PySide2.QtUiTools import QUiLoader
 from PySide2.QtWidgets import QApplication, QMainWindow, QMenuBar
 from SupportCodes.setWindow import SetupWindow
-from Resources import resourceGUI
+from Resources import resourceGUIdo
 
 from Pages.recording import UI_Buttons_Recorder as ubr 
 
