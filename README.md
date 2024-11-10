@@ -7,6 +7,8 @@
 
 Welcome to the PsychoBox Audio Analysis framework! PsychoBox is a comprehensive Python library crafted to facilitate manipulating, analyzing, and evaluating audio signals. With a focus on psychoacoustic metrics, this framework empowers users to delve into sound quality assessment and exploration effortlessly.
 
+PsychoBox leverages [MosQiTo](https://github.com/Eomys/MoSQITo), a specialized library developed by Eomys for sound quality and psychoacoustic analysis, as one of its core dependencies. MosQiTo provides essential functionalities and algorithms that enable PsychoBox to perform precise and reliable evaluations in areas such as loudness, sharpness, roughness, and other psychoacoustic metrics. By integrating MosQiTo, PsychoBox brings advanced sound quality analysis to your fingertips with ease and flexibility.
+
 ## Features
 
 - Signal Analysis: Seamlessly load audio files and generate insightful visualizations like waveforms and spectrograms.
