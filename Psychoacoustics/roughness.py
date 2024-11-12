@@ -13,7 +13,9 @@ class Roughness():
         if shape >= 2:
             timeData = timeData[:,0] 
         if len(timeData) > 0:
-            globalRoughness, specificRoughness, Bark,_ = roughness_dw(timeData, samplingRate)
+            globalRoughness, specificRoughness, Bark,_ = roughness_dw(timeData, samplingRate, overlap = 0)
+            globalRoughness = np.mean(globalRoughness)
+            specificRoughness = np.sum(specificRoughness, axis = 1)
         else:
             specificRoughness = 0
             globalRoughness = 0
@@ -25,9 +27,9 @@ class Roughness():
         if shape >= 2:
             timeData = timeData[:,0] 
         if len(timeData) > 0:
-            globalLoudness, _, specificLoudness, Bark, _= roughness_ecma(timeData, samplingRate)
+            globalRoughness, _, specificRoughness, Bark, _= roughness_ecma(timeData, samplingRate)
         else:
-            specificLoudness = 0
-            globalLoudness = 0
+            specificRoughness = 0
+            globalRoughness = 0
             
-        return (Bark, globalLoudness, specificLoudness)
+        return (Bark, globalRoughness, specificRoughness)
