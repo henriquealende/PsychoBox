@@ -1,14 +1,22 @@
 import os
-from PySide2.QtWidgets import QFileDialog,  QAbstractItemView
+from PySide2.QtWidgets import QFileDialog,  QAbstractItemView, QMessageBox, QProgressDialog
 from PySide2.QtGui import QImage, QPainter
 import numpy as np
 import csv
 
+from Psychoacoustics.loudness import Loudness
+from Psychoacoustics.sharpness_din import Sharpnes_DIN
+from Psychoacoustics.roughness import Roughness
+
+from Utils.filter_utils import FilterUtils
+
+loudness = Loudness()
+sharpness_din = Sharpnes_DIN()
+roughness = Roughness()
 class UI_Buttons_Graph():
     def __init__(self):
         super(UI_Buttons_Graph, self).__init__()
         self.chartview = None
-
 
     def importButton(self):
         importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')
@@ -70,11 +78,11 @@ class UI_Buttons_Graph():
         GetWave.getAndReadWav(self.gp, pathExport)
         self.gp.show()
 
-    def changeGraph(self, window):
+    def changeGraph(self):
         from Utils.graph_utils import GraphUtils
         domain = self.gp.domainBox.currentText()
         samplingBox = self.gp.samplingBox.currentText()
-        self.chartview = GraphUtils.getGraph(self, domain, samplingBox)
+        self.chartview = GraphUtils.getGraph(self, pathExport, domain, samplingBox)
         print(self.chartview)
 
     def saveGraph(self):
@@ -98,62 +106,50 @@ class UI_Buttons_Graph():
         # Salvar a imagem e imprimir o resultado
         print(image.save(fileName, "PNG")) 
 
+
     def saveData(self):
-        domain = self.gp.domainBox.currentText()
-        
-        # Inicializa os dados para exportação
-        data_to_export = []
-        num_curves = len(self.x)
-        
-        # Prepara os cabeçalhos incluindo os nomes dos arquivos.
-        if domain == 'Time':
-            headers = ['Time [s]', 'Amplitude']
-        elif domain == "Frequency":
-            headers = ['Frequency [Hz]', 'Amplitude']
-        else:
-            headers = ['Frequency [Bark]', 'Amplitude']
-            
-        # if num_curves > 1:
-        #     headers.extend(f'Amplitude ({os.path.basename(path)})' for i, path in enumerate(pathExport))
-        # else:
-        #     headers.extend('Amplitude')
-
-        # Prepara os dados de cada curva para exportação
-        for i in range(num_curves):
-            data_to_export.extend(zip(self.x[i], self.y[i]))
-        fileName, _ = QFileDialog.getSaveFileName(self, 'Save File', '', 'CSV Files (*.csv)')
-
+        """
+        Calcula as métricas psicoacústicas e salva os resultados em um arquivo .csv.
+        """
+        # Caixa de diálogo para salvar o arquivo
+        fileName, _ = QFileDialog.getSaveFileName(self, "Salvar Arquivo", "", "CSV (*.csv)")
         if not fileName:
-            return  
-
-        with open(fileName, mode='w', newline='') as file:
-            writer = csv.writer(file)
+            return
+        # Abre o arquivo CSV para escrita
+        with open(fileName, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            # Define o cabeçalho
+            headers = [
+                "File", "Frequency (Bark)", 
+                "Global Loudness Zwicker (sone)", "Specific Loudness Zwicker", 
+                "Global Loudness ECMA", "Specific Loudness ECMA", "Global Roughness DW", 
+                "Specific Roughness DW", "Global Roughness ECMA", "Specific Roughness ECMA", 
+                "Global Sharpness", "Specific Sharpness"
+            ]
             writer.writerow(headers)
-            
-            # Escreve os dados no arquivo CSV linha por linha
-            for row in data_to_export:
-                writer.writerow(row)
-        
-    # def saveData(self):
-    #     domain = self.gp.domainBox.currentText()
-    #     if domain == 'Time':
-    #         headers = ['Amplitude []', 'Time [s]']
-    #     elif domain == "Frequency":
-    #         headers = ['Amplitude [Pa]', 'Frequency [Hz]']
-        
-    #     fileName, _ = QFileDialog.getSaveFileName(
-    #         self, 'Save File', '', 'CSV Files (*.csv)')
 
-    #     if not fileName:
-    #         return
-        
-    #     with open(fileName, mode='w', newline='') as file:
-    #         writer = csv.writer(file)
-    #         writer.writerow(headers)
-    
-    #         for x_val, y_val in zip(self.x, self.y):
-    #             writer.writerow([y_val, x_val])
+            # Preenche os dados
+            for i in range(len(self.timeData)):
+                filename = os.path.basename(pathExport[i])
+                timeData = self.timeData[i]
+                samplingRate = self.samplingRate[i]
+                
+                # Calcula as métricas
+                Bark, globalLoudnessZWK, specificLoudnessZWK = loudness.loudnessZWK(timeData, samplingRate)
+                Bark, globalLoudnessECMA, specificLoudnessECMA = loudness.loudnessECMA(timeData, samplingRate)
+                Bark, globalRoughnessECMA, specificRoughnessECMA = roughness.roughnessECMA(timeData, samplingRate)
+                Bark, globalSharpness, specificSharpness = sharpness_din.sharpnessCalculation(timeData, samplingRate)
+                Bark, globalRoughnessDW, specificRoughnessDW = roughness.roughnessDW(timeData, samplingRate)
+                writer.writerow([filename,
+                                Bark,
+                                globalLoudnessZWK, specificLoudnessZWK,
+                                globalLoudnessECMA, specificLoudnessECMA,
+                                globalRoughnessDW, specificRoughnessDW,
+                                globalRoughnessECMA, specificRoughnessECMA,
+                                globalSharpness, specificSharpness])
+            QMessageBox.information(self, "Data Saved", "Psychoacoustic metrics were saved successfully!")
 
+       
 class GetWave():
     def __init__(self):
         super(GetWave, self).__init__()
@@ -200,5 +196,5 @@ class GetWave():
             self.timeData2 = timeDataList[1]
             self.samplingRate2 = samplingRateList[1]
             
-        self.chartview = GraphUtils.getGraph(self, domain, samplingBox)
+        self.chartview = GraphUtils.getGraph(self, pathExports, domain, samplingBox)
 

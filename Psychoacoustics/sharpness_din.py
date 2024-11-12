@@ -7,16 +7,11 @@ loud_zwk = Loudness()
 class Sharpnes_DIN():
     def __init__(self):
         super(Sharpnes_DIN, self).__init__()        
-    
-    def sharpnessCalculation(self, timeData, samplingRate):
-        if len(timeData) > 0:
-            self.globalSharpness = sharpness_din_st(timeData, samplingRate, weighting="din")
-        else:
-            self.globalSharpness = 0
             
-    def specificSharpnessCalculation(self, timeData, samplingRate):        
+    def sharpnessCalculation(self, timeData, samplingRate):        
     # Bark scale
         if len(timeData) > 0:
+            globalSharpness = sharpness_din_st(timeData, samplingRate, weighting="din")
             Bark, _, sL = loud_zwk.loudnessZWK(timeData, samplingRate)
             z = np.arange(1, 241) / 10
 
@@ -34,5 +29,7 @@ class Sharpnes_DIN():
             specificSharpness = np.squeeze(num / (np.sum(sL) + sm))  # Remove axis specification
         else:
             specificSharpness = 0  
-        return(Bark, specificSharpness)
+            globalSharpness = 0
+        return(Bark, globalSharpness, specificSharpness)
               
+        
