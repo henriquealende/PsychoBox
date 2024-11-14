@@ -30,8 +30,7 @@ class Main_Window(QMainWindow):
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         SetupWindow.setWindowInformation(self, "main")
-        ButtonSignals.buttonCallbackMainWindow(self)
-        
+        ButtonSignals.buttonCallbackMainWindow(self)        
         pygame.init()
         ubr.initialParameters(self)
         
@@ -41,9 +40,7 @@ class Main_Window(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-
     widget = Main_Window()
     widget.show()
-
     QtCore.QTimer.singleShot(0, lambda: SetupWindow.centerWindow(widget))
     sys.exit(app.exec_())
