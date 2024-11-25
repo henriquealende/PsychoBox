@@ -1,4 +1,5 @@
 
+import sys
 from PySide2 import QtCore
 from PySide2.QtWidgets import QMainWindow, QApplication
 from PySide2.QtCore import Qt, QFile
@@ -8,10 +9,14 @@ from SupportCodes.setWindow import SetupWindow
 
 class Expand_Graph(QMainWindow):
     def __init__(self):
-        super(Expand_Graph, self).__init__()
-        self.initUI()
-        self.set()
-        self.gp.frame_axis.hide()
+        try:
+            print('Hello')
+            super(Expand_Graph, self).__init__()
+            self.initUI()
+            self.set()
+            self.gp.frame_axis.hide()
+        except Exception as e:
+            print(f"Erro na inicialização da janela: {e}")
 
     def initUI(self):
         loader = QUiLoader()
@@ -32,9 +37,9 @@ class Expand_Graph(QMainWindow):
 
 
 
-# if __name__ == "__main__":
-#    app = QApplication(sys.argv)
-#    widget = Expand_Graph()
-#    QtCore.QTimer.singleShot(0, lambda: SetupWindow.centerWindow(widget))
-#    sys.exit(app.exec_())
+if __name__ == "__main__":
+   app = QApplication(sys.argv)
+   widget = Expand_Graph()
+   QtCore.QTimer.singleShot(0, lambda: SetupWindow.centerWindow(widget))
+   sys.exit(app.exec_())
 

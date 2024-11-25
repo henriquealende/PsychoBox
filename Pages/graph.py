@@ -17,6 +17,8 @@ class UI_Buttons_Graph():
     def __init__(self):
         super(UI_Buttons_Graph, self).__init__()
         self.chartview = None
+        self.gp = None  
+
 
     def importButton(self):
         importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')
