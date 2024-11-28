@@ -19,7 +19,6 @@ class UI_Buttons_Recorder():
         self.audio_data = []
         self.stream = None
         self.nChannels = 0
-        
 
     def toggle_recording(self):
         """Inicia ou para a gravação"""

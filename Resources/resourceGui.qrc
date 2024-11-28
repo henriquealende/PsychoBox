@@ -1,56 +1,36 @@
 <RCC>
+    <qresource prefix="/logos">
+        <file>img/psychobox_logo2.png</file>
+        <file>img/psychobox_logo.png</file>
+    </qresource>
     <qresource prefix="/icons">
         <file>img/addEnabled.png</file>
-        <file>img/chart.png</file>
-        <file>img/downArrow.png</file>
-        <file>img/downArrowDis.png</file>
-        <file>img/equalizerEnable.png</file>
-        <file>img/filter.png</file>
-        <file>img/graphicsEnabled.png</file>
-        <file>img/homeEnabled.png</file>
-        <file>img/importAudio.png</file>
-        <file>img/menuEnabled.png</file>
-        <file>img/metricas.png</file>
-        <file>img/pause.png</file>
-        <file>img/play.png</file>
-        <file>img/saveEnable.png</file>
-        <file>img/settingsEnable.png</file>
-        <file>img/upArrow.png</file>
-        <file>img/upArrowDis.png</file>
-        <file>img/userEnabled.png</file>
-        <file>img/close.png</file>
-        <file>img/minus.png</file>
-        <file>img/stop.png</file>
-        <file>img/volume-alto.png</file>
-        <file>img/volume-mute.png</file>
-        <file>img/shopping-basket.png</file>
-        <file>img/refresh.png</file>
-        <file>img/closepp.png</file>
-        <file>img/maximize.png</file>
-        <file>img/trash-can.png</file>
-        <file>img/calibration.png</file>
-        <file>img/HATS.png</file>
-        <file>img/headphones.png</file>
-        <file>img/graphic.png</file>
-        <file>img/puzzle.png</file>
-        <file>img/bar-graph.png</file>
-        <file>img/bar-graph_dis.png</file>
-        <file>img/puzzle_disabled.png</file>
-        <file>img/psychobox.png</file>
-        <file>img/microfone.png</file>
         <file>img/botao-de-gravacao.png</file>
         <file>img/botao-de-gravacao_2.png</file>
-        <file>img/exportar.png</file>
-        <file>img/microfone_w.png</file>
-        <file>img/dodecaedro.png</file>
-        <file>img/botao-de-gravacao_2_w.png</file>
-        <file>img/botao-de-gravacao_w.png</file>
+        <file>img/calibration.png</file>
         <file>img/dodecaedro_o.png</file>
-    </qresource>
-    <qresource prefix="/logos">
-        <file>img/nidecLogo.png</file>
+        <file>img/equalizerEnable.png</file>
+        <file>img/microfone.png</file>
+        <file>img/menuEnabled.png</file>
+        <file>img/filter.png</file>
+        <file>img/metricas.png</file>
+        <file>img/importAudio.png</file>
+        <file>img/downArrow.png</file>
+        <file>img/microfone_w.png</file>
+        <file>img/pause.png</file>
+        <file>img/play.png</file>
+        <file>img/puzzle.png</file>
+        <file>img/stop.png</file>
+        <file>img/trash-can.png</file>
+        <file>img/volume-alto.png</file>
+        <file>img/volume-mute.png</file>
+        <file>img/close.png</file>
         <file>img/maximizar-janela.png</file>
-        <file>img/psychobox_logo.png</file>
-        <file>img/psychobox_logo2.png</file>
+        <file>img/minus.png</file>
+        <file>img/homeEnabled.png</file>
+        <file>img/shopping-basket.png</file>
+        <file>img/HATS.png</file>
+        <file>img/headphones.png</file>
+        <file>img/settingsEnable.png</file>
     </qresource>
 </RCC>

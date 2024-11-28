@@ -1,5 +1,5 @@
 
-from PySide6.QtCharts import QtCharts
+from PySide6 import QtCharts
 from PySide6.QtGui import  QPainter, QColor
 from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import Qt

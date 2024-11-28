@@ -1,0 +1,29 @@
+{
+    "files": [
+        "main.py",
+        "expandGraph.py",
+        "Forms/form.ui",
+        "Forms/ui_form.py",
+        "Resources/resourceGUI.qrc",
+        "SupportCodes/buttonSignals.py",
+        "SupportCodes/setWindow.py",
+        "Pages/editor.py",
+        "Pages/graph.py",
+        "Pages/recording.py",
+        "PagesSetup/mainSettings.py",
+        "PagesSetup/setCalibration.py",
+        "PagesSetup/setEditor.py",
+        "PagesSetup/setGraph.py",
+        "PagesSetup/setLeftMenu.py",
+        "PagesSetup/setRecorder.py",
+        "PagesSetup/setWelcome.py",
+        "BinauralTreatment/binaural_treatment.py",
+        "Psychoacoustics/loudness.py",
+        "Psychoacoustics/roughness.py",
+        "Psychoacoustics/sharpness_din.py",
+        "Utils/filter_utils.py",
+        "Utils/graph_utils.py",
+        "Forms/ui_expand.py",
+        "Forms/expandGraph.ui"
+    ]
+}
