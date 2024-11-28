@@ -1,9 +1,9 @@
 
 import sys
-from PySide2 import QtCore
-from PySide2.QtWidgets import QMainWindow, QApplication
-from PySide2.QtCore import Qt, QFile
-from PySide2.QtUiTools import QUiLoader
+from PySide6 import QtCore
+from PySide6.QtWidgets import QMainWindow, QApplication
+from PySide6.QtCore import Qt, QFile
+from PySide6.QtUiTools import QUiLoader
 
 from SupportCodes.setWindow import SetupWindow
 

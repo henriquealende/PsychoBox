@@ -1,8 +1,8 @@
 
-from PySide2.QtCharts import QtCharts
-from PySide2.QtGui import  QPainter, QColor
-from PySide2.QtWidgets import QApplication
-from PySide2.QtCore import Qt
+from PySide6.QtCharts import QtCharts
+from PySide6.QtGui import  QPainter, QColor
+from PySide6.QtWidgets import QApplication
+from PySide6.QtCore import Qt
 
 from Utils.filter_utils import FilterUtils
 import numpy as np

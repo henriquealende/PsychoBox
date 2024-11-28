@@ -1,5 +1,5 @@
 from BinauralTreatment.binaural_treatment import Calibration as cal
-from PySide2.QtWidgets import QMessageBox
+from PySide6.QtWidgets import QMessageBox
 
 class SetCalibration():
     def __init__(self):

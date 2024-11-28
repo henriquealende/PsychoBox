@@ -1,10 +1,10 @@
 import sys
-import pygame
+# import pygame
 
-from PySide2 import QtCore
-from PySide2.QtCore import Qt, QFile
-from PySide2.QtUiTools import QUiLoader
-from PySide2.QtWidgets import QApplication, QMainWindow, QMenuBar
+from PySide6 import QtCore
+from PySide6.QtCore import Qt, QFile
+from PySide6.QtUiTools import QUiLoader
+from PySide6.QtWidgets import QApplication, QMainWindow, QMenuBar
 from SupportCodes.setWindow import SetupWindow
 from Resources import resourceGUIdo
 
@@ -31,7 +31,7 @@ class Main_Window(QMainWindow):
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         SetupWindow.setWindowInformation(self, "main")
         ButtonSignals.buttonCallbackMainWindow(self)        
-        pygame.init()
+        # pygame.init()
         ubr.initialParameters(self)
         
     def eventFilter(self, source, event):

@@ -1,7 +1,7 @@
 from scipy.io import loadmat
 import numpy as np
 from scipy.signal import fftconvolve
-from librosa import resample
+from scipy.signal import resample
 import warnings
 
 
@@ -29,7 +29,7 @@ class Calibration():
             return None
 
         if samplingRate != filterData['samplingRate']:
-            timeSignal = resample(y = timeSignal, orig_sr=samplingRate, target_sr=filterData['samplingRate'])
+            timeSignal = resample(timeSignal, int(len(timeSignal) * filterData['samplingRate'] / samplingRate)) 
 
         # tratando o sinal de audio:
         nChannels = timeSignal.ndim
@@ -60,7 +60,7 @@ class Calibration():
             return None
         
         if samplingRate != hrir['samplingRate']:
-            timeSignal = resample(y = timeSignal, orig_sr=samplingRate, target_sr=hrir['samplingRate'])    
+            timeSignal = resample(timeSignal, int(len(timeSignal) * hrir['samplingRate'] / samplingRate)) 
 
         binauralAudio = np.vstack((
                                     fftconvolve(micSignal,hrir['hrirLeft'].flatten()),

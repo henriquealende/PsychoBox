@@ -1,4 +1,4 @@
-from PySide2.QtWidgets import QMainWindow, QApplication, QPushButton, QDialog, QVBoxLayout, QLabel, QListWidget
+from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton, QDialog, QVBoxLayout, QLabel, QListWidget
 import sounddevice as sd
 
 class DeviceSelectionDialog(QDialog):

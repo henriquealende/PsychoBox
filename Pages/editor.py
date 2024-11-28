@@ -2,7 +2,7 @@ import os
 import numpy as np
 
 from pygame import mixer
-from PySide2.QtWidgets import QFileDialog
+from PySide6.QtWidgets import QFileDialog
 
 from Utils.filter_utils import FilterUtils
 from PagesSetup.mainSettings import MainSettings

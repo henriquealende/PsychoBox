@@ -1,6 +1,6 @@
 import os
-from PySide2.QtWidgets import QFileDialog,  QAbstractItemView, QMessageBox, QProgressDialog
-from PySide2.QtGui import QImage, QPainter
+from PySide6.QtWidgets import QFileDialog,  QAbstractItemView, QMessageBox, QProgressDialog
+from PySide6.QtGui import QImage, QPainter
 import numpy as np
 import csv
 

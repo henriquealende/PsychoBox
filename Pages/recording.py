@@ -5,9 +5,8 @@ import sounddevice as sd
 from PagesSetup.mainSettings import MainSettings
 from PagesSetup.setRecorder import DeviceSelectionDialog
 
-import pyqtgraph as pg
-from PySide2.QtCore import QTimer
-from PySide2.QtWidgets import (QFileDialog, QVBoxLayout, QWidget)
+from PySide6.QtCore import QTimer
+from PySide6.QtWidgets import (QFileDialog, QVBoxLayout, QWidget)
 
 
 class UI_Buttons_Recorder():
@@ -20,40 +19,7 @@ class UI_Buttons_Recorder():
         self.audio_data = []
         self.stream = None
         self.nChannels = 0
-        samplerate = float(self.ui.samplingRate_Combo.currentText())
         
-        # def update_plot():
-        #     """Atualiza o gráfico de áudio em tempo real"""
-        #     if self.is_recording and self.audio_data:
-        #         current_data = np.concatenate(self.audio_data, axis=0).flatten()
-        #         if len(current_data) > len(self.plot_data):
-        #             current_data = current_data[-len(self.plot_data):]
-        #         self.plot_data = np.roll(self.plot_data, -len(current_data))
-        #         self.plot_data[-len(current_data):] = current_data
-        #         self.curve.setData(self.plot_data)
-
-        # self.timer = QTimer()
-        # self.timer.timeout.connect(update_plot)
-        # self.timer.start(50)
-        # self.plot_data = np.zeros(int(samplerate))
-        
-        # # Criando o layout e widget para a plotagem
-        # self.plot_widget_container = QWidget(self.ui.recordingFrame)
-        # self.plot_layout = QVBoxLayout(self.plot_widget_container)
-
-        # # Criando o PlotWidget do pyqtgraph sem especificar um widget pai
-        # self.plot_widget = pg.PlotWidget()  
-
-        # # Adicionando o plot_widget diretamente ao layout
-        # self.plot_layout.addWidget(self.plot_widget)
-
-        # # Plotando os dados de áudio
-        # self.curve = self.plot_widget.plot(self.plot_data)
-
-        # # Adicionando o container ao layout do recordingFrame
-        # self.recording_layout = QVBoxLayout(self.ui.recordingFrame)
-        # self.recording_layout.addWidget(self.plot_widget_container)
-
 
     def toggle_recording(self):
         """Inicia ou para a gravação"""

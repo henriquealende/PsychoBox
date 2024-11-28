@@ -1,6 +1,6 @@
-from PySide2 import QtCore
-from PySide2.QtGui import QIcon
-from PySide2 import QtGui, QtWidgets
+from PySide6 import QtCore
+from PySide6.QtGui import QIcon
+from PySide6 import QtGui, QtWidgets
 
 class SetupWindow():
     def __init__(self):

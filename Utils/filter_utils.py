@@ -4,7 +4,7 @@ import scipy.io.wavfile as wav
 
 from scipy import signal
 from scipy.fft import fft
-from PySide2.QtWidgets import (QFileDialog)
+from PySide6.QtWidgets import (QFileDialog)
 
 
 class FilterUtils():

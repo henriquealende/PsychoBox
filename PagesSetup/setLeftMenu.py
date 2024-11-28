@@ -1,5 +1,5 @@
-from PySide2.QtCore import QPropertyAnimation
-from PySide2.QtWidgets import QGraphicsOpacityEffect
+from PySide6.QtCore import QPropertyAnimation
+from PySide6.QtWidgets import QGraphicsOpacityEffect
 
 class SetLeftMenu():
     def __init__(self):
