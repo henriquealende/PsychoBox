@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'form.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.0
+## Created by: Qt User Interface Compiler version 6.8.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -38,8 +38,8 @@ class Ui_MainWindow(object):
         self.topContent.setMinimumSize(QSize(0, 50))
         self.topContent.setMaximumSize(QSize(16777215, 70))
         self.topContent.setSizeIncrement(QSize(0, 0))
-        self.topContent.setFrameShape(QFrame.NoFrame)
-        self.topContent.setFrameShadow(QFrame.Raised)
+        self.topContent.setFrameShape(QFrame.Shape.NoFrame)
+        self.topContent.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.topContent)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -73,8 +73,8 @@ class Ui_MainWindow(object):
 "	padding-left: 5px;\n"
 "	border-left: 5px solid  rgb(255, 82,26);\n"
 "}")
-        self.frame_3.setFrameShape(QFrame.NoFrame)
-        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.frame_3.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_3.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_3 = QHBoxLayout(self.frame_3)
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -106,16 +106,16 @@ class Ui_MainWindow(object):
         self.infoBar.setStyleSheet(u"QFrame{\n"
 "	background-color : rgb(117, 117, 117);\n"
 "}")
-        self.infoBar.setFrameShape(QFrame.NoFrame)
-        self.infoBar.setFrameShadow(QFrame.Raised)
+        self.infoBar.setFrameShape(QFrame.Shape.NoFrame)
+        self.infoBar.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_5 = QHBoxLayout(self.infoBar)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.frame_5 = QFrame(self.infoBar)
         self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.NoFrame)
-        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.frame_5.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_5.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_5)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -127,7 +127,7 @@ class Ui_MainWindow(object):
         self.label_2.setPixmap(QPixmap(u":/logos/img/psychobox_logo2.png"))
         self.label_2.setScaledContents(True)
 
-        self.verticalLayout_6.addWidget(self.label_2, 0, Qt.AlignHCenter)
+        self.verticalLayout_6.addWidget(self.label_2, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_5.addWidget(self.frame_5)
@@ -138,8 +138,8 @@ class Ui_MainWindow(object):
         self.frameButtons.setStyleSheet(u"QPushButton {\n"
 "	border-radius: 10px;\n"
 "}")
-        self.frameButtons.setFrameShape(QFrame.NoFrame)
-        self.frameButtons.setFrameShadow(QFrame.Raised)
+        self.frameButtons.setFrameShape(QFrame.Shape.NoFrame)
+        self.frameButtons.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_7 = QHBoxLayout(self.frameButtons)
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
@@ -209,8 +209,8 @@ class Ui_MainWindow(object):
 
         self.centerContent = QFrame(self.centralwidget)
         self.centerContent.setObjectName(u"centerContent")
-        self.centerContent.setFrameShape(QFrame.NoFrame)
-        self.centerContent.setFrameShadow(QFrame.Raised)
+        self.centerContent.setFrameShape(QFrame.Shape.NoFrame)
+        self.centerContent.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout = QHBoxLayout(self.centerContent)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -220,8 +220,8 @@ class Ui_MainWindow(object):
         self.leftMenu.setMinimumSize(QSize(50, 0))
         self.leftMenu.setMaximumSize(QSize(50, 16777215))
         self.leftMenu.setSizeIncrement(QSize(0, 0))
-        self.leftMenu.setFrameShape(QFrame.NoFrame)
-        self.leftMenu.setFrameShadow(QFrame.Raised)
+        self.leftMenu.setFrameShape(QFrame.Shape.NoFrame)
+        self.leftMenu.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_2 = QVBoxLayout(self.leftMenu)
         self.verticalLayout_2.setSpacing(50)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -256,8 +256,8 @@ class Ui_MainWindow(object):
 "	padding-left: 5px;\n"
 "	border-left: 5px solid  rgb(80, 184, 158);\n"
 "}")
-        self.frame.setFrameShape(QFrame.NoFrame)
-        self.frame.setFrameShadow(QFrame.Raised)
+        self.frame.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_3 = QVBoxLayout(self.frame)
         self.verticalLayout_3.setSpacing(15)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -310,6 +310,7 @@ class Ui_MainWindow(object):
         self.filterButton.setMinimumSize(QSize(50, 50))
         self.filterButton.setMaximumSize(QSize(16777215, 16777215))
         self.filterButton.setFont(font2)
+        self.filterButton.setToolTipDuration(-1)
         self.filterButton.setStyleSheet(u"QPushButton:checked {\n"
 "	background-color:#rgb(80, 184, 158);\n"
 "	padding-left:5px;\n"
@@ -357,8 +358,8 @@ class Ui_MainWindow(object):
         self.frame_9 = QFrame(self.frame)
         self.frame_9.setObjectName(u"frame_9")
         self.frame_9.setMinimumSize(QSize(0, 100))
-        self.frame_9.setFrameShape(QFrame.StyledPanel)
-        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.frame_9.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_4 = QVBoxLayout(self.frame_9)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -373,7 +374,7 @@ class Ui_MainWindow(object):
         font3.setPointSize(13)
         font3.setBold(True)
         self.userButton.setFont(font3)
-        self.userButton.setLayoutDirection(Qt.LeftToRight)
+        self.userButton.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.userButton.setStyleSheet(u"QPushButton:checked {\n"
 "	color: rgb(0, 196, 204);\n"
 "	border-radius:25px;\n"
@@ -393,7 +394,7 @@ class Ui_MainWindow(object):
         self.settingsButton.setMinimumSize(QSize(50, 50))
         self.settingsButton.setMaximumSize(QSize(16777215, 16777215))
         self.settingsButton.setFont(font3)
-        self.settingsButton.setLayoutDirection(Qt.LeftToRight)
+        self.settingsButton.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         icon9 = QIcon()
         icon9.addFile(u":/icons/img/settingsEnable.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.settingsButton.setIcon(icon9)
@@ -416,8 +417,8 @@ class Ui_MainWindow(object):
         self.rightContent.setObjectName(u"rightContent")
         self.rightContent.setEnabled(True)
         self.rightContent.setFont(font1)
-        self.rightContent.setFrameShape(QFrame.NoFrame)
-        self.rightContent.setFrameShadow(QFrame.Raised)
+        self.rightContent.setFrameShape(QFrame.Shape.NoFrame)
+        self.rightContent.setFrameShadow(QFrame.Shadow.Raised)
         self.welcomePage = QWidget()
         self.welcomePage.setObjectName(u"welcomePage")
         self.horizontalLayout_10 = QHBoxLayout(self.welcomePage)
@@ -429,16 +430,16 @@ class Ui_MainWindow(object):
         self.mainContent_2.setStyleSheet(u"QFrame{	\n"
 "	background-color: rgb(237, 237, 237);\n"
 "}")
-        self.mainContent_2.setFrameShape(QFrame.StyledPanel)
-        self.mainContent_2.setFrameShadow(QFrame.Raised)
+        self.mainContent_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.mainContent_2.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_8 = QVBoxLayout(self.mainContent_2)
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.frame_7 = QFrame(self.mainContent_2)
         self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setFrameShape(QFrame.NoFrame)
-        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.frame_7.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_7.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_9 = QVBoxLayout(self.frame_7)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
@@ -447,8 +448,8 @@ class Ui_MainWindow(object):
         self.frame_17.setObjectName(u"frame_17")
         self.frame_17.setMinimumSize(QSize(0, 0))
         self.frame_17.setMaximumSize(QSize(16777215, 100))
-        self.frame_17.setFrameShape(QFrame.NoFrame)
-        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.frame_17.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_17.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_12 = QHBoxLayout(self.frame_17)
         self.horizontalLayout_12.setSpacing(0)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
@@ -457,8 +458,8 @@ class Ui_MainWindow(object):
         self.welcomeUser.setObjectName(u"welcomeUser")
         self.welcomeUser.setMinimumSize(QSize(0, 0))
         self.welcomeUser.setMaximumSize(QSize(16777215, 16777215))
-        self.welcomeUser.setFrameShape(QFrame.NoFrame)
-        self.welcomeUser.setFrameShadow(QFrame.Raised)
+        self.welcomeUser.setFrameShape(QFrame.Shape.NoFrame)
+        self.welcomeUser.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_10 = QVBoxLayout(self.welcomeUser)
         self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
@@ -473,7 +474,7 @@ class Ui_MainWindow(object):
         font4.setBold(True)
         self.welcome.setFont(font4)
         self.welcome.setStyleSheet(u"color: rgb(70, 70, 70); ")
-        self.welcome.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
+        self.welcome.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft)
 
         self.verticalLayout_10.addWidget(self.welcome)
 
@@ -485,8 +486,8 @@ class Ui_MainWindow(object):
 
         self.frame_10 = QFrame(self.frame_7)
         self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setFrameShape(QFrame.NoFrame)
-        self.frame_10.setFrameShadow(QFrame.Raised)
+        self.frame_10.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_10.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_13 = QHBoxLayout(self.frame_10)
         self.horizontalLayout_13.setSpacing(10)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
@@ -494,16 +495,16 @@ class Ui_MainWindow(object):
         self.frame_16 = QFrame(self.frame_10)
         self.frame_16.setObjectName(u"frame_16")
         self.frame_16.setMinimumSize(QSize(0, 450))
-        self.frame_16.setFrameShape(QFrame.NoFrame)
-        self.frame_16.setFrameShadow(QFrame.Raised)
+        self.frame_16.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_16.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_11 = QVBoxLayout(self.frame_16)
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.frame_19 = QFrame(self.frame_16)
         self.frame_19.setObjectName(u"frame_19")
-        self.frame_19.setFrameShape(QFrame.NoFrame)
-        self.frame_19.setFrameShadow(QFrame.Raised)
+        self.frame_19.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_19.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_12 = QVBoxLayout(self.frame_19)
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
@@ -523,16 +524,16 @@ class Ui_MainWindow(object):
         self.settings = QFrame(self.frame_16)
         self.settings.setObjectName(u"settings")
         self.settings.setMinimumSize(QSize(0, 250))
-        self.settings.setFrameShape(QFrame.NoFrame)
-        self.settings.setFrameShadow(QFrame.Raised)
+        self.settings.setFrameShape(QFrame.Shape.NoFrame)
+        self.settings.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_13 = QVBoxLayout(self.settings)
         self.verticalLayout_13.setSpacing(0)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
         self.frame_43 = QFrame(self.settings)
         self.frame_43.setObjectName(u"frame_43")
-        self.frame_43.setFrameShape(QFrame.NoFrame)
-        self.frame_43.setFrameShadow(QFrame.Raised)
+        self.frame_43.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_43.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_25 = QHBoxLayout(self.frame_43)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
         self.horizontalLayout_25.setContentsMargins(6, 0, 6, 6)
@@ -544,8 +545,8 @@ class Ui_MainWindow(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px\n"
 "}")
-        self.frame_44.setFrameShape(QFrame.NoFrame)
-        self.frame_44.setFrameShadow(QFrame.Raised)
+        self.frame_44.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_44.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_23 = QVBoxLayout(self.frame_44)
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
@@ -556,14 +557,14 @@ class Ui_MainWindow(object):
         self.label_43.setMaximumSize(QSize(16777215, 40))
         self.label_43.setFont(font)
         self.label_43.setStyleSheet(u"color: rgb(237, 237, 237);")
-        self.label_43.setAlignment(Qt.AlignCenter)
+        self.label_43.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_23.addWidget(self.label_43)
 
         self.frame_45 = QFrame(self.frame_44)
         self.frame_45.setObjectName(u"frame_45")
-        self.frame_45.setFrameShape(QFrame.NoFrame)
-        self.frame_45.setFrameShadow(QFrame.Raised)
+        self.frame_45.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_45.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_26 = QHBoxLayout(self.frame_45)
         self.horizontalLayout_26.setSpacing(0)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
@@ -579,7 +580,7 @@ class Ui_MainWindow(object):
 "border: 5px  solid rgb(237, 237, 237);")
         self.label_32.setPixmap(QPixmap(u":/icons/img/importAudio.png"))
         self.label_32.setScaledContents(True)
-        self.label_32.setAlignment(Qt.AlignCenter)
+        self.label_32.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_26.addWidget(self.label_32)
 
@@ -596,7 +597,7 @@ class Ui_MainWindow(object):
         font5.setBold(False)
         self.label_45.setFont(font5)
         self.label_45.setStyleSheet(u"color: rgb(237, 237, 237);")
-        self.label_45.setAlignment(Qt.AlignCenter)
+        self.label_45.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_23.addWidget(self.label_45)
 
@@ -609,8 +610,8 @@ class Ui_MainWindow(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px\n"
 "}")
-        self.frame_46.setFrameShape(QFrame.NoFrame)
-        self.frame_46.setFrameShadow(QFrame.Raised)
+        self.frame_46.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_46.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_24 = QVBoxLayout(self.frame_46)
         self.verticalLayout_24.setSpacing(0)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
@@ -620,14 +621,14 @@ class Ui_MainWindow(object):
         self.label_46.setMaximumSize(QSize(16777215, 40))
         self.label_46.setFont(font)
         self.label_46.setStyleSheet(u"color: rgb(237, 237, 237);")
-        self.label_46.setAlignment(Qt.AlignCenter)
+        self.label_46.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_24.addWidget(self.label_46)
 
         self.frame_47 = QFrame(self.frame_46)
         self.frame_47.setObjectName(u"frame_47")
-        self.frame_47.setFrameShape(QFrame.NoFrame)
-        self.frame_47.setFrameShadow(QFrame.Raised)
+        self.frame_47.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_47.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_27 = QHBoxLayout(self.frame_47)
         self.horizontalLayout_27.setSpacing(0)
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
@@ -642,7 +643,7 @@ class Ui_MainWindow(object):
 "border: 5px  inset rgb(237, 237, 237);")
         self.label_47.setPixmap(QPixmap(u":/icons/img/filter.png"))
         self.label_47.setScaledContents(True)
-        self.label_47.setAlignment(Qt.AlignCenter)
+        self.label_47.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_27.addWidget(self.label_47)
 
@@ -655,7 +656,7 @@ class Ui_MainWindow(object):
         self.label_48.setMaximumSize(QSize(16777215, 80))
         self.label_48.setFont(font5)
         self.label_48.setStyleSheet(u"color: rgb(237, 237, 237);")
-        self.label_48.setAlignment(Qt.AlignCenter)
+        self.label_48.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_24.addWidget(self.label_48)
 
@@ -668,8 +669,8 @@ class Ui_MainWindow(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px\n"
 "}")
-        self.frame_48.setFrameShape(QFrame.NoFrame)
-        self.frame_48.setFrameShadow(QFrame.Raised)
+        self.frame_48.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_48.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_25 = QVBoxLayout(self.frame_48)
         self.verticalLayout_25.setSpacing(0)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
@@ -679,14 +680,14 @@ class Ui_MainWindow(object):
         self.label_49.setMaximumSize(QSize(16777215, 40))
         self.label_49.setFont(font)
         self.label_49.setStyleSheet(u"color: rgb(237, 237, 237);")
-        self.label_49.setAlignment(Qt.AlignCenter)
+        self.label_49.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_25.addWidget(self.label_49)
 
         self.frame_49 = QFrame(self.frame_48)
         self.frame_49.setObjectName(u"frame_49")
-        self.frame_49.setFrameShape(QFrame.NoFrame)
-        self.frame_49.setFrameShadow(QFrame.Raised)
+        self.frame_49.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_49.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_28 = QHBoxLayout(self.frame_49)
         self.horizontalLayout_28.setSpacing(0)
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
@@ -701,7 +702,7 @@ class Ui_MainWindow(object):
 "border: 5px  inset rgb(237, 237, 237);")
         self.label_50.setPixmap(QPixmap(u":/icons/img/metricas.png"))
         self.label_50.setScaledContents(True)
-        self.label_50.setAlignment(Qt.AlignCenter)
+        self.label_50.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.horizontalLayout_28.addWidget(self.label_50)
 
@@ -714,7 +715,7 @@ class Ui_MainWindow(object):
         self.label_51.setMaximumSize(QSize(16777215, 80))
         self.label_51.setFont(font5)
         self.label_51.setStyleSheet(u"color: rgb(237, 237, 237);")
-        self.label_51.setAlignment(Qt.AlignCenter)
+        self.label_51.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_25.addWidget(self.label_51)
 
@@ -751,18 +752,20 @@ class Ui_MainWindow(object):
         self.frame_8.setStyleSheet(u"QFrame{	\n"
 "	background-color: rgb(237, 237, 237);\n"
 "}")
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.frame_8.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_15 = QVBoxLayout(self.frame_8)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.frame_11 = QFrame(self.frame_8)
         self.frame_11.setObjectName(u"frame_11")
         self.frame_11.setMaximumSize(QSize(16777215, 100))
-        self.frame_11.setFrameShape(QFrame.NoFrame)
-        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.frame_11.setStyleSheet(u"color: rgb(70, 70, 70); ")
+        self.frame_11.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_11.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_16 = QVBoxLayout(self.frame_11)
         self.verticalLayout_16.setObjectName(u"verticalLayout_16")
+        self.verticalLayout_16.setContentsMargins(-1, 5, -1, -1)
         self.label_4 = QLabel(self.frame_11)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMinimumSize(QSize(0, 50))
@@ -776,15 +779,15 @@ class Ui_MainWindow(object):
 
         self.frame_12 = QFrame(self.frame_8)
         self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setFrameShape(QFrame.NoFrame)
-        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.frame_12.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_12.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_17 = QVBoxLayout(self.frame_12)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.frame_13 = QFrame(self.frame_12)
         self.frame_13.setObjectName(u"frame_13")
         self.frame_13.setMaximumSize(QSize(16777215, 100))
-        self.frame_13.setFrameShape(QFrame.NoFrame)
-        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.frame_13.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_13.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_14 = QHBoxLayout(self.frame_13)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
@@ -801,8 +804,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.frame_18.setFrameShape(QFrame.NoFrame)
-        self.frame_18.setFrameShadow(QFrame.Raised)
+        self.frame_18.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_18.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_16 = QHBoxLayout(self.frame_18)
         self.horizontalLayout_16.setSpacing(9)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
@@ -967,8 +970,8 @@ class Ui_MainWindow(object):
 "	selection-color: #4f4f4f;\n"
 "}\n"
 "")
-        self.frame_23.setFrameShape(QFrame.NoFrame)
-        self.frame_23.setFrameShadow(QFrame.Raised)
+        self.frame_23.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_23.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_19 = QHBoxLayout(self.frame_23)
         self.horizontalLayout_19.setSpacing(2)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
@@ -994,7 +997,7 @@ class Ui_MainWindow(object):
         font7.setPointSize(12)
         self.samplingRate_Combo.setFont(font7)
         self.samplingRate_Combo.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
-        self.samplingRate_Combo.setInsertPolicy(QComboBox.InsertAtBottom)
+        self.samplingRate_Combo.setInsertPolicy(QComboBox.InsertPolicy.InsertAtBottom)
 
         self.horizontalLayout_19.addWidget(self.samplingRate_Combo)
 
@@ -1022,15 +1025,15 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.frame_22.setFrameShape(QFrame.NoFrame)
-        self.frame_22.setFrameShadow(QFrame.Raised)
+        self.frame_22.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_22.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_20 = QHBoxLayout(self.frame_22)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.horizontalLayout_20.setContentsMargins(-1, 0, -1, 0)
         self.frame_24 = QFrame(self.frame_22)
         self.frame_24.setObjectName(u"frame_24")
-        self.frame_24.setFrameShape(QFrame.StyledPanel)
-        self.frame_24.setFrameShadow(QFrame.Raised)
+        self.frame_24.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_24.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_19 = QVBoxLayout(self.frame_24)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.setMicrophone_1 = QPushButton(self.frame_24)
@@ -1073,7 +1076,7 @@ class Ui_MainWindow(object):
         self.label_8 = QLabel(self.frame_24)
         self.label_8.setObjectName(u"label_8")
         self.label_8.setFont(font7)
-        self.label_8.setAlignment(Qt.AlignCenter)
+        self.label_8.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_19.addWidget(self.label_8)
 
@@ -1082,13 +1085,13 @@ class Ui_MainWindow(object):
 
         self.frame_25 = QFrame(self.frame_22)
         self.frame_25.setObjectName(u"frame_25")
-        self.frame_25.setFrameShape(QFrame.StyledPanel)
-        self.frame_25.setFrameShadow(QFrame.Raised)
+        self.frame_25.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_25.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_20 = QVBoxLayout(self.frame_25)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.setMicrophone_2 = QPushButton(self.frame_25)
         self.setMicrophone_2.setObjectName(u"setMicrophone_2")
-        self.setMicrophone_2.setEnabled(True)
+        self.setMicrophone_2.setEnabled(False)
         self.setMicrophone_2.setMinimumSize(QSize(50, 50))
         self.setMicrophone_2.setMaximumSize(QSize(50, 50))
         self.setMicrophone_2.setStyleSheet(u"QPushButton{\n"
@@ -1123,7 +1126,7 @@ class Ui_MainWindow(object):
         self.label_10 = QLabel(self.frame_25)
         self.label_10.setObjectName(u"label_10")
         self.label_10.setFont(font7)
-        self.label_10.setAlignment(Qt.AlignCenter)
+        self.label_10.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_20.addWidget(self.label_10)
 
@@ -1132,13 +1135,13 @@ class Ui_MainWindow(object):
 
         self.frame_26 = QFrame(self.frame_22)
         self.frame_26.setObjectName(u"frame_26")
-        self.frame_26.setFrameShape(QFrame.StyledPanel)
-        self.frame_26.setFrameShadow(QFrame.Raised)
+        self.frame_26.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_26.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_21 = QVBoxLayout(self.frame_26)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
         self.setSource_1 = QPushButton(self.frame_26)
         self.setSource_1.setObjectName(u"setSource_1")
-        self.setSource_1.setEnabled(True)
+        self.setSource_1.setEnabled(False)
         self.setSource_1.setMinimumSize(QSize(50, 50))
         self.setSource_1.setMaximumSize(QSize(50, 50))
         self.setSource_1.setStyleSheet(u"QPushButton{\n"
@@ -1176,7 +1179,7 @@ class Ui_MainWindow(object):
         self.label_11 = QLabel(self.frame_26)
         self.label_11.setObjectName(u"label_11")
         self.label_11.setFont(font7)
-        self.label_11.setAlignment(Qt.AlignCenter)
+        self.label_11.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.verticalLayout_21.addWidget(self.label_11)
 
@@ -1226,8 +1229,8 @@ class Ui_MainWindow(object):
 
         self.frame_14 = QFrame(self.frame_12)
         self.frame_14.setObjectName(u"frame_14")
-        self.frame_14.setFrameShape(QFrame.NoFrame)
-        self.frame_14.setFrameShadow(QFrame.Raised)
+        self.frame_14.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_14.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_18 = QVBoxLayout(self.frame_14)
         self.verticalLayout_18.setSpacing(0)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
@@ -1236,8 +1239,8 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.recordingFrame = QFrame(self.frame_14)
         self.recordingFrame.setObjectName(u"recordingFrame")
-        self.recordingFrame.setFrameShape(QFrame.NoFrame)
-        self.recordingFrame.setFrameShadow(QFrame.Raised)
+        self.recordingFrame.setFrameShape(QFrame.Shape.NoFrame)
+        self.recordingFrame.setFrameShadow(QFrame.Shadow.Raised)
 
         self.gridLayout.addWidget(self.recordingFrame, 0, 0, 1, 1)
 
@@ -1250,8 +1253,8 @@ class Ui_MainWindow(object):
         self.frame_15 = QFrame(self.frame_12)
         self.frame_15.setObjectName(u"frame_15")
         self.frame_15.setMaximumSize(QSize(16777215, 100))
-        self.frame_15.setFrameShape(QFrame.NoFrame)
-        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.frame_15.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_15.setFrameShadow(QFrame.Shadow.Raised)
 
         self.verticalLayout_17.addWidget(self.frame_15)
 
@@ -1275,8 +1278,8 @@ class Ui_MainWindow(object):
         self.title.setObjectName(u"title")
         self.title.setMinimumSize(QSize(0, 80))
         self.title.setMaximumSize(QSize(16777215, 16777215))
-        self.title.setFrameShape(QFrame.NoFrame)
-        self.title.setFrameShadow(QFrame.Raised)
+        self.title.setFrameShape(QFrame.Shape.NoFrame)
+        self.title.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_15 = QHBoxLayout(self.title)
         self.horizontalLayout_15.setSpacing(0)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
@@ -1284,8 +1287,8 @@ class Ui_MainWindow(object):
         self.frame_20 = QFrame(self.title)
         self.frame_20.setObjectName(u"frame_20")
         self.frame_20.setMaximumSize(QSize(464, 80))
-        self.frame_20.setFrameShape(QFrame.NoFrame)
-        self.frame_20.setFrameShadow(QFrame.Raised)
+        self.frame_20.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_20.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_22 = QVBoxLayout(self.frame_20)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
@@ -1296,7 +1299,7 @@ class Ui_MainWindow(object):
         self.label_9.setMaximumSize(QSize(16777215, 50))
         self.label_9.setFont(font4)
         self.label_9.setStyleSheet(u"color: rgb(70, 70, 70); ")
-        self.label_9.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
+        self.label_9.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft)
 
         self.verticalLayout_22.addWidget(self.label_9)
 
@@ -1306,8 +1309,8 @@ class Ui_MainWindow(object):
         self.frame_21 = QFrame(self.title)
         self.frame_21.setObjectName(u"frame_21")
         self.frame_21.setMaximumSize(QSize(16777215, 16777215))
-        self.frame_21.setFrameShape(QFrame.NoFrame)
-        self.frame_21.setFrameShadow(QFrame.Raised)
+        self.frame_21.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_21.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_26 = QVBoxLayout(self.frame_21)
         self.verticalLayout_26.setSpacing(0)
         self.verticalLayout_26.setObjectName(u"verticalLayout_26")
@@ -1319,7 +1322,7 @@ class Ui_MainWindow(object):
         self.logo.setPixmap(QPixmap(u":/logos/img/psychobox_logo.png"))
         self.logo.setScaledContents(True)
 
-        self.verticalLayout_26.addWidget(self.logo, 0, Qt.AlignRight)
+        self.verticalLayout_26.addWidget(self.logo, 0, Qt.AlignmentFlag.AlignRight)
 
 
         self.horizontalLayout_15.addWidget(self.frame_21)
@@ -1366,8 +1369,8 @@ class Ui_MainWindow(object):
 "		background: #4B4B4B;\n"
 "}\n"
 "")
-        self.controlFrame.setFrameShape(QFrame.NoFrame)
-        self.controlFrame.setFrameShadow(QFrame.Raised)
+        self.controlFrame.setFrameShape(QFrame.Shape.NoFrame)
+        self.controlFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_29 = QVBoxLayout(self.controlFrame)
         self.verticalLayout_29.setSpacing(6)
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
@@ -1375,8 +1378,8 @@ class Ui_MainWindow(object):
         self.playerFrame = QFrame(self.controlFrame)
         self.playerFrame.setObjectName(u"playerFrame")
         self.playerFrame.setMaximumSize(QSize(16777212, 160))
-        self.playerFrame.setFrameShape(QFrame.NoFrame)
-        self.playerFrame.setFrameShadow(QFrame.Raised)
+        self.playerFrame.setFrameShape(QFrame.Shape.NoFrame)
+        self.playerFrame.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_59 = QVBoxLayout(self.playerFrame)
         self.verticalLayout_59.setSpacing(0)
         self.verticalLayout_59.setObjectName(u"verticalLayout_59")
@@ -1384,8 +1387,8 @@ class Ui_MainWindow(object):
         self.playerFrame_2 = QFrame(self.playerFrame)
         self.playerFrame_2.setObjectName(u"playerFrame_2")
         self.playerFrame_2.setEnabled(True)
-        self.playerFrame_2.setFrameShape(QFrame.NoFrame)
-        self.playerFrame_2.setFrameShadow(QFrame.Raised)
+        self.playerFrame_2.setFrameShape(QFrame.Shape.NoFrame)
+        self.playerFrame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.playerFrame_2.setLineWidth(0)
         self.horizontalLayout_17 = QHBoxLayout(self.playerFrame_2)
         self.horizontalLayout_17.setSpacing(30)
@@ -1395,8 +1398,8 @@ class Ui_MainWindow(object):
         self.importAudio.setObjectName(u"importAudio")
         self.importAudio.setMinimumSize(QSize(0, 100))
         self.importAudio.setMaximumSize(QSize(16777215, 16777215))
-        self.importAudio.setFrameShape(QFrame.NoFrame)
-        self.importAudio.setFrameShadow(QFrame.Raised)
+        self.importAudio.setFrameShape(QFrame.Shape.NoFrame)
+        self.importAudio.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_29 = QHBoxLayout(self.importAudio)
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
@@ -1405,8 +1408,8 @@ class Ui_MainWindow(object):
         self.frame_52.setMinimumSize(QSize(0, 0))
         self.frame_52.setMaximumSize(QSize(16777215, 16777215))
         self.frame_52.setSizeIncrement(QSize(0, 0))
-        self.frame_52.setFrameShape(QFrame.NoFrame)
-        self.frame_52.setFrameShadow(QFrame.Raised)
+        self.frame_52.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_52.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_30 = QHBoxLayout(self.frame_52)
         self.horizontalLayout_30.setSpacing(0)
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
@@ -1443,13 +1446,13 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.listWidget.setFrameShape(QFrame.NoFrame)
-        self.listWidget.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-        self.listWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.listWidget.setFrameShape(QFrame.Shape.NoFrame)
+        self.listWidget.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.listWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.listWidget.setAutoScroll(True)
         self.listWidget.setAutoScrollMargin(16)
-        self.listWidget.setDragDropMode(QAbstractItemView.NoDragDrop)
-        self.listWidget.setItemAlignment(Qt.AlignLeading)
+        self.listWidget.setDragDropMode(QAbstractItemView.DragDropMode.NoDragDrop)
+        self.listWidget.setItemAlignment(Qt.AlignmentFlag.AlignLeading)
 
         self.horizontalLayout_30.addWidget(self.listWidget)
 
@@ -1478,8 +1481,8 @@ class Ui_MainWindow(object):
 "	background-color: rgb(237, 105, 59)\n"
 "}\n"
 "")
-        self.frame_53.setFrameShape(QFrame.NoFrame)
-        self.frame_53.setFrameShadow(QFrame.Raised)
+        self.frame_53.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_53.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_55 = QVBoxLayout(self.frame_53)
         self.verticalLayout_55.setSpacing(0)
         self.verticalLayout_55.setObjectName(u"verticalLayout_55")
@@ -1508,7 +1511,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_55.addWidget(self.removeAllButton)
 
 
-        self.horizontalLayout_29.addWidget(self.frame_53, 0, Qt.AlignLeft)
+        self.horizontalLayout_29.addWidget(self.frame_53, 0, Qt.AlignmentFlag.AlignLeft)
 
 
         self.horizontalLayout_17.addWidget(self.importAudio)
@@ -1523,8 +1526,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.buttons.setFrameShape(QFrame.NoFrame)
-        self.buttons.setFrameShadow(QFrame.Raised)
+        self.buttons.setFrameShape(QFrame.Shape.NoFrame)
+        self.buttons.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.buttons)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -1532,8 +1535,8 @@ class Ui_MainWindow(object):
         self.frame_55 = QFrame(self.buttons)
         self.frame_55.setObjectName(u"frame_55")
         self.frame_55.setStyleSheet(u"")
-        self.frame_55.setFrameShape(QFrame.NoFrame)
-        self.frame_55.setFrameShadow(QFrame.Plain)
+        self.frame_55.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_55.setFrameShadow(QFrame.Shadow.Plain)
         self.verticalLayout_57 = QVBoxLayout(self.frame_55)
         self.verticalLayout_57.setSpacing(0)
         self.verticalLayout_57.setObjectName(u"verticalLayout_57")
@@ -1551,8 +1554,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.frameButtonsSE.setFrameShape(QFrame.NoFrame)
-        self.frameButtonsSE.setFrameShadow(QFrame.Raised)
+        self.frameButtonsSE.setFrameShape(QFrame.Shape.NoFrame)
+        self.frameButtonsSE.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_31 = QHBoxLayout(self.frameButtonsSE)
         self.horizontalLayout_31.setSpacing(0)
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
@@ -1695,8 +1698,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.frame_27.setFrameShape(QFrame.NoFrame)
-        self.frame_27.setFrameShadow(QFrame.Raised)
+        self.frame_27.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_27.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_18 = QHBoxLayout(self.frame_27)
         self.horizontalLayout_18.setSpacing(0)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
@@ -1738,7 +1741,7 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.volumeSlider.setValue(50)
-        self.volumeSlider.setOrientation(Qt.Horizontal)
+        self.volumeSlider.setOrientation(Qt.Orientation.Horizontal)
 
         self.horizontalLayout_18.addWidget(self.volumeSlider)
 
@@ -1775,8 +1778,8 @@ class Ui_MainWindow(object):
 "	color: rgb(136,138,133);\n"
 "	}\n"
 "")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.frame_2.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_21 = QHBoxLayout(self.frame_2)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
         self.filterAudioButton = QPushButton(self.frame_2)
@@ -1794,7 +1797,7 @@ class Ui_MainWindow(object):
         self.resetButton.setMinimumSize(QSize(100, 30))
         self.resetButton.setMaximumSize(QSize(100, 30))
         self.resetButton.setFont(font5)
-        self.resetButton.setLayoutDirection(Qt.RightToLeft)
+        self.resetButton.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
         self.resetButton.setStyleSheet(u"")
 
         self.horizontalLayout_21.addWidget(self.resetButton)
@@ -1843,8 +1846,8 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.uperSliders.setFrameShape(QFrame.NoFrame)
-        self.uperSliders.setFrameShadow(QFrame.Raised)
+        self.uperSliders.setFrameShape(QFrame.Shape.NoFrame)
+        self.uperSliders.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_22 = QHBoxLayout(self.uperSliders)
         self.horizontalLayout_22.setSpacing(0)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
@@ -1853,8 +1856,8 @@ class Ui_MainWindow(object):
         self.frame_56.setObjectName(u"frame_56")
         self.frame_56.setMinimumSize(QSize(76, 150))
         self.frame_56.setMaximumSize(QSize(76, 150))
-        self.frame_56.setFrameShape(QFrame.NoFrame)
-        self.frame_56.setFrameShadow(QFrame.Raised)
+        self.frame_56.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_56.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_32 = QVBoxLayout(self.frame_56)
         self.verticalLayout_32.setSpacing(3)
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
@@ -1882,9 +1885,9 @@ class Ui_MainWindow(object):
         self.slider_50.setMinimum(-50)
         self.slider_50.setMaximum(50)
         self.slider_50.setValue(0)
-        self.slider_50.setOrientation(Qt.Vertical)
+        self.slider_50.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_32.addWidget(self.slider_50, 0, Qt.AlignHCenter)
+        self.verticalLayout_32.addWidget(self.slider_50, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_12 = QLabel(self.frame_56)
         self.label_12.setObjectName(u"label_12")
@@ -1894,7 +1897,7 @@ class Ui_MainWindow(object):
         font10.setBold(True)
         self.label_12.setFont(font10)
         self.label_12.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_12.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_12.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_32.addWidget(self.label_12)
 
@@ -1906,8 +1909,8 @@ class Ui_MainWindow(object):
         self.frame_57.setMinimumSize(QSize(76, 150))
         self.frame_57.setMaximumSize(QSize(76, 150))
         self.frame_57.setStyleSheet(u"")
-        self.frame_57.setFrameShape(QFrame.NoFrame)
-        self.frame_57.setFrameShadow(QFrame.Raised)
+        self.frame_57.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_57.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_33 = QVBoxLayout(self.frame_57)
         self.verticalLayout_33.setSpacing(3)
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
@@ -1929,15 +1932,15 @@ class Ui_MainWindow(object):
         self.slider_63.setMinimum(-50)
         self.slider_63.setMaximum(50)
         self.slider_63.setValue(0)
-        self.slider_63.setOrientation(Qt.Vertical)
+        self.slider_63.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_33.addWidget(self.slider_63, 0, Qt.AlignHCenter)
+        self.verticalLayout_33.addWidget(self.slider_63, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_13 = QLabel(self.frame_57)
         self.label_13.setObjectName(u"label_13")
         self.label_13.setFont(font10)
         self.label_13.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_13.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_13.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_33.addWidget(self.label_13)
 
@@ -1948,8 +1951,8 @@ class Ui_MainWindow(object):
         self.frame_58.setObjectName(u"frame_58")
         self.frame_58.setMinimumSize(QSize(76, 150))
         self.frame_58.setMaximumSize(QSize(76, 150))
-        self.frame_58.setFrameShape(QFrame.NoFrame)
-        self.frame_58.setFrameShadow(QFrame.Raised)
+        self.frame_58.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_58.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_34 = QVBoxLayout(self.frame_58)
         self.verticalLayout_34.setSpacing(3)
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
@@ -1971,15 +1974,15 @@ class Ui_MainWindow(object):
         self.slider_80.setMinimum(-50)
         self.slider_80.setMaximum(50)
         self.slider_80.setValue(0)
-        self.slider_80.setOrientation(Qt.Vertical)
+        self.slider_80.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_34.addWidget(self.slider_80, 0, Qt.AlignHCenter)
+        self.verticalLayout_34.addWidget(self.slider_80, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_14 = QLabel(self.frame_58)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setFont(font10)
         self.label_14.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_14.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_14.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_34.addWidget(self.label_14)
 
@@ -1990,9 +1993,9 @@ class Ui_MainWindow(object):
         self.frame_59.setObjectName(u"frame_59")
         self.frame_59.setMinimumSize(QSize(76, 150))
         self.frame_59.setMaximumSize(QSize(76, 150))
-        self.frame_59.setLayoutDirection(Qt.LeftToRight)
-        self.frame_59.setFrameShape(QFrame.NoFrame)
-        self.frame_59.setFrameShadow(QFrame.Raised)
+        self.frame_59.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.frame_59.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_59.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_35 = QVBoxLayout(self.frame_59)
         self.verticalLayout_35.setSpacing(3)
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
@@ -2014,15 +2017,15 @@ class Ui_MainWindow(object):
         self.slider_100.setMinimum(-50)
         self.slider_100.setMaximum(50)
         self.slider_100.setValue(0)
-        self.slider_100.setOrientation(Qt.Vertical)
+        self.slider_100.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_35.addWidget(self.slider_100, 0, Qt.AlignHCenter)
+        self.verticalLayout_35.addWidget(self.slider_100, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_15 = QLabel(self.frame_59)
         self.label_15.setObjectName(u"label_15")
         self.label_15.setFont(font10)
         self.label_15.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_15.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_15.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_35.addWidget(self.label_15)
 
@@ -2033,8 +2036,8 @@ class Ui_MainWindow(object):
         self.frame_60.setObjectName(u"frame_60")
         self.frame_60.setMinimumSize(QSize(76, 150))
         self.frame_60.setMaximumSize(QSize(76, 150))
-        self.frame_60.setFrameShape(QFrame.NoFrame)
-        self.frame_60.setFrameShadow(QFrame.Raised)
+        self.frame_60.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_60.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_37 = QVBoxLayout(self.frame_60)
         self.verticalLayout_37.setSpacing(3)
         self.verticalLayout_37.setObjectName(u"verticalLayout_37")
@@ -2056,15 +2059,15 @@ class Ui_MainWindow(object):
         self.slider_125.setMinimum(-50)
         self.slider_125.setMaximum(50)
         self.slider_125.setValue(0)
-        self.slider_125.setOrientation(Qt.Vertical)
+        self.slider_125.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_37.addWidget(self.slider_125, 0, Qt.AlignHCenter)
+        self.verticalLayout_37.addWidget(self.slider_125, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_16 = QLabel(self.frame_60)
         self.label_16.setObjectName(u"label_16")
         self.label_16.setFont(font10)
         self.label_16.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_16.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_16.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_37.addWidget(self.label_16)
 
@@ -2075,8 +2078,8 @@ class Ui_MainWindow(object):
         self.frame_61.setObjectName(u"frame_61")
         self.frame_61.setMinimumSize(QSize(76, 150))
         self.frame_61.setMaximumSize(QSize(76, 150))
-        self.frame_61.setFrameShape(QFrame.NoFrame)
-        self.frame_61.setFrameShadow(QFrame.Raised)
+        self.frame_61.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_61.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_38 = QVBoxLayout(self.frame_61)
         self.verticalLayout_38.setSpacing(3)
         self.verticalLayout_38.setObjectName(u"verticalLayout_38")
@@ -2098,15 +2101,15 @@ class Ui_MainWindow(object):
         self.slider_160.setMinimum(-50)
         self.slider_160.setMaximum(50)
         self.slider_160.setValue(0)
-        self.slider_160.setOrientation(Qt.Vertical)
+        self.slider_160.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_38.addWidget(self.slider_160, 0, Qt.AlignHCenter)
+        self.verticalLayout_38.addWidget(self.slider_160, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_17 = QLabel(self.frame_61)
         self.label_17.setObjectName(u"label_17")
         self.label_17.setFont(font10)
         self.label_17.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_17.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_17.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_38.addWidget(self.label_17)
 
@@ -2117,8 +2120,8 @@ class Ui_MainWindow(object):
         self.frame_62.setObjectName(u"frame_62")
         self.frame_62.setMinimumSize(QSize(76, 150))
         self.frame_62.setMaximumSize(QSize(76, 150))
-        self.frame_62.setFrameShape(QFrame.NoFrame)
-        self.frame_62.setFrameShadow(QFrame.Raised)
+        self.frame_62.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_62.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_39 = QVBoxLayout(self.frame_62)
         self.verticalLayout_39.setSpacing(3)
         self.verticalLayout_39.setObjectName(u"verticalLayout_39")
@@ -2140,15 +2143,15 @@ class Ui_MainWindow(object):
         self.slider_200.setMinimum(-50)
         self.slider_200.setMaximum(50)
         self.slider_200.setValue(0)
-        self.slider_200.setOrientation(Qt.Vertical)
+        self.slider_200.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_39.addWidget(self.slider_200, 0, Qt.AlignHCenter)
+        self.verticalLayout_39.addWidget(self.slider_200, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_18 = QLabel(self.frame_62)
         self.label_18.setObjectName(u"label_18")
         self.label_18.setFont(font10)
         self.label_18.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_18.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_18.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_39.addWidget(self.label_18)
 
@@ -2159,8 +2162,8 @@ class Ui_MainWindow(object):
         self.frame_63.setObjectName(u"frame_63")
         self.frame_63.setMinimumSize(QSize(76, 150))
         self.frame_63.setMaximumSize(QSize(76, 150))
-        self.frame_63.setFrameShape(QFrame.NoFrame)
-        self.frame_63.setFrameShadow(QFrame.Raised)
+        self.frame_63.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_63.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_40 = QVBoxLayout(self.frame_63)
         self.verticalLayout_40.setSpacing(3)
         self.verticalLayout_40.setObjectName(u"verticalLayout_40")
@@ -2182,15 +2185,15 @@ class Ui_MainWindow(object):
         self.slider_250.setMinimum(-50)
         self.slider_250.setMaximum(50)
         self.slider_250.setValue(0)
-        self.slider_250.setOrientation(Qt.Vertical)
+        self.slider_250.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_40.addWidget(self.slider_250, 0, Qt.AlignHCenter)
+        self.verticalLayout_40.addWidget(self.slider_250, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_19 = QLabel(self.frame_63)
         self.label_19.setObjectName(u"label_19")
         self.label_19.setFont(font10)
         self.label_19.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_19.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_19.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_40.addWidget(self.label_19)
 
@@ -2201,8 +2204,8 @@ class Ui_MainWindow(object):
         self.frame_64.setObjectName(u"frame_64")
         self.frame_64.setMinimumSize(QSize(76, 150))
         self.frame_64.setMaximumSize(QSize(76, 150))
-        self.frame_64.setFrameShape(QFrame.NoFrame)
-        self.frame_64.setFrameShadow(QFrame.Raised)
+        self.frame_64.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_64.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_41 = QVBoxLayout(self.frame_64)
         self.verticalLayout_41.setSpacing(3)
         self.verticalLayout_41.setObjectName(u"verticalLayout_41")
@@ -2225,15 +2228,15 @@ class Ui_MainWindow(object):
         self.slider_315.setMinimum(-50)
         self.slider_315.setMaximum(50)
         self.slider_315.setValue(0)
-        self.slider_315.setOrientation(Qt.Vertical)
+        self.slider_315.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_41.addWidget(self.slider_315, 0, Qt.AlignHCenter)
+        self.verticalLayout_41.addWidget(self.slider_315, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_22 = QLabel(self.frame_64)
         self.label_22.setObjectName(u"label_22")
         self.label_22.setFont(font10)
         self.label_22.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_22.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_22.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_41.addWidget(self.label_22)
 
@@ -2245,8 +2248,8 @@ class Ui_MainWindow(object):
         self.frame_65.setEnabled(True)
         self.frame_65.setMinimumSize(QSize(76, 150))
         self.frame_65.setMaximumSize(QSize(76, 150))
-        self.frame_65.setFrameShape(QFrame.NoFrame)
-        self.frame_65.setFrameShadow(QFrame.Raised)
+        self.frame_65.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_65.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_42 = QVBoxLayout(self.frame_65)
         self.verticalLayout_42.setSpacing(3)
         self.verticalLayout_42.setObjectName(u"verticalLayout_42")
@@ -2268,15 +2271,15 @@ class Ui_MainWindow(object):
         self.slider_400.setMinimum(-50)
         self.slider_400.setMaximum(50)
         self.slider_400.setValue(0)
-        self.slider_400.setOrientation(Qt.Vertical)
+        self.slider_400.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_42.addWidget(self.slider_400, 0, Qt.AlignHCenter)
+        self.verticalLayout_42.addWidget(self.slider_400, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_52 = QLabel(self.frame_65)
         self.label_52.setObjectName(u"label_52")
         self.label_52.setFont(font10)
         self.label_52.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_52.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_52.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_42.addWidget(self.label_52)
 
@@ -2288,8 +2291,8 @@ class Ui_MainWindow(object):
         self.frame_66.setEnabled(True)
         self.frame_66.setMinimumSize(QSize(76, 150))
         self.frame_66.setMaximumSize(QSize(76, 150))
-        self.frame_66.setFrameShape(QFrame.NoFrame)
-        self.frame_66.setFrameShadow(QFrame.Raised)
+        self.frame_66.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_66.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_43 = QVBoxLayout(self.frame_66)
         self.verticalLayout_43.setSpacing(3)
         self.verticalLayout_43.setObjectName(u"verticalLayout_43")
@@ -2312,15 +2315,15 @@ class Ui_MainWindow(object):
         self.slider_500.setMinimum(-50)
         self.slider_500.setMaximum(50)
         self.slider_500.setValue(0)
-        self.slider_500.setOrientation(Qt.Vertical)
+        self.slider_500.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_43.addWidget(self.slider_500, 0, Qt.AlignHCenter)
+        self.verticalLayout_43.addWidget(self.slider_500, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_53 = QLabel(self.frame_66)
         self.label_53.setObjectName(u"label_53")
         self.label_53.setFont(font10)
         self.label_53.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_53.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_53.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_43.addWidget(self.label_53)
 
@@ -2331,8 +2334,8 @@ class Ui_MainWindow(object):
         self.frame_67.setObjectName(u"frame_67")
         self.frame_67.setMinimumSize(QSize(76, 150))
         self.frame_67.setMaximumSize(QSize(76, 150))
-        self.frame_67.setFrameShape(QFrame.NoFrame)
-        self.frame_67.setFrameShadow(QFrame.Raised)
+        self.frame_67.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_67.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_44 = QVBoxLayout(self.frame_67)
         self.verticalLayout_44.setSpacing(3)
         self.verticalLayout_44.setObjectName(u"verticalLayout_44")
@@ -2355,15 +2358,15 @@ class Ui_MainWindow(object):
         self.slider_630.setMinimum(-50)
         self.slider_630.setMaximum(50)
         self.slider_630.setValue(0)
-        self.slider_630.setOrientation(Qt.Vertical)
+        self.slider_630.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_44.addWidget(self.slider_630, 0, Qt.AlignHCenter)
+        self.verticalLayout_44.addWidget(self.slider_630, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_54 = QLabel(self.frame_67)
         self.label_54.setObjectName(u"label_54")
         self.label_54.setFont(font10)
         self.label_54.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_54.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_54.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_44.addWidget(self.label_54)
 
@@ -2400,16 +2403,16 @@ class Ui_MainWindow(object):
 "};\n"
 "\n"
 "")
-        self.lowerSliders.setFrameShape(QFrame.NoFrame)
-        self.lowerSliders.setFrameShadow(QFrame.Raised)
+        self.lowerSliders.setFrameShape(QFrame.Shape.NoFrame)
+        self.lowerSliders.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_23 = QHBoxLayout(self.lowerSliders)
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
         self.frame_84 = QFrame(self.lowerSliders)
         self.frame_84.setObjectName(u"frame_84")
         self.frame_84.setMinimumSize(QSize(76, 150))
         self.frame_84.setMaximumSize(QSize(76, 150))
-        self.frame_84.setFrameShape(QFrame.NoFrame)
-        self.frame_84.setFrameShadow(QFrame.Raised)
+        self.frame_84.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_84.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_30 = QVBoxLayout(self.frame_84)
         self.verticalLayout_30.setSpacing(0)
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
@@ -2431,15 +2434,15 @@ class Ui_MainWindow(object):
         self.slider_800.setMinimum(-50)
         self.slider_800.setMaximum(50)
         self.slider_800.setValue(0)
-        self.slider_800.setOrientation(Qt.Vertical)
+        self.slider_800.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_30.addWidget(self.slider_800, 0, Qt.AlignHCenter)
+        self.verticalLayout_30.addWidget(self.slider_800, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_7 = QLabel(self.frame_84)
         self.label_7.setObjectName(u"label_7")
         self.label_7.setFont(font10)
         self.label_7.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_7.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_7.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_30.addWidget(self.label_7)
 
@@ -2450,8 +2453,8 @@ class Ui_MainWindow(object):
         self.frame_85.setObjectName(u"frame_85")
         self.frame_85.setMinimumSize(QSize(76, 150))
         self.frame_85.setMaximumSize(QSize(76, 150))
-        self.frame_85.setFrameShape(QFrame.NoFrame)
-        self.frame_85.setFrameShadow(QFrame.Raised)
+        self.frame_85.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_85.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_31 = QVBoxLayout(self.frame_85)
         self.verticalLayout_31.setSpacing(0)
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
@@ -2473,15 +2476,15 @@ class Ui_MainWindow(object):
         self.slider_1000.setMinimum(-50)
         self.slider_1000.setMaximum(50)
         self.slider_1000.setValue(0)
-        self.slider_1000.setOrientation(Qt.Vertical)
+        self.slider_1000.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_31.addWidget(self.slider_1000, 0, Qt.AlignHCenter)
+        self.verticalLayout_31.addWidget(self.slider_1000, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_20 = QLabel(self.frame_85)
         self.label_20.setObjectName(u"label_20")
         self.label_20.setFont(font10)
         self.label_20.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_20.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_20.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_31.addWidget(self.label_20)
 
@@ -2492,8 +2495,8 @@ class Ui_MainWindow(object):
         self.frame_86.setObjectName(u"frame_86")
         self.frame_86.setMinimumSize(QSize(76, 150))
         self.frame_86.setMaximumSize(QSize(76, 150))
-        self.frame_86.setFrameShape(QFrame.NoFrame)
-        self.frame_86.setFrameShadow(QFrame.Raised)
+        self.frame_86.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_86.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_45 = QVBoxLayout(self.frame_86)
         self.verticalLayout_45.setSpacing(0)
         self.verticalLayout_45.setObjectName(u"verticalLayout_45")
@@ -2515,15 +2518,15 @@ class Ui_MainWindow(object):
         self.slider_1250.setMinimum(-50)
         self.slider_1250.setMaximum(50)
         self.slider_1250.setValue(0)
-        self.slider_1250.setOrientation(Qt.Vertical)
+        self.slider_1250.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_45.addWidget(self.slider_1250, 0, Qt.AlignHCenter)
+        self.verticalLayout_45.addWidget(self.slider_1250, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_55 = QLabel(self.frame_86)
         self.label_55.setObjectName(u"label_55")
         self.label_55.setFont(font10)
         self.label_55.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_55.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_55.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_45.addWidget(self.label_55)
 
@@ -2534,8 +2537,8 @@ class Ui_MainWindow(object):
         self.frame_87.setObjectName(u"frame_87")
         self.frame_87.setMinimumSize(QSize(76, 150))
         self.frame_87.setMaximumSize(QSize(76, 150))
-        self.frame_87.setFrameShape(QFrame.NoFrame)
-        self.frame_87.setFrameShadow(QFrame.Raised)
+        self.frame_87.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_87.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_46 = QVBoxLayout(self.frame_87)
         self.verticalLayout_46.setSpacing(0)
         self.verticalLayout_46.setObjectName(u"verticalLayout_46")
@@ -2557,15 +2560,15 @@ class Ui_MainWindow(object):
         self.slider_1600.setMinimum(-50)
         self.slider_1600.setMaximum(50)
         self.slider_1600.setValue(0)
-        self.slider_1600.setOrientation(Qt.Vertical)
+        self.slider_1600.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_46.addWidget(self.slider_1600, 0, Qt.AlignHCenter)
+        self.verticalLayout_46.addWidget(self.slider_1600, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_56 = QLabel(self.frame_87)
         self.label_56.setObjectName(u"label_56")
         self.label_56.setFont(font10)
         self.label_56.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_56.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_56.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_46.addWidget(self.label_56)
 
@@ -2576,8 +2579,8 @@ class Ui_MainWindow(object):
         self.frame_88.setObjectName(u"frame_88")
         self.frame_88.setMinimumSize(QSize(76, 150))
         self.frame_88.setMaximumSize(QSize(76, 150))
-        self.frame_88.setFrameShape(QFrame.NoFrame)
-        self.frame_88.setFrameShadow(QFrame.Raised)
+        self.frame_88.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_88.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_47 = QVBoxLayout(self.frame_88)
         self.verticalLayout_47.setSpacing(0)
         self.verticalLayout_47.setObjectName(u"verticalLayout_47")
@@ -2599,15 +2602,15 @@ class Ui_MainWindow(object):
         self.slider_2000.setMinimum(-50)
         self.slider_2000.setMaximum(50)
         self.slider_2000.setValue(0)
-        self.slider_2000.setOrientation(Qt.Vertical)
+        self.slider_2000.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_47.addWidget(self.slider_2000, 0, Qt.AlignHCenter)
+        self.verticalLayout_47.addWidget(self.slider_2000, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_57 = QLabel(self.frame_88)
         self.label_57.setObjectName(u"label_57")
         self.label_57.setFont(font10)
         self.label_57.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_57.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_57.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_47.addWidget(self.label_57)
 
@@ -2618,8 +2621,8 @@ class Ui_MainWindow(object):
         self.frame_89.setObjectName(u"frame_89")
         self.frame_89.setMinimumSize(QSize(76, 150))
         self.frame_89.setMaximumSize(QSize(76, 150))
-        self.frame_89.setFrameShape(QFrame.NoFrame)
-        self.frame_89.setFrameShadow(QFrame.Raised)
+        self.frame_89.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_89.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_48 = QVBoxLayout(self.frame_89)
         self.verticalLayout_48.setSpacing(0)
         self.verticalLayout_48.setObjectName(u"verticalLayout_48")
@@ -2641,15 +2644,15 @@ class Ui_MainWindow(object):
         self.slider_2500.setMinimum(-50)
         self.slider_2500.setMaximum(50)
         self.slider_2500.setValue(0)
-        self.slider_2500.setOrientation(Qt.Vertical)
+        self.slider_2500.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_48.addWidget(self.slider_2500, 0, Qt.AlignHCenter)
+        self.verticalLayout_48.addWidget(self.slider_2500, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_58 = QLabel(self.frame_89)
         self.label_58.setObjectName(u"label_58")
         self.label_58.setFont(font10)
         self.label_58.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_58.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_58.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_48.addWidget(self.label_58)
 
@@ -2660,8 +2663,8 @@ class Ui_MainWindow(object):
         self.frame_90.setObjectName(u"frame_90")
         self.frame_90.setMinimumSize(QSize(76, 150))
         self.frame_90.setMaximumSize(QSize(76, 150))
-        self.frame_90.setFrameShape(QFrame.NoFrame)
-        self.frame_90.setFrameShadow(QFrame.Raised)
+        self.frame_90.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_90.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_49 = QVBoxLayout(self.frame_90)
         self.verticalLayout_49.setSpacing(0)
         self.verticalLayout_49.setObjectName(u"verticalLayout_49")
@@ -2683,15 +2686,15 @@ class Ui_MainWindow(object):
         self.slider_3150.setMinimum(-50)
         self.slider_3150.setMaximum(50)
         self.slider_3150.setValue(0)
-        self.slider_3150.setOrientation(Qt.Vertical)
+        self.slider_3150.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_49.addWidget(self.slider_3150, 0, Qt.AlignHCenter)
+        self.verticalLayout_49.addWidget(self.slider_3150, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_59 = QLabel(self.frame_90)
         self.label_59.setObjectName(u"label_59")
         self.label_59.setFont(font10)
         self.label_59.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_59.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_59.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_49.addWidget(self.label_59)
 
@@ -2702,8 +2705,8 @@ class Ui_MainWindow(object):
         self.frame_91.setObjectName(u"frame_91")
         self.frame_91.setMinimumSize(QSize(76, 150))
         self.frame_91.setMaximumSize(QSize(76, 150))
-        self.frame_91.setFrameShape(QFrame.NoFrame)
-        self.frame_91.setFrameShadow(QFrame.Raised)
+        self.frame_91.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_91.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_50 = QVBoxLayout(self.frame_91)
         self.verticalLayout_50.setSpacing(0)
         self.verticalLayout_50.setObjectName(u"verticalLayout_50")
@@ -2725,15 +2728,15 @@ class Ui_MainWindow(object):
         self.slider_4000.setMinimum(-50)
         self.slider_4000.setMaximum(50)
         self.slider_4000.setValue(0)
-        self.slider_4000.setOrientation(Qt.Vertical)
+        self.slider_4000.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_50.addWidget(self.slider_4000, 0, Qt.AlignHCenter)
+        self.verticalLayout_50.addWidget(self.slider_4000, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_60 = QLabel(self.frame_91)
         self.label_60.setObjectName(u"label_60")
         self.label_60.setFont(font10)
         self.label_60.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_60.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_60.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_50.addWidget(self.label_60)
 
@@ -2744,8 +2747,8 @@ class Ui_MainWindow(object):
         self.frame_92.setObjectName(u"frame_92")
         self.frame_92.setMinimumSize(QSize(76, 150))
         self.frame_92.setMaximumSize(QSize(76, 150))
-        self.frame_92.setFrameShape(QFrame.NoFrame)
-        self.frame_92.setFrameShadow(QFrame.Raised)
+        self.frame_92.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_92.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_51 = QVBoxLayout(self.frame_92)
         self.verticalLayout_51.setSpacing(0)
         self.verticalLayout_51.setObjectName(u"verticalLayout_51")
@@ -2767,15 +2770,15 @@ class Ui_MainWindow(object):
         self.slider_5000.setMinimum(-50)
         self.slider_5000.setMaximum(50)
         self.slider_5000.setValue(0)
-        self.slider_5000.setOrientation(Qt.Vertical)
+        self.slider_5000.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_51.addWidget(self.slider_5000, 0, Qt.AlignHCenter)
+        self.verticalLayout_51.addWidget(self.slider_5000, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_61 = QLabel(self.frame_92)
         self.label_61.setObjectName(u"label_61")
         self.label_61.setFont(font10)
         self.label_61.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_61.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_61.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_51.addWidget(self.label_61)
 
@@ -2786,8 +2789,8 @@ class Ui_MainWindow(object):
         self.frame_93.setObjectName(u"frame_93")
         self.frame_93.setMinimumSize(QSize(76, 150))
         self.frame_93.setMaximumSize(QSize(76, 150))
-        self.frame_93.setFrameShape(QFrame.NoFrame)
-        self.frame_93.setFrameShadow(QFrame.Raised)
+        self.frame_93.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_93.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_52 = QVBoxLayout(self.frame_93)
         self.verticalLayout_52.setSpacing(0)
         self.verticalLayout_52.setObjectName(u"verticalLayout_52")
@@ -2809,15 +2812,15 @@ class Ui_MainWindow(object):
         self.slider_6300.setMinimum(-50)
         self.slider_6300.setMaximum(50)
         self.slider_6300.setValue(0)
-        self.slider_6300.setOrientation(Qt.Vertical)
+        self.slider_6300.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_52.addWidget(self.slider_6300, 0, Qt.AlignHCenter)
+        self.verticalLayout_52.addWidget(self.slider_6300, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_62 = QLabel(self.frame_93)
         self.label_62.setObjectName(u"label_62")
         self.label_62.setFont(font10)
         self.label_62.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_62.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_62.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_52.addWidget(self.label_62)
 
@@ -2828,8 +2831,8 @@ class Ui_MainWindow(object):
         self.frame_94.setObjectName(u"frame_94")
         self.frame_94.setMinimumSize(QSize(76, 150))
         self.frame_94.setMaximumSize(QSize(76, 150))
-        self.frame_94.setFrameShape(QFrame.NoFrame)
-        self.frame_94.setFrameShadow(QFrame.Raised)
+        self.frame_94.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_94.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_53 = QVBoxLayout(self.frame_94)
         self.verticalLayout_53.setSpacing(0)
         self.verticalLayout_53.setObjectName(u"verticalLayout_53")
@@ -2851,15 +2854,15 @@ class Ui_MainWindow(object):
         self.slider_8000.setMinimum(-50)
         self.slider_8000.setMaximum(50)
         self.slider_8000.setValue(0)
-        self.slider_8000.setOrientation(Qt.Vertical)
+        self.slider_8000.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_53.addWidget(self.slider_8000, 0, Qt.AlignHCenter)
+        self.verticalLayout_53.addWidget(self.slider_8000, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_63 = QLabel(self.frame_94)
         self.label_63.setObjectName(u"label_63")
         self.label_63.setFont(font10)
         self.label_63.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_63.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_63.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_53.addWidget(self.label_63)
 
@@ -2870,8 +2873,8 @@ class Ui_MainWindow(object):
         self.frame_95.setObjectName(u"frame_95")
         self.frame_95.setMinimumSize(QSize(76, 150))
         self.frame_95.setMaximumSize(QSize(76, 140))
-        self.frame_95.setFrameShape(QFrame.NoFrame)
-        self.frame_95.setFrameShadow(QFrame.Raised)
+        self.frame_95.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_95.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_54 = QVBoxLayout(self.frame_95)
         self.verticalLayout_54.setSpacing(0)
         self.verticalLayout_54.setObjectName(u"verticalLayout_54")
@@ -2893,15 +2896,15 @@ class Ui_MainWindow(object):
         self.slider_10000.setMinimum(-50)
         self.slider_10000.setMaximum(50)
         self.slider_10000.setValue(0)
-        self.slider_10000.setOrientation(Qt.Vertical)
+        self.slider_10000.setOrientation(Qt.Orientation.Vertical)
 
-        self.verticalLayout_54.addWidget(self.slider_10000, 0, Qt.AlignHCenter)
+        self.verticalLayout_54.addWidget(self.slider_10000, 0, Qt.AlignmentFlag.AlignHCenter)
 
         self.label_64 = QLabel(self.frame_95)
         self.label_64.setObjectName(u"label_64")
         self.label_64.setFont(font10)
         self.label_64.setStyleSheet(u"color: rgb(80, 184, 158)")
-        self.label_64.setAlignment(Qt.AlignHCenter|Qt.AlignTop)
+        self.label_64.setAlignment(Qt.AlignmentFlag.AlignHCenter|Qt.AlignmentFlag.AlignTop)
 
         self.verticalLayout_54.addWidget(self.label_64)
 
@@ -2913,10 +2916,10 @@ class Ui_MainWindow(object):
 
         self.frame_100 = QFrame(self.controlFrame)
         self.frame_100.setObjectName(u"frame_100")
-        self.frame_100.setLayoutDirection(Qt.RightToLeft)
+        self.frame_100.setLayoutDirection(Qt.LayoutDirection.RightToLeft)
         self.frame_100.setStyleSheet(u"")
-        self.frame_100.setFrameShape(QFrame.NoFrame)
-        self.frame_100.setFrameShadow(QFrame.Raised)
+        self.frame_100.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_100.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_43 = QHBoxLayout(self.frame_100)
         self.horizontalLayout_43.setSpacing(0)
         self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
@@ -2941,16 +2944,16 @@ class Ui_MainWindow(object):
         self.SupCalibrationSetup.setObjectName(u"SupCalibrationSetup")
         self.SupCalibrationSetup.setMinimumSize(QSize(0, 80))
         self.SupCalibrationSetup.setMaximumSize(QSize(16777215, 140))
-        self.SupCalibrationSetup.setFrameShape(QFrame.NoFrame)
-        self.SupCalibrationSetup.setFrameShadow(QFrame.Raised)
+        self.SupCalibrationSetup.setFrameShape(QFrame.Shape.NoFrame)
+        self.SupCalibrationSetup.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_65 = QHBoxLayout(self.SupCalibrationSetup)
         self.horizontalLayout_65.setSpacing(0)
         self.horizontalLayout_65.setObjectName(u"horizontalLayout_65")
         self.horizontalLayout_65.setContentsMargins(0, 0, 0, 0)
         self.frame_128 = QFrame(self.SupCalibrationSetup)
         self.frame_128.setObjectName(u"frame_128")
-        self.frame_128.setFrameShape(QFrame.NoFrame)
-        self.frame_128.setFrameShadow(QFrame.Raised)
+        self.frame_128.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_128.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_66 = QHBoxLayout(self.frame_128)
         self.horizontalLayout_66.setSpacing(0)
         self.horizontalLayout_66.setObjectName(u"horizontalLayout_66")
@@ -2969,8 +2972,8 @@ class Ui_MainWindow(object):
 
         self.frame_129 = QFrame(self.SupCalibrationSetup)
         self.frame_129.setObjectName(u"frame_129")
-        self.frame_129.setFrameShape(QFrame.NoFrame)
-        self.frame_129.setFrameShadow(QFrame.Raised)
+        self.frame_129.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_129.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_88 = QVBoxLayout(self.frame_129)
         self.verticalLayout_88.setSpacing(0)
         self.verticalLayout_88.setObjectName(u"verticalLayout_88")
@@ -2982,7 +2985,7 @@ class Ui_MainWindow(object):
         self.logo_3.setPixmap(QPixmap(u":/logos/img/psychobox_logo.png"))
         self.logo_3.setScaledContents(True)
 
-        self.verticalLayout_88.addWidget(self.logo_3, 0, Qt.AlignRight)
+        self.verticalLayout_88.addWidget(self.logo_3, 0, Qt.AlignmentFlag.AlignRight)
 
 
         self.horizontalLayout_65.addWidget(self.frame_129)
@@ -2994,8 +2997,8 @@ class Ui_MainWindow(object):
         self.InfCalibrationSetup.setObjectName(u"InfCalibrationSetup")
         self.InfCalibrationSetup.setMinimumSize(QSize(0, 0))
         self.InfCalibrationSetup.setStyleSheet(u"b")
-        self.InfCalibrationSetup.setFrameShape(QFrame.NoFrame)
-        self.InfCalibrationSetup.setFrameShadow(QFrame.Raised)
+        self.InfCalibrationSetup.setFrameShape(QFrame.Shape.NoFrame)
+        self.InfCalibrationSetup.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_54 = QHBoxLayout(self.InfCalibrationSetup)
         self.horizontalLayout_54.setSpacing(6)
         self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
@@ -3007,8 +3010,8 @@ class Ui_MainWindow(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px\n"
 "}")
-        self.Import.setFrameShape(QFrame.StyledPanel)
-        self.Import.setFrameShadow(QFrame.Raised)
+        self.Import.setFrameShape(QFrame.Shape.StyledPanel)
+        self.Import.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_84 = QVBoxLayout(self.Import)
         self.verticalLayout_84.setSpacing(5)
         self.verticalLayout_84.setObjectName(u"verticalLayout_84")
@@ -3017,8 +3020,8 @@ class Ui_MainWindow(object):
         self.frame_121.setObjectName(u"frame_121")
         self.frame_121.setMinimumSize(QSize(0, 50))
         self.frame_121.setMaximumSize(QSize(16777215, 50))
-        self.frame_121.setFrameShape(QFrame.NoFrame)
-        self.frame_121.setFrameShadow(QFrame.Raised)
+        self.frame_121.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_121.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_59 = QHBoxLayout(self.frame_121)
         self.horizontalLayout_59.setSpacing(5)
         self.horizontalLayout_59.setObjectName(u"horizontalLayout_59")
@@ -3056,15 +3059,15 @@ class Ui_MainWindow(object):
         self.checkHold.setFont(font12)
         self.checkHold.setChecked(False)
 
-        self.horizontalLayout_59.addWidget(self.checkHold, 0, Qt.AlignRight)
+        self.horizontalLayout_59.addWidget(self.checkHold, 0, Qt.AlignmentFlag.AlignRight)
 
 
         self.verticalLayout_84.addWidget(self.frame_121)
 
         self.frame_122 = QFrame(self.Import)
         self.frame_122.setObjectName(u"frame_122")
-        self.frame_122.setFrameShape(QFrame.StyledPanel)
-        self.frame_122.setFrameShadow(QFrame.Raised)
+        self.frame_122.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_122.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_85 = QVBoxLayout(self.frame_122)
         self.verticalLayout_85.setObjectName(u"verticalLayout_85")
         self.listWidget2 = QListWidget(self.frame_122)
@@ -3116,8 +3119,8 @@ class Ui_MainWindow(object):
 "	background-color: rgb(237, 105, 59)\n"
 "}\n"
 "")
-        self.frame_123.setFrameShape(QFrame.StyledPanel)
-        self.frame_123.setFrameShadow(QFrame.Raised)
+        self.frame_123.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_123.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_86 = QVBoxLayout(self.frame_123)
         self.verticalLayout_86.setSpacing(6)
         self.verticalLayout_86.setObjectName(u"verticalLayout_86")
@@ -3160,8 +3163,8 @@ class Ui_MainWindow(object):
         self.RightCalibrationSetup.setMinimumSize(QSize(0, 0))
         self.RightCalibrationSetup.setMaximumSize(QSize(16777215, 16777215))
         self.RightCalibrationSetup.setStyleSheet(u"")
-        self.RightCalibrationSetup.setFrameShape(QFrame.NoFrame)
-        self.RightCalibrationSetup.setFrameShadow(QFrame.Raised)
+        self.RightCalibrationSetup.setFrameShape(QFrame.Shape.NoFrame)
+        self.RightCalibrationSetup.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_90 = QVBoxLayout(self.RightCalibrationSetup)
         self.verticalLayout_90.setSpacing(6)
         self.verticalLayout_90.setObjectName(u"verticalLayout_90")
@@ -3174,8 +3177,8 @@ class Ui_MainWindow(object):
 "	border-radius: 6px;\n"
 "}	\n"
 "")
-        self.Headphones.setFrameShape(QFrame.NoFrame)
-        self.Headphones.setFrameShadow(QFrame.Raised)
+        self.Headphones.setFrameShape(QFrame.Shape.NoFrame)
+        self.Headphones.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_91 = QVBoxLayout(self.Headphones)
         self.verticalLayout_91.setSpacing(5)
         self.verticalLayout_91.setObjectName(u"verticalLayout_91")
@@ -3183,8 +3186,8 @@ class Ui_MainWindow(object):
         self.frame_133.setObjectName(u"frame_133")
         self.frame_133.setMinimumSize(QSize(0, 50))
         self.frame_133.setMaximumSize(QSize(16777215, 50))
-        self.frame_133.setFrameShape(QFrame.NoFrame)
-        self.frame_133.setFrameShadow(QFrame.Raised)
+        self.frame_133.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_133.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_67 = QHBoxLayout(self.frame_133)
         self.horizontalLayout_67.setSpacing(5)
         self.horizontalLayout_67.setObjectName(u"horizontalLayout_67")
@@ -3257,8 +3260,8 @@ class Ui_MainWindow(object):
 "	selection-color: #4f4f4f;\n"
 "}\n"
 "")
-        self.frame_134.setFrameShape(QFrame.NoFrame)
-        self.frame_134.setFrameShadow(QFrame.Raised)
+        self.frame_134.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_134.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_92 = QVBoxLayout(self.frame_134)
         self.verticalLayout_92.setObjectName(u"verticalLayout_92")
         self.verticalLayout_92.setContentsMargins(0, 0, 0, 0)
@@ -3279,7 +3282,7 @@ class Ui_MainWindow(object):
         self.typeHeadBox_2.setMaximumSize(QSize(16777215, 30))
         self.typeHeadBox_2.setFont(font7)
         self.typeHeadBox_2.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
-        self.typeHeadBox_2.setInsertPolicy(QComboBox.InsertAtBottom)
+        self.typeHeadBox_2.setInsertPolicy(QComboBox.InsertPolicy.InsertAtBottom)
 
         self.verticalLayout_92.addWidget(self.typeHeadBox_2)
 
@@ -3315,8 +3318,8 @@ class Ui_MainWindow(object):
 "	border-radius: 6px;\n"
 "}	\n"
 "")
-        self.Hats.setFrameShape(QFrame.NoFrame)
-        self.Hats.setFrameShadow(QFrame.Raised)
+        self.Hats.setFrameShape(QFrame.Shape.NoFrame)
+        self.Hats.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_93 = QVBoxLayout(self.Hats)
         self.verticalLayout_93.setSpacing(5)
         self.verticalLayout_93.setObjectName(u"verticalLayout_93")
@@ -3364,8 +3367,8 @@ class Ui_MainWindow(object):
 "	selection-color: #4f4f4f;\n"
 "}\n"
 "")
-        self.frame_136.setFrameShape(QFrame.NoFrame)
-        self.frame_136.setFrameShadow(QFrame.Raised)
+        self.frame_136.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_136.setFrameShadow(QFrame.Shadow.Raised)
         self.verticalLayout_94 = QVBoxLayout(self.frame_136)
         self.verticalLayout_94.setObjectName(u"verticalLayout_94")
         self.verticalLayout_94.setContentsMargins(0, 0, 0, 0)
@@ -3373,8 +3376,8 @@ class Ui_MainWindow(object):
         self.frame_137.setObjectName(u"frame_137")
         self.frame_137.setMinimumSize(QSize(0, 50))
         self.frame_137.setMaximumSize(QSize(16777215, 50))
-        self.frame_137.setFrameShape(QFrame.NoFrame)
-        self.frame_137.setFrameShadow(QFrame.Raised)
+        self.frame_137.setFrameShape(QFrame.Shape.NoFrame)
+        self.frame_137.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_68 = QHBoxLayout(self.frame_137)
         self.horizontalLayout_68.setSpacing(5)
         self.horizontalLayout_68.setObjectName(u"horizontalLayout_68")
@@ -3477,8 +3480,8 @@ class Ui_MainWindow(object):
 "	background-color:rgb(70, 70, 70);\n"
 "}\n"
 "")
-        self.frame_28.setFrameShape(QFrame.StyledPanel)
-        self.frame_28.setFrameShadow(QFrame.Raised)
+        self.frame_28.setFrameShape(QFrame.Shape.StyledPanel)
+        self.frame_28.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_24 = QHBoxLayout(self.frame_28)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
         self.plot = QPushButton(self.frame_28)
@@ -3536,8 +3539,8 @@ class Ui_MainWindow(object):
         self.bottomContent.setStyleSheet(u"QFrame{\n"
 "	background-color: rgb(70, 70, 70);\n"
 "}")
-        self.bottomContent.setFrameShape(QFrame.NoFrame)
-        self.bottomContent.setFrameShadow(QFrame.Raised)
+        self.bottomContent.setFrameShape(QFrame.Shape.NoFrame)
+        self.bottomContent.setFrameShadow(QFrame.Shadow.Raised)
         self.horizontalLayout_11 = QHBoxLayout(self.bottomContent)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
@@ -3546,7 +3549,7 @@ class Ui_MainWindow(object):
         self.label.setObjectName(u"label")
         self.label.setFont(font12)
         self.label.setStyleSheet(u"color:rgb(255, 255, 255)")
-        self.label.setAlignment(Qt.AlignBottom|Qt.AlignLeading|Qt.AlignLeft)
+        self.label.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignLeading|Qt.AlignmentFlag.AlignLeft)
 
         self.horizontalLayout_11.addWidget(self.label)
 
@@ -3558,7 +3561,7 @@ class Ui_MainWindow(object):
         font14.setBold(False)
         self.label_23.setFont(font14)
         self.label_23.setStyleSheet(u"color: rgb(238, 238, 236);")
-        self.label_23.setAlignment(Qt.AlignBottom|Qt.AlignRight|Qt.AlignTrailing)
+        self.label_23.setAlignment(Qt.AlignmentFlag.AlignBottom|Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing)
 
         self.horizontalLayout_11.addWidget(self.label_23)
 
@@ -3568,7 +3571,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1164, 21))
+        self.menubar.setGeometry(QRect(0, 0, 1164, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -3593,6 +3596,9 @@ class Ui_MainWindow(object):
         self.closeAllButton.setText("")
         self.homeButton.setText("")
         self.recordingButton.setText("")
+#if QT_CONFIG(tooltip)
+        self.filterButton.setToolTip("")
+#endif // QT_CONFIG(tooltip)
         self.filterButton.setText("")
         self.calibrationButton.setText("")
 #if QT_CONFIG(accessibility)

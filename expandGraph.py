@@ -30,4 +30,4 @@ if __name__ == "__main__":
    widget.show()
    QtCore.QTimer.singleShot(0, lambda: SetupWindow.centerWindow(widget))
    sys.exit(app.exec_())
-
+    

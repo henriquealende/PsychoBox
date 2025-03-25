@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton, QDialog, QVBoxLayout, QLabel, QListWidget
+from PySide6.QtWidgets import QMainWindow, QApplication, QPushButton, QDialog, QVBoxLayout, QLabel, QListWidget, QListWidgetItem
 import sounddevice as sd
 
 class DeviceSelectionDialog(QDialog):
@@ -20,7 +20,6 @@ class DeviceSelectionDialog(QDialog):
         layout.addWidget(self.device_list)
 
         # Conectar ao clique na lista
-        
         self.device_list.itemClicked.connect(self.device_selected)
 
         # Configurar layout da janela
@@ -30,21 +29,28 @@ class DeviceSelectionDialog(QDialog):
         """Popula a lista com dispositivos de entrada ou saída"""
         devices = sd.query_devices()
         if self.device_type == 'Gravação':
-            device_names = [dev['name'] for dev in devices if dev['max_input_channels'] > 0]
+            device_info = [(i, dev['name']) for i, dev in enumerate(devices) if dev['max_input_channels'] > 0]
         elif self.device_type == 'Reprodução':
-            device_names = [dev['name'] for dev in devices if dev['max_output_channels'] > 0]
+            device_info = [(i, dev['name']) for i, dev in enumerate(devices) if dev['max_output_channels'] > 0]
 
-        self.device_list.addItems(device_names)
+        # Adiciona à lista exibida o número e o nome do dispositivo
+        for i, name in device_info:
+            item_text = f"[{i}] {name}"  # Formato: [Número] Nome
+            item = QListWidgetItem(item_text)
+            item.device_index = i  # Armazenando o índice do dispositivo
+            self.device_list.addItem(item)
 
     def device_selected(self, item):
         """Ação quando um dispositivo é selecionado"""
-        selected_device = item.text()
+        device_index = item.device_index  # Pega o índice do dispositivo
+        devices = sd.query_devices()
+        selected_device = devices[device_index]['name']  # Pega o nome do dispositivo pelo índice
+
         if self.device_type == 'Gravação':
-            device_info = sd.query_devices(selected_device, 'input')
-            sd.default.device[0] = device_info['name']
-            print(f"Microfone Selecionado: {device_info['name']}")
+            sd.default.device[0] = device_index
+            print(f"Microfone Selecionado: {selected_device}")
         elif self.device_type == 'Reprodução':
-            device_info = sd.query_devices(selected_device, 'output')
-            sd.default.device[1] = device_info['name']
-            print(f"Alto-falante Selecionado: {device_info['name']}")
+            sd.default.device[1] = device_index
+            print(f"Alto-falante Selecionado: {selected_device}")
+        
         self.accept()  # Fechar a janela ao selecionar
