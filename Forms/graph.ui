@@ -207,8 +207,8 @@ QPushButton:hover {
            </property>
            <property name="styleSheet">
             <string notr="true">QPushButton {
-	background-color:  qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
-	border: 2px solid  qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));
+	background-color:  rgb(237, 105, 59);
+	border: 2px solid rgb(184, 80, 45) ;
 }
 
 QPushButton:hover {
@@ -217,6 +217,16 @@ QPushButton:hover {
            </property>
            <property name="text">
             <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../Resources/resourceGui.qrc">
+             <normaloff>:/icons/img/maximizar-janela.png</normaloff>:/icons/img/maximizar-janela.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>12</width>
+             <height>12</height>
+            </size>
            </property>
           </widget>
          </item>
@@ -391,7 +401,7 @@ QPushButton:hover{
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/graphicsEnabled.png</pixmap>
+               <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/statistics.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -596,7 +606,7 @@ QSpinBox::up-arrow:disabled {
 }</string>
            </property>
            <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
+            <enum>QFrame::NoFrame</enum>
            </property>
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
@@ -617,19 +627,6 @@ QSpinBox::up-arrow:disabled {
             <property name="bottomMargin">
              <number>5</number>
             </property>
-            <item>
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
             <item>
              <widget class="QFrame" name="frame_20">
               <property name="frameShape">
@@ -715,19 +712,6 @@ QSpinBox::up-arrow:disabled {
                   <number>0</number>
                  </property>
                 </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer_3">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
                </item>
                <item>
                 <widget class="QLabel" name="label_79">
@@ -866,19 +850,6 @@ QSpinBox::up-arrow:disabled {
                 </widget>
                </item>
                <item>
-                <spacer name="horizontalSpacer_4">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item>
                 <widget class="QLabel" name="label_81">
                  <property name="font">
                   <font>
@@ -928,12 +899,34 @@ QSpinBox::up-arrow:disabled {
                 </widget>
                </item>
                <item>
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
                 <widget class="QPushButton" name="refresh">
+                 <property name="minimumSize">
+                  <size>
+                   <width>30</width>
+                   <height>30</height>
+                  </size>
+                 </property>
                  <property name="maximumSize">
                   <size>
                    <width>30</width>
                    <height>30</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 170, 127)</string>
                  </property>
                  <property name="text">
                   <string/>
@@ -946,19 +939,6 @@ QSpinBox::up-arrow:disabled {
                </item>
               </layout>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </widget>

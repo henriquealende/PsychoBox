@@ -20,7 +20,6 @@ class SetupWindow():
         appIcon = QIcon('Resources/img/psychobox_logo2.png')
         self.setWindowIcon(appIcon)
         self.setWindowTitle('PsychoBox')
-
         if window == "main":
             self.ui.infoBar.installEventFilter(self)
         else:

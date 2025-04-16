@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QFrame,
     QGridLayout, QHBoxLayout, QLabel, QPushButton,
     QSizePolicy, QSpacerItem, QSpinBox, QVBoxLayout,
     QWidget)
-import rc_resourceGui
+import Resources.rc_resourceGUI
 
 class Ui_Form(object):
     def setupUi(self, Form):
@@ -103,13 +103,17 @@ class Ui_Form(object):
         self.maximizeButton.setObjectName(u"maximizeButton")
         self.maximizeButton.setMaximumSize(QSize(20, 20))
         self.maximizeButton.setStyleSheet(u"QPushButton {\n"
-"	background-color:  qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));\n"
-"	border: 2px solid  qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5, stop:0 rgba(252, 175, 62,255), stop:1 rgba(241, 102, 55, 255));\n"
+"	background-color:  rgb(237, 105, 59);\n"
+"	border: 2px solid rgb(184, 80, 45) ;\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
 "	background-color:  rgb(220, 147, 0)\n"
 "}")
+        icon1 = QIcon()
+        icon1.addFile(u":/icons/img/maximizar-janela.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.maximizeButton.setIcon(icon1)
+        self.maximizeButton.setIconSize(QSize(12, 12))
 
         self.horizontalLayout.addWidget(self.maximizeButton)
 
@@ -124,9 +128,9 @@ class Ui_Form(object):
 "QPushButton:hover{\n"
 "	background-color: rgb(255, 119, 119)\n"
 "}")
-        icon1 = QIcon()
-        icon1.addFile(u":/icons/img/close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.closeAllButton.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u":/icons/img/close.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.closeAllButton.setIcon(icon2)
         self.closeAllButton.setIconSize(QSize(12, 12))
 
         self.horizontalLayout.addWidget(self.closeAllButton)
@@ -185,7 +189,7 @@ class Ui_Form(object):
 "	background-color: rgb(70,70,70);\n"
 "	border-radius: 25px;\n"
 "}")
-        self.label_12.setPixmap(QPixmap(u":/icons/img/graphicsEnabled.png"))
+        self.label_12.setPixmap(QPixmap(u":/icons/img/statistics.png"))
         self.label_12.setScaledContents(True)
         self.label_12.setMargin(10)
 
@@ -212,9 +216,9 @@ class Ui_Form(object):
 "	background-color: rgb(70,70,70);\n"
 "	border-radius: 15px;\n"
 "}")
-        icon2 = QIcon()
-        icon2.addFile(u":/icons/img/addEnabled.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.plusButton.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u":/icons/img/addEnabled.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.plusButton.setIcon(icon3)
 
         self.horizontalLayout_4.addWidget(self.plusButton)
 
@@ -311,16 +315,12 @@ class Ui_Form(object):
 "	width : 10px;\n"
 "	margin-right:4px;\n"
 "}")
-        self.frame_axis.setFrameShape(QFrame.StyledPanel)
+        self.frame_axis.setFrameShape(QFrame.NoFrame)
         self.frame_axis.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.frame_axis)
         self.horizontalLayout_6.setSpacing(50)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.horizontalLayout_6.setContentsMargins(5, 5, 5, 5)
-        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_6.addItem(self.horizontalSpacer)
-
         self.frame_20 = QFrame(self.frame_axis)
         self.frame_20.setObjectName(u"frame_20")
         self.frame_20.setFrameShape(QFrame.NoFrame)
@@ -361,10 +361,6 @@ class Ui_Form(object):
         self.spinBox_3.setValue(0)
 
         self.horizontalLayout_43.addWidget(self.spinBox_3)
-
-        self.horizontalSpacer_3 = QSpacerItem(20, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_43.addItem(self.horizontalSpacer_3)
 
         self.label_79 = QLabel(self.frame_20)
         self.label_79.setObjectName(u"label_79")
@@ -424,10 +420,6 @@ class Ui_Form(object):
 
         self.horizontalLayout_48.addWidget(self.spinBox)
 
-        self.horizontalSpacer_4 = QSpacerItem(20, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_48.addItem(self.horizontalSpacer_4)
-
         self.label_81 = QLabel(self.frame_100)
         self.label_81.setObjectName(u"label_81")
         self.label_81.setFont(font2)
@@ -447,21 +439,23 @@ class Ui_Form(object):
 
         self.horizontalLayout_48.addWidget(self.spinBox_2)
 
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_48.addItem(self.horizontalSpacer_3)
+
         self.refresh = QPushButton(self.frame_100)
         self.refresh.setObjectName(u"refresh")
+        self.refresh.setMinimumSize(QSize(30, 30))
         self.refresh.setMaximumSize(QSize(30, 30))
-        icon3 = QIcon()
-        icon3.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
-        self.refresh.setIcon(icon3)
+        self.refresh.setStyleSheet(u"background-color: rgb(255, 170, 127)")
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/img/refresh.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        self.refresh.setIcon(icon4)
 
         self.horizontalLayout_48.addWidget(self.refresh)
 
 
         self.horizontalLayout_6.addWidget(self.frame_100)
-
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
-
-        self.horizontalLayout_6.addItem(self.horizontalSpacer_2)
 
 
         self.verticalLayout_10.addWidget(self.frame_axis)

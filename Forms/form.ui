@@ -51,10 +51,7 @@
        </size>
       </property>
       <property name="frameShape">
-       <enum>QFrame::Shape::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <property name="spacing">
@@ -114,10 +111,7 @@ QPushButton:checked {
 }</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Shape::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Raised</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <property name="spacing">
@@ -160,7 +154,7 @@ QPushButton:checked {
              <string/>
             </property>
             <property name="icon">
-             <iconset resource="../Resources/resourceGUI.qrc">
+             <iconset resource="../Resources/resourceGui.qrc">
               <normaloff>:/icons/img/menuEnabled.png</normaloff>:/icons/img/menuEnabled.png</iconset>
             </property>
             <property name="iconSize">
@@ -191,10 +185,7 @@ QPushButton:checked {
 }</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Shape::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Raised</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
           <property name="spacing">
@@ -215,10 +206,7 @@ QPushButton:checked {
           <item>
            <widget class="QFrame" name="frame_5">
             <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <property name="spacing">
@@ -236,7 +224,7 @@ QPushButton:checked {
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item alignment="Qt::AlignmentFlag::AlignHCenter">
+             <item>
               <widget class="QLabel" name="label_2">
                <property name="minimumSize">
                 <size>
@@ -254,7 +242,7 @@ QPushButton:checked {
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="../Resources/resourceGUI.qrc">:/logos/img/psychobox_logo2.png</pixmap>
+                <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/psychobox_logo2.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -278,10 +266,7 @@ QPushButton:checked {
 }</string>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_7">
              <property name="spacing">
@@ -321,7 +306,7 @@ QPushButton:hover {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../Resources/resourceGUI.qrc">
+                <iconset resource="../Resources/resourceGui.qrc">
                  <normaloff>:/icons/img/minus.png</normaloff>:/icons/img/minus.png</iconset>
                </property>
               </widget>
@@ -354,13 +339,13 @@ QPushButton:hover {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../Resources/resourceGUI.qrc">
+                <iconset resource="../Resources/resourceGui.qrc">
                  <normaloff>:/icons/img/maximizar-janela.png</normaloff>:/icons/img/maximizar-janela.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
                  <width>12</width>
-                 <height>16</height>
+                 <height>12</height>
                 </size>
                </property>
               </widget>
@@ -387,7 +372,7 @@ QPushButton:hover{
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../Resources/resourceGUI.qrc">
+                <iconset resource="../Resources/resourceGui.qrc">
                  <normaloff>:/icons/img/close.png</normaloff>:/icons/img/close.png</iconset>
                </property>
                <property name="iconSize">
@@ -410,10 +395,7 @@ QPushButton:hover{
     <item>
      <widget class="QFrame" name="centerContent">
       <property name="frameShape">
-       <enum>QFrame::Shape::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <property name="spacing">
@@ -452,10 +434,7 @@ QPushButton:hover{
           </size>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Shape::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Raised</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="spacing">
@@ -508,10 +487,7 @@ QPushButton:checked {
 }</string>
             </property>
             <property name="frameShape">
-             <enum>QFrame::Shape::NoFrame</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Shadow::Raised</enum>
+             <enum>QFrame::NoFrame</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <property name="spacing">
@@ -561,7 +537,7 @@ QPushButton:checked {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../Resources/resourceGUI.qrc">
+                <iconset resource="../Resources/resourceGui.qrc">
                  <normaloff>:/icons/img/homeEnabled.png</normaloff>:/icons/img/homeEnabled.png</iconset>
                </property>
                <property name="iconSize">
@@ -607,7 +583,7 @@ QPushButton:checked {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../Resources/resourceGUI.qrc">
+                <iconset resource="../Resources/resourceGui.qrc">
                  <normaloff>:/icons/img/microfone.png</normaloff>:/icons/img/microfone.png</iconset>
                </property>
                <property name="iconSize">
@@ -665,7 +641,7 @@ QPushButton:checked {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../Resources/resourceGUI.qrc">
+                <iconset resource="../Resources/resourceGui.qrc">
                  <normaloff>:/icons/img/equalizerEnable.png</normaloff>:/icons/img/equalizerEnable.png</iconset>
                </property>
                <property name="iconSize">
@@ -723,7 +699,7 @@ QPushButton:checked {
                 <string/>
                </property>
                <property name="icon">
-                <iconset resource="../Resources/resourceGUI.qrc">
+                <iconset resource="../Resources/resourceGui.qrc">
                  <normaloff>:/icons/img/calibration.png</normaloff>:/icons/img/calibration.png</iconset>
                </property>
                <property name="iconSize">
@@ -748,9 +724,6 @@ QPushButton:checked {
              </item>
              <item>
               <spacer name="verticalSpacer_4">
-               <property name="orientation">
-                <enum>Qt::Orientation::Vertical</enum>
-               </property>
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
@@ -768,10 +741,7 @@ QPushButton:checked {
                 </size>
                </property>
                <property name="frameShape">
-                <enum>QFrame::Shape::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Shadow::Raised</enum>
+                <enum>QFrame::NoFrame</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_4">
                 <property name="spacing">
@@ -814,7 +784,7 @@ QPushButton:checked {
                    <string/>
                   </property>
                   <property name="layoutDirection">
-                   <enum>Qt::LayoutDirection::LeftToRight</enum>
+                   <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton:checked {
@@ -846,6 +816,9 @@ QPushButton:checked {
                 </item>
                 <item>
                  <widget class="QPushButton" name="settingsButton">
+                  <property name="enabled">
+                   <bool>false</bool>
+                  </property>
                   <property name="minimumSize">
                    <size>
                     <width>50</width>
@@ -869,13 +842,13 @@ QPushButton:checked {
                    <string/>
                   </property>
                   <property name="layoutDirection">
-                   <enum>Qt::LayoutDirection::LeftToRight</enum>
+                   <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="text">
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="../Resources/resourceGUI.qrc">
+                   <iconset resource="../Resources/resourceGui.qrc">
                     <normaloff>:/icons/img/settingsEnable.png</normaloff>:/icons/img/settingsEnable.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -916,10 +889,7 @@ QPushButton:checked {
           <string/>
          </property>
          <property name="frameShape">
-          <enum>QFrame::Shape::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Shadow::Raised</enum>
+          <enum>QFrame::NoFrame</enum>
          </property>
          <property name="currentIndex">
           <number>0</number>
@@ -949,10 +919,7 @@ QPushButton:checked {
 }</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::Shape::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <property name="spacing">
@@ -973,10 +940,7 @@ QPushButton:checked {
               <item>
                <widget class="QFrame" name="frame_7">
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_9">
                  <property name="spacing">
@@ -1009,10 +973,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_12">
                     <property name="spacing">
@@ -1045,10 +1006,7 @@ QPushButton:checked {
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_10">
                        <property name="spacing">
@@ -1090,9 +1048,6 @@ QPushButton:checked {
                          <property name="text">
                           <string>Welcome</string>
                          </property>
-                         <property name="alignment">
-                          <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
-                         </property>
                         </widget>
                        </item>
                       </layout>
@@ -1104,10 +1059,7 @@ QPushButton:checked {
                  <item>
                   <widget class="QFrame" name="frame_10">
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="0">
                     <property name="spacing">
@@ -1134,10 +1086,7 @@ QPushButton:checked {
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_11">
                        <property name="spacing">
@@ -1158,10 +1107,7 @@ QPushButton:checked {
                        <item>
                         <widget class="QFrame" name="frame_19">
                          <property name="frameShape">
-                          <enum>QFrame::Shape::NoFrame</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_12">
                           <property name="spacing">
@@ -1197,7 +1143,7 @@ QPushButton:checked {
                              <string/>
                             </property>
                             <property name="pixmap">
-                             <pixmap resource="../Resources/resourceGUI.qrc">:/logos/img/psychobox_logo.png</pixmap>
+                             <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/psychobox_logo.png</pixmap>
                             </property>
                             <property name="scaledContents">
                              <bool>true</bool>
@@ -1216,10 +1162,7 @@ QPushButton:checked {
                           </size>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::Shape::NoFrame</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_13">
                           <property name="spacing">
@@ -1240,10 +1183,7 @@ QPushButton:checked {
                           <item>
                            <widget class="QFrame" name="frame_43">
                             <property name="frameShape">
-                             <enum>QFrame::Shape::NoFrame</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Shadow::Raised</enum>
+                             <enum>QFrame::NoFrame</enum>
                             </property>
                             <layout class="QHBoxLayout" name="horizontalLayout_25">
                              <property name="leftMargin">
@@ -1279,10 +1219,7 @@ QPushButton:checked {
 }</string>
                                </property>
                                <property name="frameShape">
-                                <enum>QFrame::Shape::NoFrame</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Shadow::Raised</enum>
+                                <enum>QFrame::NoFrame</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_23">
                                 <property name="spacing">
@@ -1327,18 +1264,12 @@ QPushButton:checked {
                                   <property name="text">
                                    <string>IMPORT YOUR FILES</string>
                                   </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                                  </property>
                                  </widget>
                                 </item>
                                 <item>
                                  <widget class="QFrame" name="frame_45">
                                   <property name="frameShape">
-                                   <enum>QFrame::Shape::NoFrame</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Shadow::Raised</enum>
+                                   <enum>QFrame::NoFrame</enum>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_26">
                                    <property name="spacing">
@@ -1375,13 +1306,10 @@ border: 5px  solid rgb(237, 237, 237);</string>
                                       <string/>
                                      </property>
                                      <property name="pixmap">
-                                      <pixmap resource="../Resources/resourceGUI.qrc">:/icons/img/importAudio.png</pixmap>
+                                      <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/importAudio.png</pixmap>
                                      </property>
                                      <property name="scaledContents">
                                       <bool>true</bool>
-                                     </property>
-                                     <property name="alignment">
-                                      <set>Qt::AlignmentFlag::AlignCenter</set>
                                      </property>
                                     </widget>
                                    </item>
@@ -1417,9 +1345,6 @@ border: 5px  solid rgb(237, 237, 237);</string>
 with audio extensions 
 (.wav, .acc, .mp3)</string>
                                   </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                                  </property>
                                  </widget>
                                 </item>
                                </layout>
@@ -1434,10 +1359,7 @@ with audio extensions
 }</string>
                                </property>
                                <property name="frameShape">
-                                <enum>QFrame::Shape::NoFrame</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Shadow::Raised</enum>
+                                <enum>QFrame::NoFrame</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_24">
                                 <property name="spacing">
@@ -1470,18 +1392,12 @@ with audio extensions
                                   <property name="text">
                                    <string>EDIT YOUR SIGNAL</string>
                                   </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                                  </property>
                                  </widget>
                                 </item>
                                 <item>
                                  <widget class="QFrame" name="frame_47">
                                   <property name="frameShape">
-                                   <enum>QFrame::Shape::NoFrame</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Shadow::Raised</enum>
+                                   <enum>QFrame::NoFrame</enum>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_27">
                                    <property name="spacing">
@@ -1517,13 +1433,10 @@ border: 5px  inset rgb(237, 237, 237);</string>
                                       <string/>
                                      </property>
                                      <property name="pixmap">
-                                      <pixmap resource="../Resources/resourceGUI.qrc">:/icons/img/filter.png</pixmap>
+                                      <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/filter.png</pixmap>
                                      </property>
                                      <property name="scaledContents">
                                       <bool>true</bool>
-                                     </property>
-                                     <property name="alignment">
-                                      <set>Qt::AlignmentFlag::AlignCenter</set>
                                      </property>
                                     </widget>
                                    </item>
@@ -1559,9 +1472,6 @@ border: 5px  inset rgb(237, 237, 237);</string>
 Process and listen to 
  signals using filters and windows</string>
                                   </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                                  </property>
                                  </widget>
                                 </item>
                                </layout>
@@ -1576,10 +1486,7 @@ Process and listen to
 }</string>
                                </property>
                                <property name="frameShape">
-                                <enum>QFrame::Shape::NoFrame</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Shadow::Raised</enum>
+                                <enum>QFrame::NoFrame</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_25">
                                 <property name="spacing">
@@ -1612,18 +1519,12 @@ Process and listen to
                                   <property name="text">
                                    <string>APPLY METRICS</string>
                                   </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignmentFlag::AlignCenter</set>
-                                  </property>
                                  </widget>
                                 </item>
                                 <item>
                                  <widget class="QFrame" name="frame_49">
                                   <property name="frameShape">
-                                   <enum>QFrame::Shape::NoFrame</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Shadow::Raised</enum>
+                                   <enum>QFrame::NoFrame</enum>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_28">
                                    <property name="spacing">
@@ -1659,13 +1560,10 @@ border: 5px  inset rgb(237, 237, 237);</string>
                                       <string/>
                                      </property>
                                      <property name="pixmap">
-                                      <pixmap resource="../Resources/resourceGUI.qrc">:/icons/img/metricas.png</pixmap>
+                                      <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/metricas.png</pixmap>
                                      </property>
                                      <property name="scaledContents">
                                       <bool>true</bool>
-                                     </property>
-                                     <property name="alignment">
-                                      <set>Qt::AlignmentFlag::AlignCenter</set>
                                      </property>
                                     </widget>
                                    </item>
@@ -1699,9 +1597,6 @@ border: 5px  inset rgb(237, 237, 237);</string>
                                   <property name="text">
                                    <string>Use psychoacoustic 
  metrics to analyze your signal</string>
-                                  </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignmentFlag::AlignCenter</set>
                                   </property>
                                  </widget>
                                 </item>
@@ -1753,10 +1648,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
 }</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::Shape::StyledPanel</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_15">
               <property name="leftMargin">
@@ -1783,10 +1675,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
                  <string notr="true">color: rgb(70, 70, 70); </string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_16">
                  <property name="topMargin">
@@ -1824,10 +1713,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
               <item>
                <widget class="QFrame" name="frame_12">
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_17">
                  <item>
@@ -1839,10 +1725,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_14">
                     <property name="spacing">
@@ -1875,10 +1758,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_16">
                        <property name="spacing">
@@ -1926,7 +1806,7 @@ QPushButton:disabled{
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="../Resources/resourceGUI.qrc">
+                          <iconset resource="../Resources/resourceGui.qrc">
                            <normaloff>:/icons/img/botao-de-gravacao_2.png</normaloff>
                            <normalon>:/icons/img/botao-de-gravacao.png</normalon>
                            <disabledoff>:/icons/img/botao-de-gravacao_2_w.png</disabledoff>
@@ -1984,7 +1864,7 @@ QPushButton:disabled{
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="../Resources/resourceGUI.qrc">
+                          <iconset resource="../Resources/resourceGui.qrc">
                            <normaloff>:/icons/img/play.png</normaloff>:/icons/img/play.png</iconset>
                          </property>
                          <property name="iconSize">
@@ -2033,7 +1913,7 @@ QPushButton:disabled{
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="../Resources/resourceGUI.qrc">
+                          <iconset resource="../Resources/resourceGui.qrc">
                            <normaloff>:/icons/img/pause.png</normaloff>:/icons/img/pause.png</iconset>
                          </property>
                          <property name="iconSize">
@@ -2082,7 +1962,7 @@ QPushButton:disabled{
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="../Resources/resourceGUI.qrc">
+                          <iconset resource="../Resources/resourceGui.qrc">
                            <normaloff>:/icons/img/stop.png</normaloff>:/icons/img/stop.png</iconset>
                          </property>
                          <property name="iconSize">
@@ -2140,10 +2020,7 @@ QComboBox QAbstractView{
 </string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::Shape::NoFrame</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_19">
                           <property name="spacing">
@@ -2192,7 +2069,7 @@ QComboBox QAbstractView{
                              <number>0</number>
                             </property>
                             <property name="insertPolicy">
-                             <enum>QComboBox::InsertPolicy::InsertAtBottom</enum>
+                             <enum>QComboBox::NoInsert</enum>
                             </property>
                             <item>
                              <property name="text">
@@ -2245,10 +2122,7 @@ QComboBox QAbstractView{
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_20">
                        <property name="topMargin">
@@ -2260,10 +2134,7 @@ QComboBox QAbstractView{
                        <item>
                         <widget class="QFrame" name="frame_24">
                          <property name="frameShape">
-                          <enum>QFrame::Shape::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_19">
                           <item>
@@ -2311,7 +2182,7 @@ QPushButton:checked{
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../Resources/resourceGUI.qrc">
+                             <iconset resource="../Resources/resourceGui.qrc">
                               <normaloff>:/icons/img/microfone_w.png</normaloff>
                               <normalon>:/icons/img/microfone.png</normalon>:/icons/img/microfone_w.png</iconset>
                             </property>
@@ -2340,9 +2211,6 @@ QPushButton:checked{
                             <property name="text">
                              <string>Ch. 1</string>
                             </property>
-                            <property name="alignment">
-                             <set>Qt::AlignmentFlag::AlignCenter</set>
-                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2351,10 +2219,7 @@ QPushButton:checked{
                        <item>
                         <widget class="QFrame" name="frame_25">
                          <property name="frameShape">
-                          <enum>QFrame::Shape::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_20">
                           <item>
@@ -2402,7 +2267,7 @@ QPushButton:checked{
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../Resources/resourceGUI.qrc">
+                             <iconset resource="../Resources/resourceGui.qrc">
                               <normaloff>:/icons/img/microfone_w.png</normaloff>
                               <normalon>:/icons/img/microfone.png</normalon>:/icons/img/microfone_w.png</iconset>
                             </property>
@@ -2431,9 +2296,6 @@ QPushButton:checked{
                             <property name="text">
                              <string>Ch. 2</string>
                             </property>
-                            <property name="alignment">
-                             <set>Qt::AlignmentFlag::AlignCenter</set>
-                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2442,10 +2304,7 @@ QPushButton:checked{
                        <item>
                         <widget class="QFrame" name="frame_26">
                          <property name="frameShape">
-                          <enum>QFrame::Shape::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_21">
                           <item>
@@ -2522,9 +2381,6 @@ QPushButton:checked{
                             <property name="text">
                              <string>Output</string>
                             </property>
-                            <property name="alignment">
-                             <set>Qt::AlignmentFlag::AlignCenter</set>
-                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -2532,9 +2388,6 @@ QPushButton:checked{
                        </item>
                        <item>
                         <spacer name="horizontalSpacer_3">
-                         <property name="orientation">
-                          <enum>Qt::Orientation::Horizontal</enum>
-                         </property>
                          <property name="sizeHint" stdset="0">
                           <size>
                            <width>244</width>
@@ -2605,10 +2458,7 @@ QPushButton:disabled{
                  <item>
                   <widget class="QFrame" name="frame_14">
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_18">
                     <property name="spacing">
@@ -2631,10 +2481,7 @@ QPushButton:disabled{
                       <item row="0" column="0">
                        <widget class="QFrame" name="recordingFrame">
                         <property name="frameShape">
-                         <enum>QFrame::Shape::NoFrame</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Shadow::Raised</enum>
+                         <enum>QFrame::NoFrame</enum>
                         </property>
                        </widget>
                       </item>
@@ -2652,10 +2499,7 @@ QPushButton:disabled{
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                   </widget>
                  </item>
@@ -2704,10 +2548,7 @@ QPushButton:disabled{
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::Shape::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_15">
               <property name="spacing">
@@ -2734,10 +2575,7 @@ QPushButton:disabled{
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_22">
                  <property name="spacing">
@@ -2779,9 +2617,6 @@ QPushButton:disabled{
                    <property name="text">
                     <string>Signal Editor</string>
                    </property>
-                   <property name="alignment">
-                    <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
-                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -2796,10 +2631,7 @@ QPushButton:disabled{
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_26">
                  <property name="spacing">
@@ -2817,7 +2649,7 @@ QPushButton:disabled{
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
-                 <item alignment="Qt::AlignmentFlag::AlignRight">
+                 <item>
                   <widget class="QLabel" name="logo">
                    <property name="minimumSize">
                     <size>
@@ -2835,7 +2667,7 @@ QPushButton:disabled{
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap resource="../Resources/resourceGUI.qrc">:/logos/img/psychobox_logo.png</pixmap>
+                    <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/psychobox_logo.png</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -2902,10 +2734,7 @@ QSlider::sub-page:vertical:disabled{
 </string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::Shape::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_29">
               <property name="spacing">
@@ -2932,10 +2761,7 @@ QSlider::sub-page:vertical:disabled{
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_59">
                  <property name="spacing">
@@ -2956,10 +2782,7 @@ QSlider::sub-page:vertical:disabled{
                     <bool>true</bool>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <property name="lineWidth">
                     <number>0</number>
@@ -2995,10 +2818,7 @@ QSlider::sub-page:vertical:disabled{
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_29">
                        <property name="leftMargin">
@@ -3034,10 +2854,7 @@ QSlider::sub-page:vertical:disabled{
                           </size>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::Shape::NoFrame</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_30">
                           <property name="spacing">
@@ -3102,13 +2919,13 @@ QListView::item {
 </string>
                             </property>
                             <property name="frameShape">
-                             <enum>QFrame::Shape::NoFrame</enum>
+                             <enum>QFrame::NoFrame</enum>
                             </property>
                             <property name="verticalScrollBarPolicy">
-                             <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+                             <enum>Qt::ScrollBarAsNeeded</enum>
                             </property>
                             <property name="horizontalScrollBarPolicy">
-                             <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+                             <enum>Qt::ScrollBarAsNeeded</enum>
                             </property>
                             <property name="autoScroll">
                              <bool>true</bool>
@@ -3117,17 +2934,14 @@ QListView::item {
                              <number>16</number>
                             </property>
                             <property name="dragDropMode">
-                             <enum>QAbstractItemView::DragDropMode::NoDragDrop</enum>
-                            </property>
-                            <property name="itemAlignment">
-                             <set>Qt::AlignmentFlag::AlignLeading</set>
+                             <enum>QAbstractItemView::NoDragDrop</enum>
                             </property>
                            </widget>
                           </item>
                          </layout>
                         </widget>
                        </item>
-                       <item alignment="Qt::AlignmentFlag::AlignLeft">
+                       <item>
                         <widget class="QFrame" name="frame_53">
                          <property name="minimumSize">
                           <size>
@@ -3162,10 +2976,7 @@ QPushButton:pressed {
 </string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::Shape::NoFrame</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_55">
                           <property name="spacing">
@@ -3284,10 +3095,7 @@ QPushButton:pressed {
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_5">
                        <property name="spacing">
@@ -3297,7 +3105,7 @@ QPushButton:pressed {
                         <number>0</number>
                        </property>
                        <property name="topMargin">
-                        <number>5</number>
+                        <number>0</number>
                        </property>
                        <property name="rightMargin">
                         <number>0</number>
@@ -3311,10 +3119,7 @@ QPushButton:pressed {
                           <string notr="true"/>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::Shape::NoFrame</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Plain</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_57">
                           <property name="spacing">
@@ -3350,10 +3155,7 @@ QPushButton:pressed {
 </string>
                             </property>
                             <property name="frameShape">
-                             <enum>QFrame::Shape::NoFrame</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Shadow::Raised</enum>
+                             <enum>QFrame::NoFrame</enum>
                             </property>
                             <layout class="QHBoxLayout" name="horizontalLayout_31">
                              <property name="spacing">
@@ -3409,7 +3211,7 @@ QPushButton:disabled{
                                 <string/>
                                </property>
                                <property name="icon">
-                                <iconset resource="../Resources/resourceGUI.qrc">
+                                <iconset resource="../Resources/resourceGui.qrc">
                                  <normaloff>:/icons/img/play.png</normaloff>:/icons/img/play.png</iconset>
                                </property>
                                <property name="iconSize">
@@ -3458,7 +3260,7 @@ QPushButton:disabled{
                                 <string/>
                                </property>
                                <property name="icon">
-                                <iconset resource="../Resources/resourceGUI.qrc">
+                                <iconset resource="../Resources/resourceGui.qrc">
                                  <normaloff>:/icons/img/pause.png</normaloff>:/icons/img/pause.png</iconset>
                                </property>
                                <property name="iconSize">
@@ -3507,7 +3309,7 @@ QPushButton:disabled{
                                 <string/>
                                </property>
                                <property name="icon">
-                                <iconset resource="../Resources/resourceGUI.qrc">
+                                <iconset resource="../Resources/resourceGui.qrc">
                                  <normaloff>:/icons/img/stop.png</normaloff>:/icons/img/stop.png</iconset>
                                </property>
                                <property name="iconSize">
@@ -3585,40 +3387,24 @@ QPushButton:pressed {
 </string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::Shape::NoFrame</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_18">
                           <property name="spacing">
-                           <number>0</number>
+                           <number>15</number>
                           </property>
                           <property name="leftMargin">
-                           <number>0</number>
+                           <number>50</number>
                           </property>
                           <property name="topMargin">
                            <number>0</number>
                           </property>
                           <property name="rightMargin">
-                           <number>0</number>
+                           <number>50</number>
                           </property>
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
-                          <item>
-                           <spacer name="horizontalSpacer">
-                            <property name="orientation">
-                             <enum>Qt::Orientation::Horizontal</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>40</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
-                          </item>
                           <item>
                            <widget class="QPushButton" name="muteButton">
                             <property name="enabled">
@@ -3645,7 +3431,7 @@ QPushButton:pressed {
                              <string/>
                             </property>
                             <property name="icon">
-                             <iconset resource="../Resources/resourceGUI.qrc">
+                             <iconset resource="../Resources/resourceGui.qrc">
                               <normaloff>:/icons/img/volume-alto.png</normaloff>
                               <normalon>:/icons/img/volume-mute.png</normalon>
                               <activeon>:/icons/img/volume-mute.png</activeon>:/icons/img/volume-alto.png</iconset>
@@ -3662,64 +3448,17 @@ QPushButton:pressed {
                            </widget>
                           </item>
                           <item>
-                           <spacer name="horizontalSpacer_4">
-                            <property name="orientation">
-                             <enum>Qt::Orientation::Horizontal</enum>
-                            </property>
-                            <property name="sizeType">
-                             <enum>QSizePolicy::Policy::Fixed</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>10</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
-                          </item>
-                          <item>
                            <widget class="QSlider" name="volumeSlider">
                             <property name="enabled">
                              <bool>false</bool>
-                            </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>200</width>
-                              <height>0</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>16777215</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QSlider::groove:horizontal {				
-        width:200px;
-}
-</string>
                             </property>
                             <property name="value">
                              <number>50</number>
                             </property>
                             <property name="orientation">
-                             <enum>Qt::Orientation::Horizontal</enum>
+                             <enum>Qt::Horizontal</enum>
                             </property>
                            </widget>
-                          </item>
-                          <item>
-                           <spacer name="horizontalSpacer_2">
-                            <property name="orientation">
-                             <enum>Qt::Orientation::Horizontal</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>40</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
                           </item>
                          </layout>
                         </widget>
@@ -3763,10 +3502,7 @@ QPushButton:disabled{
 </string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::Shape::StyledPanel</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_21">
                           <item>
@@ -3823,7 +3559,7 @@ QPushButton:disabled{
                              </font>
                             </property>
                             <property name="layoutDirection">
-                             <enum>Qt::LayoutDirection::RightToLeft</enum>
+                             <enum>Qt::LeftToRight</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -3847,9 +3583,6 @@ QPushButton:disabled{
               </item>
               <item>
                <spacer name="verticalSpacer_2">
-                <property name="orientation">
-                 <enum>Qt::Orientation::Vertical</enum>
-                </property>
                 <property name="sizeHint" stdset="0">
                  <size>
                   <width>20</width>
@@ -3896,10 +3629,7 @@ QPushButton:checked {
 </string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_22">
                  <property name="spacing">
@@ -3932,10 +3662,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_32">
                     <property name="spacing">
@@ -3988,7 +3715,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_50">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4011,9 +3738,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4030,9 +3754,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>50 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4057,10 +3778,7 @@ QPushButton:checked {
                     <string notr="true"/>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_33">
                     <property name="spacing">
@@ -4110,7 +3828,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_63">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4130,9 +3848,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4149,9 +3864,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>63 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4173,10 +3885,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_34">
                     <property name="spacing">
@@ -4226,7 +3935,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_80">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4246,9 +3955,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4265,9 +3971,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>80 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4289,13 +3992,10 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LayoutDirection::LeftToRight</enum>
+                    <enum>Qt::LeftToRight</enum>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_35">
                     <property name="spacing">
@@ -4345,7 +4045,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_100">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4365,9 +4065,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4384,9 +4081,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>100 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4408,10 +4102,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_37">
                     <property name="spacing">
@@ -4461,7 +4152,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_125">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4481,9 +4172,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4500,9 +4188,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>125 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4524,10 +4209,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_38">
                     <property name="spacing">
@@ -4577,7 +4259,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_160">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4597,9 +4279,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4616,9 +4295,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>160 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4640,10 +4316,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_39">
                     <property name="spacing">
@@ -4693,7 +4366,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_200">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4713,9 +4386,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4732,9 +4402,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>200 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4756,10 +4423,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_40">
                     <property name="spacing">
@@ -4809,7 +4473,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_250">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4829,9 +4493,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4848,9 +4509,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>250 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4872,10 +4530,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_41">
                     <property name="spacing">
@@ -4928,7 +4583,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_315">
                       <property name="enabled">
                        <bool>false</bool>
@@ -4948,9 +4603,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -4967,9 +4619,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>315 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -4994,10 +4643,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_42">
                     <property name="spacing">
@@ -5047,7 +4693,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_400">
                       <property name="enabled">
                        <bool>false</bool>
@@ -5067,9 +4713,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -5086,9 +4729,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>400 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -5113,10 +4753,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_43">
                     <property name="spacing">
@@ -5169,7 +4806,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_500">
                       <property name="enabled">
                        <bool>false</bool>
@@ -5189,9 +4826,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -5208,9 +4842,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>500 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -5232,10 +4863,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_44">
                     <property name="spacing">
@@ -5288,7 +4916,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_630">
                       <property name="enabled">
                        <bool>false</bool>
@@ -5308,9 +4936,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -5327,9 +4952,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>630 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -5374,10 +4996,7 @@ QPushButton:checked {
 </string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_23">
                  <item>
@@ -5395,10 +5014,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_30">
                     <property name="spacing">
@@ -5448,7 +5064,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_800">
                       <property name="enabled">
                        <bool>false</bool>
@@ -5468,9 +5084,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -5487,9 +5100,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>800 Hz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -5511,10 +5121,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_31">
                     <property name="spacing">
@@ -5564,7 +5171,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_1000">
                       <property name="enabled">
                        <bool>false</bool>
@@ -5584,9 +5191,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -5603,9 +5207,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>1 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -5627,10 +5228,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_45">
                     <property name="spacing">
@@ -5680,7 +5278,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_1250">
                       <property name="enabled">
                        <bool>false</bool>
@@ -5700,9 +5298,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -5719,9 +5314,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>1.25 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -5743,10 +5335,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_46">
                     <property name="spacing">
@@ -5796,7 +5385,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_1600">
                       <property name="enabled">
                        <bool>false</bool>
@@ -5816,9 +5405,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -5835,9 +5421,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>1.6 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -5859,10 +5442,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_47">
                     <property name="spacing">
@@ -5912,7 +5492,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_2000">
                       <property name="enabled">
                        <bool>false</bool>
@@ -5932,9 +5512,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -5951,9 +5528,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>2 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -5975,10 +5549,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_48">
                     <property name="spacing">
@@ -6028,7 +5599,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_2500">
                       <property name="enabled">
                        <bool>false</bool>
@@ -6048,9 +5619,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -6067,9 +5635,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>2.5 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -6091,10 +5656,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_49">
                     <property name="spacing">
@@ -6144,7 +5706,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_3150">
                       <property name="enabled">
                        <bool>false</bool>
@@ -6164,9 +5726,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -6183,9 +5742,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>3.15 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -6207,10 +5763,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_50">
                     <property name="spacing">
@@ -6260,7 +5813,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_4000">
                       <property name="enabled">
                        <bool>false</bool>
@@ -6280,9 +5833,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -6299,9 +5849,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>4 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -6323,10 +5870,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_51">
                     <property name="spacing">
@@ -6376,7 +5920,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_5000">
                       <property name="enabled">
                        <bool>false</bool>
@@ -6396,9 +5940,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -6415,9 +5956,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>5 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -6439,10 +5977,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_52">
                     <property name="spacing">
@@ -6492,7 +6027,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_6300">
                       <property name="enabled">
                        <bool>false</bool>
@@ -6512,9 +6047,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -6531,9 +6063,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>6.3 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -6555,10 +6084,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_53">
                     <property name="spacing">
@@ -6608,7 +6134,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_8000">
                       <property name="enabled">
                        <bool>false</bool>
@@ -6628,9 +6154,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -6647,9 +6170,6 @@ QPushButton:checked {
                       </property>
                       <property name="text">
                        <string>8 kHz</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
                       </property>
                      </widget>
                     </item>
@@ -6671,10 +6191,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_54">
                     <property name="spacing">
@@ -6724,7 +6241,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignHCenter">
+                    <item>
                      <widget class="QSlider" name="slider_10000">
                       <property name="enabled">
                        <bool>false</bool>
@@ -6744,9 +6261,6 @@ QPushButton:checked {
                       <property name="value">
                        <number>0</number>
                       </property>
-                      <property name="orientation">
-                       <enum>Qt::Orientation::Vertical</enum>
-                      </property>
                      </widget>
                     </item>
                     <item>
@@ -6764,47 +6278,11 @@ QPushButton:checked {
                       <property name="text">
                        <string>10 kHz</string>
                       </property>
-                      <property name="alignment">
-                       <set>Qt::AlignmentFlag::AlignHCenter|Qt::AlignmentFlag::AlignTop</set>
-                      </property>
                      </widget>
                     </item>
                    </layout>
                   </widget>
                  </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QFrame" name="frame_100">
-                <property name="layoutDirection">
-                 <enum>Qt::LayoutDirection::RightToLeft</enum>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true"/>
-                </property>
-                <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_43">
-                 <property name="spacing">
-                  <number>0</number>
-                 </property>
-                 <property name="leftMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="topMargin">
-                  <number>0</number>
-                 </property>
-                 <property name="rightMargin">
-                  <number>20</number>
-                 </property>
-                 <property name="bottomMargin">
-                  <number>0</number>
-                 </property>
                 </layout>
                </widget>
               </item>
@@ -6850,10 +6328,7 @@ QPushButton:checked {
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::Shape::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_65">
               <property name="spacing">
@@ -6874,10 +6349,7 @@ QPushButton:checked {
               <item>
                <widget class="QFrame" name="frame_128">
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_66">
                  <property name="spacing">
@@ -6930,10 +6402,7 @@ QPushButton:checked {
               <item>
                <widget class="QFrame" name="frame_129">
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_88">
                  <property name="spacing">
@@ -6951,7 +6420,7 @@ QPushButton:checked {
                  <property name="bottomMargin">
                   <number>0</number>
                  </property>
-                 <item alignment="Qt::AlignmentFlag::AlignRight">
+                 <item>
                   <widget class="QLabel" name="logo_3">
                    <property name="minimumSize">
                     <size>
@@ -6969,7 +6438,7 @@ QPushButton:checked {
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap resource="../Resources/resourceGUI.qrc">:/logos/img/psychobox_logo.png</pixmap>
+                    <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/psychobox_logo.png</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -6994,10 +6463,7 @@ QPushButton:checked {
               <string notr="true">b</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::Shape::NoFrame</enum>
-             </property>
-             <property name="frameShadow">
-              <enum>QFrame::Shadow::Raised</enum>
+              <enum>QFrame::NoFrame</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_54">
               <property name="spacing">
@@ -7030,10 +6496,7 @@ QPushButton:checked {
 }</string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::Shape::StyledPanel</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_84">
                  <property name="spacing">
@@ -7066,10 +6529,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_59">
                     <property name="spacing">
@@ -7111,7 +6571,7 @@ QPushButton:checked {
                        <string/>
                       </property>
                       <property name="pixmap">
-                       <pixmap resource="../Resources/resourceGUI.qrc">:/icons/img/shopping-basket.png</pixmap>
+                       <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/shopping-basket.png</pixmap>
                       </property>
                       <property name="scaledContents">
                        <bool>true</bool>
@@ -7138,7 +6598,7 @@ QPushButton:checked {
                       </property>
                      </widget>
                     </item>
-                    <item alignment="Qt::AlignmentFlag::AlignRight">
+                    <item>
                      <widget class="QCheckBox" name="checkHold">
                       <property name="font">
                        <font>
@@ -7160,10 +6620,7 @@ QPushButton:checked {
                  <item>
                   <widget class="QFrame" name="frame_122">
                    <property name="frameShape">
-                    <enum>QFrame::Shape::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_85">
                     <item>
@@ -7225,10 +6682,7 @@ QPushButton:pressed {
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_86">
                        <property name="spacing">
@@ -7348,10 +6802,7 @@ QPushButton:pressed {
                  <string notr="true"/>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::Shape::NoFrame</enum>
-                </property>
-                <property name="frameShadow">
-                 <enum>QFrame::Shadow::Raised</enum>
+                 <enum>QFrame::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_90">
                  <property name="spacing">
@@ -7385,10 +6836,7 @@ QPushButton:pressed {
 </string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_91">
                     <property name="spacing">
@@ -7409,10 +6857,7 @@ QPushButton:pressed {
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_67">
                        <property name="spacing">
@@ -7454,7 +6899,7 @@ QPushButton:pressed {
                           <string/>
                          </property>
                          <property name="pixmap">
-                          <pixmap resource="../Resources/resourceGUI.qrc">:/icons/img/headphones.png</pixmap>
+                          <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/headphones.png</pixmap>
                          </property>
                          <property name="scaledContents">
                           <bool>true</bool>
@@ -7531,10 +6976,7 @@ QComboBox QAbstractView{
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_92">
                        <property name="leftMargin">
@@ -7604,7 +7046,7 @@ QComboBox QAbstractView{
                           <number>0</number>
                          </property>
                          <property name="insertPolicy">
-                          <enum>QComboBox::InsertPolicy::InsertAtBottom</enum>
+                          <enum>QComboBox::NoInsert</enum>
                          </property>
                          <item>
                           <property name="text">
@@ -7693,10 +7135,7 @@ QComboBox QAbstractView{
 </string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::NoFrame</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_93">
                     <property name="spacing">
@@ -7749,10 +7188,7 @@ QComboBox QAbstractView{
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::Shape::NoFrame</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Shadow::Raised</enum>
+                       <enum>QFrame::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_94">
                        <property name="leftMargin">
@@ -7782,10 +7218,7 @@ QComboBox QAbstractView{
                           </size>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::Shape::NoFrame</enum>
-                         </property>
-                         <property name="frameShadow">
-                          <enum>QFrame::Shadow::Raised</enum>
+                          <enum>QFrame::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_68">
                           <property name="spacing">
@@ -7827,7 +7260,7 @@ QComboBox QAbstractView{
                              <string/>
                             </property>
                             <property name="pixmap">
-                             <pixmap resource="../Resources/resourceGUI.qrc">:/icons/img/HATS.png</pixmap>
+                             <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/HATS.png</pixmap>
                             </property>
                             <property name="scaledContents">
                              <bool>true</bool>
@@ -8019,10 +7452,7 @@ QPushButton:disabled{
 </string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::Shape::StyledPanel</enum>
-                   </property>
-                   <property name="frameShadow">
-                    <enum>QFrame::Shadow::Raised</enum>
+                    <enum>QFrame::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_24">
                     <item>
@@ -8093,7 +7523,7 @@ QPushButton:disabled{
                        <string>convolve</string>
                       </property>
                       <property name="icon">
-                       <iconset resource="../Resources/resourceGUI.qrc">
+                       <iconset resource="../Resources/resourceGui.qrc">
                         <normaloff>:/icons/img/puzzle.png</normaloff>
                         <disabledoff>:/icons/img/puzzle_disabled.png</disabledoff>:/icons/img/puzzle.png</iconset>
                       </property>
@@ -8141,46 +7571,24 @@ QPushButton:disabled{
 }</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::Shape::NoFrame</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Shadow::Raised</enum>
+       <enum>QFrame::NoFrame</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_11">
        <property name="spacing">
         <number>0</number>
        </property>
        <property name="leftMargin">
-        <number>5</number>
+        <number>0</number>
        </property>
        <property name="topMargin">
-        <number>5</number>
+        <number>0</number>
        </property>
        <property name="rightMargin">
-        <number>5</number>
+        <number>10</number>
        </property>
        <property name="bottomMargin">
-        <number>5</number>
+        <number>0</number>
        </property>
-       <item>
-        <widget class="QLabel" name="label">
-         <property name="font">
-          <font>
-           <family>PF BeauSans Pro</family>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">color:rgb(255, 255, 255)</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft</set>
-         </property>
-        </widget>
-       </item>
        <item>
         <widget class="QLabel" name="label_23">
          <property name="font">
@@ -8198,7 +7606,7 @@ QPushButton:disabled{
 Jucélio Tavares and Ricardo Brum</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignmentFlag::AlignBottom|Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing</set>
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -8220,7 +7628,7 @@ Jucélio Tavares and Ricardo Brum</string>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../Resources/resourceGUI.qrc"/>
+  <include location="../Resources/resourceGui.qrc"/>
  </resources>
  <connections/>
 </ui>

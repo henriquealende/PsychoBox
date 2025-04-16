@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 11.0.2, 2025-03-18T12:01:05. -->
+<!-- Written by QtCreator 11.0.2, 2025-04-16T09:57:34. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -146,6 +146,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">main.py</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">PythonEditor.RunConfiguration.C:/Users/alend/OneDrive/Documentos/UFSC/PÓS-DOUTORADO/PSYCHOBOX(v.PS6)/main.py</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">C:/Users/alend/OneDrive/Documentos/UFSC/PÓS-DOUTORADO/PSYCHOBOX(v.PS6)/main.py</value>
+    <value type="QString" key="PythonEditor.RunConfiguation.Interpreter">{aadf2dd0-bc1a-412f-b3b5-4560ec1995d5}</value>
     <value type="QString" key="PythonEditor.RunConfiguation.Script">C:\Users\alend\OneDrive\Documentos\UFSC\PÓS-DOUTORADO\PSYCHOBOX(v.PS6)\main.py</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
@@ -170,7 +171,6 @@
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Python.PysideBuildStep</value>
-      <value type="QString" key="Python.PySideProjectTool">C:\Users\alend\OneDrive\Documentos\UFSC\PÓS-DOUTORADO\PSYCHOBOX(v.PS6)\venv\Scripts\pyside6-project.exe</value>
      </valuemap>
      <value type="qlonglong" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>

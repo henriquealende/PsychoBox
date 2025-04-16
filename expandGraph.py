@@ -5,17 +5,18 @@ from PySide6.QtWidgets import QMainWindow, QApplication
 from PySide6.QtCore import Qt
 
 from SupportCodes.setWindow import SetupWindow
-from Forms.ui_expand import Ui_MainWindow
+from Forms.ui_graph import Ui_Form
 
 class Expand_Graph(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.gp = Ui_MainWindow()
+        self.gp = Ui_Form()
         self.gp.setupUi(self)
         self.set()
 
     def set(self):
         from SupportCodes.buttonSignals import ButtonSignals
+        self.gp.frame_axis.hide()
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         SetupWindow.setWindowInformation(self, "secondary")

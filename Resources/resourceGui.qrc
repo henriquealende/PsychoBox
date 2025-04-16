@@ -32,5 +32,8 @@
         <file>img/HATS.png</file>
         <file>img/headphones.png</file>
         <file>img/settingsEnable.png</file>
+        <file>img/chart.png</file>
+        <file>img/statistics.png</file>
+        <file>img/refresh.png</file>
     </qresource>
 </RCC>
