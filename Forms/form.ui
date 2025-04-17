@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1164</width>
+    <width>1192</width>
     <height>789</height>
    </rect>
   </property>
@@ -51,7 +51,7 @@
        </size>
       </property>
       <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <property name="spacing">
@@ -111,7 +111,7 @@ QPushButton:checked {
 }</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+          <enum>QFrame::Shape::NoFrame</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <property name="spacing">
@@ -185,7 +185,7 @@ QPushButton:checked {
 }</string>
          </property>
          <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+          <enum>QFrame::Shape::NoFrame</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_5">
           <property name="spacing">
@@ -206,7 +206,7 @@ QPushButton:checked {
           <item>
            <widget class="QFrame" name="frame_5">
             <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
+             <enum>QFrame::Shape::NoFrame</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_6">
              <property name="spacing">
@@ -224,7 +224,7 @@ QPushButton:checked {
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
+             <item alignment="Qt::AlignmentFlag::AlignHCenter">
               <widget class="QLabel" name="label_2">
                <property name="minimumSize">
                 <size>
@@ -266,7 +266,7 @@ QPushButton:checked {
 }</string>
             </property>
             <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
+             <enum>QFrame::Shape::NoFrame</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_7">
              <property name="spacing">
@@ -395,7 +395,7 @@ QPushButton:hover{
     <item>
      <widget class="QFrame" name="centerContent">
       <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <property name="spacing">
@@ -434,7 +434,7 @@ QPushButton:hover{
           </size>
          </property>
          <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+          <enum>QFrame::Shape::NoFrame</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="spacing">
@@ -487,7 +487,7 @@ QPushButton:checked {
 }</string>
             </property>
             <property name="frameShape">
-             <enum>QFrame::NoFrame</enum>
+             <enum>QFrame::Shape::NoFrame</enum>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <property name="spacing">
@@ -724,6 +724,9 @@ QPushButton:checked {
              </item>
              <item>
               <spacer name="verticalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Orientation::Vertical</enum>
+               </property>
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
@@ -741,7 +744,7 @@ QPushButton:checked {
                 </size>
                </property>
                <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
+                <enum>QFrame::Shape::NoFrame</enum>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_4">
                 <property name="spacing">
@@ -784,7 +787,7 @@ QPushButton:checked {
                    <string/>
                   </property>
                   <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
+                   <enum>Qt::LayoutDirection::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
                    <string notr="true">QPushButton:checked {
@@ -842,7 +845,7 @@ QPushButton:checked {
                    <string/>
                   </property>
                   <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
+                   <enum>Qt::LayoutDirection::LeftToRight</enum>
                   </property>
                   <property name="text">
                    <string/>
@@ -889,7 +892,7 @@ QPushButton:checked {
           <string/>
          </property>
          <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+          <enum>QFrame::Shape::NoFrame</enum>
          </property>
          <property name="currentIndex">
           <number>0</number>
@@ -919,7 +922,7 @@ QPushButton:checked {
 }</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_8">
               <property name="spacing">
@@ -940,7 +943,7 @@ QPushButton:checked {
               <item>
                <widget class="QFrame" name="frame_7">
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_9">
                  <property name="spacing">
@@ -973,7 +976,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_12">
                     <property name="spacing">
@@ -1006,7 +1009,7 @@ QPushButton:checked {
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_10">
                        <property name="spacing">
@@ -1059,7 +1062,7 @@ QPushButton:checked {
                  <item>
                   <widget class="QFrame" name="frame_10">
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="0">
                     <property name="spacing">
@@ -1086,7 +1089,7 @@ QPushButton:checked {
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_11">
                        <property name="spacing">
@@ -1107,7 +1110,7 @@ QPushButton:checked {
                        <item>
                         <widget class="QFrame" name="frame_19">
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_12">
                           <property name="spacing">
@@ -1162,7 +1165,7 @@ QPushButton:checked {
                           </size>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_13">
                           <property name="spacing">
@@ -1183,7 +1186,7 @@ QPushButton:checked {
                           <item>
                            <widget class="QFrame" name="frame_43">
                             <property name="frameShape">
-                             <enum>QFrame::NoFrame</enum>
+                             <enum>QFrame::Shape::NoFrame</enum>
                             </property>
                             <layout class="QHBoxLayout" name="horizontalLayout_25">
                              <property name="leftMargin">
@@ -1219,7 +1222,7 @@ QPushButton:checked {
 }</string>
                                </property>
                                <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                                <enum>QFrame::Shape::NoFrame</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_23">
                                 <property name="spacing">
@@ -1269,7 +1272,7 @@ QPushButton:checked {
                                 <item>
                                  <widget class="QFrame" name="frame_45">
                                   <property name="frameShape">
-                                   <enum>QFrame::NoFrame</enum>
+                                   <enum>QFrame::Shape::NoFrame</enum>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_26">
                                    <property name="spacing">
@@ -1359,7 +1362,7 @@ with audio extensions
 }</string>
                                </property>
                                <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                                <enum>QFrame::Shape::NoFrame</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_24">
                                 <property name="spacing">
@@ -1397,7 +1400,7 @@ with audio extensions
                                 <item>
                                  <widget class="QFrame" name="frame_47">
                                   <property name="frameShape">
-                                   <enum>QFrame::NoFrame</enum>
+                                   <enum>QFrame::Shape::NoFrame</enum>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_27">
                                    <property name="spacing">
@@ -1486,7 +1489,7 @@ Process and listen to
 }</string>
                                </property>
                                <property name="frameShape">
-                                <enum>QFrame::NoFrame</enum>
+                                <enum>QFrame::Shape::NoFrame</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_25">
                                 <property name="spacing">
@@ -1524,7 +1527,7 @@ Process and listen to
                                 <item>
                                  <widget class="QFrame" name="frame_49">
                                   <property name="frameShape">
-                                   <enum>QFrame::NoFrame</enum>
+                                   <enum>QFrame::Shape::NoFrame</enum>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_28">
                                    <property name="spacing">
@@ -1648,7 +1651,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
 }</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_15">
               <property name="leftMargin">
@@ -1665,21 +1668,27 @@ border: 5px  inset rgb(237, 237, 237);</string>
               </property>
               <item>
                <widget class="QFrame" name="frame_11">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>80</height>
+                 </size>
+                </property>
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>100</height>
+                  <height>80</height>
                  </size>
                 </property>
                 <property name="styleSheet">
                  <string notr="true">color: rgb(70, 70, 70); </string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
-                <layout class="QVBoxLayout" name="verticalLayout_16">
-                 <property name="topMargin">
-                  <number>5</number>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <property name="rightMargin">
+                  <number>9</number>
                  </property>
                  <item>
                   <widget class="QLabel" name="label_4">
@@ -1707,13 +1716,38 @@ border: 5px  inset rgb(237, 237, 237);</string>
                    </property>
                   </widget>
                  </item>
+                 <item>
+                  <widget class="QLabel" name="logo_4">
+                   <property name="minimumSize">
+                    <size>
+                     <width>130</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>130</width>
+                     <height>50</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="pixmap">
+                    <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/psychobox_logo.png</pixmap>
+                   </property>
+                   <property name="scaledContents">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
                 </layout>
                </widget>
               </item>
               <item>
                <widget class="QFrame" name="frame_12">
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_17">
                  <item>
@@ -1725,7 +1759,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_14">
                     <property name="spacing">
@@ -1758,7 +1792,7 @@ border: 5px  inset rgb(237, 237, 237);</string>
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_16">
                        <property name="spacing">
@@ -2020,7 +2054,7 @@ QComboBox QAbstractView{
 </string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_19">
                           <property name="spacing">
@@ -2069,7 +2103,7 @@ QComboBox QAbstractView{
                              <number>0</number>
                             </property>
                             <property name="insertPolicy">
-                             <enum>QComboBox::NoInsert</enum>
+                             <enum>QComboBox::InsertPolicy::NoInsert</enum>
                             </property>
                             <item>
                              <property name="text">
@@ -2122,7 +2156,7 @@ QComboBox QAbstractView{
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_20">
                        <property name="topMargin">
@@ -2134,7 +2168,7 @@ QComboBox QAbstractView{
                        <item>
                         <widget class="QFrame" name="frame_24">
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_19">
                           <item>
@@ -2219,7 +2253,7 @@ QPushButton:checked{
                        <item>
                         <widget class="QFrame" name="frame_25">
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_20">
                           <item>
@@ -2304,7 +2338,7 @@ QPushButton:checked{
                        <item>
                         <widget class="QFrame" name="frame_26">
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_21">
                           <item>
@@ -2388,6 +2422,9 @@ QPushButton:checked{
                        </item>
                        <item>
                         <spacer name="horizontalSpacer_3">
+                         <property name="orientation">
+                          <enum>Qt::Orientation::Vertical</enum>
+                         </property>
                          <property name="sizeHint" stdset="0">
                           <size>
                            <width>244</width>
@@ -2458,7 +2495,7 @@ QPushButton:disabled{
                  <item>
                   <widget class="QFrame" name="frame_14">
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_18">
                     <property name="spacing">
@@ -2481,7 +2518,7 @@ QPushButton:disabled{
                       <item row="0" column="0">
                        <widget class="QFrame" name="recordingFrame">
                         <property name="frameShape">
-                         <enum>QFrame::NoFrame</enum>
+                         <enum>QFrame::Shape::NoFrame</enum>
                         </property>
                        </widget>
                       </item>
@@ -2499,7 +2536,7 @@ QPushButton:disabled{
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                   </widget>
                  </item>
@@ -2544,11 +2581,11 @@ QPushButton:disabled{
              <property name="maximumSize">
               <size>
                <width>16777215</width>
-               <height>16777215</height>
+               <height>80</height>
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_15">
               <property name="spacing">
@@ -2575,7 +2612,7 @@ QPushButton:disabled{
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_22">
                  <property name="spacing">
@@ -2631,25 +2668,25 @@ QPushButton:disabled{
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_26">
                  <property name="spacing">
                   <number>0</number>
                  </property>
                  <property name="leftMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
                  <property name="topMargin">
-                  <number>12</number>
+                  <number>9</number>
                  </property>
                  <property name="rightMargin">
-                  <number>11</number>
+                  <number>9</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
-                 <item>
+                 <item alignment="Qt::AlignmentFlag::AlignRight">
                   <widget class="QLabel" name="logo">
                    <property name="minimumSize">
                     <size>
@@ -2734,7 +2771,7 @@ QSlider::sub-page:vertical:disabled{
 </string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_29">
               <property name="spacing">
@@ -2761,7 +2798,7 @@ QSlider::sub-page:vertical:disabled{
                  </size>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_59">
                  <property name="spacing">
@@ -2782,7 +2819,7 @@ QSlider::sub-page:vertical:disabled{
                     <bool>true</bool>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <property name="lineWidth">
                     <number>0</number>
@@ -2818,7 +2855,7 @@ QSlider::sub-page:vertical:disabled{
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_29">
                        <property name="leftMargin">
@@ -2854,7 +2891,7 @@ QSlider::sub-page:vertical:disabled{
                           </size>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_30">
                           <property name="spacing">
@@ -2919,13 +2956,13 @@ QListView::item {
 </string>
                             </property>
                             <property name="frameShape">
-                             <enum>QFrame::NoFrame</enum>
+                             <enum>QFrame::Shape::NoFrame</enum>
                             </property>
                             <property name="verticalScrollBarPolicy">
-                             <enum>Qt::ScrollBarAsNeeded</enum>
+                             <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
                             </property>
                             <property name="horizontalScrollBarPolicy">
-                             <enum>Qt::ScrollBarAsNeeded</enum>
+                             <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
                             </property>
                             <property name="autoScroll">
                              <bool>true</bool>
@@ -2934,7 +2971,7 @@ QListView::item {
                              <number>16</number>
                             </property>
                             <property name="dragDropMode">
-                             <enum>QAbstractItemView::NoDragDrop</enum>
+                             <enum>QAbstractItemView::DragDropMode::NoDragDrop</enum>
                             </property>
                            </widget>
                           </item>
@@ -2976,7 +3013,7 @@ QPushButton:pressed {
 </string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_55">
                           <property name="spacing">
@@ -3095,7 +3132,7 @@ QPushButton:pressed {
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_5">
                        <property name="spacing">
@@ -3119,7 +3156,7 @@ QPushButton:pressed {
                           <string notr="true"/>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_57">
                           <property name="spacing">
@@ -3155,7 +3192,7 @@ QPushButton:pressed {
 </string>
                             </property>
                             <property name="frameShape">
-                             <enum>QFrame::NoFrame</enum>
+                             <enum>QFrame::Shape::NoFrame</enum>
                             </property>
                             <layout class="QHBoxLayout" name="horizontalLayout_31">
                              <property name="spacing">
@@ -3387,7 +3424,7 @@ QPushButton:pressed {
 </string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_18">
                           <property name="spacing">
@@ -3456,7 +3493,7 @@ QPushButton:pressed {
                              <number>50</number>
                             </property>
                             <property name="orientation">
-                             <enum>Qt::Horizontal</enum>
+                             <enum>Qt::Orientation::Horizontal</enum>
                             </property>
                            </widget>
                           </item>
@@ -3502,7 +3539,7 @@ QPushButton:disabled{
 </string>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_21">
                           <item>
@@ -3559,7 +3596,7 @@ QPushButton:disabled{
                              </font>
                             </property>
                             <property name="layoutDirection">
-                             <enum>Qt::LeftToRight</enum>
+                             <enum>Qt::LayoutDirection::LeftToRight</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true"/>
@@ -3583,6 +3620,9 @@ QPushButton:disabled{
               </item>
               <item>
                <spacer name="verticalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Orientation::Vertical</enum>
+                </property>
                 <property name="sizeHint" stdset="0">
                  <size>
                   <width>20</width>
@@ -3629,7 +3669,7 @@ QPushButton:checked {
 </string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_22">
                  <property name="spacing">
@@ -3662,7 +3702,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_32">
                     <property name="spacing">
@@ -3778,7 +3818,7 @@ QPushButton:checked {
                     <string notr="true"/>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_33">
                     <property name="spacing">
@@ -3885,7 +3925,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_34">
                     <property name="spacing">
@@ -3992,10 +4032,10 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="layoutDirection">
-                    <enum>Qt::LeftToRight</enum>
+                    <enum>Qt::LayoutDirection::LeftToRight</enum>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_35">
                     <property name="spacing">
@@ -4102,7 +4142,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_37">
                     <property name="spacing">
@@ -4209,7 +4249,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_38">
                     <property name="spacing">
@@ -4316,7 +4356,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_39">
                     <property name="spacing">
@@ -4423,7 +4463,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_40">
                     <property name="spacing">
@@ -4530,7 +4570,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_41">
                     <property name="spacing">
@@ -4643,7 +4683,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_42">
                     <property name="spacing">
@@ -4753,7 +4793,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_43">
                     <property name="spacing">
@@ -4863,7 +4903,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_44">
                     <property name="spacing">
@@ -4996,7 +5036,7 @@ QPushButton:checked {
 </string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_23">
                  <item>
@@ -5014,7 +5054,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_30">
                     <property name="spacing">
@@ -5121,7 +5161,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_31">
                     <property name="spacing">
@@ -5228,7 +5268,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_45">
                     <property name="spacing">
@@ -5335,7 +5375,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_46">
                     <property name="spacing">
@@ -5442,7 +5482,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_47">
                     <property name="spacing">
@@ -5549,7 +5589,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_48">
                     <property name="spacing">
@@ -5656,7 +5696,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_49">
                     <property name="spacing">
@@ -5763,7 +5803,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_50">
                     <property name="spacing">
@@ -5870,7 +5910,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_51">
                     <property name="spacing">
@@ -5977,7 +6017,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_52">
                     <property name="spacing">
@@ -6084,7 +6124,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_53">
                     <property name="spacing">
@@ -6191,7 +6231,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_54">
                     <property name="spacing">
@@ -6328,7 +6368,7 @@ QPushButton:checked {
               </size>
              </property>
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_65">
               <property name="spacing">
@@ -6349,7 +6389,7 @@ QPushButton:checked {
               <item>
                <widget class="QFrame" name="frame_128">
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_66">
                  <property name="spacing">
@@ -6402,7 +6442,7 @@ QPushButton:checked {
               <item>
                <widget class="QFrame" name="frame_129">
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_88">
                  <property name="spacing">
@@ -6412,15 +6452,15 @@ QPushButton:checked {
                   <number>0</number>
                  </property>
                  <property name="topMargin">
-                  <number>12</number>
+                  <number>9</number>
                  </property>
                  <property name="rightMargin">
-                  <number>11</number>
+                  <number>9</number>
                  </property>
                  <property name="bottomMargin">
-                  <number>0</number>
+                  <number>9</number>
                  </property>
-                 <item>
+                 <item alignment="Qt::AlignmentFlag::AlignRight">
                   <widget class="QLabel" name="logo_3">
                    <property name="minimumSize">
                     <size>
@@ -6463,7 +6503,7 @@ QPushButton:checked {
               <string notr="true">b</string>
              </property>
              <property name="frameShape">
-              <enum>QFrame::NoFrame</enum>
+              <enum>QFrame::Shape::NoFrame</enum>
              </property>
              <layout class="QHBoxLayout" name="horizontalLayout_54">
               <property name="spacing">
@@ -6496,7 +6536,7 @@ QPushButton:checked {
 }</string>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_84">
                  <property name="spacing">
@@ -6529,7 +6569,7 @@ QPushButton:checked {
                     </size>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_59">
                     <property name="spacing">
@@ -6600,11 +6640,46 @@ QPushButton:checked {
                     </item>
                     <item>
                      <widget class="QCheckBox" name="checkHold">
+                      <property name="minimumSize">
+                       <size>
+                        <width>75</width>
+                        <height>0</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>75</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="font">
                        <font>
                         <family>PF BeauSans Pro</family>
-                        <pointsize>10</pointsize>
+                        <pointsize>11</pointsize>
                        </font>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QCheckBox{
+	color: rgb(255,255,255);
+}
+QCheckBox::indicator{
+	background-color: rgb(70,70,70);
+	color: rgb(241,102,55);
+	border-radius:6px;
+}
+
+QCheckBox::indicator:checked{
+	background-color: rgb(241,102,55);
+	border: 2px solid rgb(70,70,70);
+}
+
+QCheckBox:disabled{
+ color: rgb(136, 138, 133);
+}
+
+QCheckBox::indicator:checked:disabled{
+	background-color: rgb(136, 138, 133);
+}</string>
                       </property>
                       <property name="text">
                        <string>Hold on</string>
@@ -6620,7 +6695,7 @@ QPushButton:checked {
                  <item>
                   <widget class="QFrame" name="frame_122">
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_85">
                     <item>
@@ -6682,7 +6757,7 @@ QPushButton:pressed {
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_86">
                        <property name="spacing">
@@ -6802,7 +6877,7 @@ QPushButton:pressed {
                  <string notr="true"/>
                 </property>
                 <property name="frameShape">
-                 <enum>QFrame::NoFrame</enum>
+                 <enum>QFrame::Shape::NoFrame</enum>
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_90">
                  <property name="spacing">
@@ -6836,7 +6911,7 @@ QPushButton:pressed {
 </string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_91">
                     <property name="spacing">
@@ -6857,7 +6932,7 @@ QPushButton:pressed {
                        </size>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QHBoxLayout" name="horizontalLayout_67">
                        <property name="spacing">
@@ -6976,7 +7051,7 @@ QComboBox QAbstractView{
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_92">
                        <property name="leftMargin">
@@ -7046,7 +7121,7 @@ QComboBox QAbstractView{
                           <number>0</number>
                          </property>
                          <property name="insertPolicy">
-                          <enum>QComboBox::NoInsert</enum>
+                          <enum>QComboBox::InsertPolicy::NoInsert</enum>
                          </property>
                          <item>
                           <property name="text">
@@ -7135,7 +7210,7 @@ QComboBox QAbstractView{
 </string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QVBoxLayout" name="verticalLayout_93">
                     <property name="spacing">
@@ -7188,7 +7263,7 @@ QComboBox QAbstractView{
 </string>
                       </property>
                       <property name="frameShape">
-                       <enum>QFrame::NoFrame</enum>
+                       <enum>QFrame::Shape::NoFrame</enum>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_94">
                        <property name="leftMargin">
@@ -7218,7 +7293,7 @@ QComboBox QAbstractView{
                           </size>
                          </property>
                          <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
+                          <enum>QFrame::Shape::NoFrame</enum>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_68">
                           <property name="spacing">
@@ -7452,7 +7527,7 @@ QPushButton:disabled{
 </string>
                    </property>
                    <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
+                    <enum>QFrame::Shape::NoFrame</enum>
                    </property>
                    <layout class="QHBoxLayout" name="horizontalLayout_24">
                     <item>
@@ -7571,7 +7646,7 @@ QPushButton:disabled{
 }</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_11">
        <property name="spacing">
@@ -7606,7 +7681,7 @@ QPushButton:disabled{
 Jucélio Tavares and Ricardo Brum</string>
          </property>
          <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
          </property>
         </widget>
        </item>
@@ -7620,7 +7695,7 @@ Jucélio Tavares and Ricardo Brum</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1164</width>
+     <width>1192</width>
      <height>22</height>
     </rect>
    </property>

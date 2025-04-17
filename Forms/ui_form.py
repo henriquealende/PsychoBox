@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1164, 789)
+        MainWindow.resize(1192, 789)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
         self.topContent.setMinimumSize(QSize(0, 50))
         self.topContent.setMaximumSize(QSize(16777215, 70))
         self.topContent.setSizeIncrement(QSize(0, 0))
-        self.topContent.setFrameShape(QFrame.NoFrame)
+        self.topContent.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_2 = QHBoxLayout(self.topContent)
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
@@ -72,7 +72,7 @@ class Ui_MainWindow(object):
 "	padding-left: 5px;\n"
 "	border-left: 5px solid  rgb(255, 82,26);\n"
 "}")
-        self.frame_3.setFrameShape(QFrame.NoFrame)
+        self.frame_3.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_3 = QHBoxLayout(self.frame_3)
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -104,14 +104,14 @@ class Ui_MainWindow(object):
         self.infoBar.setStyleSheet(u"QFrame{\n"
 "	background-color : rgb(117, 117, 117);\n"
 "}")
-        self.infoBar.setFrameShape(QFrame.NoFrame)
+        self.infoBar.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_5 = QHBoxLayout(self.infoBar)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
         self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.frame_5 = QFrame(self.infoBar)
         self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setFrameShape(QFrame.NoFrame)
+        self.frame_5.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_6 = QVBoxLayout(self.frame_5)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -123,7 +123,7 @@ class Ui_MainWindow(object):
         self.label_2.setPixmap(QPixmap(u":/logos/img/psychobox_logo2.png"))
         self.label_2.setScaledContents(True)
 
-        self.verticalLayout_6.addWidget(self.label_2)
+        self.verticalLayout_6.addWidget(self.label_2, 0, Qt.AlignmentFlag.AlignHCenter)
 
 
         self.horizontalLayout_5.addWidget(self.frame_5)
@@ -134,7 +134,7 @@ class Ui_MainWindow(object):
         self.frameButtons.setStyleSheet(u"QPushButton {\n"
 "	border-radius: 10px;\n"
 "}")
-        self.frameButtons.setFrameShape(QFrame.NoFrame)
+        self.frameButtons.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_7 = QHBoxLayout(self.frameButtons)
         self.horizontalLayout_7.setSpacing(0)
         self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
@@ -204,7 +204,7 @@ class Ui_MainWindow(object):
 
         self.centerContent = QFrame(self.centralwidget)
         self.centerContent.setObjectName(u"centerContent")
-        self.centerContent.setFrameShape(QFrame.NoFrame)
+        self.centerContent.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout = QHBoxLayout(self.centerContent)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -214,7 +214,7 @@ class Ui_MainWindow(object):
         self.leftMenu.setMinimumSize(QSize(50, 0))
         self.leftMenu.setMaximumSize(QSize(50, 16777215))
         self.leftMenu.setSizeIncrement(QSize(0, 0))
-        self.leftMenu.setFrameShape(QFrame.NoFrame)
+        self.leftMenu.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_2 = QVBoxLayout(self.leftMenu)
         self.verticalLayout_2.setSpacing(50)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -249,7 +249,7 @@ class Ui_MainWindow(object):
 "	padding-left: 5px;\n"
 "	border-left: 5px solid  rgb(80, 184, 158);\n"
 "}")
-        self.frame.setFrameShape(QFrame.NoFrame)
+        self.frame.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_3 = QVBoxLayout(self.frame)
         self.verticalLayout_3.setSpacing(15)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -343,14 +343,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3.addWidget(self.calibrationButton)
 
-        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_3.addItem(self.verticalSpacer_4)
 
         self.frame_9 = QFrame(self.frame)
         self.frame_9.setObjectName(u"frame_9")
         self.frame_9.setMinimumSize(QSize(0, 100))
-        self.frame_9.setFrameShape(QFrame.NoFrame)
+        self.frame_9.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_4 = QVBoxLayout(self.frame_9)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
@@ -365,7 +365,7 @@ class Ui_MainWindow(object):
         font3.setPointSize(13)
         font3.setBold(True)
         self.userButton.setFont(font3)
-        self.userButton.setLayoutDirection(Qt.LeftToRight)
+        self.userButton.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.userButton.setStyleSheet(u"QPushButton:checked {\n"
 "	color: rgb(0, 196, 204);\n"
 "	border-radius:25px;\n"
@@ -386,7 +386,7 @@ class Ui_MainWindow(object):
         self.settingsButton.setMinimumSize(QSize(50, 50))
         self.settingsButton.setMaximumSize(QSize(16777215, 16777215))
         self.settingsButton.setFont(font3)
-        self.settingsButton.setLayoutDirection(Qt.LeftToRight)
+        self.settingsButton.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         icon9 = QIcon()
         icon9.addFile(u":/icons/img/settingsEnable.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.settingsButton.setIcon(icon9)
@@ -409,7 +409,7 @@ class Ui_MainWindow(object):
         self.rightContent.setObjectName(u"rightContent")
         self.rightContent.setEnabled(True)
         self.rightContent.setFont(font1)
-        self.rightContent.setFrameShape(QFrame.NoFrame)
+        self.rightContent.setFrameShape(QFrame.Shape.NoFrame)
         self.welcomePage = QWidget()
         self.welcomePage.setObjectName(u"welcomePage")
         self.horizontalLayout_10 = QHBoxLayout(self.welcomePage)
@@ -421,14 +421,14 @@ class Ui_MainWindow(object):
         self.mainContent_2.setStyleSheet(u"QFrame{	\n"
 "	background-color: rgb(237, 237, 237);\n"
 "}")
-        self.mainContent_2.setFrameShape(QFrame.NoFrame)
+        self.mainContent_2.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_8 = QVBoxLayout(self.mainContent_2)
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.frame_7 = QFrame(self.mainContent_2)
         self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setFrameShape(QFrame.NoFrame)
+        self.frame_7.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_9 = QVBoxLayout(self.frame_7)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
@@ -437,7 +437,7 @@ class Ui_MainWindow(object):
         self.frame_17.setObjectName(u"frame_17")
         self.frame_17.setMinimumSize(QSize(0, 0))
         self.frame_17.setMaximumSize(QSize(16777215, 100))
-        self.frame_17.setFrameShape(QFrame.NoFrame)
+        self.frame_17.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_12 = QHBoxLayout(self.frame_17)
         self.horizontalLayout_12.setSpacing(0)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
@@ -446,7 +446,7 @@ class Ui_MainWindow(object):
         self.welcomeUser.setObjectName(u"welcomeUser")
         self.welcomeUser.setMinimumSize(QSize(0, 0))
         self.welcomeUser.setMaximumSize(QSize(16777215, 16777215))
-        self.welcomeUser.setFrameShape(QFrame.NoFrame)
+        self.welcomeUser.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_10 = QVBoxLayout(self.welcomeUser)
         self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
@@ -472,7 +472,7 @@ class Ui_MainWindow(object):
 
         self.frame_10 = QFrame(self.frame_7)
         self.frame_10.setObjectName(u"frame_10")
-        self.frame_10.setFrameShape(QFrame.NoFrame)
+        self.frame_10.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_13 = QHBoxLayout(self.frame_10)
         self.horizontalLayout_13.setSpacing(10)
         self.horizontalLayout_13.setObjectName(u"horizontalLayout_13")
@@ -480,14 +480,14 @@ class Ui_MainWindow(object):
         self.frame_16 = QFrame(self.frame_10)
         self.frame_16.setObjectName(u"frame_16")
         self.frame_16.setMinimumSize(QSize(0, 450))
-        self.frame_16.setFrameShape(QFrame.NoFrame)
+        self.frame_16.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_11 = QVBoxLayout(self.frame_16)
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.frame_19 = QFrame(self.frame_16)
         self.frame_19.setObjectName(u"frame_19")
-        self.frame_19.setFrameShape(QFrame.NoFrame)
+        self.frame_19.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_12 = QVBoxLayout(self.frame_19)
         self.verticalLayout_12.setSpacing(0)
         self.verticalLayout_12.setObjectName(u"verticalLayout_12")
@@ -507,14 +507,14 @@ class Ui_MainWindow(object):
         self.settings = QFrame(self.frame_16)
         self.settings.setObjectName(u"settings")
         self.settings.setMinimumSize(QSize(0, 250))
-        self.settings.setFrameShape(QFrame.NoFrame)
+        self.settings.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_13 = QVBoxLayout(self.settings)
         self.verticalLayout_13.setSpacing(0)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
         self.frame_43 = QFrame(self.settings)
         self.frame_43.setObjectName(u"frame_43")
-        self.frame_43.setFrameShape(QFrame.NoFrame)
+        self.frame_43.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_25 = QHBoxLayout(self.frame_43)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
         self.horizontalLayout_25.setContentsMargins(6, 0, 6, 6)
@@ -526,7 +526,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px\n"
 "}")
-        self.frame_44.setFrameShape(QFrame.NoFrame)
+        self.frame_44.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_23 = QVBoxLayout(self.frame_44)
         self.verticalLayout_23.setSpacing(0)
         self.verticalLayout_23.setObjectName(u"verticalLayout_23")
@@ -542,7 +542,7 @@ class Ui_MainWindow(object):
 
         self.frame_45 = QFrame(self.frame_44)
         self.frame_45.setObjectName(u"frame_45")
-        self.frame_45.setFrameShape(QFrame.NoFrame)
+        self.frame_45.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_26 = QHBoxLayout(self.frame_45)
         self.horizontalLayout_26.setSpacing(0)
         self.horizontalLayout_26.setObjectName(u"horizontalLayout_26")
@@ -586,7 +586,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px\n"
 "}")
-        self.frame_46.setFrameShape(QFrame.NoFrame)
+        self.frame_46.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_24 = QVBoxLayout(self.frame_46)
         self.verticalLayout_24.setSpacing(0)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
@@ -601,7 +601,7 @@ class Ui_MainWindow(object):
 
         self.frame_47 = QFrame(self.frame_46)
         self.frame_47.setObjectName(u"frame_47")
-        self.frame_47.setFrameShape(QFrame.NoFrame)
+        self.frame_47.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_27 = QHBoxLayout(self.frame_47)
         self.horizontalLayout_27.setSpacing(0)
         self.horizontalLayout_27.setObjectName(u"horizontalLayout_27")
@@ -640,7 +640,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px\n"
 "}")
-        self.frame_48.setFrameShape(QFrame.NoFrame)
+        self.frame_48.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_25 = QVBoxLayout(self.frame_48)
         self.verticalLayout_25.setSpacing(0)
         self.verticalLayout_25.setObjectName(u"verticalLayout_25")
@@ -655,7 +655,7 @@ class Ui_MainWindow(object):
 
         self.frame_49 = QFrame(self.frame_48)
         self.frame_49.setObjectName(u"frame_49")
-        self.frame_49.setFrameShape(QFrame.NoFrame)
+        self.frame_49.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_28 = QHBoxLayout(self.frame_49)
         self.horizontalLayout_28.setSpacing(0)
         self.horizontalLayout_28.setObjectName(u"horizontalLayout_28")
@@ -718,38 +718,48 @@ class Ui_MainWindow(object):
         self.frame_8.setStyleSheet(u"QFrame{	\n"
 "	background-color: rgb(237, 237, 237);\n"
 "}")
-        self.frame_8.setFrameShape(QFrame.NoFrame)
+        self.frame_8.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_15 = QVBoxLayout(self.frame_8)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
         self.frame_11 = QFrame(self.frame_8)
         self.frame_11.setObjectName(u"frame_11")
-        self.frame_11.setMaximumSize(QSize(16777215, 100))
+        self.frame_11.setMinimumSize(QSize(0, 80))
+        self.frame_11.setMaximumSize(QSize(16777215, 80))
         self.frame_11.setStyleSheet(u"color: rgb(70, 70, 70); ")
-        self.frame_11.setFrameShape(QFrame.NoFrame)
-        self.verticalLayout_16 = QVBoxLayout(self.frame_11)
-        self.verticalLayout_16.setObjectName(u"verticalLayout_16")
-        self.verticalLayout_16.setContentsMargins(-1, 5, -1, -1)
+        self.frame_11.setFrameShape(QFrame.Shape.NoFrame)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_11)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(-1, -1, 9, -1)
         self.label_4 = QLabel(self.frame_11)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setMinimumSize(QSize(0, 50))
         self.label_4.setMaximumSize(QSize(16777215, 50))
         self.label_4.setFont(font4)
 
-        self.verticalLayout_16.addWidget(self.label_4)
+        self.horizontalLayout_4.addWidget(self.label_4)
+
+        self.logo_4 = QLabel(self.frame_11)
+        self.logo_4.setObjectName(u"logo_4")
+        self.logo_4.setMinimumSize(QSize(130, 50))
+        self.logo_4.setMaximumSize(QSize(130, 50))
+        self.logo_4.setPixmap(QPixmap(u":/logos/img/psychobox_logo.png"))
+        self.logo_4.setScaledContents(True)
+
+        self.horizontalLayout_4.addWidget(self.logo_4)
 
 
         self.verticalLayout_15.addWidget(self.frame_11)
 
         self.frame_12 = QFrame(self.frame_8)
         self.frame_12.setObjectName(u"frame_12")
-        self.frame_12.setFrameShape(QFrame.NoFrame)
+        self.frame_12.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_17 = QVBoxLayout(self.frame_12)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.frame_13 = QFrame(self.frame_12)
         self.frame_13.setObjectName(u"frame_13")
         self.frame_13.setMaximumSize(QSize(16777215, 100))
-        self.frame_13.setFrameShape(QFrame.NoFrame)
+        self.frame_13.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_14 = QHBoxLayout(self.frame_13)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
@@ -766,7 +776,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.frame_18.setFrameShape(QFrame.NoFrame)
+        self.frame_18.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_16 = QHBoxLayout(self.frame_18)
         self.horizontalLayout_16.setSpacing(9)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
@@ -931,7 +941,7 @@ class Ui_MainWindow(object):
 "	selection-color: #4f4f4f;\n"
 "}\n"
 "")
-        self.frame_23.setFrameShape(QFrame.NoFrame)
+        self.frame_23.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_19 = QHBoxLayout(self.frame_23)
         self.horizontalLayout_19.setSpacing(2)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
@@ -957,7 +967,7 @@ class Ui_MainWindow(object):
         font7.setPointSize(12)
         self.samplingRate_Combo.setFont(font7)
         self.samplingRate_Combo.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
-        self.samplingRate_Combo.setInsertPolicy(QComboBox.NoInsert)
+        self.samplingRate_Combo.setInsertPolicy(QComboBox.InsertPolicy.NoInsert)
 
         self.horizontalLayout_19.addWidget(self.samplingRate_Combo)
 
@@ -985,13 +995,13 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.frame_22.setFrameShape(QFrame.NoFrame)
+        self.frame_22.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_20 = QHBoxLayout(self.frame_22)
         self.horizontalLayout_20.setObjectName(u"horizontalLayout_20")
         self.horizontalLayout_20.setContentsMargins(-1, 0, -1, 0)
         self.frame_24 = QFrame(self.frame_22)
         self.frame_24.setObjectName(u"frame_24")
-        self.frame_24.setFrameShape(QFrame.NoFrame)
+        self.frame_24.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_19 = QVBoxLayout(self.frame_24)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.setMicrophone_1 = QPushButton(self.frame_24)
@@ -1042,7 +1052,7 @@ class Ui_MainWindow(object):
 
         self.frame_25 = QFrame(self.frame_22)
         self.frame_25.setObjectName(u"frame_25")
-        self.frame_25.setFrameShape(QFrame.NoFrame)
+        self.frame_25.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_20 = QVBoxLayout(self.frame_25)
         self.verticalLayout_20.setObjectName(u"verticalLayout_20")
         self.setMicrophone_2 = QPushButton(self.frame_25)
@@ -1090,7 +1100,7 @@ class Ui_MainWindow(object):
 
         self.frame_26 = QFrame(self.frame_22)
         self.frame_26.setObjectName(u"frame_26")
-        self.frame_26.setFrameShape(QFrame.NoFrame)
+        self.frame_26.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_21 = QVBoxLayout(self.frame_26)
         self.verticalLayout_21.setObjectName(u"verticalLayout_21")
         self.setSource_1 = QPushButton(self.frame_26)
@@ -1139,7 +1149,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_20.addWidget(self.frame_26)
 
-        self.horizontalSpacer_3 = QSpacerItem(244, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.horizontalSpacer_3 = QSpacerItem(244, 20, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.horizontalLayout_20.addItem(self.horizontalSpacer_3)
 
@@ -1182,7 +1192,7 @@ class Ui_MainWindow(object):
 
         self.frame_14 = QFrame(self.frame_12)
         self.frame_14.setObjectName(u"frame_14")
-        self.frame_14.setFrameShape(QFrame.NoFrame)
+        self.frame_14.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_18 = QVBoxLayout(self.frame_14)
         self.verticalLayout_18.setSpacing(0)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
@@ -1191,7 +1201,7 @@ class Ui_MainWindow(object):
         self.gridLayout.setObjectName(u"gridLayout")
         self.recordingFrame = QFrame(self.frame_14)
         self.recordingFrame.setObjectName(u"recordingFrame")
-        self.recordingFrame.setFrameShape(QFrame.NoFrame)
+        self.recordingFrame.setFrameShape(QFrame.Shape.NoFrame)
 
         self.gridLayout.addWidget(self.recordingFrame, 0, 0, 1, 1)
 
@@ -1204,7 +1214,7 @@ class Ui_MainWindow(object):
         self.frame_15 = QFrame(self.frame_12)
         self.frame_15.setObjectName(u"frame_15")
         self.frame_15.setMaximumSize(QSize(16777215, 100))
-        self.frame_15.setFrameShape(QFrame.NoFrame)
+        self.frame_15.setFrameShape(QFrame.Shape.NoFrame)
 
         self.verticalLayout_17.addWidget(self.frame_15)
 
@@ -1227,8 +1237,8 @@ class Ui_MainWindow(object):
         self.title = QFrame(self.filterPage)
         self.title.setObjectName(u"title")
         self.title.setMinimumSize(QSize(0, 80))
-        self.title.setMaximumSize(QSize(16777215, 16777215))
-        self.title.setFrameShape(QFrame.NoFrame)
+        self.title.setMaximumSize(QSize(16777215, 80))
+        self.title.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_15 = QHBoxLayout(self.title)
         self.horizontalLayout_15.setSpacing(0)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
@@ -1236,7 +1246,7 @@ class Ui_MainWindow(object):
         self.frame_20 = QFrame(self.title)
         self.frame_20.setObjectName(u"frame_20")
         self.frame_20.setMaximumSize(QSize(464, 80))
-        self.frame_20.setFrameShape(QFrame.NoFrame)
+        self.frame_20.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_22 = QVBoxLayout(self.frame_20)
         self.verticalLayout_22.setSpacing(0)
         self.verticalLayout_22.setObjectName(u"verticalLayout_22")
@@ -1256,11 +1266,11 @@ class Ui_MainWindow(object):
         self.frame_21 = QFrame(self.title)
         self.frame_21.setObjectName(u"frame_21")
         self.frame_21.setMaximumSize(QSize(16777215, 16777215))
-        self.frame_21.setFrameShape(QFrame.NoFrame)
+        self.frame_21.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_26 = QVBoxLayout(self.frame_21)
         self.verticalLayout_26.setSpacing(0)
         self.verticalLayout_26.setObjectName(u"verticalLayout_26")
-        self.verticalLayout_26.setContentsMargins(0, 12, 11, 0)
+        self.verticalLayout_26.setContentsMargins(9, 9, 9, 9)
         self.logo = QLabel(self.frame_21)
         self.logo.setObjectName(u"logo")
         self.logo.setMinimumSize(QSize(130, 50))
@@ -1268,7 +1278,7 @@ class Ui_MainWindow(object):
         self.logo.setPixmap(QPixmap(u":/logos/img/psychobox_logo.png"))
         self.logo.setScaledContents(True)
 
-        self.verticalLayout_26.addWidget(self.logo)
+        self.verticalLayout_26.addWidget(self.logo, 0, Qt.AlignmentFlag.AlignRight)
 
 
         self.horizontalLayout_15.addWidget(self.frame_21)
@@ -1315,7 +1325,7 @@ class Ui_MainWindow(object):
 "		background: #4B4B4B;\n"
 "}\n"
 "")
-        self.controlFrame.setFrameShape(QFrame.NoFrame)
+        self.controlFrame.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_29 = QVBoxLayout(self.controlFrame)
         self.verticalLayout_29.setSpacing(6)
         self.verticalLayout_29.setObjectName(u"verticalLayout_29")
@@ -1323,7 +1333,7 @@ class Ui_MainWindow(object):
         self.playerFrame = QFrame(self.controlFrame)
         self.playerFrame.setObjectName(u"playerFrame")
         self.playerFrame.setMaximumSize(QSize(16777212, 160))
-        self.playerFrame.setFrameShape(QFrame.NoFrame)
+        self.playerFrame.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_59 = QVBoxLayout(self.playerFrame)
         self.verticalLayout_59.setSpacing(0)
         self.verticalLayout_59.setObjectName(u"verticalLayout_59")
@@ -1331,7 +1341,7 @@ class Ui_MainWindow(object):
         self.playerFrame_2 = QFrame(self.playerFrame)
         self.playerFrame_2.setObjectName(u"playerFrame_2")
         self.playerFrame_2.setEnabled(True)
-        self.playerFrame_2.setFrameShape(QFrame.NoFrame)
+        self.playerFrame_2.setFrameShape(QFrame.Shape.NoFrame)
         self.playerFrame_2.setLineWidth(0)
         self.horizontalLayout_17 = QHBoxLayout(self.playerFrame_2)
         self.horizontalLayout_17.setSpacing(30)
@@ -1341,7 +1351,7 @@ class Ui_MainWindow(object):
         self.importAudio.setObjectName(u"importAudio")
         self.importAudio.setMinimumSize(QSize(0, 100))
         self.importAudio.setMaximumSize(QSize(16777215, 16777215))
-        self.importAudio.setFrameShape(QFrame.NoFrame)
+        self.importAudio.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_29 = QHBoxLayout(self.importAudio)
         self.horizontalLayout_29.setObjectName(u"horizontalLayout_29")
         self.horizontalLayout_29.setContentsMargins(0, 0, 0, 0)
@@ -1350,7 +1360,7 @@ class Ui_MainWindow(object):
         self.frame_52.setMinimumSize(QSize(0, 0))
         self.frame_52.setMaximumSize(QSize(16777215, 16777215))
         self.frame_52.setSizeIncrement(QSize(0, 0))
-        self.frame_52.setFrameShape(QFrame.NoFrame)
+        self.frame_52.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_30 = QHBoxLayout(self.frame_52)
         self.horizontalLayout_30.setSpacing(0)
         self.horizontalLayout_30.setObjectName(u"horizontalLayout_30")
@@ -1387,12 +1397,12 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.listWidget.setFrameShape(QFrame.NoFrame)
-        self.listWidget.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-        self.listWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.listWidget.setFrameShape(QFrame.Shape.NoFrame)
+        self.listWidget.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.listWidget.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.listWidget.setAutoScroll(True)
         self.listWidget.setAutoScrollMargin(16)
-        self.listWidget.setDragDropMode(QAbstractItemView.NoDragDrop)
+        self.listWidget.setDragDropMode(QAbstractItemView.DragDropMode.NoDragDrop)
 
         self.horizontalLayout_30.addWidget(self.listWidget)
 
@@ -1421,7 +1431,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(237, 105, 59)\n"
 "}\n"
 "")
-        self.frame_53.setFrameShape(QFrame.NoFrame)
+        self.frame_53.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_55 = QVBoxLayout(self.frame_53)
         self.verticalLayout_55.setSpacing(0)
         self.verticalLayout_55.setObjectName(u"verticalLayout_55")
@@ -1465,7 +1475,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.buttons.setFrameShape(QFrame.NoFrame)
+        self.buttons.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_5 = QVBoxLayout(self.buttons)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
@@ -1473,7 +1483,7 @@ class Ui_MainWindow(object):
         self.frame_55 = QFrame(self.buttons)
         self.frame_55.setObjectName(u"frame_55")
         self.frame_55.setStyleSheet(u"")
-        self.frame_55.setFrameShape(QFrame.NoFrame)
+        self.frame_55.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_57 = QVBoxLayout(self.frame_55)
         self.verticalLayout_57.setSpacing(0)
         self.verticalLayout_57.setObjectName(u"verticalLayout_57")
@@ -1491,7 +1501,7 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.frameButtonsSE.setFrameShape(QFrame.NoFrame)
+        self.frameButtonsSE.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_31 = QHBoxLayout(self.frameButtonsSE)
         self.horizontalLayout_31.setSpacing(0)
         self.horizontalLayout_31.setObjectName(u"horizontalLayout_31")
@@ -1634,7 +1644,7 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.frame_27.setFrameShape(QFrame.NoFrame)
+        self.frame_27.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_18 = QHBoxLayout(self.frame_27)
         self.horizontalLayout_18.setSpacing(15)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
@@ -1662,7 +1672,7 @@ class Ui_MainWindow(object):
         self.volumeSlider.setObjectName(u"volumeSlider")
         self.volumeSlider.setEnabled(False)
         self.volumeSlider.setValue(50)
-        self.volumeSlider.setOrientation(Qt.Horizontal)
+        self.volumeSlider.setOrientation(Qt.Orientation.Horizontal)
 
         self.horizontalLayout_18.addWidget(self.volumeSlider)
 
@@ -1695,7 +1705,7 @@ class Ui_MainWindow(object):
 "	color: rgb(136,138,133);\n"
 "	}\n"
 "")
-        self.frame_2.setFrameShape(QFrame.NoFrame)
+        self.frame_2.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_21 = QHBoxLayout(self.frame_2)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
         self.filterAudioButton = QPushButton(self.frame_2)
@@ -1713,7 +1723,7 @@ class Ui_MainWindow(object):
         self.resetButton.setMinimumSize(QSize(100, 30))
         self.resetButton.setMaximumSize(QSize(100, 30))
         self.resetButton.setFont(font5)
-        self.resetButton.setLayoutDirection(Qt.LeftToRight)
+        self.resetButton.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
         self.resetButton.setStyleSheet(u"")
 
         self.horizontalLayout_21.addWidget(self.resetButton)
@@ -1730,7 +1740,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_29.addWidget(self.playerFrame)
 
-        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+        self.verticalSpacer_2 = QSpacerItem(20, 40, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
 
         self.verticalLayout_29.addItem(self.verticalSpacer_2)
 
@@ -1762,7 +1772,7 @@ class Ui_MainWindow(object):
 "\n"
 "\n"
 "")
-        self.uperSliders.setFrameShape(QFrame.NoFrame)
+        self.uperSliders.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_22 = QHBoxLayout(self.uperSliders)
         self.horizontalLayout_22.setSpacing(0)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
@@ -1771,7 +1781,7 @@ class Ui_MainWindow(object):
         self.frame_56.setObjectName(u"frame_56")
         self.frame_56.setMinimumSize(QSize(76, 150))
         self.frame_56.setMaximumSize(QSize(76, 150))
-        self.frame_56.setFrameShape(QFrame.NoFrame)
+        self.frame_56.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_32 = QVBoxLayout(self.frame_56)
         self.verticalLayout_32.setSpacing(3)
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
@@ -1821,7 +1831,7 @@ class Ui_MainWindow(object):
         self.frame_57.setMinimumSize(QSize(76, 150))
         self.frame_57.setMaximumSize(QSize(76, 150))
         self.frame_57.setStyleSheet(u"")
-        self.frame_57.setFrameShape(QFrame.NoFrame)
+        self.frame_57.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_33 = QVBoxLayout(self.frame_57)
         self.verticalLayout_33.setSpacing(3)
         self.verticalLayout_33.setObjectName(u"verticalLayout_33")
@@ -1860,7 +1870,7 @@ class Ui_MainWindow(object):
         self.frame_58.setObjectName(u"frame_58")
         self.frame_58.setMinimumSize(QSize(76, 150))
         self.frame_58.setMaximumSize(QSize(76, 150))
-        self.frame_58.setFrameShape(QFrame.NoFrame)
+        self.frame_58.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_34 = QVBoxLayout(self.frame_58)
         self.verticalLayout_34.setSpacing(3)
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
@@ -1899,8 +1909,8 @@ class Ui_MainWindow(object):
         self.frame_59.setObjectName(u"frame_59")
         self.frame_59.setMinimumSize(QSize(76, 150))
         self.frame_59.setMaximumSize(QSize(76, 150))
-        self.frame_59.setLayoutDirection(Qt.LeftToRight)
-        self.frame_59.setFrameShape(QFrame.NoFrame)
+        self.frame_59.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.frame_59.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_35 = QVBoxLayout(self.frame_59)
         self.verticalLayout_35.setSpacing(3)
         self.verticalLayout_35.setObjectName(u"verticalLayout_35")
@@ -1939,7 +1949,7 @@ class Ui_MainWindow(object):
         self.frame_60.setObjectName(u"frame_60")
         self.frame_60.setMinimumSize(QSize(76, 150))
         self.frame_60.setMaximumSize(QSize(76, 150))
-        self.frame_60.setFrameShape(QFrame.NoFrame)
+        self.frame_60.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_37 = QVBoxLayout(self.frame_60)
         self.verticalLayout_37.setSpacing(3)
         self.verticalLayout_37.setObjectName(u"verticalLayout_37")
@@ -1978,7 +1988,7 @@ class Ui_MainWindow(object):
         self.frame_61.setObjectName(u"frame_61")
         self.frame_61.setMinimumSize(QSize(76, 150))
         self.frame_61.setMaximumSize(QSize(76, 150))
-        self.frame_61.setFrameShape(QFrame.NoFrame)
+        self.frame_61.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_38 = QVBoxLayout(self.frame_61)
         self.verticalLayout_38.setSpacing(3)
         self.verticalLayout_38.setObjectName(u"verticalLayout_38")
@@ -2017,7 +2027,7 @@ class Ui_MainWindow(object):
         self.frame_62.setObjectName(u"frame_62")
         self.frame_62.setMinimumSize(QSize(76, 150))
         self.frame_62.setMaximumSize(QSize(76, 150))
-        self.frame_62.setFrameShape(QFrame.NoFrame)
+        self.frame_62.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_39 = QVBoxLayout(self.frame_62)
         self.verticalLayout_39.setSpacing(3)
         self.verticalLayout_39.setObjectName(u"verticalLayout_39")
@@ -2056,7 +2066,7 @@ class Ui_MainWindow(object):
         self.frame_63.setObjectName(u"frame_63")
         self.frame_63.setMinimumSize(QSize(76, 150))
         self.frame_63.setMaximumSize(QSize(76, 150))
-        self.frame_63.setFrameShape(QFrame.NoFrame)
+        self.frame_63.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_40 = QVBoxLayout(self.frame_63)
         self.verticalLayout_40.setSpacing(3)
         self.verticalLayout_40.setObjectName(u"verticalLayout_40")
@@ -2095,7 +2105,7 @@ class Ui_MainWindow(object):
         self.frame_64.setObjectName(u"frame_64")
         self.frame_64.setMinimumSize(QSize(76, 150))
         self.frame_64.setMaximumSize(QSize(76, 150))
-        self.frame_64.setFrameShape(QFrame.NoFrame)
+        self.frame_64.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_41 = QVBoxLayout(self.frame_64)
         self.verticalLayout_41.setSpacing(3)
         self.verticalLayout_41.setObjectName(u"verticalLayout_41")
@@ -2136,7 +2146,7 @@ class Ui_MainWindow(object):
         self.frame_65.setEnabled(True)
         self.frame_65.setMinimumSize(QSize(76, 150))
         self.frame_65.setMaximumSize(QSize(76, 150))
-        self.frame_65.setFrameShape(QFrame.NoFrame)
+        self.frame_65.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_42 = QVBoxLayout(self.frame_65)
         self.verticalLayout_42.setSpacing(3)
         self.verticalLayout_42.setObjectName(u"verticalLayout_42")
@@ -2176,7 +2186,7 @@ class Ui_MainWindow(object):
         self.frame_66.setEnabled(True)
         self.frame_66.setMinimumSize(QSize(76, 150))
         self.frame_66.setMaximumSize(QSize(76, 150))
-        self.frame_66.setFrameShape(QFrame.NoFrame)
+        self.frame_66.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_43 = QVBoxLayout(self.frame_66)
         self.verticalLayout_43.setSpacing(3)
         self.verticalLayout_43.setObjectName(u"verticalLayout_43")
@@ -2216,7 +2226,7 @@ class Ui_MainWindow(object):
         self.frame_67.setObjectName(u"frame_67")
         self.frame_67.setMinimumSize(QSize(76, 150))
         self.frame_67.setMaximumSize(QSize(76, 150))
-        self.frame_67.setFrameShape(QFrame.NoFrame)
+        self.frame_67.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_44 = QVBoxLayout(self.frame_67)
         self.verticalLayout_44.setSpacing(3)
         self.verticalLayout_44.setObjectName(u"verticalLayout_44")
@@ -2282,14 +2292,14 @@ class Ui_MainWindow(object):
 "};\n"
 "\n"
 "")
-        self.lowerSliders.setFrameShape(QFrame.NoFrame)
+        self.lowerSliders.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_23 = QHBoxLayout(self.lowerSliders)
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
         self.frame_84 = QFrame(self.lowerSliders)
         self.frame_84.setObjectName(u"frame_84")
         self.frame_84.setMinimumSize(QSize(76, 150))
         self.frame_84.setMaximumSize(QSize(76, 150))
-        self.frame_84.setFrameShape(QFrame.NoFrame)
+        self.frame_84.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_30 = QVBoxLayout(self.frame_84)
         self.verticalLayout_30.setSpacing(0)
         self.verticalLayout_30.setObjectName(u"verticalLayout_30")
@@ -2328,7 +2338,7 @@ class Ui_MainWindow(object):
         self.frame_85.setObjectName(u"frame_85")
         self.frame_85.setMinimumSize(QSize(76, 150))
         self.frame_85.setMaximumSize(QSize(76, 150))
-        self.frame_85.setFrameShape(QFrame.NoFrame)
+        self.frame_85.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_31 = QVBoxLayout(self.frame_85)
         self.verticalLayout_31.setSpacing(0)
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
@@ -2367,7 +2377,7 @@ class Ui_MainWindow(object):
         self.frame_86.setObjectName(u"frame_86")
         self.frame_86.setMinimumSize(QSize(76, 150))
         self.frame_86.setMaximumSize(QSize(76, 150))
-        self.frame_86.setFrameShape(QFrame.NoFrame)
+        self.frame_86.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_45 = QVBoxLayout(self.frame_86)
         self.verticalLayout_45.setSpacing(0)
         self.verticalLayout_45.setObjectName(u"verticalLayout_45")
@@ -2406,7 +2416,7 @@ class Ui_MainWindow(object):
         self.frame_87.setObjectName(u"frame_87")
         self.frame_87.setMinimumSize(QSize(76, 150))
         self.frame_87.setMaximumSize(QSize(76, 150))
-        self.frame_87.setFrameShape(QFrame.NoFrame)
+        self.frame_87.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_46 = QVBoxLayout(self.frame_87)
         self.verticalLayout_46.setSpacing(0)
         self.verticalLayout_46.setObjectName(u"verticalLayout_46")
@@ -2445,7 +2455,7 @@ class Ui_MainWindow(object):
         self.frame_88.setObjectName(u"frame_88")
         self.frame_88.setMinimumSize(QSize(76, 150))
         self.frame_88.setMaximumSize(QSize(76, 150))
-        self.frame_88.setFrameShape(QFrame.NoFrame)
+        self.frame_88.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_47 = QVBoxLayout(self.frame_88)
         self.verticalLayout_47.setSpacing(0)
         self.verticalLayout_47.setObjectName(u"verticalLayout_47")
@@ -2484,7 +2494,7 @@ class Ui_MainWindow(object):
         self.frame_89.setObjectName(u"frame_89")
         self.frame_89.setMinimumSize(QSize(76, 150))
         self.frame_89.setMaximumSize(QSize(76, 150))
-        self.frame_89.setFrameShape(QFrame.NoFrame)
+        self.frame_89.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_48 = QVBoxLayout(self.frame_89)
         self.verticalLayout_48.setSpacing(0)
         self.verticalLayout_48.setObjectName(u"verticalLayout_48")
@@ -2523,7 +2533,7 @@ class Ui_MainWindow(object):
         self.frame_90.setObjectName(u"frame_90")
         self.frame_90.setMinimumSize(QSize(76, 150))
         self.frame_90.setMaximumSize(QSize(76, 150))
-        self.frame_90.setFrameShape(QFrame.NoFrame)
+        self.frame_90.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_49 = QVBoxLayout(self.frame_90)
         self.verticalLayout_49.setSpacing(0)
         self.verticalLayout_49.setObjectName(u"verticalLayout_49")
@@ -2562,7 +2572,7 @@ class Ui_MainWindow(object):
         self.frame_91.setObjectName(u"frame_91")
         self.frame_91.setMinimumSize(QSize(76, 150))
         self.frame_91.setMaximumSize(QSize(76, 150))
-        self.frame_91.setFrameShape(QFrame.NoFrame)
+        self.frame_91.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_50 = QVBoxLayout(self.frame_91)
         self.verticalLayout_50.setSpacing(0)
         self.verticalLayout_50.setObjectName(u"verticalLayout_50")
@@ -2601,7 +2611,7 @@ class Ui_MainWindow(object):
         self.frame_92.setObjectName(u"frame_92")
         self.frame_92.setMinimumSize(QSize(76, 150))
         self.frame_92.setMaximumSize(QSize(76, 150))
-        self.frame_92.setFrameShape(QFrame.NoFrame)
+        self.frame_92.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_51 = QVBoxLayout(self.frame_92)
         self.verticalLayout_51.setSpacing(0)
         self.verticalLayout_51.setObjectName(u"verticalLayout_51")
@@ -2640,7 +2650,7 @@ class Ui_MainWindow(object):
         self.frame_93.setObjectName(u"frame_93")
         self.frame_93.setMinimumSize(QSize(76, 150))
         self.frame_93.setMaximumSize(QSize(76, 150))
-        self.frame_93.setFrameShape(QFrame.NoFrame)
+        self.frame_93.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_52 = QVBoxLayout(self.frame_93)
         self.verticalLayout_52.setSpacing(0)
         self.verticalLayout_52.setObjectName(u"verticalLayout_52")
@@ -2679,7 +2689,7 @@ class Ui_MainWindow(object):
         self.frame_94.setObjectName(u"frame_94")
         self.frame_94.setMinimumSize(QSize(76, 150))
         self.frame_94.setMaximumSize(QSize(76, 150))
-        self.frame_94.setFrameShape(QFrame.NoFrame)
+        self.frame_94.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_53 = QVBoxLayout(self.frame_94)
         self.verticalLayout_53.setSpacing(0)
         self.verticalLayout_53.setObjectName(u"verticalLayout_53")
@@ -2718,7 +2728,7 @@ class Ui_MainWindow(object):
         self.frame_95.setObjectName(u"frame_95")
         self.frame_95.setMinimumSize(QSize(76, 150))
         self.frame_95.setMaximumSize(QSize(76, 140))
-        self.frame_95.setFrameShape(QFrame.NoFrame)
+        self.frame_95.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_54 = QVBoxLayout(self.frame_95)
         self.verticalLayout_54.setSpacing(0)
         self.verticalLayout_54.setObjectName(u"verticalLayout_54")
@@ -2773,14 +2783,14 @@ class Ui_MainWindow(object):
         self.SupCalibrationSetup.setObjectName(u"SupCalibrationSetup")
         self.SupCalibrationSetup.setMinimumSize(QSize(0, 80))
         self.SupCalibrationSetup.setMaximumSize(QSize(16777215, 140))
-        self.SupCalibrationSetup.setFrameShape(QFrame.NoFrame)
+        self.SupCalibrationSetup.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_65 = QHBoxLayout(self.SupCalibrationSetup)
         self.horizontalLayout_65.setSpacing(0)
         self.horizontalLayout_65.setObjectName(u"horizontalLayout_65")
         self.horizontalLayout_65.setContentsMargins(0, 0, 0, 0)
         self.frame_128 = QFrame(self.SupCalibrationSetup)
         self.frame_128.setObjectName(u"frame_128")
-        self.frame_128.setFrameShape(QFrame.NoFrame)
+        self.frame_128.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_66 = QHBoxLayout(self.frame_128)
         self.horizontalLayout_66.setSpacing(0)
         self.horizontalLayout_66.setObjectName(u"horizontalLayout_66")
@@ -2799,11 +2809,11 @@ class Ui_MainWindow(object):
 
         self.frame_129 = QFrame(self.SupCalibrationSetup)
         self.frame_129.setObjectName(u"frame_129")
-        self.frame_129.setFrameShape(QFrame.NoFrame)
+        self.frame_129.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_88 = QVBoxLayout(self.frame_129)
         self.verticalLayout_88.setSpacing(0)
         self.verticalLayout_88.setObjectName(u"verticalLayout_88")
-        self.verticalLayout_88.setContentsMargins(0, 12, 11, 0)
+        self.verticalLayout_88.setContentsMargins(0, 9, 9, 9)
         self.logo_3 = QLabel(self.frame_129)
         self.logo_3.setObjectName(u"logo_3")
         self.logo_3.setMinimumSize(QSize(130, 50))
@@ -2811,7 +2821,7 @@ class Ui_MainWindow(object):
         self.logo_3.setPixmap(QPixmap(u":/logos/img/psychobox_logo.png"))
         self.logo_3.setScaledContents(True)
 
-        self.verticalLayout_88.addWidget(self.logo_3)
+        self.verticalLayout_88.addWidget(self.logo_3, 0, Qt.AlignmentFlag.AlignRight)
 
 
         self.horizontalLayout_65.addWidget(self.frame_129)
@@ -2823,7 +2833,7 @@ class Ui_MainWindow(object):
         self.InfCalibrationSetup.setObjectName(u"InfCalibrationSetup")
         self.InfCalibrationSetup.setMinimumSize(QSize(0, 0))
         self.InfCalibrationSetup.setStyleSheet(u"b")
-        self.InfCalibrationSetup.setFrameShape(QFrame.NoFrame)
+        self.InfCalibrationSetup.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_54 = QHBoxLayout(self.InfCalibrationSetup)
         self.horizontalLayout_54.setSpacing(6)
         self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
@@ -2835,7 +2845,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(182, 182, 182);\n"
 "	border-radius: 6px\n"
 "}")
-        self.Import.setFrameShape(QFrame.NoFrame)
+        self.Import.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_84 = QVBoxLayout(self.Import)
         self.verticalLayout_84.setSpacing(5)
         self.verticalLayout_84.setObjectName(u"verticalLayout_84")
@@ -2844,7 +2854,7 @@ class Ui_MainWindow(object):
         self.frame_121.setObjectName(u"frame_121")
         self.frame_121.setMinimumSize(QSize(0, 50))
         self.frame_121.setMaximumSize(QSize(16777215, 50))
-        self.frame_121.setFrameShape(QFrame.NoFrame)
+        self.frame_121.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_59 = QHBoxLayout(self.frame_121)
         self.horizontalLayout_59.setSpacing(5)
         self.horizontalLayout_59.setObjectName(u"horizontalLayout_59")
@@ -2876,10 +2886,33 @@ class Ui_MainWindow(object):
 
         self.checkHold = QCheckBox(self.frame_121)
         self.checkHold.setObjectName(u"checkHold")
+        self.checkHold.setMinimumSize(QSize(75, 0))
+        self.checkHold.setMaximumSize(QSize(75, 16777215))
         font12 = QFont()
         font12.setFamilies([u"PF BeauSans Pro"])
-        font12.setPointSize(10)
+        font12.setPointSize(11)
         self.checkHold.setFont(font12)
+        self.checkHold.setStyleSheet(u"QCheckBox{\n"
+"	color: rgb(255,255,255);\n"
+"}\n"
+"QCheckBox::indicator{\n"
+"	background-color: rgb(70,70,70);\n"
+"	color: rgb(241,102,55);\n"
+"	border-radius:6px;\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked{\n"
+"	background-color: rgb(241,102,55);\n"
+"	border: 2px solid rgb(70,70,70);\n"
+"}\n"
+"\n"
+"QCheckBox:disabled{\n"
+" color: rgb(136, 138, 133);\n"
+"}\n"
+"\n"
+"QCheckBox::indicator:checked:disabled{\n"
+"	background-color: rgb(136, 138, 133);\n"
+"}")
         self.checkHold.setChecked(False)
 
         self.horizontalLayout_59.addWidget(self.checkHold)
@@ -2889,7 +2922,7 @@ class Ui_MainWindow(object):
 
         self.frame_122 = QFrame(self.Import)
         self.frame_122.setObjectName(u"frame_122")
-        self.frame_122.setFrameShape(QFrame.NoFrame)
+        self.frame_122.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_85 = QVBoxLayout(self.frame_122)
         self.verticalLayout_85.setObjectName(u"verticalLayout_85")
         self.listWidget2 = QListWidget(self.frame_122)
@@ -2941,7 +2974,7 @@ class Ui_MainWindow(object):
 "	background-color: rgb(237, 105, 59)\n"
 "}\n"
 "")
-        self.frame_123.setFrameShape(QFrame.NoFrame)
+        self.frame_123.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_86 = QVBoxLayout(self.frame_123)
         self.verticalLayout_86.setSpacing(6)
         self.verticalLayout_86.setObjectName(u"verticalLayout_86")
@@ -2984,7 +3017,7 @@ class Ui_MainWindow(object):
         self.RightCalibrationSetup.setMinimumSize(QSize(0, 0))
         self.RightCalibrationSetup.setMaximumSize(QSize(16777215, 16777215))
         self.RightCalibrationSetup.setStyleSheet(u"")
-        self.RightCalibrationSetup.setFrameShape(QFrame.NoFrame)
+        self.RightCalibrationSetup.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_90 = QVBoxLayout(self.RightCalibrationSetup)
         self.verticalLayout_90.setSpacing(6)
         self.verticalLayout_90.setObjectName(u"verticalLayout_90")
@@ -2997,7 +3030,7 @@ class Ui_MainWindow(object):
 "	border-radius: 6px;\n"
 "}	\n"
 "")
-        self.Headphones.setFrameShape(QFrame.NoFrame)
+        self.Headphones.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_91 = QVBoxLayout(self.Headphones)
         self.verticalLayout_91.setSpacing(5)
         self.verticalLayout_91.setObjectName(u"verticalLayout_91")
@@ -3005,7 +3038,7 @@ class Ui_MainWindow(object):
         self.frame_133.setObjectName(u"frame_133")
         self.frame_133.setMinimumSize(QSize(0, 50))
         self.frame_133.setMaximumSize(QSize(16777215, 50))
-        self.frame_133.setFrameShape(QFrame.NoFrame)
+        self.frame_133.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_67 = QHBoxLayout(self.frame_133)
         self.horizontalLayout_67.setSpacing(5)
         self.horizontalLayout_67.setObjectName(u"horizontalLayout_67")
@@ -3078,7 +3111,7 @@ class Ui_MainWindow(object):
 "	selection-color: #4f4f4f;\n"
 "}\n"
 "")
-        self.frame_134.setFrameShape(QFrame.NoFrame)
+        self.frame_134.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_92 = QVBoxLayout(self.frame_134)
         self.verticalLayout_92.setObjectName(u"verticalLayout_92")
         self.verticalLayout_92.setContentsMargins(0, 0, 0, 0)
@@ -3099,7 +3132,7 @@ class Ui_MainWindow(object):
         self.typeHeadBox_2.setMaximumSize(QSize(16777215, 30))
         self.typeHeadBox_2.setFont(font7)
         self.typeHeadBox_2.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
-        self.typeHeadBox_2.setInsertPolicy(QComboBox.NoInsert)
+        self.typeHeadBox_2.setInsertPolicy(QComboBox.InsertPolicy.NoInsert)
 
         self.verticalLayout_92.addWidget(self.typeHeadBox_2)
 
@@ -3135,7 +3168,7 @@ class Ui_MainWindow(object):
 "	border-radius: 6px;\n"
 "}	\n"
 "")
-        self.Hats.setFrameShape(QFrame.NoFrame)
+        self.Hats.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_93 = QVBoxLayout(self.Hats)
         self.verticalLayout_93.setSpacing(5)
         self.verticalLayout_93.setObjectName(u"verticalLayout_93")
@@ -3183,7 +3216,7 @@ class Ui_MainWindow(object):
 "	selection-color: #4f4f4f;\n"
 "}\n"
 "")
-        self.frame_136.setFrameShape(QFrame.NoFrame)
+        self.frame_136.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_94 = QVBoxLayout(self.frame_136)
         self.verticalLayout_94.setObjectName(u"verticalLayout_94")
         self.verticalLayout_94.setContentsMargins(0, 0, 0, 0)
@@ -3191,7 +3224,7 @@ class Ui_MainWindow(object):
         self.frame_137.setObjectName(u"frame_137")
         self.frame_137.setMinimumSize(QSize(0, 50))
         self.frame_137.setMaximumSize(QSize(16777215, 50))
-        self.frame_137.setFrameShape(QFrame.NoFrame)
+        self.frame_137.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_68 = QHBoxLayout(self.frame_137)
         self.horizontalLayout_68.setSpacing(5)
         self.horizontalLayout_68.setObjectName(u"horizontalLayout_68")
@@ -3294,7 +3327,7 @@ class Ui_MainWindow(object):
 "	background-color:rgb(70, 70, 70);\n"
 "}\n"
 "")
-        self.frame_28.setFrameShape(QFrame.NoFrame)
+        self.frame_28.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_24 = QHBoxLayout(self.frame_28)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
         self.plot = QPushButton(self.frame_28)
@@ -3352,7 +3385,7 @@ class Ui_MainWindow(object):
         self.bottomContent.setStyleSheet(u"QFrame{\n"
 "	background-color: rgb(70, 70, 70);\n"
 "}")
-        self.bottomContent.setFrameShape(QFrame.NoFrame)
+        self.bottomContent.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout_11 = QHBoxLayout(self.bottomContent)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
@@ -3365,7 +3398,7 @@ class Ui_MainWindow(object):
         font14.setBold(False)
         self.label_23.setFont(font14)
         self.label_23.setStyleSheet(u"color: rgb(238, 238, 236);")
-        self.label_23.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_23.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
 
         self.horizontalLayout_11.addWidget(self.label_23)
 
@@ -3375,7 +3408,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QMenuBar(MainWindow)
         self.menubar.setObjectName(u"menubar")
-        self.menubar.setGeometry(QRect(0, 0, 1164, 22))
+        self.menubar.setGeometry(QRect(0, 0, 1192, 22))
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -3433,6 +3466,7 @@ class Ui_MainWindow(object):
         self.label_51.setText(QCoreApplication.translate("MainWindow", u"Use psychoacoustic \n"
 " metrics to analyze your signal", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Recording", None))
+        self.logo_4.setText("")
         self.recordingButton_2.setText("")
         self.playButton_2.setText("")
         self.pauseButton_2.setText("")

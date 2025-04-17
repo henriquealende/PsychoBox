@@ -23,6 +23,11 @@ class MainWindow(QMainWindow):
         from SupportCodes.buttonSignals import ButtonSignals
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
+        
+        # Configurações de tamanho inicial e mínimo
+        self.setGeometry(100, 100, 1200, 800)  # Define posição e tamanho inicial da janela
+        self.setMinimumSize(1200, 800)  # Define o tamanho mínimo da janela
+        
         SetupWindow.setWindowInformation(self, "main")
         ButtonSignals.buttonCallbackMainWindow(self)
         pygame.init()

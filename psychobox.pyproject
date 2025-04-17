@@ -23,7 +23,7 @@
         "Psychoacoustics/sharpness_din.py",
         "Utils/filter_utils.py",
         "Utils/graph_utils.py",
-        "Forms/ui_expand.py",
-        "Forms/expandGraph.ui"
+        "Forms/ui_graph.py",
+        "Forms/graph.ui"
     ]
 }

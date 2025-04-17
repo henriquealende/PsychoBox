@@ -1,5 +1,5 @@
 import os
-from PySide6.QtWidgets import QFileDialog,  QAbstractItemView, QMessageBox, QProgressDialog
+from PySide6.QtWidgets import QFileDialog,  QAbstractItemView, QMessageBox, QDialog, QVBoxLayout, QLabel, QComboBox, QPushButton
 from PySide6.QtGui import QImage, QPainter
 import numpy as np
 import csv
@@ -85,7 +85,6 @@ class UI_Buttons_Graph():
         domain = self.gp.domainBox.currentText()
         samplingBox = self.gp.samplingBox.currentText()
         self.chartview = GraphUtils.getGraph(self, pathExport, domain, samplingBox)
-        print(self.chartview)
 
     def saveGraph(self):
         if self.chartview is None:
@@ -150,7 +149,9 @@ class UI_Buttons_Graph():
                                 globalRoughnessECMA, specificRoughnessECMA,
                                 globalSharpness, specificSharpness])
             QMessageBox.information(self, "Data Saved", "Psychoacoustic metrics were saved successfully!")
-
+    
+    def window_select(self):
+        pass
        
 class GetWave():
     def __init__(self):
