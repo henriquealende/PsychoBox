@@ -21,7 +21,9 @@ class MainWindow(QMainWindow):
 
     def set(self):
         from SupportCodes.buttonSignals import ButtonSignals
-        self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        # Remove a flag Qt.WindowStaysOnTopHint para permitir que a janela minimize.
+        # Mantém Qt.FramelessWindowHint para remover a barra de título padrão.
+        self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         
         # Configurações de tamanho inicial e mínimo
