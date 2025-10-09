@@ -1,5 +1,5 @@
 import os
-from PySide6.QtWidgets import QFileDialog,  QAbstractItemView, QMessageBox, QDialog, QVBoxLayout, QLabel, QComboBox, QPushButton
+from PySide6.QtWidgets import QFileDialog,  QAbstractItemView, QMessageBox, QGraphicsSimpleTextItem, QGraphicsLineItem
 from PySide6.QtGui import QImage, QPainter
 import numpy as np
 import csv
@@ -18,7 +18,6 @@ class UI_Buttons_Graph():
         super(UI_Buttons_Graph, self).__init__()
         self.chartview = None
         self.gp = None  
-
 
     def importButton(self):
         importAdress = QFileDialog.getOpenFileName(self,'Open file','','WAV files (*.wav)')
@@ -40,7 +39,6 @@ class UI_Buttons_Graph():
         else: 
             self.ui.convolve.setEnabled(False)
 
-        
     def selectMulti(self):
         global pathExport
         model_head = self.ui.modelHeadBox_2.currentText()
@@ -107,7 +105,6 @@ class UI_Buttons_Graph():
         # Salvar a imagem e imprimir o resultado
         print(image.save(fileName, "PNG")) 
 
-
     def saveData(self):
         """
         Calcula as métricas psicoacústicas e salva os resultados em um arquivo .csv.
@@ -152,6 +149,25 @@ class UI_Buttons_Graph():
     
     def window_select(self):
         pass
+
+    def clearCursors(self):
+        """
+        Remove todos os cursores (linhas verticais e textos) adicionados ao gráfico.
+        """
+        if self.chartview is None or self.chartview.chart() is None:
+            print("Erro: chartview ou chart não foi inicializado.")
+            return
+
+        # Obtém a cena do gráfico
+        scene = self.chartview.scene()
+        if not scene:
+            print("Erro: a cena do gráfico não foi encontrada.")
+            return
+
+        # Itera sobre os itens da cena e remove apenas os itens marcados como "cursor"
+        for item in scene.items():
+            if item.data(0) == "cursor":  # Verifica se o item foi marcado como "cursor"
+                scene.removeItem(item)
        
 class GetWave():
     def __init__(self):

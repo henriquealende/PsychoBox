@@ -121,4 +121,4 @@ class ButtonSignals():
         self.gp.refresh.setToolTip("Refresh the graph with the latest data.")
         self.gp.refresh.clicked.connect(lambda: UI_Buttons_Graph.changeGraph(self))
         self.gp.windowButton.setToolTip("Open a window to select the signal window type.")
-        self.gp.windowButton.clicked.connect(lambda: UI_Buttons_Graph.openWindowSelection(self))
+        self.gp.select_area.clicked.connect(lambda: UI_Buttons_Graph.clearCursors(self))

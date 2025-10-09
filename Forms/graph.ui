@@ -125,7 +125,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../Resources/resourceGui.qrc">:/logos/img/psychobox_logo2.png</pixmap>
+            <pixmap resource="../Resources/resourceGUI.qrc">:/logos/img/psychobox_logo2.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
@@ -192,7 +192,7 @@ QPushButton:hover {
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../Resources/resourceGui.qrc">
+            <iconset resource="../Resources/resourceGUI.qrc">
              <normaloff>:/icons/img/minus.png</normaloff>:/icons/img/minus.png</iconset>
            </property>
           </widget>
@@ -219,7 +219,7 @@ QPushButton:hover {
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../Resources/resourceGui.qrc">
+            <iconset resource="../Resources/resourceGUI.qrc">
              <normaloff>:/icons/img/maximizar-janela.png</normaloff>:/icons/img/maximizar-janela.png</iconset>
            </property>
            <property name="iconSize">
@@ -252,7 +252,7 @@ QPushButton:hover{
             <string/>
            </property>
            <property name="icon">
-            <iconset resource="../Resources/resourceGui.qrc">
+            <iconset resource="../Resources/resourceGUI.qrc">
              <normaloff>:/icons/img/close.png</normaloff>:/icons/img/close.png</iconset>
            </property>
            <property name="iconSize">
@@ -467,7 +467,7 @@ QComboBox QAbstractView{
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/statistics.png</pixmap>
+               <pixmap resource="../Resources/resourceGUI.qrc">:/icons/img/statistics.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -524,7 +524,7 @@ QComboBox QAbstractView{
                <string/>
               </property>
               <property name="icon">
-               <iconset resource="../Resources/resourceGui.qrc">
+               <iconset resource="../Resources/resourceGUI.qrc">
                 <normaloff>:/icons/img/select_area.png</normaloff>:/icons/img/select_area.png</iconset>
               </property>
               <property name="iconSize">
@@ -542,55 +542,20 @@ QComboBox QAbstractView{
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="windowButton">
+             <widget class="QComboBox" name="window_selection">
               <property name="enabled">
                <bool>false</bool>
               </property>
               <property name="minimumSize">
                <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>30</width>
-                <height>30</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true"/>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="icon">
-               <iconset resource="../Resources/resourceGui.qrc">
-                <normaloff>:/icons/img/gaussian-function.png</normaloff>:/icons/img/gaussian-function.png</iconset>
-              </property>
-              <property name="iconSize">
-               <size>
-                <width>18</width>
-                <height>18</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="comboBox">
-              <property name="enabled">
-               <bool>false</bool>
-              </property>
-              <property name="minimumSize">
-               <size>
-                <width>150</width>
+                <width>203</width>
                 <height>30</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
                 <width>150</width>
-                <height>16777215</height>
+                <height>30</height>
                </size>
               </property>
               <property name="font">
@@ -617,6 +582,41 @@ QComboBox QAbstractView{
              </widget>
             </item>
             <item>
+             <widget class="QPushButton" name="windowButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>30</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../Resources/resourceGUI.qrc">
+                <normaloff>:/icons/img/gaussian-function.png</normaloff>:/icons/img/gaussian-function.png</iconset>
+              </property>
+              <property name="iconSize">
+               <size>
+                <width>18</width>
+                <height>18</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="pushButton">
               <property name="minimumSize">
                <size>
@@ -632,6 +632,10 @@ QComboBox QAbstractView{
               </property>
               <property name="text">
                <string/>
+              </property>
+              <property name="icon">
+               <iconset resource="../Resources/resourceGUI.qrc">
+                <normaloff>:/icons/img/computer-mouse.png</normaloff>:/icons/img/computer-mouse.png</iconset>
               </property>
              </widget>
             </item>
@@ -1048,7 +1052,7 @@ QLineEdit:disabled{
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset resource="../Resources/resourceGui.qrc">
+                  <iconset resource="../Resources/resourceGUI.qrc">
                    <normaloff>:/icons/img/refresh.png</normaloff>:/icons/img/refresh.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -1235,7 +1239,7 @@ QCheckBox::indicator:checked:disabled{
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap resource="../Resources/resourceGui.qrc">:/icons/img/settingsEnable.png</pixmap>
+               <pixmap resource="../Resources/resourceGUI.qrc">:/icons/img/settingsEnable.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
@@ -1895,7 +1899,7 @@ Jucélio Tavares and Ricardo Brum</string>
   </layout>
  </widget>
  <resources>
-  <include location="../Resources/resourceGui.qrc"/>
+  <include location="../Resources/resourceGUI.qrc"/>
  </resources>
  <connections/>
 </ui>

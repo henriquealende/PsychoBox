@@ -3,7 +3,7 @@ import pygame
 
 from PySide6 import QtCore
 from PySide6.QtWidgets import QApplication, QMainWindow
-from PySide6.QtCore import Qt, QFile
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QMainWindow, QMenuBar
 
 from SupportCodes.setWindow import SetupWindow

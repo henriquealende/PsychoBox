@@ -1,6 +1,6 @@
 from PySide6 import QtCharts
 from PySide6.QtGui import QPainter, QColor, QBrush, QPen
-from PySide6.QtWidgets import QApplication, QMessageBox
+from PySide6.QtWidgets import QApplication, QMessageBox, QGraphicsSimpleTextItem, QGraphicsLineItem
 from PySide6.QtCore import Qt, QRectF, QPointF
 
 from Utils.filter_utils import FilterUtils
@@ -24,19 +24,45 @@ class CustomChartView(QtCharts.QChartView):
         self.end_pos = None
         self.selection_rect = None  # Retângulo gráfico para a seleção
         self.gp = gp  # Referência à interface gráfica (Ui_Form)
+        self.is_dragging = False  # Indica se o cursor está sendo arrastado
+
+        # Conecta o evento de alteração do estado do botão select_area
+        if self.gp and hasattr(self.gp, 'select_area'):
+            self.gp.select_area.toggled.connect(self.handleSelectAreaToggle)
+
+    def handleSelectAreaToggle(self, checked):
+        """
+        Método chamado quando o estado do botão select_area é alterado.
+        """
+        if not checked:  # Se o botão foi desmarcado
+            # Encerra a seleção
+            self.start_pos = None
+            self.end_pos = None
+            self.selection_rect = None
+            self.viewport().update()  # Atualiza a exibição para remover o retângulo
+
+            # Desabilita os botões windowButton e window_selection
+            if self.gp and hasattr(self.gp, 'windowButton') and hasattr(self.gp, 'window_selection'):
+                self.gp.windowButton.setEnabled(False)
+                self.gp.window_selection.setEnabled(False)
 
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
-            # Verifica se o botão "select_area" está checado
-            if self.gp and not self.gp.select_area.isChecked():
-                return  # Não faz nada se o botão não estiver checado
+            # Lógica de seleção de área
+            if self.gp and self.gp.select_area.isChecked():
+                self.start_pos = self.chart().mapToValue(event.scenePosition())
+                self.selection_rect = QRectF()
+                return
 
-            # Captura a posição inicial do clique
-            self.start_pos = self.chart().mapToValue(event.scenePosition())
-            self.selection_rect = QRectF()  # Inicializa o retângulo de seleção
+            # Lógica de arrastar o cursor
+            if self.gp and self.gp.cursorButton.isChecked():
+                self.start_pos = self.chart().mapToValue(event.scenePosition())
+                self.is_dragging = True  # Indica que o cursor está sendo arrastado
+                self.updateCursor(event.scenePosition())  # Atualiza o cursor na posição inicial
 
     def mouseMoveEvent(self, event):
-        if self.start_pos:
+        # Atualiza a seleção de área
+        if self.start_pos and self.gp and self.gp.select_area.isChecked():
             self.end_pos = self.chart().mapToValue(event.scenePosition())
 
             # Calcula as coordenadas do retângulo no plotArea
@@ -54,26 +80,89 @@ class CustomChartView(QtCharts.QChartView):
             )
             self.viewport().update()  # Atualiza a exibição para desenhar o retângulo
 
+        # Atualiza o cursor enquanto arrasta
+        if self.is_dragging and self.gp and self.gp.cursorButton.isChecked():
+            self.updateCursor(event.scenePosition())
+
     def mouseReleaseEvent(self, event):
-        if event.button() == Qt.LeftButton and self.start_pos:
-            self.end_pos = self.chart().mapToValue(event.scenePosition())
-            x1, x2 = sorted([self.start_pos.x(), self.end_pos.x()])
+        if event.button() == Qt.LeftButton:
+            # Finaliza a seleção de área
+            if self.start_pos and self.gp and self.gp.select_area.isChecked():
+                self.end_pos = self.chart().mapToValue(event.scenePosition())
+                x1, x2 = sorted([self.start_pos.x(), self.end_pos.x()])
 
-            # Save x1 and x2 to self for later use
-            self.selected_x1 = x1
-            self.selected_x2 = x2
+                # Salva os valores selecionados
+                self.selected_x1 = x1
+                self.selected_x2 = x2
 
-            # Enable or disable the windowButton based on the selection
-            if self.gp and hasattr(self.gp, 'windowButton'):
-                if self.selected_x1 == self.selected_x2:
-                    self.gp.windowButton.setEnabled(False)  # Disable if no region is selected
-                else:
-                    self.gp.windowButton.setEnabled(True)  # Enable if a region is selected
+                # Habilita ou desabilita o botão com base na seleção
+                if self.gp and hasattr(self.gp, 'windowButton'):
+                    if self.selected_x1 == self.selected_x2:
+                        self.gp.windowButton.setEnabled(False)  # Desabilita se nenhuma região foi selecionada
+                        self.gp.window_selection.setEnabled(False)
+                    else:
+                        self.gp.windowButton.setEnabled(True)  # Habilita se uma região foi selecionada
+                        self.gp.window_selection.setEnabled(True)
 
-            # Reset selection
-            self.start_pos = None
-            self.end_pos = None
-            self.viewport().update()  # Update the viewport to remove the rectangle
+                # Reseta a seleção
+                self.start_pos = None
+                self.end_pos = None
+                self.viewport().update()  # Atualiza a exibição para remover o retângulo
+
+            # Finaliza o arrasto do cursor
+            if self.is_dragging and self.gp and self.gp.cursorButton.isChecked():
+                self.is_dragging = False  # Finaliza o arrasto
+                self.updateCursor(event.scenePosition())  # Atualiza o cursor na posição final
+
+    def updateCursor(self, scene_pos):
+        chart = self.chart()
+        if not chart:
+            return
+
+        # Obtém a posição do mouse no gráfico
+        chart_item = chart.mapFromScene(scene_pos)
+        x_value = chart.mapToValue(chart_item).x()
+
+        # Itera sobre as séries para encontrar o valor correspondente de Y
+        y_value = None
+        for series in chart.series():
+            x_data = [series.at(i).x() for i in range(series.count())]
+            y_data = [series.at(i).y() for i in range(series.count())]
+
+            # Localiza o índice mais próximo no array de x
+            closest_index = min(range(len(x_data)), key=lambda i: abs(x_data[i] - x_value))
+
+            # Obtém o valor de Y correspondente
+            y_value = y_data[closest_index]
+            break  # Considera apenas a primeira série
+
+        if y_value is None:
+            return
+
+        # Remove itens de cursor anteriores
+        for item in chart.scene().items():
+            if item.data(0) == "cursor":
+                chart.scene().removeItem(item)
+
+        # Adiciona uma linha vertical na posição x
+        axis_y = chart.axisY(series)
+        x_pos = chart.mapToPosition(QPointF(x_value, axis_y.min())).x()
+        y_min = chart.mapToPosition(QPointF(x_value, axis_y.min())).y()
+        y_max = chart.mapToPosition(QPointF(x_value, axis_y.max())).y()
+
+        vertical_line = QGraphicsLineItem(x_pos, y_min, x_pos, y_max)
+        pen = QPen(QColor("#f16637"))
+        pen.setWidth(2)
+        vertical_line.setPen(pen)
+        vertical_line.setData(0, "cursor")
+        chart.scene().addItem(vertical_line)
+
+        # Exibe os valores de x e y na parte superior da linha
+        text_item = QGraphicsSimpleTextItem(f"x: {x_value:.2f}, y: {y_value:.2f}")
+        text_item.setPos(x_pos - text_item.boundingRect().width() / 2, y_max - 20)
+        text_item.setBrush(QColor("#f16637"))
+        text_item.setData(0, "cursor")
+        chart.scene().addItem(text_item)
 
     def paintEvent(self, event):
         super().paintEvent(event)
@@ -219,12 +308,12 @@ class GraphUtils():
         # Configuração unificada dos eixos
         axis_x = QtCharts.QValueAxis()
         axis_x.setTickCount(5)
-        axis_x.setLabelFormat("%.1f")
+        # axis_x.setLabelFormat("%.1f")
         axis_x.setTitleText(x_title)            
         axis_y = QtCharts.QValueAxis()
         axis_y.setTitleText(y_title) 
         axis_y.setTickCount(5)
-        axis_y.setLabelFormat("%.1f")       
+        # axis_y.setLabelFormat("%.1f")       
         
         self.chart.addAxis(axis_x, Qt.AlignBottom)
         self.chart.addAxis(axis_y, Qt.AlignLeft)
