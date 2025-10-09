@@ -29,7 +29,8 @@ class Expand_Graph(QMainWindow):
         self.setGeometry(100, 100, 1200, 800)  # Define posição e tamanho inicial da janela
         self.setMinimumSize(962, 665)  # Define o tamanho mínimo da janela
         
-        self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
+        # Altera aqui: remove a flag Qt.WindowStaysOnTopHint para permitir que a janela se minimize.
+        self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint)
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         SetupWindow.setWindowInformation(self, "secondary")
         ButtonSignals.buttonCallbackGraphWindow(self)
